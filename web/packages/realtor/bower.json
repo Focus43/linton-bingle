@@ -1,0 +1,19 @@
+{
+  "name": "Focus43",
+  "version": "0.0.1",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "twbs/bootstrap-sass#~3.3.4",
+    "gsap": "~1.13.2",
+    "fastclick": "~1.0.3",
+    "knockout": "~3.3.0",
+    "zepto": "~1.1.6"
+  }
+}

@@ -1,0 +1,16 @@
+// Custom variables
+@import 'required';
+
+// Core dependencies
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/scaffolding';
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize';
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/type';
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/grid';
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons';
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/forms';
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/utilities';
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/responsive-utilities';
+
+#c-level-1 {
+  @import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/grid';
+}

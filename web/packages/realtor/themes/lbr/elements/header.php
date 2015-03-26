@@ -1,8 +1,10 @@
 <header>
-    <nav slideable>
-        <a class="trigger"></a>
-        <div class="inner">
-            <?php $a = new GlobalArea('Header Right'); $a->display($c); ?>
-        </div>
+<!--    <a class="trigger"></a>-->
+    <nav>
+        <div class="logo"></div>
+        <ul>
+            <li><a href="">About</a></li>
+            <li><a href="">Property</a></li>
+        </ul>
     </nav>
 </header>

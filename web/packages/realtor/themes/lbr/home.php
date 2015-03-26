@@ -1,19 +1,10 @@
 <!DOCTYPE HTML>
-<html ng-app="sequence" ng-controller="CtrlRoot" ng-class="rootClasses" lang="<?php echo LANGUAGE; ?>" class="<?php echo $isEditMode ? 'cms-edit-mode' : ''; ?>">
+<html lang="<?php echo LANGUAGE; ?>" class="<?php echo $isEditMode ? 'cms-edit-mode' : ''; ?>">
 <?php $this->inc('elements/head.php'); ?>
 
-<body<?php if($pagePermissionObj->canWrite()){ echo ' can-admin'; } ?>>
-
-<?php if( ! $pagePermissionObj->canWrite() ): ?>
-    <script type="text/ng-template" id="<?php echo URL::route(array('disclaimer', 'sequence')); ?>">
-    <?php Loader::packageElement('partials/disclaimer', 'sequence'); ?>
-</script>
-<?php endif; ?>
+<body class="pg-home">
 
 <div id="c-level-1" class="<?php echo $c->getPageWrapperClass(); ?>">
-
-    <?php $this->inc('elements/header.php'); ?>
-
     <main slideable>
         <section id="section-0">
             <div masthead data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="12"';} ?>>
@@ -62,46 +53,14 @@
                         <?php $a = new Area('Contact Top'); $a->display($c); ?>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-3 col-md-3 col-md-offset-1">
-                        <?php $a = new Area('Contact Left'); $a->display($c); ?>
-                    </div>
-                    <div class="col-sm-9 col-md-7">
-                        <form name="contactForm" ng-controller="CtrlContactForm" ng-submit="submitHandler($event)" role="form" action="<?php echo URL::route(array('contact_form', 'sequence')); ?>">
-                            <div class="row">
-                                <div class="col-sm-6 form-group">
-                                    <label class="sr-only">Name</label>
-                                    <input required ng-model="form_data.name" type="text" class="form-control" placeholder="Name" />
-                                </div>
-                                <div class="col-sm-6 form-group">
-                                    <label class="sr-only">Email</label>
-                                    <input required ng-model="form_data.email" type="email" class="form-control" placeholder="Email" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 form-group">
-                                    <textarea ng-model="form_data.message" class="form-control" placeholder="Message" rows="5"></textarea>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12 form-group">
-                                    <button ng-disabled="isDisabled()" type="submit" class="btn btn-default">Send</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <?php $a = new Area('Contact Bottom'); $a->enableGridContainer(); $a->display($c); ?>
-                    </div>
-                </div>
+
             </div>
         </section>
 
-        <footer>TitleCard Capital&trade;. Copyright &copy; <?php echo date('Y'); ?> | <a modalize="<?php echo URL::route(array('/terms_of_use', 'sequence')); ?>">Terms Of Use</a></footer>
+        <?php $this->inc('elements/footer.php'); ?>
+        <?php $this->inc('elements/header.php'); ?>
     </main>
-    <aside scroll-top class="icn-angle-up"></aside>
+
 </div>
 
 <?php Loader::element('footer_required'); // REQUIRED BY C5 // ?>

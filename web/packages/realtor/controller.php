@@ -328,7 +328,7 @@
             // Things available through the API
             $homePageCollection = \Concrete\Core\Page\Page::getByID(1)->getVersionToModify();
             $homePageCollection->update(array(
-                'pTemplateID' => PageTemplate::getByHandle('default')->getPageTemplateID()
+                'pTemplateID' => PageTemplate::getByHandle('home')->getPageTemplateID()
             ));
             $homePageCollection->setPageType(PageType::getByHandle('page'));
 

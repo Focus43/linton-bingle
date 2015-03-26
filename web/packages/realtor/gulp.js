@@ -1,5 +1,8 @@
 module.exports = function( gulp ){
 
+    // Get the name of the parent directory so we can use it to "namespace" tasks
+    var directoryName = require('path').basename(__dirname);
+    
     /**
      * Return full path on the file system.
      * @param _path
@@ -7,6 +10,11 @@ module.exports = function( gulp ){
      */
     function _packagePath(_path){
         return __dirname + '/' + _path;
+    }
+
+    /** Prepends a task name with the parent directory for uniqueness. */
+    function _taskName( taskName ){
+        return directoryName + ':' + taskName;
     }
 
     var utils   = require('gulp-util'),
@@ -24,18 +32,18 @@ module.exports = function( gulp ){
         js: {
             core: [
                 _packagePath('bower_components/fastclick/lib/fastclick.js'),
-//                _packagePath('bower_components/angular/angular.js'),
+                _packagePath('bower_components/knockout/dist/knockout.js'),
                 _packagePath('bower_components/gsap/src/uncompressed/TweenMax.js'),
+                _packagePath('bower_components/zepto/zepto.min.js'),
 //                _packagePath('bower_components/gsap/src/uncompressed/plugins/ScrollToPlugin.js'),
 //                _packagePath('bower_components/isotope/dist/isotope.pkgd.js'),
 //                _packagePath('bower_components/moment/min/moment.min.js'),
                 _packagePath('js/3rd_party/*.js')
             ],
             app: [
-                _packagePath('js/src/**/*.js')
+                _packagePath('js/src/elements/*.js'),
+                _packagePath('js/src/*.js')
             ]
-
-
         }
     };
 
@@ -45,7 +53,7 @@ module.exports = function( gulp ){
      * @param _style
      * @returns {*|pipe|pipe}
      */
-    function runSass( files, _style ){
+    function runSass( files, _style ){ utils.log("runSass" )
         return gulp.src(files)
             .pipe(sass({compass:true, style:(_style || 'nested')}))
             .on('error', function( err ){
@@ -86,25 +94,25 @@ module.exports = function( gulp ){
     /**
      * Individual tasks
      */
-    gulp.task('sass:core:dev', function(){ return runSass(sourcePaths.css.core); });
-    gulp.task('sass:core:prod', function(){ return runSass(sourcePaths.css.core, 'compressed'); });
-    gulp.task('sass:app:dev', function(){ return runSass(sourcePaths.css.app); });
-    gulp.task('sass:app:prod', function(){ return runSass(sourcePaths.css.app, 'compressed'); });
-    gulp.task('jshint', function(){ return runJsHint(sourcePaths.js.app); });
-    gulp.task('js:core:dev', function(){ return runJs(sourcePaths.js.core, 'core.js') });
-    gulp.task('js:core:prod', function(){ return runJs(sourcePaths.js.core, 'core.js', true) });
-    gulp.task('js:app:dev', ['jshint'], function(){ return runJs(sourcePaths.js.app, 'app.js') });
-    gulp.task('js:app:prod', ['jshint'], function(){ return runJs(sourcePaths.js.app, 'app.js', true) });
+    gulp.task(_taskName('sass:core:dev'), function(){ return runSass(sourcePaths.css.core); });
+    gulp.task(_taskName('sass:core:prod'), function(){ return runSass(sourcePaths.css.core, 'compressed'); });
+    gulp.task(_taskName('sass:app:dev'), function(){ return runSass(sourcePaths.css.app); });
+    gulp.task(_taskName('sass:app:prod'), function(){ return runSass(sourcePaths.css.app, 'compressed'); });
+    gulp.task(_taskName('jshint'), function(){ return runJsHint(sourcePaths.js.app); });
+    gulp.task(_taskName('js:core:dev'), function(){ return runJs(sourcePaths.js.core, 'core.js') });
+    gulp.task(_taskName('js:core:prod'), function(){ return runJs(sourcePaths.js.core, 'core.js', true) });
+    gulp.task(_taskName('js:app:dev', 'jshint'), function(){ return runJs(sourcePaths.js.app, 'app.js') });
+    gulp.task(_taskName('js:app:prod', 'jshint'), function(){ return runJs(sourcePaths.js.app, 'app.js', true) });
 
 
     /**
      * Grouped tasks (by environment target)
      */
-    gulp.task('build:dev', ['sass:core:dev', 'sass:app:dev', 'js:core:dev', 'js:app:dev'], function(){
+    gulp.task(_taskName('build:dev'), [_taskName('sass:core:dev'), _taskName('sass:app:dev'), _taskName('js:core:dev'), _taskName('js:app:dev')], function(){
         utils.log(utils.colors.bgGreen('Dev build OK'));
     });
 
-    gulp.task('build:prod', ['sass:core:prod', 'sass:app:prod', 'js:core:prod', 'js:app:prod'], function(){
+    gulp.task(_taskName('build:prod'), [_taskName('sass:core:prod'), _taskName('sass:app:prod'), _taskName('js:core:prod'), _taskName('js:app:prod')], function(){
         utils.log(utils.colors.bgGreen('Prod build OK'));
     });
 
@@ -112,10 +120,10 @@ module.exports = function( gulp ){
     /**
      * Watch tasks
      */
-    gulp.task('watch', function(){
-        gulp.watch(_packagePath('css/src/_required.scss'), {interval:1000}, ['sass:core:dev']);
-        gulp.watch(_packagePath('css/src/**/*.scss'), {interval:1000}, ['sass:app:dev']);
-        gulp.watch(_packagePath('js/src/**/*.js'), {interval:1000}, ['js:app:dev']);
+    gulp.task(_taskName('watches'), function(){
+        gulp.watch(_packagePath('css/src/_required.scss'), {interval:1000}, [_taskName('sass:core:dev')]);
+        gulp.watch(_packagePath('css/src/**/*.scss'), {interval:1000}, [_taskName('sass:app:dev')]);
+        gulp.watch(_packagePath('js/src/**/*.js'), {interval:1000}, [_taskName('js:app:dev')]);
     });
 
 };
