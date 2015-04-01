@@ -4,15 +4,16 @@
 // Custom
 $package-path:                  '/packages/realtor/';
 $image-path:                    '#{$package-path}images';
-//$icomoon-font-path:             '#{$package-path}css/fonts';
-//$font-family-icomoon:           'icomoon';
+$icomoon-font-path:             '#{$package-path}css/fonts';
+$font-family-icomoon:           'icomoon';
 
 $nav-sidebar-width:         320px;
 $nav-header-full-height:    150px;
 $nav-header-short-height:   75px;
 $nav-header-full-bg-color:  rgba(0, 0, 0, 0.33);
 $nav-header-short-bg-color: #ffffff;
-//$mask-animate-time:             0.5s;
+
+$animate-time:             0.5s;
 
 // Palette
 $theme-font-family-headers:   'Josefin Sans', sans-serif;
@@ -68,4 +69,11 @@ $container-sm:                  100%;
 // Mixins
 @mixin scrollOverflow {
   overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;
+}
+
+@mixin blockTransition {
+    -webkit-transition: all $animate-time ease-in-out;
+    -moz-transition: all $animate-time ease-in-out;
+    -o-transition: all $animate-time ease-in-out;
+    transition: all $animate-time ease-in-out;
 }

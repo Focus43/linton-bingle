@@ -32,7 +32,7 @@ module.exports = function( gulp ){
         js: {
             core: [
                 _packagePath('bower_components/fastclick/lib/fastclick.js'),
-                _packagePath('bower_components/knockout/dist/knockout.js'),
+//                _packagePath('bower_components/knockout/dist/knockout.js'),
                 _packagePath('bower_components/gsap/src/uncompressed/TweenMax.js'),
                 _packagePath('bower_components/zepto/zepto.min.js'),
 //                _packagePath('bower_components/gsap/src/uncompressed/plugins/ScrollToPlugin.js'),

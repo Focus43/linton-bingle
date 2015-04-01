@@ -1,0 +1,13 @@
+section.footer { height: 100%;padding-top: 55px !important;color: $theme-color-brown; overflow: hidden;max-width: 1250px;text-align: center;
+    ul { margin: 0;padding: 0 0 35px 0;
+        li a { color: $theme-color-brown;
+            &:hover { color: $theme-color-darkred; }
+        }
+    }
+    .small-print { padding-bottom: 15px; }
+    .row.table { display: table;height: 100%;
+        & > [class*="col-"] { display: table-cell;vertical-align: bottom;height: 100%;float: none !important;/* flex: 1; */ }
+    }
+
+    img.portrait { padding-bottom: 0; }
+}

@@ -1,12 +1,22 @@
-/* global FastClick */
-;(function( window ){ 'use strict';
+;(function (ns, undefined) {
+    'use strict';
 
-    FastClick.attach(document.body);
+    ns.Header = new Header();
+    ns.Search = new Search();
 
-    // theme components
-    headerComponents(window);
+    ns.init = function () {
+        /* global FastClick */
+        $(function() {
+            FastClick.attach(document.body);
+        });
 
-    // register knockout components here
-    // http://knockoutjs.com/documentation/component-registration.html
+        ns.Header.initShrink();
+    }
 
-})(window);
+})(window.LB = window.LB || {});
+
+LB.init();
+
+//window.addEventListener("load", function() {
+//
+//}, false);

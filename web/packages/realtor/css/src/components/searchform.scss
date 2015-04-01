@@ -1,0 +1,48 @@
+$form-spacing: 15px;
+section.search { text-align: center;background-color: $theme-color-beige;color: $theme-color-brown;padding: 70px 0 50px 0;
+    h3 { text-align: left; }
+    div.property-search { width: 100%;position: relative;padding: 0 10px;
+        button { text-transform: uppercase;float: left;
+            &.locations { height: 50px;border-radius: 4px;text-align: left;border: 1px solid #ccc;background-color: $theme-color-brown;background-image: url('#{$image-path}/dropdown_arrow.jpg');background-position: calc(100% - 4px) 0;background-repeat: no-repeat;color: $theme-color-white;}
+        }
+        input, select, button.locations { width: inherit;height: 50px;padding: 12px 70px 6px 20px;font-family: $theme-font-family-headers;font-size: 1.1em;text-transform: uppercase; }
+        select { -webkit-appearance: none; }
+        input[type=checkbox] { height: inherit;margin: 0 3px 0 0; }
+        p { text-align: left;padding: 0;
+            .target-result-count { color: $theme-color-red; }
+            &.big-match { font-size: 2em;color: $theme-color-red;
+                .target-result-count { font-weight: 700; }
+            }
+        }
+        .or { height: 50px;font-family: $theme-font-family-headers;font-size: 1.1em;font-weight: bold;line-height: 2.8em;margin-right: $form-spacing; }
+        .mls, .or { float: left;
+            input { float: left;padding: 12px 20px 6px 20px; }
+            button { float: right; }
+        }
+        .dropdown {
+            select { float: left;background-color: $theme-color-brown;background-image: url('#{$image-path}/dropdown_arrow.jpg');background-position: calc(100% - 4px) 0;background-repeat: no-repeat;color: $theme-color-white;margin-right: $form-spacing; }
+            button { margin-right: $form-spacing; }
+        }
+        .property-types { font-family: $theme-font-family-headers;font-weight: 700;font-size: 0.8em;padding: 20px 0;text-transform: uppercase;text-align: left;
+            .type { float: left;padding-left: 20px; }
+        }
+        .buttons { text-align: left; }
+
+        div#locationFilters { position: absolute;top: 100px;left: 20px;height: 295px;width: 285px;overflow-y: scroll;padding: 10px;background-color: $theme-color-white;border: 1px solid $theme-color-brown;font-family: $theme-font-family-headers;font-weight: 700;font-size: 0.8em;text-align: left;
+            &.hidden { height: 0px;width: 0px; }
+            ul { list-style: none;margin: 0;padding: 0; }
+            h5 { width: 50%;float: left; }
+            .btn { height: 20px;line-height: 0.7em;font-size: 1em;float:right;margin-left: 5px; }
+        }
+
+        @media screen and (max-width:$screen-sm) {
+            .dropdown { display: block;width:100%;
+                select, button { /* margin: 10px 0; */ }
+            }
+            .or, .dropdown, button.locations { width: 100% !important; }
+            .mls { width: 100%;
+                input { width: calc(100% - 55px); }
+            }
+        }
+    }
+}

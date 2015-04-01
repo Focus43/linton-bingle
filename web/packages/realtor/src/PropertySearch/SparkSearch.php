@@ -62,6 +62,7 @@
             $this->_customSearchParams = array_merge( $this->_customSearchParams, $params );
         }
 
+
         /**
          * @return string
          */

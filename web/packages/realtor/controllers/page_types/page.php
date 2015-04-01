@@ -1,7 +1,9 @@
 <?php namespace Concrete\Package\Realtor\Controller\PageType {
 
-    use FileSet;
+    use FileSet,
+        FileList;
     use Concrete\Package\Realtor\Controller\RealtorPageController;
+    use Concrete\Package\Realtor\Controller as PackageController;
 
     class Page extends RealtorPageController {
 
@@ -10,8 +12,11 @@
         public function view(){
             parent::view();
 //            $this->set('mastheadHelper', new \Concrete\Package\Realtor\Src\Helpers\Masthead($this->getPageObject()));
+            $this->set('mastheadImages', $this->getMastheadImages());
         }
 
+        protected function getMastheadImages () {
+            return FileSet::getByName(PackageController::FILE_SET_MASTHEAD)->getFiles();
+        }
     }
-
 }

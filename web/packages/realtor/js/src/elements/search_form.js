@@ -1,19 +1,3 @@
-var Header = function () {
-    this.initShrink = function () {
-        // shrink header on scroll (only on home page)
-        if ( $('body').hasClass('pg-home') ) {
-            $(window).scroll( function() {
-                var _header = $('header')
-                if ( $(window).scrollTop() > 50 ) {
-                    TweenLite.to(_header, 0.5, {className:"shrink"})
-                } else {
-                    TweenLite.to(_header, 0.5, {className:"-=shrink"})
-                }
-            })
-        }
-    }
-}
-
 var Search = function () {
 
     var self = this,
@@ -71,26 +55,3 @@ var Search = function () {
 
     autoInit();
 }
-
-;(function (ns, undefined) {
-    'use strict';
-
-    ns.Header = new Header();
-    ns.Search = new Search();
-
-    ns.init = function () {
-        /* global FastClick */
-        $(function() {
-            FastClick.attach(document.body);
-        });
-
-        ns.Header.initShrink();
-    }
-
-})(window.LB = window.LB || {});
-
-LB.init();
-
-//window.addEventListener("load", function() {
-//
-//}, false);

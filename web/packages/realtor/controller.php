@@ -38,7 +38,7 @@
 
         protected $pkgHandle 			= self::PACKAGE_HANDLE;
         protected $appVersionRequired 	= '5.7';
-        protected $pkgVersion 			= '0.09';
+        protected $pkgVersion 			= '0.18';
 
 
         /**
@@ -78,10 +78,10 @@
 //                '\Concrete\Package\Realtor\Controller\Tools\ModalInfo::view'
 //            );
 //
-//            Route::register(
-//                Router::route(array('/disclaimer', 'Realtor')),
-//                '\Concrete\Package\Realtor\Controller\Tools\Disclaimer::view'
-//            );
+            Route::register(
+                Router::route(array('/propertysearchcount', 'Realtor')),
+                'Concrete\Package\Realtor\Controller\SinglePage\Properties::resultsCount'
+            );
 //
 //            Route::register(
 //                Router::route(array('/terms_of_use', 'Realtor')),
@@ -226,9 +226,9 @@
          * @return Controller
          */
         private function setupFileSets(){
-//            if( ! is_object(FileSet::getByName(self::FILE_SET_MASTHEAD)) ){
-//                FileSet::createAndGetSet(self::FILE_SET_MASTHEAD, FileSet::TYPE_PUBLIC);
-//            }
+            if( ! is_object(FileSet::getByName(self::FILE_SET_MASTHEAD)) ){
+                FileSet::createAndGetSet(self::FILE_SET_MASTHEAD, FileSet::TYPE_PUBLIC);
+            }
 
             return $this;
         }

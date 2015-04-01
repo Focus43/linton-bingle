@@ -1,0 +1,23 @@
+.masthead { width: 100%;height: 100%;position: relative;overflow: hidden;
+    .node { height: 845px;width: 100%;display: table;visibility: hidden;opacity: 0;position: absolute;top: 0;left: 0;background-size: cover;background-position: 70% 50%;
+        &:first-of-type { visibility: visible;opacity: 1; }
+        .inner {width:100%;height:100%;display:table-cell;vertical-align:bottom;text-align:left;padding-bottom:2rem;}
+        .node-content {font-size:1.3rem;display:inline-block;max-width:90%;padding-left:2rem;}
+    }
+    // Markers
+    .markers { position:absolute;left:0;right:0;bottom:0;width:100%;text-align:center;padding:1rem;font-size:0;line-height:0;
+        a { color:$theme-color-red;display:inline-block;padding:0.25rem;font-size:14px;line-height:1;
+            &:hover, &.active {color:$theme-color-darkred;text-decoration:none;}
+        }
+    }
+    // Arrows
+    .arrows {color:$theme-color-beige;position:absolute;top:100%;font-size:4rem;padding:0;line-height:1;@include transform(translateY(-100%));@include transition(all 0.25s ease);z-index:1;
+        &:hover {color:lighten($theme-color-beige, 12%);text-decoration:none;}
+        &[class*="left"]{left:0;
+            &:hover {padding-left:0.25rem;}
+        }
+        &[class*="right"]{right:0;
+            &:hover {padding-right:0.25rem;}
+        }
+    }
+}

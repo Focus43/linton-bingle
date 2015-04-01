@@ -21,6 +21,27 @@
 			$this->loadProperty($id );
 		}
 
+        public function resultsCount () {  print_r("resultsCount");exit;
+            $respObj = new stdClass();
+            $respObj->code = 1;
+            $respObj->resultCount = 0;
+
+            $search = new SparkSearch( $_REQUEST, true );
+            $searchResults = $search->get();
+            $respObj->resultCount = count($searchResults);
+
+            echo json_encode($respObj);
+            exit;
+        }
+
+
+        private function loadProperty($id) {
+            $propertyObj = SparkProperty::getByID($id);
+            $this->set('propertyObj', $propertyObj);
+            return $propertyObj;
+        }
+
+
         public function print_friendly($id = null) {
 //            $propertyObj = $this->loadProperty($id);
 //            $firstPhotoUrl = $propertyObj->getFirstPhotoURL(640);
@@ -42,12 +63,6 @@
 //            $this->set('details', empty($details) ? null : nl2br($details));
 //
 //            $this->render('print');
-        }
-
-        private function loadProperty($id) {
-            $propertyObj = SparkProperty::getByID($id);
-            $this->set('propertyObj', $propertyObj);
-            return $propertyObj;
         }
 		
 	}
