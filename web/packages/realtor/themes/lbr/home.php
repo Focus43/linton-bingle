@@ -13,9 +13,9 @@
                                 <div class="hidden-xs" data-viz-d>
                                     <?php $index++; $a = new Area("Masthead {$index}"); $a->display($c); ?>
                                 </div>
-                                <div class="visible-xs" data-viz-m>
-                                    <?php $a = new Area("Masthead Mobile {$index}"); $a->display($c); ?>
-                                </div>
+<!--                                <div class="visible-xs" data-viz-m>-->
+<!--                                    --><?php //$a = new Area("Masthead Mobile {$index}"); $a->display($c); ?>
+<!--                                </div>-->
                             </div>
                         </div>
                     </div>

@@ -38,7 +38,7 @@
 
         protected $pkgHandle 			= self::PACKAGE_HANDLE;
         protected $appVersionRequired 	= '5.7';
-        protected $pkgVersion 			= '0.19';
+        protected $pkgVersion 			= '0.20';
 
 
         /**
@@ -249,6 +249,9 @@
             }
             if( ! PageTemplate::getByHandle('home') ){
                 PageTemplate::add('home', t('Home'), 'full.png', $this->packageObject());
+            }
+            if( ! PageTemplate::getByHandle('landing') ){
+                PageTemplate::add('home', t('Landing'), 'full.png', $this->packageObject());
             }
 
             return $this;
