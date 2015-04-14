@@ -1,31 +1,71 @@
 // in common
 body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
+    div.trigger { display: none; }
     nav {
         .logo { display: block;float: left;background-repeat: none; }
-        ul { display: block;float: right;margin: 0;
+        ul { display: block;float: right;margin: 0;position: relative;
             li { display: block;float: left;margin:0 17px;list-style: none;font: 1em $theme-font-family-headers;font-weight: 700;text-transform: uppercase;
                 a {
                     &:hover { color: $theme-color-red !important;text-decoration: none; }
                 }
             }
+            li.sub { position: relative;font-size: 0.9em;visibility: hidden;opacity: 0;
+                ul { display: flex;position: absolute;top: 25px;right: -50px;background-color: $theme-color-red;height: 180px;padding: 0 10px; }
+                li { width: 180px;float: left;text-align: center;margin: 0 !important;
+                    a:hover { color: $theme-color-beige !important;text-decoration: none; }
+                    img { width: 160px;height: 100px;margin: 20px 0 15px 0;padding-bottom: 0; }
+                }
+                &.open { visibility: visible;opacity: 1; }
+            }
         }
     }
 }
 // short header
-body #c-level-1 header, body.pg-home #c-level-1 header.shrink { height:$nav-header-short-height;background-color: $nav-header-short-bg-color;padding: 0 40px;
+body #c-level-1 header, body.pg-home #c-level-1 header.shrink { height:$nav-header-short-height;background-color: $nav-header-short-bg-color;padding: 0 40px;@include bottomBorder();
     nav {
-        .logo { background-image: url('#{$image-path}/logo_red.png');width: 232px;height: 43px;margin-top:15px; }
+        a.logo { background-image: url('#{$image-path}/logo_red.png');width: 232px;height: 43px;margin-top:15px; }
         ul { padding: 30px 0;
             li a { color: $theme-color-brown; }
         }
     }
 }
 // tall header
-body.pg-home #c-level-1 header { height:$nav-header-full-height;background-color: $nav-header-full-bg-color;padding: 0 40px;
+body.pg-home #c-level-1 header { height:$nav-header-full-height;background-color: $nav-header-full-bg-color;padding: 0 40px;border-bottom: none !important;
     nav {
-        .logo { background-image: url('#{$image-path}/logo_white.png');width: 306px;height: 88px;margin-top:35px; }
+        a.logo { background-image: url('#{$image-path}/logo_white.png');width: 306px;height: 88px;margin-top:35px; }
         ul { padding: 100px 0 35px 0;
             li a { color: $theme-color-white; }
+        }
+    }
+}
+
+@media screen and (max-width:$screen-sm) {
+    [slideable].open { right: 162px; }
+    body.pg-home #c-level-1 {
+        header { height:$nav-header-short-height;padding: 0 20px;
+            nav {
+                a.logo { background-image: url('#{$image-path}/logo_white_mobile.png');width: 232px;height: 43px;background-size: contain;margin-top: 15px; }
+                ul { padding: 0 0 35px 0; }
+            }
+        }
+    }
+    body #c-level-1 header { padding: 0 20px;height:$nav-header-short-height;
+        div.trigger { display: block;text-align: center;height: $nav-header-short-height;width: 75px;position: absolute;top: 0;right: 0;background-color: $theme-color-red;border-bottom: 1px solid $theme-color-darkred;
+            a { height: $nav-header-short-height;width: $nav-header-short-height;float: left;color: $theme-color-white;
+                &:before { content: "";position: absolute;left: 20px;top: 23px;width: 32px;height: 3px;background: $theme-color-white;box-shadow: 0 10px 0 0 $theme-color-white, 0 20px 0 0 $theme-color-white; }
+                &:hover { color: $theme-color-beige; }
+            }
+        }
+        nav {
+            ul.open { left: $nav-header-short-height; }
+            ul { position: absolute;width: 100%;top: 0;left: 100%;background-color: $theme-color-red;color: $theme-color-white;padding: 0;border-left: 1px solid $theme-color-darkred;
+                li { width: 100%;border-bottom: 1px solid $theme-color-darkred;margin:0;height: $nav-header-short-height;
+                    a { color: $theme-color-white;display: block;margin: 15px;height: calc(100% - 30px);font-size: 1.1em;line-height: 3em;max-width: 225px;
+                        &:hover { color: $theme-color-beige !important;text-decoration: none; }
+                    }
+                    &.nav-selected a { color: $theme-color-beige; }
+                }
+            }
         }
     }
 }

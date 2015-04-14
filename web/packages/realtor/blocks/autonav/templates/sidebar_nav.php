@@ -77,12 +77,10 @@ foreach ($navItems as $ni) {
     }
     */
 
-    /*
     if ($ni->hasSubmenu) {
         //class for items that have dropdown sub-menus
-        $classes[] = 'nav-dropdown';
+        $classes[] = 'has-subs';
     }
-    */
 
     /*
     if (!empty($ni->attrClass)) {
@@ -110,16 +108,28 @@ foreach ($navItems as $ni) {
 
 //*** Step 2 of 2: Output menu HTML ***/
 
+$topLevelCnt = 0;
+
 echo '<ul class="majority">'; //opens the top-level menu
 
 foreach ($navItems as $ni) {
+    if ( $ni->level == 1 ) {
+        $topLevelCnt += 1;
+    }
+    echo '<li class="' . $ni->classes . '" data-sub="' . $topLevelCnt . '" >'; //opens a nav item
+    echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
 
-    echo '<li class="' . $ni->classes . '">'; //opens a nav item
+    if ( $ni->level == 2 ) {
+        echo '<img src="' . REALTOR_IMAGE_PATH . 'nav_placeholder.jpg">';
+    }
 
-    echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">' . $ni->name . '</a>';
+    echo  $ni->name . '</a>';
 
+    echo '</li>'; //closes a nav item
+
+    // open independent sub nav element
     if ($ni->hasSubmenu) {
-        echo '<ul class="sub">'; //opens a dropdown sub-menu
+        echo '<li class="sub" id="sub-'. $topLevelCnt .'"><ul>'; //opens a dropdown sub-menu
     } else {
         echo '</li>'; //closes a nav item
         echo str_repeat('</ul></li>', $ni->subDepth); //closes dropdown sub-menu(s) and their top-level nav item(s)

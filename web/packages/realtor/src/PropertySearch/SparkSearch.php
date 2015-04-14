@@ -5,6 +5,7 @@
         protected $_filterQuery     = "MlsStatus Eq 'A' And StateOrProvince Eq 'WY'",
             $_apiMethod			    = 'getListings',
             $_customSearchParams 	= array(),
+            $_connection,
             $_params;
 
 
@@ -26,7 +27,7 @@
 //            }
 
             // run the query against the API
-            $apiResults = call_user_func_array(array( SparkConnection::sparkApi(), $this->_apiMethod), array(
+            $apiResults = call_user_func_array(array( $this->_connection = SparkConnection::sparkApi(), $this->_apiMethod), array(
                 $this->searchParams()
             ));
 
@@ -45,6 +46,10 @@
 //            return parent::get();
         }
 
+        public function getConnection() {
+            return $this->_connection;
+        }
+
         /**
          * Set the query that should be run against the api (eg. getListings, getMyListings)
          * @param string $method
@@ -52,7 +57,6 @@
         public function setApiMethod( $method ){
             $this->_apiMethod = $method;
         }
-
 
         /**
          * Pass custom parameters
@@ -211,12 +215,11 @@
             if( $this->_params == null ){
                 $defaults = array(
                     '_pagination'	=> 1,
-                    '_limit'		=> 10,
+                    '_limit'		=> 5,
                     '_page'			=> 1,
                     '_filter'		=> $this->_filterQuery,
                     '_expand'		=> 'Photos'
                 );
-
                 $this->_params = empty($this->_customSearchParams) ? $defaults : array_merge($defaults, $this->_customSearchParams);
             }
 

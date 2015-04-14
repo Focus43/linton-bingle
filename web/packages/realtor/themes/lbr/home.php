@@ -4,7 +4,7 @@
 <body class="pg-home">
 <div id="c-level-1" class="<?php echo $c->getPageWrapperClass(); ?>">
     <main slideable>
-        <section id="section-0">
+        <section class="hero">
             <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="12"';} ?>>
                 <?php if(!empty($mastheadImages)): foreach($mastheadImages AS $index => $fileObj): ?>
                     <div class="node" style="background-image:url('<?php echo $fileObj->getRelativePath(); ?>');">
@@ -22,7 +22,7 @@
                 <?php endforeach; endif; ?>
 
                 <?php if(count($mastheadImages) > 1): ?>
-                    <?php if ( isEditMode ) { ?>
+                    <?php if ( $isEditMode ) { ?>
                     <a class="arrows icon-arrow-left"></a>
                     <a class="arrows icon-arrow-right"></a>
                     <?php } ?>
@@ -62,34 +62,86 @@
                 </div>
             </div>
         </section>
+
+
         <section class="featured">
+            <div id="featuredCarousel">Loading...</div>
+
+            <script id="featuredInitial" type="x-tmpl-mustache">
+                <div class="property first">
+                    <div class="top clearfix">
+                        <div class="left">
+                            <div id="carouselLeft">
+                                <div>
+                                    <div class="main-image" style="background-image:url('{{mainImage}}')"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div id="carouselRight" class='clearfix'>
+                                <div class="left">
+                                    {{#photos1}}
+                                        <div class="sub-image" style="background-image:url('{{.}}')"></div>
+                                    {{/photos1}}
+                                </div>
+                                <div class="right">
+                                    {{#photos2}}
+                                        <div class="sub-image" style="background-image:url('{{.}}')"></div>
+                                    {{/photos2}}
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h4>{{name}}</h4>
+                                <p>{{shortDescription}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="completeList" class="clearfix"></div>
+                <div class="bottom">
+                    <div class="indicators"></div>
+                </div>
+                <div class="featured-round">FEATURED PROPERTY</div>
+            </script>
+
+            <script id="featuredList" type="x-tmpl-mustache">
+                {{#properties}}
+                <div class="property clearfix">
+                    <div class="top clearfix">
+                        <div class="left">
+                            <div id="carouselLeft">
+                                <div>
+                                    <div class="main-image" style="background-image:url('{{mainImage}}')"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div id="carouselRight" class='clearfix'>
+                                <div class="left">
+                                    {{#photos1}}
+                                        <div class="sub-image" style="background-image:url('{{.}}')"></div>
+                                    {{/photos1}}
+                                </div>
+                                <div class="right">
+                                    {{#photos2}}
+                                        <div class="sub-image" style="background-image:url('{{.}}')"></div>
+                                    {{/photos2}}
+                                </div>
+                            </div>
+                            <div class="description">
+                                <h4>{{name}}</h4>
+                                <p>{{shortDescription}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/properties}}
+            </script>
+
 
         </section>
-        <section class="search">
-            <?php $this->inc('elements/search_form.php'); ?>
-        </section>
 
-<!--        --><?php //$i = 1; while($i <= (int)$areaCount): ?>
-<!--            <section id="--><?php //echo "section-{$i}"; ?><!--">-->
-<!--                --><?php
-//                $a = new Area("Main {$i}"); /** @var $a \Concrete\Core\Area\Area */
-//                $a->enableGridContainer();
-//                $a->display($c);
-//                ?>
-<!--                <div class="section-footer">--><?php //$a = new Area("Sub {$i}"); $a->display($c); ?><!--</div>-->
-<!--            </section>-->
-<!--            --><?php //$i++; endwhile; ?>
-
-<!--        <section id="--><?php //echo "section-{$i}"; ?><!--">-->
-<!--            <div class="container">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-sm-12">-->
-<!--                        --><?php //$a = new Area('Contact Top'); $a->display($c); ?>
-<!--                    </div>-->
-<!--                </div>-->
-<!---->
-<!--            </div>-->
-<!--        </section>-->
+        <?php $this->inc('elements/search_form.php'); ?>
 
         <?php $this->inc('elements/footer.php'); ?>
         <?php $this->inc('elements/header.php'); ?>

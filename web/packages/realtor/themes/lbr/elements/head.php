@@ -1,4 +1,4 @@
-<head data-image-path="<?php echo SEQUENCE_IMAGE_PATH; ?>" data-tools-path="<?php echo URL::route(array('', 'sequence')); ?>">
+<head data-image-path="<?php echo REALTOR_IMAGE_PATH; ?>" data-tools-path="<?php echo URL::route(array('', 'realtor')); ?>">
 <base href="/" />
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />

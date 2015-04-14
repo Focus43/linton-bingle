@@ -307,12 +307,12 @@ class SparkAPI_Core {
 
 			if ($json['D']['Success'] == true) {
 				$return['success'] = true;
-        if (array_key_exists('Results', $json['D'])) {
-          $return['results'] = $json['D']['Results'];
-        }
-        else {
-          $return['results'] = array();
-        }
+                if (array_key_exists('Results', $json['D'])) {
+                  $return['results'] = $json['D']['Results'];
+                }
+                else {
+                  $return['results'] = array();
+                }
 			}
 			else {
 				$return['success'] = false;

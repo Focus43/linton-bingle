@@ -16,6 +16,7 @@
                 $this->attachThemeAssets( $this );
             }
             $this->set('pagePermissionObject', $this->pagePermissionObject());
+            $this->set('isEditMode', $this->getPageObject()->isEditMode());
         }
 
         /**

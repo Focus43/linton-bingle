@@ -1,5 +1,98 @@
+var Featured = function () {
+
+    var self = this;
+
+    var populateFeaturedProperties = function () {
+
+        var firstTemplate = $('#featuredInitial').html();
+        Mustache.parse(firstTemplate);
+        var secondTemplate = $('#featuredList').html();
+        Mustache.parse(secondTemplate);
+
+        $.post( '/search/featured', function(resp) {
+            if( resp.code == 1 ) {
+                if ( resp.properties.length > 0 ) {
+                    if ( resp.properties.length > 1 ) {
+                        // cahnge to random
+                        var firstProp = resp.properties.splice(2, 1)[0];
+                        var rendered1 = Mustache.render(firstTemplate, firstProp);
+                        $('#featuredCarousel').html(rendered1);
+
+                        setTimeout(function () {
+                            var rendered2 = Mustache.render(secondTemplate, resp);
+                            $('#completeList').html(rendered2);
+                            self.adjustPropertyWidth();
+
+//                            self.startCarousel();
+                        }, 2000);
+                    }
+
+                } else {
+                   // either render a message template or just shrink section to 0 height
+                }
+            }
+        },'json');
+
+    }
+
+    this.adjustPropertyWidth = function () {
+        var baseWidth = $('div.property.first').width() + 'px';
+        $('div#completeList div.property').width(baseWidth);
+        $('div#completeList div.property').css("top", "0");
+    }
+
+    this.startCarousel = function () {
+        self.nodes = $("#featuredCarousel .property");
+        self.indexActive = 0;
+
+        var loopTiming = 3000;
+
+        (function loop( delay ){
+            setTimeout(function(){
+                next();
+                loop(delay);
+            }, (loopTiming));
+        })( 3000 );
+    }
+
+    var showNode = function ( index ) {
+
+        var indexNext       = index,
+            currentNode     = self.nodes[self.indexActive],
+            currentNodeKids = $(".top", currentNode).children(),
+            nextNode        = self.nodes[indexNext],
+            nextNodeKids    = $(".top", nextNode).children()
+            transitionSpeed  = 2;
+
+        // Current
+        TweenLite.to(currentNode, transitionSpeed, {autoAlpha:0});
+        TweenMax.staggerTo(currentNodeKids, transitionSpeed, {x:200,autoAlpha:0}, (transitionSpeed/currentNodeKids.length));
+        // Next
+        TweenMax.staggerFromTo(nextNodeKids, transitionSpeed, {x:-200,autoAlpha:0}, {x:0,autoAlpha:1}, (transitionSpeed/nextNodeKids.length));
+        TweenLite.to(nextNode, transitionSpeed, {autoAlpha:1});
+
+        self.indexActive = indexNext;
+//        $markers.removeClass('active').eq(indexActive).addClass('active');
+    }
+
+    var next = function () {
+        showNode((self.indexActive === self.nodes.length-1) ? 0 : self.indexActive + 1);
+    }
+
+    var previous = function () {
+        showNode((self.indexActive === 0) ? nodeCount : self.indexActive - 1);
+    }
+
+
+    this.onloadFunc = function () {
+        if ( $("#featuredCarousel") && $("#featuredCarousel").length > 0 ) {
+            populateFeaturedProperties();
+        }
+    }
+
+}
 var Header = function () {
-    this.initShrink = function () {
+    var initShrink = function () {
         // shrink header on scroll (only on home page)
         if ( $('body').hasClass('pg-home') ) {
             $(window).scroll( function() {
@@ -12,6 +105,242 @@ var Header = function () {
             })
         }
     }
+
+    var initMobileNav = function () {
+        var trigger = $("div.trigger a")
+        var triggerContainer = $("div.trigger")
+        var slideable = $("[slideable]")
+        trigger.on("click", function () {
+            var navList = $("nav ul")
+            if ( navList.hasClass("open") ) {
+                TweenLite.to(navList, 0.5, {className:"-=open"})
+                TweenLite.to(triggerContainer, 0.60, {width: "75px"})
+                TweenLite.to(slideable, 0.5, {className:"-=open"})
+            } else {
+                TweenLite.to(navList, 0.5, {className:"open"})
+                TweenLite.to(triggerContainer, 0.45, {width: "100%"})
+                TweenLite.to(slideable, 0.5, {className:"open"})
+            }
+        })
+    }
+
+    var initSubNavAction = function () {
+        var triggers = $('nav ul.majority > li.has-subs')
+        triggers.on('click', function ( e ) {
+            e.preventDefault()
+            var t = $(this)
+            var idNum = t.attr("data-sub")
+            var subNav = $("li#sub-" + idNum)
+            var allOpenSubs = $("ul.majority li.sub.open")
+            if ( subNav.hasClass("open") ) {
+                TweenLite.to(subNav, 0.5, {className:"-=open"})
+            } else {
+                TweenLite.to(allOpenSubs, 0.5, {className:"-=open"})
+                TweenLite.to(subNav, 0.5, {className:"+=open"})
+            }
+        })
+    }
+
+    this.onloadFunc = function () {
+        initSubNavAction();
+        initMobileNav();
+        initShrink();
+    }
+
+    var autoInit = function () {
+//        if ($) initShrink();
+    }();
+}
+
+var Masthead = function () {
+
+    var startCarousel = function () {
+        self.carousel = $("section.hero div.masthead");
+        self.nodes = $("section.hero div.masthead div.node");
+        self.indexActive = 0;
+
+        var loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
+
+        if ( loopTiming == 0 ) return;
+
+        (function loop( delay ){
+            setTimeout(function(){
+                next();
+                loop(delay);
+            }, (loopTiming));
+        })( 3000 );
+    }
+
+    var showNode = function ( index ) {
+
+        var indexNext       = index,
+            currentNode     = self.nodes[self.indexActive],
+            currentNodeKids = $(".top", currentNode).children(),
+            nextNode        = self.nodes[indexNext],
+            nextNodeKids    = $(".top", nextNode).children()
+        transitionSpeed  = 2;
+
+        // Current
+        TweenLite.to(currentNode, transitionSpeed, {autoAlpha:0});
+        TweenMax.staggerTo(currentNodeKids, transitionSpeed, {x:200,autoAlpha:0}, (transitionSpeed/currentNodeKids.length));
+        // Next
+        TweenMax.staggerFromTo(nextNodeKids, transitionSpeed, {x:-200,autoAlpha:0}, {x:0,autoAlpha:1}, (transitionSpeed/nextNodeKids.length));
+        TweenLite.to(nextNode, transitionSpeed, {autoAlpha:1});
+
+        self.indexActive = indexNext;
+    //        $markers.removeClass('active').eq(indexActive).addClass('active');
+    }
+
+    var next = function () {
+        showNode((self.indexActive === self.nodes.length-1) ? 0 : self.indexActive + 1);
+    }
+
+    var previous = function () {
+        showNode((self.indexActive === 0) ? nodeCount : self.indexActive - 1);
+    }
+
+    this.onloadFunc = function () {
+        if ( $("section.hero div.masthead") && $("section.hero div.masthead").length > 0 ) {
+            startCarousel();
+        }
+    }
+}
+var Property = function () {
+
+    var self = this,
+        galleryThumbs,
+        showHideBtn,
+        arrowLeft,
+        arrowRight,
+        thumbs,
+        circles;
+    self.indexActive = 0;
+
+    var initCarousel = function () {
+        circles = $(".circles a")
+        circles.on('click', function() {
+            var index = Array.prototype.slice.call($(".circles a")).indexOf(this);
+            showNode(index);
+        });
+        thumbs = $(".markers.thumbs a")
+        thumbs.on('click', function(){
+            var index = Array.prototype.slice.call($(".markers.thumbs a")).indexOf(this);
+            showNode(index);
+        });
+
+        self.indexActive = 0;
+        self.nodes = $("#gallery .masthead .node");
+
+        var loopTiming = 5000;
+
+        (function loop( delay ){
+            setTimeout(function(){
+                next();
+                loop(delay);
+            }, (loopTiming));
+        })( 7000 );
+    }
+
+    var showNode = function ( index ) {
+
+        var indexNext       = index,
+            currentNode     = self.nodes[self.indexActive],
+            nextNode        = self.nodes[indexNext],
+            transitionSpeed  = 2;
+
+        // Current
+        TweenLite.to(currentNode, transitionSpeed, {autoAlpha:0});
+        // Next
+        TweenLite.to(nextNode, transitionSpeed, {autoAlpha:1});
+
+        self.indexActive = indexNext;
+        circles.removeClass('active').eq(self.indexActive).addClass('active');
+        thumbs.removeClass('active').eq(self.indexActive).addClass('active');
+    }
+
+    var next = function () {
+        showNode((self.indexActive === self.nodes.length-1) ? 0 : self.indexActive + 1);
+    }
+
+    var previous = function () {
+        showNode((self.indexActive === 0) ? nodeCount : self.indexActive - 1);
+    }
+
+    var initToggleGalleryThumbs = function () {
+        galleryThumbs = $(".pg-properties section#gallery div.markers.thumbs");
+        showHideBtn = $(".pg-properties section#gallery div#showhide")
+
+        arrowLeft = $(".pg-properties section#gallery a.arrow.left");
+        arrowRight = $(".pg-properties section#gallery a.arrow.right");
+
+        showHideBtn.on('click', function () {
+            if ( showHideBtn.hasClass("up") ) {
+                TweenLite.to(showHideBtn, 0.35, {className:"-=up"})
+                TweenLite.to(galleryThumbs, 0.25, {className:"+=hidden"})
+                TweenLite.to(arrowLeft, 0.25, {opacity:0})
+                TweenLite.to(arrowRight, 0.25, {opacity:0})
+            } else {
+                TweenLite.to(showHideBtn, 0.35, {className:"up"})
+                TweenLite.to(galleryThumbs, 0.25, {className:"-=hidden"})
+                TweenLite.to(arrowLeft, 0.25, {opacity:1})
+                TweenLite.to(arrowRight, 0.25, {opacity:1})
+            }
+        })
+    }
+
+    var initSlideThumbs = function () {
+        arrowLeft = $(".pg-properties section#gallery a.arrow.left");
+        arrowRight = $(".pg-properties section#gallery a.arrow.right");
+
+        arrowLeft.on("click", function () {
+            TweenLite.to(galleryThumbs, 0.25, {left: '-=77'})
+        })
+        arrowRight.on("click", function () {
+            if ( parseInt(galleryThumbs.css("left").replace("px", "")) < 0 ) {
+                TweenLite.to(galleryThumbs, 0.25, {left: '+=77'})
+            }
+        })
+    }
+
+    var initSortingDropdown = function () {
+
+        var buttons = $("section.pagination div.sorter");
+        buttons.on("click", function () {
+            var list = $("div.sortbyList")
+            var verticalPos = { }
+
+            if ( $(this)[0] == buttons[0] ) {
+                $("section.results").append(list)
+                verticalPos = { 'top': 0 }
+            } else {
+                $("section.footer").append(list)
+                verticalPos = { 'top': -50 }
+            }
+
+            if ( list.css('visibility') == 'visible' ) {
+                list.css({ 'visibility': 'hidden' })
+            } else {
+                list.css({ 'visibility': 'visible', 'right': 0 })
+                list.css(verticalPos)
+            }
+        })
+    }
+
+    this.onloadFunc = function () {
+        if ( $(".pg-properties section#gallery div#showhide").length != 0 ) {
+            initToggleGalleryThumbs();
+            initSlideThumbs();
+            initCarousel();
+        }
+
+        if ( $("section.pagination div.sortby").length != 0 ) {
+            initSortingDropdown();
+        }
+    }
+
+    this.autoInit = function () {
+
+    }();
 }
 
 var Search = function () {
@@ -53,15 +382,11 @@ var Search = function () {
         }
      }
 
-    var autoInit = function () {
-        searchOnChange();
-    }
-
     var searchOnChange = function () {
         // when a filter gets modified, do ajax search
-        $formFilters.on('change', 'input, select', function () {
-            var _data = $formFilters.serializeArray(); console.log(_data);
-            $.post( '/propertysearchcount', _data, function(resp){
+        $formFilters.on('change' , function () {
+            var _data = $('form#propertySearch').serializeArray();
+            $.post( '/search/count', _data, function(resp){
                 if( resp.code == 1 ){
                     $('span.target-result-count').text(resp.resultCount)
                 }
@@ -69,28 +394,44 @@ var Search = function () {
         });
     }
 
-    autoInit();
+    var autoInit = function () {
+        searchOnChange();
+    }();
 }
 
 ;(function (ns, undefined) {
     'use strict';
 
-    ns.Header = new Header();
-    ns.Search = new Search();
+    ns.modules = [];
+
+    var addModule = function ( moduleName ) {
+        ns[moduleName] = new window[moduleName]();
+        ns.modules.push(ns[moduleName]);
+    }
+
+
+    addModule('Header');
+    addModule('Search');
+    addModule('Featured');
+    addModule('Property');
+    addModule('Masthead');
 
     ns.init = function () {
         /* global FastClick */
         $(function() {
             FastClick.attach(document.body);
         });
-
-        ns.Header.initShrink();
     }
 
 })(window.LB = window.LB || {});
 
 LB.init();
 
-//window.addEventListener("load", function() {
-//
-//}, false);
+window.addEventListener("load", function() {
+    // add all module onload functions
+    LB.modules.forEach( function ( mod ) {
+        if ( mod.onloadFunc ) {
+            mod.onloadFunc();
+        }
+    });
+}, false);

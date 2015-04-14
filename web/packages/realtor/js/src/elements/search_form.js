@@ -37,15 +37,11 @@ var Search = function () {
         }
      }
 
-    var autoInit = function () {
-        searchOnChange();
-    }
-
     var searchOnChange = function () {
         // when a filter gets modified, do ajax search
-        $formFilters.on('change', 'input, select', function () {
-            var _data = $formFilters.serializeArray(); console.log(_data);
-            $.post( '/propertysearchcount', _data, function(resp){
+        $formFilters.on('change' , function () {
+            var _data = $('form#propertySearch').serializeArray();
+            $.post( '/search/count', _data, function(resp){
                 if( resp.code == 1 ){
                     $('span.target-result-count').text(resp.resultCount)
                 }
@@ -53,5 +49,7 @@ var Search = function () {
         });
     }
 
-    autoInit();
+    var autoInit = function () {
+        searchOnChange();
+    }();
 }

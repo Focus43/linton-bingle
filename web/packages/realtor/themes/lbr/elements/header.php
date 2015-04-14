@@ -1,7 +1,7 @@
 <header>
-    <a class="trigger"></a>
+    <div class="trigger"><a></a></div>
     <nav>
-        <div class="logo"></div>
+        <a href="/" class="logo"></a>
         <?php
         $blockTypeNav                                       = BlockType::getByHandle('autonav');
         $blockTypeNav->controller->orderBy                  = 'display_asc';

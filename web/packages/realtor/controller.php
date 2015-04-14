@@ -73,25 +73,13 @@
             define('REALTOR_IMAGE_PATH', DIR_REL . '/packages/' . $this->pkgHandle . '/images/');
             define('REALTOR_SRC_PATH', DIR_BASE . '/packages/realtor/src/');
 
-//            Route::register(
-//                Router::route(array('/modal_info/{id}', 'Realtor')),
-//                '\Concrete\Package\Realtor\Controller\Tools\ModalInfo::view'
-//            );
-//
-            Route::register(
-                Router::route(array('/propertysearchcount', 'Realtor')),
-                'Concrete\Package\Realtor\Controller\SinglePage\Properties::resultsCount'
+            Route::register('/search/count',
+                '\Concrete\Package\Realtor\Controller\Tools\Search::resultsCount'
             );
-//
-//            Route::register(
-//                Router::route(array('/terms_of_use', 'Realtor')),
-//                '\Concrete\Package\Realtor\Controller\Tools\TermsOfUse::view'
-//            );
-//
-//            Route::register(
-//                Router::route(array('/contact_form', 'Realtor')),
-//                '\Concrete\Package\Realtor\Controller\Tools\Contact::handler'
-//            );
+            Route::register('/search/featured',
+                '\Concrete\Package\Realtor\Controller\Tools\Search::featuredProperties'
+            );
+
         }
 
         /**

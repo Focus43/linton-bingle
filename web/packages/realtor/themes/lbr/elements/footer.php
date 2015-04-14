@@ -22,7 +22,7 @@
                 <img class="portrait" src="<?php echo REALTOR_IMAGE_PATH; ?>linton_bingle_portrait.png">
             </div>
             <div class="col-xs-12 col-sm-6">
-                <div class="row">
+                <div class="row logos">
                     <div class="col-xs-12 col-sm-6"><img src="<?php echo REALTOR_IMAGE_PATH; ?>jackson_hole_realestate.png"></div>
                     <div class="col-xs-12 col-sm-6"><img src="<?php echo REALTOR_IMAGE_PATH; ?>christies_logo.png"></div>
                 </div>

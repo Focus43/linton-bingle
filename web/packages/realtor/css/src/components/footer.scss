@@ -1,4 +1,4 @@
-section.footer { height: 100%;padding-top: 55px !important;color: $theme-color-brown; overflow: hidden;max-width: 1250px;text-align: center;
+section.footer { height: 100%;padding-top: 55px !important;color: $theme-color-brown; overflow: hidden;max-width: 1250px;text-align: center;border-top: 1px solid $theme-line-color;
     ul { margin: 0;padding: 0 0 35px 0;
         li a { color: $theme-color-brown;
             &:hover { color: $theme-color-darkred; }
@@ -10,4 +10,12 @@ section.footer { height: 100%;padding-top: 55px !important;color: $theme-color-b
     }
 
     img.portrait { padding-bottom: 0; }
+
+    @media screen and (max-width:$screen-xs) {
+        .row.table { display: block;padding: 0 5px;
+            .row.logos { padding-top: 5px;margin-top: 2px;border-top: 1px solid $theme-line-color; }
+            & > [class*="col-"] { float: left !important;text-align: left;
+            }
+        }
+    }
 }

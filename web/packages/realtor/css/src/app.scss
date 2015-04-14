@@ -105,7 +105,9 @@ html.cms-edit-mode {
             figure { max-width:40%; }
         }
 
-        [slideable]{ @include transform(none);@include transition(none); }
+        [slideable]{ @include transform(none);@include transition(none);
+            &.open { rigth: 150px; }
+        }
 
         .masthead .node-content { max-width:85%;min-width:500px;width:auto; }
 
@@ -123,7 +125,9 @@ html.cms-edit-mode {
 @import 'components/header';
 @import 'components/footer';
 @import 'components/masthead';
+@import 'components/featured';
 @import 'components/searchform';
 @import 'components/icomoon';
 @import 'page_types/home';
 @import 'page_types/default';
+@import 'page_types/properties';

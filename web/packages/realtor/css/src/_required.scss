@@ -77,3 +77,5 @@ $container-sm:                  100%;
     -o-transition: all $animate-time ease-in-out;
     transition: all $animate-time ease-in-out;
 }
+
+@mixin bottomBorder { border-bottom: 1px solid $theme-line-color; }

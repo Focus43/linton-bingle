@@ -1,22 +1,36 @@
 ;(function (ns, undefined) {
     'use strict';
 
-    ns.Header = new Header();
-    ns.Search = new Search();
+    ns.modules = [];
+
+    var addModule = function ( moduleName ) {
+        ns[moduleName] = new window[moduleName]();
+        ns.modules.push(ns[moduleName]);
+    }
+
+
+    addModule('Header');
+    addModule('Search');
+    addModule('Featured');
+    addModule('Property');
+    addModule('Masthead');
 
     ns.init = function () {
         /* global FastClick */
         $(function() {
             FastClick.attach(document.body);
         });
-
-        ns.Header.initShrink();
     }
 
 })(window.LB = window.LB || {});
 
 LB.init();
 
-//window.addEventListener("load", function() {
-//
-//}, false);
+window.addEventListener("load", function() {
+    // add all module onload functions
+    LB.modules.forEach( function ( mod ) {
+        if ( mod.onloadFunc ) {
+            mod.onloadFunc();
+        }
+    });
+}, false);
