@@ -10,7 +10,7 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
                 }
             }
             li.sub { position: relative;font-size: 0.9em;visibility: hidden;opacity: 0;
-                ul { display: flex;position: absolute;top: 25px;right: -50px;background-color: $theme-color-red;height: 180px;padding: 0 10px; }
+                ul { display: flex;position: absolute;top: 25px;right: -50px;background-color: $theme-color-red;height: 180px;padding: 0 10px !important; }
                 li { width: 180px;float: left;text-align: center;margin: 0 !important;
                     a:hover { color: $theme-color-beige !important;text-decoration: none; }
                     img { width: 160px;height: 100px;margin: 20px 0 15px 0;padding-bottom: 0; }
