@@ -1,0 +1,22 @@
+$landing-masthead-height: 470px;
+.pg-landing #c-level-1 {
+    section.hero { width: 100%;height: 560px;margin-top: $nav-header-short-height;
+        .masthead { width: 100%;height: 100%;position: relative;overflow: hidden;
+            .node { height: 100%;width: 100%;display: table;visibility: hidden;opacity: 0;position: absolute;top: 0;left: 0;
+                &:first-of-type { visibility: visible;opacity: 1; }
+                .inner { width:100%;height:100%;display:block;text-align:left;
+                    .node-image { width: 50%;height: 100%;float: left;
+                        & > div.ccm-custom-style-choosebackgroundimage { background-size: cover;background-position: 70% 50%;height: 100%;width: 100%; }
+                    }
+                    .node-content {width: 50%;height: 100%;float: right;font-size:1.3rem;padding-left:2rem;background-color: $theme-color-red;color: $theme-color-white;
+                        a.btn { color: $theme-color-red;background-color: $theme-color-white; }
+                    }
+                    @media screen and (max-width:$screen-sm) {
+                        .node-image, .node-content { width: 100%;height: 50%;float: left;max-width: 100%; }
+                    }
+                }
+            }
+        }
+    }
+
+}

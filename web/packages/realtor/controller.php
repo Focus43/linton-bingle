@@ -24,13 +24,14 @@
 
         const PACKAGE_HANDLE                = 'realtor',
             // Collection Attributes
-            COLLECTION_ATTR_SECTIONS        = 'page_sections',
+            COLLECTION_ATTR_IMAGE           = 'page_image',
             // User Attributes
-            FILE_ATTR_BIO                   = 'bio',
-            FILE_ATTR_SECONDARY_PHOTO       = 'secondary_photo',
-            FILE_ATTR_INVOLVEMENT_LEVEL     = 'involvement_level',
+            FILE_ATTR_ASSOCIATED_COPY       = 'associated_copy',
+//            FILE_ATTR_SECONDARY_PHOTO       = 'secondary_photo',
+//            FILE_ATTR_INVOLVEMENT_LEVEL     = 'involvement_level',
             // File Set
-            FILE_SET_MASTHEAD               = 'Masthead Slider';
+            FILE_SET_MASTHEAD               = 'Masthead Slider',
+            FILE_SET_MASTHEAD_BLOG          = 'Masthead Blog';
 
         const SPARK_API_KEY		= 'tet_2315_key_1';
         const SPARK_API_SECRET	= 'gqG9DqbiWbLBP0xzk9lvG';
@@ -38,7 +39,7 @@
 
         protected $pkgHandle 			= self::PACKAGE_HANDLE;
         protected $appVersionRequired 	= '5.7';
-        protected $pkgVersion 			= '0.20';
+        protected $pkgVersion 			= '0.23';
 
 
         /**
@@ -161,10 +162,10 @@
          * @return Controller
          */
         private function setupCollectionAttributes(){
-            if( ! is_object(CollectionAttributeKey::getByHandle(self::COLLECTION_ATTR_SECTIONS)) ){
-                CollectionAttributeKey::add($this->attributeType('number'), array(
-                    'akHandle' =>  self::COLLECTION_ATTR_SECTIONS,
-                    'akName'    => 'Page Sections'
+            if( ! is_object(CollectionAttributeKey::getByHandle(self::COLLECTION_ATTR_IMAGE)) ){
+                CollectionAttributeKey::add($this->attributeType('image_file'), array(
+                    'akHandle' =>  self::COLLECTION_ATTR_IMAGE,
+                    'akName'    => 'Page Image'
                 ), $this->packageObject());
             }
 
@@ -176,17 +177,17 @@
          * @return Controller
          */
         private function setupFileAttributes(){
-//            if( !(is_object(FileAttributeKey::getByHandle(self::FILE_ATTR_BIO))) ){
-//                FileAttributeKey::add($this->attributeType('textarea'), array(
-//                    'akHandle'					=> self::FILE_ATTR_BIO,
-//                    'akName'					=> t('Bio'),
-//                    'uakRegisterEdit'			=> 1,
-//                    'uakRegisterEditRequired' 	=> 0,
-//                    'akIsSearchable'            => 1,
-//                    'akIsSearchableIndexed'     => 1,
-//                    'akTextareaDisplayMode'     => 'rich_text'
-//                ), $this->packageObject());
-//            }
+            if( !(is_object(FileAttributeKey::getByHandle(self::FILE_ATTR_ASSOCIATED_COPY))) ){
+                FileAttributeKey::add($this->attributeType('textarea'), array(
+                    'akHandle'					=> self::FILE_ATTR_ASSOCIATED_COPY,
+                    'akName'					=> t('Associated Copy'),
+                    'uakRegisterEdit'			=> 1,
+                    'uakRegisterEditRequired' 	=> 0,
+                    'akIsSearchable'            => 1,
+                    'akIsSearchableIndexed'     => 1,
+                    'akTextareaDisplayMode'     => 'rich_text'
+                ), $this->packageObject());
+            }
 //
 //            if( !(is_object(FileAttributeKey::getByHandle(self::FILE_ATTR_SECONDARY_PHOTO))) ){
 //                FileAttributeKey::add($this->attributeType('image_file'), array(
@@ -216,6 +217,9 @@
         private function setupFileSets(){
             if( ! is_object(FileSet::getByName(self::FILE_SET_MASTHEAD)) ){
                 FileSet::createAndGetSet(self::FILE_SET_MASTHEAD, FileSet::TYPE_PUBLIC);
+            }
+            if( ! is_object(FileSet::getByName(self::FILE_SET_MASTHEAD_BLOG)) ){
+                FileSet::createAndGetSet(self::FILE_SET_MASTHEAD_BLOG, FileSet::TYPE_PUBLIC);
             }
 
             return $this;
@@ -251,7 +255,7 @@
                 PageTemplate::add('home', t('Home'), 'full.png', $this->packageObject());
             }
             if( ! PageTemplate::getByHandle('landing') ){
-                PageTemplate::add('home', t('Landing'), 'full.png', $this->packageObject());
+                PageTemplate::add('landing', t('Landing'), 'full.png', $this->packageObject());
             }
 
             return $this;
@@ -362,10 +366,10 @@
          * @return Controller
          */
         private function setupBlocks(){
-//            if(!is_object(BlockType::getByHandle('accordion'))) {
-//                BlockType::installBlockTypeFromPackage('accordion', $this->packageObject());
-//            }
-//
+            if(!is_object(BlockType::getByHandle('photo_wall'))) {
+                BlockType::installBlockTypeFromPackage('photo_wall', $this->packageObject());
+            }
+
 //            if(!is_object(BlockType::getByHandle('quotes'))) {
 //                BlockType::installBlockTypeFromPackage('quotes', $this->packageObject());
 //            }
