@@ -18,11 +18,16 @@ var Header = function () {
     }
 
     var initMobileNav = function () {
+
+        var slideable = $("[slideable]")
+        var mobileNav = $("div#mobileNav");
+        mobileNav.height(slideable.height());
+        $("body").append(mobileNav);
         var trigger = $("div.trigger a")
         var triggerContainer = $("div.trigger")
-        var slideable = $("[slideable]")
+
         trigger.on("click", function () {
-            var navList = $("nav ul.sidebar")
+            var navList = $("div#mobileNav")
             if ( navList.hasClass("open") ) {
                 TweenLite.to(navList, 0.5, {className:"-=open"})
                 TweenLite.to(triggerContainer, 0.60, {width: "75px"})

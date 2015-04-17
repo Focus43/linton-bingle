@@ -146,7 +146,7 @@ echo '</ul>'; //closes the top-level menu
 
 
 // make the sidebar menu
-echo '<div><ul class="sidebar">'; //opens the top-level menu
+echo '<div id="mobileNav"><ul class="sidebar">'; //opens the top-level menu
 
 foreach ($navItems as $ni) {
     if ( !$ni->hasSubmenu ) {
