@@ -9,14 +9,38 @@ $landing-masthead-height: 470px;
                         & > div.ccm-custom-style-choosebackgroundimage { background-size: cover;background-position: 70% 50%;height: 100%;width: 100%; }
                     }
                     .node-content {width: 50%;height: 100%;float: right;font-size:1.3rem;padding-left:2rem;background-color: $theme-color-red;color: $theme-color-white;
+                        h3 { margin-top: 130px;text-transform: uppercase; }
                         a.btn { color: $theme-color-red;background-color: $theme-color-white; }
                     }
                     @media screen and (max-width:$screen-sm) {
-                        .node-image, .node-content { width: 100%;height: 50%;float: left;max-width: 100%; }
+                        .node-image, .node-content { width: 100%;height: 50%;float: left;max-width: 100%;
+                            h3 { margin-top: 20px; }
+                        }
                     }
                 }
             }
         }
     }
-
+    section.current-level-nav { text-align: center;
+        ul { list-style: none;padding: 0;margin: 0 auto;display: inline-block;
+            li { list-style: none;padding: 0 10px;margin: 0;display: inline-block;float: left;border-right: 1px solid $theme-line-color;
+                &:last-of-type { border-right: 0; }
+                a { text-transform: uppercase;color: $theme-color-brown;font-family: $theme-font-family-headers;font-size: 0.9em;
+                    &:hover, &.nav-selected { color:$theme-color-red;text-decoration: none; }
+                }
+            }
+        }
+    }
+    section.subnav { text-align: center;
+        ul { list-style: none;padding: 0;margin: 0 auto;display: block;width: 100%;max-width: 1000px;
+            li { list-style: none;padding: 0 30px;margin: 0;width: 50%;float: left;
+                a { width: 100%;display: block;padding: 10px 0;color: $theme-color-brown;font-family: $theme-font-family-headers;
+                    &:hover { color:$theme-color-red;text-decoration: none; }
+                    div.pg-icon { overflow: hidden;padding-bottom: 58%;display: block;background-size: cover;background-position: 70% 50%;height: 100%;width: 100%;max-width: 475px; }
+                    h4 { font-weight: bold;font-size: 0.9em;text-align: left;width: 100%;text-transform: uppercase;margin-bottom: 5px;padding-top: 10px; }
+                    p { text-align: left;font-size: 0.9em; }
+                }
+            }
+        }
+    }
 }

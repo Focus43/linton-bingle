@@ -1,6 +1,6 @@
 <? defined('C5_EXECUTE') or die("Access Denied.");
 
-$navItems = $controller->getNavItems();
+$navItems = $controller->getNavItems(true);
 
 /**
  * The $navItems variable is an array of objects, each representing a nav menu item.
@@ -49,112 +49,28 @@ $navItems = $controller->getNavItems();
  */
 
 
-/*** STEP 1 of 2: Determine all CSS classes (only 2 are enabled by default, but you can un-comment other ones or add your own) ***/
-foreach ($navItems as $ni) {
-    $classes = array();
-
-    if ($ni->isCurrent) {
-        //class for the page currently being viewed
-        $classes[] = 'nav-selected';
-    }
-
-    if ($ni->inPath) {
-        //class for parent items of the page currently being viewed
-        $classes[] = 'nav-path-selected';
-    }
-
-    /*
-    if ($ni->isFirst) {
-        //class for the first item in each menu section (first top-level item, and first item of each dropdown sub-menu)
-        $classes[] = 'nav-first';
-    }
-    */
-
-    /*
-    if ($ni->isLast) {
-        //class for the last item in each menu section (last top-level item, and last item of each dropdown sub-menu)
-        $classes[] = 'nav-last';
-    }
-    */
-
-    if ($ni->hasSubmenu) {
-        //class for items that have dropdown sub-menus
-        $classes[] = 'has-subs';
-    }
-
-    /*
-    if (!empty($ni->attrClass)) {
-        //class that can be set by end-user via the 'nav_item_class' custom page attribute
-        $classes[] = $ni->attrClass;
-    }
-    */
-
-    /*
-    if ($ni->isHome) {
-        //home page
-        $classes[] = 'nav-home';
-    }
-    */
-
-    /*
-    //unique class for every single menu item
-    $classes[] = 'nav-item-' . $ni->cID;
-    */
-
-    //Put all classes together into one space-separated string
-    $ni->classes = implode(" ", $classes);
-}
-
 
 //*** Step 2 of 2: Output menu HTML ***/
 
-$topLevelCnt = 0;
 
-echo '<ul class="majority">'; //opens the top-level menu
 
-foreach ($navItems as $ni) {
-    if ( $ni->level == 1 ) {
-        $topLevelCnt += 1;
-    }
-    echo '<li class="' . $ni->classes . '" data-sub="' . $topLevelCnt . '" >'; //opens a nav item
-    echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
+echo '<ul class="clearfix">'; //opens the top-level menu
 
-    if ( $ni->level == 2 ) {
+foreach ( $navItems as $ni ) {
+    if ( !$ni->hasSubmenu ) {
         if ( $ni->cObj->getAttribute('page_image') ) {
             $imageSrc = $ni->cObj->getAttribute('page_image')->getRelativePath();
         } else {
             $imageSrc = REALTOR_IMAGE_PATH . 'nav_placeholder.jpg';
         }
-//        echo '<img src="' . REALTOR_IMAGE_PATH . 'nav_placeholder.jpg">';
+
+        echo '<li class="' . $ni->classes . '" >'; //opens a nav item
+        echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
         echo '<div class="pg-icon" style="background-image: url(' . $imageSrc . ')"></div>';
-    }
-
-    echo  $ni->name . '</a>';
-
-    echo '</li>'; //closes a nav item
-
-    // open independent sub nav element
-    if ($ni->hasSubmenu) {
-        echo '<li class="sub" id="sub-'. $topLevelCnt .'"><ul>'; //opens a dropdown sub-menu
-    } else {
-        echo '</li>'; //closes a nav item
-        echo str_repeat('</ul></li>', $ni->subDepth); //closes dropdown sub-menu(s) and their top-level nav item(s)
+        echo  '<h4>' . $ni->name . '</h4>';
+        echo  '<p>' . $ni->cObj->getCollectionDescription() . '</p>';
+        echo '</a></li>';
     }
 }
 
 echo '</ul>'; //closes the top-level menu
-
-
-// make the sidebar menu
-echo '<div><ul class="sidebar">'; //opens the top-level menu
-
-foreach ($navItems as $ni) {
-    if ( !$ni->hasSubmenu ) {
-        echo '<li class="' . $ni->classes . '">'; //opens a nav item
-        echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
-        echo  $ni->name . '</a>';
-        echo '</li>'; //closes a nav item
-    }
-}
-
-echo '</ul></div>'; //closes the top-level menu

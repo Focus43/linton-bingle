@@ -5,37 +5,63 @@ div#c-level-1 section.featured { background-color: $theme-color-beige;
         }
         .property { visibility: hidden;opacity: 0;
             &.first { display: block;width: 100%;visibility: visible;opacity: 1; }
+            &:not(.first) { position: absolute;top: 0;left: 0; }
             .top { width: 100%;height: calc(100%-50px);background-color: $theme-color-white;
                 .left { width: 50%;height: 100%;float: left;background-color: $theme-color-beige;
                     div#carouselLeft { height: 100%;
                         div.main-image { height: 0;padding-bottom: 100%;width: 100%;background-size: cover;background-position: 50% 50%; }
                     }
                 }
-                .right { width: 50%;float: right;
+                .right { width: 50%;float: right;background-color: $theme-color-white;
                     div#carouselRight { width: 100%;height: 0;padding-bottom: 50%;overflow: hidden;
-                        div.sub-image { width: 100%;height: 0;padding-bottom: 100%;float: left;background-size: cover;background-position: 25% 0%;background-repeat: no-repeat; }
+                        div.left, div.right { position: relative;
+                            div.overflow-container { position: relative;overflow: hidden;padding-bottom: 100%;
+                                div.sub-image { position: absolute;top: 0;opacity: 0;width: 100%;height: 0;padding-bottom: 100%;background-size: cover;background-position: 25% 0%;background-repeat: no-repeat;
+                                    &:first-of-type { opacity: 1; }
+                                }
+                            }
+                        }
                     }
                     .description { width: 100%;font-size: 1em;padding: 65px 50px 30px 50px;text-align: center;
+                        a { color: $theme-color-dark;display: inline-block;text-transform: uppercase;
+                            &:hover { color: $theme-color-darkred;text-decoration: none; }
+                        }
                         p { padding: 0;margin: 0; }
                     }
                 }
             }
         }
         .bottom { width: 100%;height: 50px;background-color: $theme-color-beige;
-            .indicators { width: 50%;height: 100%;float: right;background-color: $theme-color-white; }
+            .indicators { width: 50%;height: 100%;float: right;background-color: $theme-color-white;
+                & > div { height: 30px;width: 30px;padding: 10px 40px;font-size: 2em;line-height: 1em;color: $theme-color-red;cursor: pointer;
+                    &:hover { color: $theme-color-red; }
+                }
+                div.go-back { float: left; }
+                div.go-forward { float: right; }
+            }
         }
-        div.featured-round { width:120px; height:120px;position: absolute;left: 44%;top: 33%;padding-top: 35px;background-color: $theme-color-red;border: 2px solid $theme-color-red; border-radius: 50%; color:$theme-color-white;text-align:center;font-family: $theme-font-family-headers; }
-
-        // weird special case....
-        @media screen and (max-width:895px) {
-            .top .right .description { padding: 20px !important; }
-            div.featured-round { display: none; }
-        }
-
-        @media screen and (max-width:$screen-sm) {
-            .top .right .description { padding: 55px 30px !important; }
-            .top .right .description p { display: none; }
-        }
-
     }
+    div.featured-round { width:120px; height:120px;position: absolute;left: calc(50% - 60px);top: calc(50% - 80px);visibility:hidden;padding-top: 35px;background-color: $theme-color-red;border: 2px solid $theme-color-red; border-radius: 50%; color:$theme-color-white;text-align:center;font-family: $theme-font-family-headers; }
+
+    @media screen and (max-width:$screen-sm) {
+        div#featuredCarousel {
+            .top { margin-bottom: -1px;
+                .right, .left { width: 100% !important;
+                    .description { padding: 30px 30px 15px 30px !important; }
+                    div#carouselRight { display: none; }
+                }
+            }
+            .bottom { margin-bottom: 30px;
+                .indicators { background-color: $theme-color-white !important;width: 100%; }
+            }
+        }
+        div.featured-round { display: none;/* width:105px; height:105px;padding-top: 25px;left: calc(50% - 53px);top: 50%; */ }
+    }
+
+    // weird special case....
+    @media screen and (min-width:$screen-sm) and (max-width:895px) {
+        div#featuredCarousel .top .right .description { padding: 20px !important; }
+        div.featured-round { width:95px; height:95px;padding-top: 25px;left: calc(50% - 47px);top: calc(50% - 75px); }
+    }
+
 }

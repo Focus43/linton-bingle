@@ -2,8 +2,12 @@ var Header = function () {
     var initShrink = function () {
         // shrink header on scroll (only on home page)
         if ( $('body').hasClass('pg-home') ) {
+            var _header = $('header')
+            if ( $(window).scrollTop() > 50 ) {
+                _header.addClass("shrink")
+            }
+
             $(window).scroll( function() {
-                var _header = $('header')
                 if ( $(window).scrollTop() > 50 ) {
                     TweenLite.to(_header, 0.5, {className:"shrink"})
                 } else {
@@ -18,15 +22,15 @@ var Header = function () {
         var triggerContainer = $("div.trigger")
         var slideable = $("[slideable]")
         trigger.on("click", function () {
-            var navList = $("nav ul")
+            var navList = $("nav ul.sidebar")
             if ( navList.hasClass("open") ) {
                 TweenLite.to(navList, 0.5, {className:"-=open"})
                 TweenLite.to(triggerContainer, 0.60, {width: "75px"})
                 TweenLite.to(slideable, 0.5, {className:"-=open"})
             } else {
-                TweenLite.to(navList, 0.5, {className:"open"})
+                TweenLite.to(navList, 0.5, {className:"+=open"})
                 TweenLite.to(triggerContainer, 0.45, {width: "100%"})
-                TweenLite.to(slideable, 0.5, {className:"open"})
+                TweenLite.to(slideable, 0.5, {className:"+=open"})
             }
         })
     }

@@ -80,7 +80,7 @@
             <div id="featuredCarousel">Loading...</div>
 
             <script id="featuredInitial" type="x-tmpl-mustache">
-                <div class="property first">
+                <div class="property {{id}} first">
                     <div class="top clearfix">
                         <div class="left">
                             <div id="carouselLeft">
@@ -92,33 +92,39 @@
                         <div class="right">
                             <div id="carouselRight" class='clearfix'>
                                 <div class="left">
+                                    <div class="overflow-container">
                                     {{#photos1}}
                                         <div class="sub-image" style="background-image:url('{{.}}')"></div>
                                     {{/photos1}}
+                                    </div>
                                 </div>
                                 <div class="right">
+                                    <div class="overflow-container">
                                     {{#photos2}}
                                         <div class="sub-image" style="background-image:url('{{.}}')"></div>
                                     {{/photos2}}
+                                    </div>
                                 </div>
                             </div>
                             <div class="description">
-                                <h4>{{name}}</h4>
+                                <a href="/properties/id/{{id}}"><h4>{{name}}</h4></a>
                                 <p>{{shortDescription}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="completeList" class="clearfix"></div>
                 <div class="bottom">
-                    <div class="indicators"></div>
+                    <div class="indicators">
+                        <div class="go-back"><i class="icon-arrow-left"></i></div>
+                        <div class="go-forward"><i class="icon-arrow-right"></i></div>
+                    </div>
                 </div>
-                <div class="featured-round">FEATURED PROPERTY</div>
+                <div id="completeList" class="clearfix"></div>
             </script>
 
             <script id="featuredList" type="x-tmpl-mustache">
                 {{#properties}}
-                <div class="property clearfix">
+                <div class="property {{id}} clearfix">
                     <div class="top clearfix">
                         <div class="left">
                             <div id="carouselLeft">
@@ -130,26 +136,31 @@
                         <div class="right">
                             <div id="carouselRight" class='clearfix'>
                                 <div class="left">
+                                    <div class="overflow-container">
                                     {{#photos1}}
                                         <div class="sub-image" style="background-image:url('{{.}}')"></div>
                                     {{/photos1}}
+                                    </div>
                                 </div>
                                 <div class="right">
+                                    <div class="overflow-container">
                                     {{#photos2}}
                                         <div class="sub-image" style="background-image:url('{{.}}')"></div>
                                     {{/photos2}}
+                                    </div>
                                 </div>
                             </div>
                             <div class="description">
-                                <h4>{{name}}</h4>
+                                <a href="/properties/id/{{id}}"><h4>{{name}}</h4></a>
                                 <p>{{shortDescription}}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 {{/properties}}
-            </script>
 
+            </script>
+            <div class="featured-round">FEATURED PROPERTY</div>
 
         </section>
 

@@ -1,6 +1,6 @@
 <? defined('C5_EXECUTE') or die("Access Denied.");
 
-$navItems = $controller->getNavItems();
+$navItems = $controller->getNavItems(true);
 
 /**
  * The $navItems variable is an array of objects, each representing a nav menu item.
@@ -77,10 +77,10 @@ foreach ($navItems as $ni) {
     }
     */
 
-    if ($ni->hasSubmenu) {
-        //class for items that have dropdown sub-menus
-        $classes[] = 'has-subs';
-    }
+//    if ($ni->hasSubmenu) {
+//        //class for items that have dropdown sub-menus
+//        $classes[] = 'has-subs';
+//    }
 
     /*
     if (!empty($ni->attrClass)) {
@@ -108,53 +108,16 @@ foreach ($navItems as $ni) {
 
 //*** Step 2 of 2: Output menu HTML ***/
 
-$topLevelCnt = 0;
-
-echo '<ul class="majority">'; //opens the top-level menu
-
+echo '<ul>'; //opens the top-level menu
 foreach ($navItems as $ni) {
-    if ( $ni->level == 1 ) {
-        $topLevelCnt += 1;
-    }
-    echo '<li class="' . $ni->classes . '" data-sub="' . $topLevelCnt . '" >'; //opens a nav item
-    echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
 
-    if ( $ni->level == 2 ) {
-        if ( $ni->cObj->getAttribute('page_image') ) {
-            $imageSrc = $ni->cObj->getAttribute('page_image')->getRelativePath();
-        } else {
-            $imageSrc = REALTOR_IMAGE_PATH . 'nav_placeholder.jpg';
-        }
-//        echo '<img src="' . REALTOR_IMAGE_PATH . 'nav_placeholder.jpg">';
-        echo '<div class="pg-icon" style="background-image: url(' . $imageSrc . ')"></div>';
-    }
+    echo '<li class="' . $ni->classes . '" >'; //opens a nav item
+    echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
 
     echo  $ni->name . '</a>';
 
     echo '</li>'; //closes a nav item
 
-    // open independent sub nav element
-    if ($ni->hasSubmenu) {
-        echo '<li class="sub" id="sub-'. $topLevelCnt .'"><ul>'; //opens a dropdown sub-menu
-    } else {
-        echo '</li>'; //closes a nav item
-        echo str_repeat('</ul></li>', $ni->subDepth); //closes dropdown sub-menu(s) and their top-level nav item(s)
-    }
 }
 
 echo '</ul>'; //closes the top-level menu
-
-
-// make the sidebar menu
-echo '<div><ul class="sidebar">'; //opens the top-level menu
-
-foreach ($navItems as $ni) {
-    if ( !$ni->hasSubmenu ) {
-        echo '<li class="' . $ni->classes . '">'; //opens a nav item
-        echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
-        echo  $ni->name . '</a>';
-        echo '</li>'; //closes a nav item
-    }
-}
-
-echo '</ul></div>'; //closes the top-level menu

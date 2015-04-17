@@ -10,10 +10,10 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
                 }
             }
             li.sub { position: relative;font-size: 0.9em;visibility: hidden;opacity: 0;
-                ul { display: flex;position: absolute;top: 25px;right: -50px;background-color: $theme-color-red;height: 180px;padding: 0 10px !important; }
+                ul { display: flex;position: absolute;top: 25px;right: -50px;background-color: $theme-color-red;border: 1px solid $theme-color-darkred;height: 180px;padding: 0 10px !important; }
                 li { width: 180px;float: left;text-align: center;margin: 0 !important;
                     a:hover { color: $theme-color-beige !important;text-decoration: none; }
-                    img { width: 160px;height: 100px;margin: 20px 0 15px 0;padding-bottom: 0; }
+                    div.pg-icon { overflow: hidden;display: block;background-size: cover;background-position: 70% 50%;width: 160px;height: 100px;margin: 20px auto 15px auto; }
                 }
                 &.open { visibility: visible;opacity: 1; }
             }
@@ -23,7 +23,7 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
 // short header
 body #c-level-1 header, body.pg-home #c-level-1 header.shrink { height:$nav-header-short-height;background-color: $nav-header-short-bg-color;padding: 0 40px;@include bottomBorder();
     nav {
-        a.logo { background-image: url('#{$image-path}/logo_red.png');width: 232px;height: 43px;margin-top:15px; }
+        a.logo { background-image: url('#{$image-path}/logo_red.png');background-repeat: no-repeat;width: 232px;height: 43px;margin-top:15px; }
         ul { padding: 30px 0;
             li a { color: $theme-color-brown; }
         }
@@ -32,12 +32,14 @@ body #c-level-1 header, body.pg-home #c-level-1 header.shrink { height:$nav-head
 // tall header
 body.pg-home #c-level-1 header { height:$nav-header-full-height;background-color: $nav-header-full-bg-color;padding: 0 40px;border-bottom: none !important;
     nav {
-        a.logo { background-image: url('#{$image-path}/logo_white.png');width: 306px;height: 88px;margin-top:35px; }
+        a.logo { background-image: url('#{$image-path}/logo_white.png');background-repeat: no-repeat;width: 306px;height: 88px;margin-top:35px; }
         ul { padding: 100px 0 35px 0;
             li a { color: $theme-color-white; }
         }
     }
 }
+
+ul.sidebar { display: none !important; }
 
 @media screen and (max-width:$screen-sm) {
     [slideable].open { right: 162px; }
@@ -57,6 +59,8 @@ body.pg-home #c-level-1 header { height:$nav-header-full-height;background-color
             }
         }
         nav {
+            ul.sidebar { display: block !important; }
+            ul.majority { display: none; }
             ul.open { left: $nav-header-short-height; }
             ul { position: absolute;width: 100%;top: 0;left: 100%;background-color: $theme-color-red;color: $theme-color-white;padding: 0;border-left: 1px solid $theme-color-darkred;
                 li { width: 100%;border-bottom: 1px solid $theme-color-darkred;margin:0;height: $nav-header-short-height;
@@ -67,5 +71,11 @@ body.pg-home #c-level-1 header { height:$nav-header-full-height;background-color
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width:$screen-xs) {
+    body #c-level-1 header { padding: 0 5px;
+        nav a.logo { width: 217px;background-size: contain; }
     }
 }
