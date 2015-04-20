@@ -80,7 +80,9 @@
             Route::register('/search/featured',
                 '\Concrete\Package\Realtor\Controller\Tools\Search::featuredProperties'
             );
-
+            Route::register('/landing/list/{id}/{multi}',
+                '\Concrete\Package\Realtor\Controller\Tools\Landing::getPageListForId'
+            );
         }
 
         /**

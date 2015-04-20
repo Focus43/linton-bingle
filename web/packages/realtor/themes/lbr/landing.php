@@ -34,36 +34,21 @@
             ?>
         </section>
         <section class="subnav wide-wrap">
-            <?php
-            //then within each listing create a new page list instance
-            $pageList = new \PageList();
-            $pageList->filterByParentID($c->getCollectionID());
-            $pageList->sortByPublicDateDescending();
-            $pageList->get(10);
-            $pages = $pageList->get();
-            var_dump($pages);
-            //that will grab a collection of all the current pages within that page
-            //then you should just need to play around with echoing out the bits you need?
-            //something like
-            //no idea if this would work I can not remember if the $pages is an object or an array? but I think its an array
-            foreach($pages as $page){
-            //display page information
-            }
-
-            ?>
-
-
-<!--            --><?php
-//            $blockTypeNav                                       = BlockType::getByHandle('autonav');
-//            $blockTypeNav->controller->orderBy                  = 'display_desc';
-//            $blockTypeNav->controller->displayPages             = 'below';
-//            $blockTypeNav->controller->displaySubPages          = 'all';
-//            $blockTypeNav->controller->displaySubPageLevels     = 'all';
-//            $blockTypeNav->controller->displaySubPageLevelsNum  = 1;
-//            $blockTypeNav->render('templates/landing_page_nav');
-//            ?>
 
         </section>
+        <script id="pageList" type="x-tmpl-mustache">
+                <ul>
+                {{#pages}}
+                    <li>
+                        <a href="{{path}}">
+                            <div class="pg-icon" style="background-image: url({{iconPath}})"></div>
+                            <h4>{{name}}</h4>
+                            <p>{{description}}</p>
+                        </a>
+                    </li>
+                {{/pages}}
+                </ul>
+            </script>
 
         <?php $this->inc('elements/footer.php'); ?>
         <?php $this->inc('elements/header.php'); ?>

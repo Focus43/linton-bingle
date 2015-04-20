@@ -11,7 +11,6 @@
 
         public function view(){
             parent::view();
-//            $this->set('mastheadHelper', new \Concrete\Package\Realtor\Src\Helpers\Masthead($this->getPageObject()));
             $this->set('mastheadImages', $this->getMastheadImages());
         }
 
