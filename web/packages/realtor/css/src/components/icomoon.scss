@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:url('#{$icomoon-font-path}/icomoon.eot?qrargm');
-    src:url('#{$icomoon-font-path}/icomoon.eot?#iefixqrargm') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/icomoon.woff?qrargm') format('woff'),
-    url('#{$icomoon-font-path}/icomoon.ttf?qrargm') format('truetype'),
-    url('#{$icomoon-font-path}/icomoon.svg?qrargm#icomoon') format('svg');
+    src:url('fonts/icomoon.eot?-zb4hca');
+    src:url('fonts/icomoon.eot?#iefix-zb4hca') format('embedded-opentype'),
+    url('fonts/icomoon.woff?-zb4hca') format('woff'),
+    url('fonts/icomoon.ttf?-zb4hca') format('truetype'),
+    url('fonts/icomoon.svg?-zb4hca#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -23,11 +23,31 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-arrow-right:before {
+.icon-spinner:before {
+    content: "\f110";
+}
+
+.icon-envelope:before {
+    content: "\e604";
+}
+
+.icon-google-plus:before {
+    content: "\e603";
+}
+
+.icon-expand-less:before {
+    content: "\e608";
+}
+
+.icon-expand-more:before {
+    content: "\e609";
+}
+
+.icon-keyboard-arrow-right:before {
     content: "\e606";
 }
 
-.icon-arrow-left:before {
+.icon-keyboard-arrow-left:before {
     content: "\e607";
 }
 
@@ -45,12 +65,4 @@
 
 .icon-pinterest:before {
     content: "\e602";
-}
-
-.icon-envelope:before {
-    content: "\e604";
-}
-
-.icon-google-plus:before {
-    content: "\e603";
 }

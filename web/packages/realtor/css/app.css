@@ -152,6 +152,24 @@ video.fullscreen {
     padding-left: 7.5px; }
   #c-level-1 footer [modalize] {
     display: inline; } }
+.spinner {
+  -webkit-animation: spin 2500ms infinite linear;
+  animation: spin 2500ms infinite linear; }
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
 /**
 * When In Edit Mode
 */
@@ -191,7 +209,7 @@ body #c-level-1 header {
   body #c-level-1 header div.trigger {
     display: none; }
   body #c-level-1 header div#mobileNav {
-    display: none; }
+    display: none !important; }
   body #c-level-1 header nav .logo {
     display: block;
     float: left;
@@ -330,7 +348,7 @@ ul.sidebar {
       display: none; }
 
   div#mobileNav {
-    display: block !important;
+    display: block;
     position: absolute;
     top: 0;
     left: 100%;
@@ -487,6 +505,11 @@ section.footer {
       right: 0; }
       .masthead .arrows[class*="right"]:hover {
         padding-right: 0.25rem; }
+  .masthead .edit-arrows {
+    display: block;
+    height: 60px;
+    width: 40px;
+    color: #ffffff; }
 
 div#c-level-1 section.featured {
   background-color: #e2dddb; }
@@ -766,8 +789,8 @@ section.search {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("/packages/realtor/css/fonts/icomoon.eot?qrargm");
-  src: url("/packages/realtor/css/fonts/icomoon.eot?#iefixqrargm") format("embedded-opentype"), url("/packages/realtor/css/fonts/icomoon.woff?qrargm") format("woff"), url("/packages/realtor/css/fonts/icomoon.ttf?qrargm") format("truetype"), url("/packages/realtor/css/fonts/icomoon.svg?qrargm#icomoon") format("svg");
+  src: url("fonts/icomoon.eot?-zb4hca");
+  src: url("fonts/icomoon.eot?#iefix-zb4hca") format("embedded-opentype"), url("fonts/icomoon.woff?-zb4hca") format("woff"), url("fonts/icomoon.ttf?-zb4hca") format("truetype"), url("fonts/icomoon.svg?-zb4hca#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -782,10 +805,25 @@ section.search {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-arrow-right:before {
+.icon-spinner:before {
+  content: "\f110"; }
+
+.icon-envelope:before {
+  content: "\e604"; }
+
+.icon-google-plus:before {
+  content: "\e603"; }
+
+.icon-expand-less:before {
+  content: "\e608"; }
+
+.icon-expand-more:before {
+  content: "\e609"; }
+
+.icon-keyboard-arrow-right:before {
   content: "\e606"; }
 
-.icon-arrow-left:before {
+.icon-keyboard-arrow-left:before {
   content: "\e607"; }
 
 .icon-linkedin:before {
@@ -799,12 +837,6 @@ section.search {
 
 .icon-pinterest:before {
   content: "\e602"; }
-
-.icon-envelope:before {
-  content: "\e604"; }
-
-.icon-google-plus:before {
-  content: "\e603"; }
 
 .pg-home #c-level-1 main section.hero {
   height: 845px;
@@ -821,7 +853,7 @@ section.search {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     position: relative;
-    padding: 0 0 33% 0 !important;
+    padding: 0 0 33% 0;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -909,6 +941,27 @@ section.search {
 .pg-home #c-level-1 main section.search {
   padding-top: 0px !important;
   padding-bottom: 50px; }
+.pg-home #c-level-1 main section.featured span.icon-spinner {
+  font-size: 12em;
+  color: #9b8c86; }
+
+html.cms-edit-mode div.row > div {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  height: 300px;
+  padding: 0 !important;
+  min-height: 300px; }
+  html.cms-edit-mode div.row > div a.shade {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    height: 300px; }
+    html.cms-edit-mode div.row > div a.shade div.extra {
+      opacity: 1 !important;
+      min-height: 300px; }
+html.cms-edit-mode section.nav-blocks div.ccm-area-footer div.ccm-area-footer-handle {
+  max-width: 300px; }
 
 .pg-landing #c-level-1 section.hero {
   width: 100%;
@@ -993,48 +1046,91 @@ section.search {
           text-decoration: none; }
 .pg-landing #c-level-1 section.subnav {
   text-align: center; }
-  .pg-landing #c-level-1 section.subnav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    display: block;
+  .pg-landing #c-level-1 section.subnav h3 {
+    float: left;
+    padding-left: 30px;
+    text-transform: uppercase;
     width: 100%;
-    max-width: 1000px; }
-    .pg-landing #c-level-1 section.subnav ul li {
+    text-align: left; }
+  .pg-landing #c-level-1 section.subnav div.pagination {
+    padding: 10px 0 20px 30px; }
+    .pg-landing #c-level-1 section.subnav div.pagination ul {
       list-style: none;
-      padding: 0 30px;
+      width: 100%;
       margin: 0;
-      width: 50%;
-      float: left; }
-      .pg-landing #c-level-1 section.subnav ul li a {
-        width: 100%;
-        display: block;
-        padding: 10px 0;
+      padding: 0;
+      color: #9b8c86;
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 0.9em;
+      display: inline-block;
+      max-width: 1000px; }
+      .pg-landing #c-level-1 section.subnav div.pagination ul li {
+        display: inline-block;
         color: #9b8c86;
-        font-family: "Josefin Sans", sans-serif; }
-        .pg-landing #c-level-1 section.subnav ul li a:hover {
-          color: #b5121b;
-          text-decoration: none; }
-        .pg-landing #c-level-1 section.subnav ul li a div.pg-icon {
-          overflow: hidden;
-          padding-bottom: 58%;
+        float: left;
+        padding-right: 10px; }
+        .pg-landing #c-level-1 section.subnav div.pagination ul li:hover, .pg-landing #c-level-1 section.subnav div.pagination ul li.active {
+          color: #b5121b; }
+        .pg-landing #c-level-1 section.subnav div.pagination ul li:first-of-type {
+          color: #9b8c86; }
+  .pg-landing #c-level-1 section.subnav div.pagelist {
+    min-height: 300px;
+    height: 100%;
+    text-align: center;
+    opacity: 1;
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out; }
+    .pg-landing #c-level-1 section.subnav div.pagelist span {
+      font-size: 12em;
+      color: #9b8c86; }
+    .pg-landing #c-level-1 section.subnav div.pagelist ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      max-width: 1000px; }
+      .pg-landing #c-level-1 section.subnav div.pagelist ul li {
+        list-style: none;
+        padding: 0 30px;
+        margin: 0;
+        width: 50%;
+        float: left; }
+        .pg-landing #c-level-1 section.subnav div.pagelist ul li a {
+          width: 100%;
           display: block;
-          background-size: cover;
-          background-position: 70% 50%;
-          height: 100%;
-          width: 100%;
-          max-width: 475px; }
-        .pg-landing #c-level-1 section.subnav ul li a h4 {
-          font-weight: bold;
-          font-size: 0.9em;
-          text-align: left;
-          width: 100%;
-          text-transform: uppercase;
-          margin-bottom: 5px;
-          padding-top: 10px; }
-        .pg-landing #c-level-1 section.subnav ul li a p {
-          text-align: left;
-          font-size: 0.9em; }
+          padding: 10px 0;
+          color: #9b8c86;
+          font-family: "Josefin Sans", sans-serif; }
+          .pg-landing #c-level-1 section.subnav div.pagelist ul li a:hover {
+            color: #b5121b;
+            text-decoration: none; }
+          .pg-landing #c-level-1 section.subnav div.pagelist ul li a div.pg-icon {
+            overflow: hidden;
+            padding-bottom: 58%;
+            display: block;
+            background-size: cover;
+            background-position: 70% 50%;
+            height: 100%;
+            width: 100%;
+            max-width: 475px; }
+          .pg-landing #c-level-1 section.subnav div.pagelist ul li a h4 {
+            font-weight: bold;
+            font-size: 0.9em;
+            text-align: left;
+            width: 100%;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            padding-top: 10px; }
+          .pg-landing #c-level-1 section.subnav div.pagelist ul li a p {
+            text-align: left;
+            font-size: 0.9em; }
+      @media screen and (max-width: 480px) {
+        .pg-landing #c-level-1 section.subnav div.pagelist ul li {
+          width: 100% !important; } }
 
 body.pg-properties div#c-level-1 div.disclaimer {
   padding: 15px 0; }

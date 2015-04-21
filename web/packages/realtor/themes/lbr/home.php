@@ -23,8 +23,8 @@
 
                 <?php if(count($mastheadImages) > 1): ?>
                     <?php if ( $isEditMode ) { ?>
-                    <a class="arrows icon-arrow-left"></a>
-                    <a class="arrows icon-arrow-right"></a>
+                    <a class="edit-arrows arrows icon-keyboard-arrow-left"></a>
+                    <a class="edit-arrows arrows icon-keyboard-arrow-right"></a>
                     <?php } ?>
                     <div class="markers">
                         <?php for($i = 0; $i < count($mastheadImages); $i++): ?>
@@ -37,37 +37,31 @@
         <section class="nav-blocks">
             <div class="row">
                 <div class="about col-xs-12 col-sm-4">
-                    <a class="shade" style="display:block;visibility:visible;opacity:1;">
+                    <a class="shade">
                         <h3>ABOUT</h3>
-                        <div class="extra" style="display:block;visibility:visible;opacity:1;">
-                            <div>
-                                <?php $a = new Area("About Short"); $a->display($c); ?>
-                            </div>
-                            <p>Together, Betsy and Carol are a real estate team unlike any other in the Valley.  Their professional marketing style and customer service to their clients is unrivaled and for those qualities they earned the 2013 Award for Professional Excellence.</p>
+                        <div class="extra">
+                            <div><?php $a = new Area("About Short"); $a->display($c); ?></div>
+<!--                            <p>Together, Betsy and Carol are a real estate team unlike any other in the Valley.  Their professional marketing style and customer service to their clients is unrivaled and for those qualities they earned the 2013 Award for Professional Excellence.</p>-->
                         </div>
                         <div class="more">READ MORE</div>
                     </a>
                 </div>
                 <div class="resources col-xs-12 col-sm-4">
-                    <a class="shade" style="display:block;visibility:visible;opacity:1;">
+                    <a class="shade">
                         <h3>RESOURCES</h3>
-                        <div class="extra" style="display:block;visibility:visible;opacity:1;">
-                            <div>
-                                <?php $a = new Area("Resources Short"); $a->display($c); ?>
-                            </div>
-                            <p>A trusted team with a wealth of information fo Buyers and Sellers</p>
+                        <div class="extra">
+                            <div><?php $a = new Area("Resources Short"); $a->display($c); ?></div>
+<!--                            <p>A trusted team with a wealth of information fo Buyers and Sellers</p>-->
                         </div>
                         <div class="more">LEARN MORE</div>
                     </a>
                 </div>
                 <div class="blog col-xs-12 col-sm-4">
-                    <a class="shade" style="display:block;visibility:visible;opacity:1;">
+                    <a class="shade">
                         <h3>BLOG / MEDIA</h3>
-                        <div class="extra" style="display:block;visibility:visible;opacity:1;">
-                            <div>
-                                <?php $a = new Area("Blog Short"); $a->display($c); ?>
-                            </div>
-                            <p>Stay up to date with our latest posts,  property brochures and videos.</p>
+                        <div class="extra">
+                            <div><?php $a = new Area("Blog Short"); $a->display($c); ?></div>
+<!--                            <p>Stay up to date with our latest posts,  property brochures and videos.</p>-->
                         </div>
                         <div class="more">READ MORE</div>
                     </a>
@@ -75,9 +69,10 @@
             </div>
         </section>
 
-
         <section class="featured">
-            <div id="featuredCarousel">Loading...</div>
+            <div id="featuredCarousel">
+                <div style="text-align: center;padding: 20px;"><span class="icon-spinner spinner"></span></div>
+            </div>
 
             <script id="featuredInitial" type="x-tmpl-mustache">
                 <div class="property {{id}} first">

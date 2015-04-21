@@ -32,13 +32,29 @@ $landing-masthead-height: 470px;
         }
     }
     section.subnav { text-align: center;
-        ul { list-style: none;padding: 0;margin: 0 auto;display: block;width: 100%;max-width: 1000px;
-            li { list-style: none;padding: 0 30px;margin: 0;width: 50%;float: left;
-                a { width: 100%;display: block;padding: 10px 0;color: $theme-color-brown;font-family: $theme-font-family-headers;
-                    &:hover { color:$theme-color-red;text-decoration: none; }
-                    div.pg-icon { overflow: hidden;padding-bottom: 58%;display: block;background-size: cover;background-position: 70% 50%;height: 100%;width: 100%;max-width: 475px; }
-                    h4 { font-weight: bold;font-size: 0.9em;text-align: left;width: 100%;text-transform: uppercase;margin-bottom: 5px;padding-top: 10px; }
-                    p { text-align: left;font-size: 0.9em; }
+        h3 { float: left;padding-left: 30px;text-transform: uppercase;width: 100%;text-align: left; }
+        div.pagination { padding: 10px 0 20px 30px;
+            ul { list-style: none;width: 100%;margin: 0;padding: 0;color: $theme-color-brown;font-family: $theme-font-family-headers;font-size: 0.9em;display: inline-block;max-width: 1000px;
+                li { display: inline-block;color: $theme-color-brown;float: left; padding-right: 10px;
+                    &:hover, &.active { color: $theme-color-red; }
+                    &:first-of-type { color: $theme-color-brown; }
+                }
+            }
+        }
+        div.pagelist { min-height: 300px;height: 100%;text-align: center;opacity: 1;
+            -webkit-transition: all 500ms ease-out;-moz-transition: all 500ms ease-out;-o-transition: all 500ms ease-out;transition: all 500ms ease-out;
+            span { font-size: 12em;color: $theme-color-brown; }
+            ul { list-style: none;padding: 0;margin: 0 auto;display: inline-block;width: 100%;height: 100%;max-width: 1000px;
+                li { list-style: none;padding: 0 30px;margin: 0;width: 50%;float: left;
+                    a { width: 100%;display: block;padding: 10px 0;color: $theme-color-brown;font-family: $theme-font-family-headers;
+                        &:hover { color:$theme-color-red;text-decoration: none; }
+                        div.pg-icon { overflow: hidden;padding-bottom: 58%;display: block;background-size: cover;background-position: 70% 50%;height: 100%;width: 100%;max-width: 475px; }
+                        h4 { font-weight: bold;font-size: 0.9em;text-align: left;width: 100%;text-transform: uppercase;margin-bottom: 5px;padding-top: 10px; }
+                        p { text-align: left;font-size: 0.9em; }
+                    }
+                }
+                @media screen and (max-width:$screen-xs) {
+                    li { width: 100% !important; }
                 }
             }
         }

@@ -42,12 +42,24 @@ var Masthead = function () {
     }
 
     var previous = function () {
-        showNode((self.indexActive === 0) ? nodeCount : self.indexActive - 1);
+        showNode((self.indexActive === 0) ? self.nodes.length : self.indexActive - 1);
+    }
+
+    var initArrows = function () {
+        $("section.hero div.masthead a.edit-arrows").on('click', function () {
+            if ( $(this).hasClass('icon-arrow-left') ) {
+                previous();
+            } else {
+                next();
+            }
+        });
+
     }
 
     this.onloadFunc = function () {
         if ( $("section.hero div.masthead") && $("section.hero div.masthead").length > 0 ) {
             startCarousel();
+            initArrows();
         }
     }
 }

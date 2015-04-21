@@ -5,7 +5,6 @@
 <div id="c-level-1" class="<?php echo $c->getPageWrapperClass(); ?>">
     <main slideable>
         <section class="hero">
-<!--            --><?php //$a = new Area("Photo"); $a->display($c); ?>
             <div class="masthead">
                     <div class="node" >
                         <div class="inner clearfix">
@@ -34,21 +33,32 @@
             ?>
         </section>
         <section class="subnav wide-wrap">
-
+            <h3><?php echo $c->getCollectionName(); ?></h3>
+            <div class="pagination clearfix"></div>
+            <div class="pagelist"><span class="icon-spinner spinner"></span></div>
+            <div class="pagination clearfix"></div>
         </section>
+        <script id="pagination" type="x-tmpl-mustache">
+            <ul>
+                <li>PAGES</li>
+            {{#increments}}
+                <li class="pagenum" data-next-page="{{.}}">{{.}}</li>
+            {{/increments}}
+            </ul>
+        </script>
         <script id="pageList" type="x-tmpl-mustache">
-                <ul>
-                {{#pages}}
-                    <li>
-                        <a href="{{path}}">
-                            <div class="pg-icon" style="background-image: url({{iconPath}})"></div>
-                            <h4>{{name}}</h4>
-                            <p>{{description}}</p>
-                        </a>
-                    </li>
-                {{/pages}}
-                </ul>
-            </script>
+            <ul>
+            {{#pages}}
+                <li>
+                    <a href="{{path}}">
+                        <div class="pg-icon" style="background-image: url({{iconPath}})"></div>
+                        <h4>{{name}}</h4>
+                        <p>{{description}}</p>
+                    </a>
+                </li>
+            {{/pages}}
+            </ul>
+        </script>
 
         <?php $this->inc('elements/footer.php'); ?>
         <?php $this->inc('elements/header.php'); ?>
