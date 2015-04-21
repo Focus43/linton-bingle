@@ -208,8 +208,6 @@ body #c-level-1 header {
   width: 100%; }
   body #c-level-1 header div.trigger {
     display: none; }
-  body #c-level-1 header div#mobileNav {
-    display: none !important; }
   body #c-level-1 header nav .logo {
     display: block;
     float: left;
@@ -295,6 +293,9 @@ body.pg-home #c-level-1 header {
     padding: 100px 0 35px 0; }
     body.pg-home #c-level-1 header nav ul li a {
       color: #ffffff; }
+
+div#mobileNav {
+  display: none; }
 
 ul.sidebar {
   display: none !important; }

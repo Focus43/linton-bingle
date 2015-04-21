@@ -1,7 +1,6 @@
 // in common
 body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
     div.trigger { display: none; }
-    div#mobileNav { display: none !important; }
     nav {
         .logo { display: block;float: left;background-repeat: none; }
         ul { display: block;float: right;margin: 0;position: relative;
@@ -40,6 +39,7 @@ body.pg-home #c-level-1 header { height:$nav-header-full-height;background-color
     }
 }
 
+div#mobileNav { display: none; }
 ul.sidebar { display: none !important; }
 
 @media screen and (max-width:$screen-sm) {
