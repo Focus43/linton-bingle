@@ -9,7 +9,7 @@
         <div class="sortby clearfix">
             <div class="sorter">
                 <div class="copy">SORT BY <?php echo $this->controller->getSortByString(); ?></div>
-                <div class="arrow">^</div>
+                <div class="arrow"><i class="icon-expand-more"></i></div>
             </div>
             <div class="list">
                 <div class="sortbyList">

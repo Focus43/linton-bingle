@@ -27,7 +27,6 @@
                     <?php if ( count($searchResults) > $idx + 1 ) : ?><div class="divider-line"></div><?php endif; ?>
                 <?php endforeach; ?>
             </section>
-<!--            --><?php //$this->inc('elements/search_pagination.php'); ?>
 
         <?php } ?>
 

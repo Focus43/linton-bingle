@@ -84,13 +84,13 @@
          * @return string
          */
         public function getListPrice() {
-            return number_format( (int) $this->BuildingAreaTotal, 2 );
+            return number_format( $this->ListPrice );
         }
         /**
          * @return string
          */
         public function getBuildingAreaTotal() {
-            return number_format( (int) $this->ListPrice, 2 );
+            return number_format( (int) $this->BuildingAreaTotal, 2 );
         }
         /**
          * @return string
