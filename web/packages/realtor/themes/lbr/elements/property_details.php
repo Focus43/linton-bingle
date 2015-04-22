@@ -36,8 +36,8 @@
             <?php } ?>
             </div>
             <?php endif; ?>
-            <a class="arrow left"><i class="icon-arrow-left"></i></a>
-            <a class="arrow right"><i class="icon-arrow-right"></i></a>
+            <a class="arrow left"><i class="icon-keyboard-arrow-left"></i></a>
+            <a class="arrow right"><i class="icon-keyboard-arrow-right"></i></a>
         </div>
         <?php if(count($photos) > 1): ?>
             <div class="circles">

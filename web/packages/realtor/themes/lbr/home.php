@@ -111,8 +111,8 @@
                 </div>
                 <div class="bottom">
                     <div class="indicators">
-                        <div class="go-back"><i class="icon-arrow-left"></i></div>
-                        <div class="go-forward"><i class="icon-arrow-right"></i></div>
+                        <div class="go-back"><i class="icon-keyboard-arrow-left"></i></div>
+                        <div class="go-forward"><i class="icon-keyboard-arrow-right"></i></div>
                     </div>
                 </div>
                 <div id="completeList" class="clearfix"></div>
