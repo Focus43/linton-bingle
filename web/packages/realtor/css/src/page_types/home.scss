@@ -5,24 +5,24 @@
             div.row { margin-left: 0px;margin-right: 0px;
                 h3 { font-weight: bold;font-size: 2em; }
                 & > div { background-size: 100% 100%;background-position: 50% 50%;background-repeat: no-repeat;position: relative;padding: 0 0 33% 0;@include blockTransition();margin-bottom: -1px;
-                    a.shade { display: block;width: 100%;height: 100%;position: absolute;top: 0; bottom: 0; left: 0; right: 0;color: $theme-color-white;padding: 42% 20%;text-align: center;@include blockTransition();transition-delay: 0.25s;-webkit-transition-delay: 0.25s;
-                        .extra { opacity: 0 !important;height: 1px;@include blockTransition();transition-delay: 0.25s;-webkit-transition-delay: 0.25s; }
+                    div.shade { display: block;width: 100%;height: 100%;position: absolute;top: 0; bottom: 0; left: 0; right: 0;color: $theme-color-white;padding: 42% 20%;text-align: center;@include blockTransition();transition-delay: 0.25s;-webkit-transition-delay: 0.25s;
+                        .extra { opacity: 0;height: 1px;@include blockTransition();transition-delay: 0.25s;-webkit-transition-delay: 0.25s; }
                         .more { opacity: 1;font-family: $theme-font-family-headers;font-size: 1em;@include blockTransition();transition-delay: 0.25s;-webkit-transition-delay: 0.25s; }
                     }
                     &:hover { background-size: 170% 170%;background-position: 50% 50%;
-                        a.shade { background-color: rgba(18,10,7,0.70);color: $theme-color-white;text-decoration: none;padding: 25% 20%;
+                        div.shade { background-color: rgba(18,10,7,0.70);color: $theme-color-white;text-decoration: none;padding: 25% 20%;
                             .extra { opacity: 1 !important;height: 70px; }
                             .more { opacity: 0 !important; }
                         }
                     }
                 }
                 div.about { background-image: url("#{$image-path}/about.jpg");
-                    a.shade { padding: 12%;
+                    div.shade { padding: 12%;
                         .extra { opacity: 1 !important;height: auto !important; }
                         .more { padding-top: 10px; }
                     }
                     @media screen and (min-width:$screen-sm) and (max-width:$screen-md) {
-                        a.shade { padding: 10px !important; }
+                        div.shade { padding: 10px !important; }
                     }
                 }
                 div.resources { background-image: url("#{$image-path}/resources.jpg"); }
@@ -30,9 +30,9 @@
             }
             @media screen and (min-width:$screen-xs) and (max-width:$screen-sm) {
                 div.row > div { padding: 0 0 50% 0 !important;
-                    a.shade { padding: 20% 20%; }
+                    div.shade { padding: 20% 20%; }
                     &:hover {
-                        a.shade { padding: 10% 20%; }
+                        div.shade { padding: 10% 20%; }
                     }
                 }
             }
@@ -40,7 +40,7 @@
                 div.row > div { padding: 0 0 100% 0 !important; }
             }
             @media screen and (max-width:350px) {
-                div.row > div a.shade { padding: 6% !important; }
+                div.row > div div.shade { padding: 6% !important; }
             }
         }
         section.search { padding-top: 0px !important;padding-bottom: 50px; }
@@ -51,12 +51,14 @@
 }
 
 html.cms-edit-mode {
-    div.row > div  { display:block;visibility:visible;opacity:1; height: 300px;padding: 0 !important;min-height: 300px;
-        a.shade { display:block;visibility:visible;opacity:1; height: 300px;
-            div.extra { opacity: 1 !important;min-height: 300px; }
+    div.masthead div.node-content { color: $theme-color-white; }
+    div.row > div  { display:block;visibility:visible;opacity:1; height: 300px;padding: 0 !important;color: $theme-color-white;
+        div.shade { display:block;visibility:visible;opacity:1; height: 300px;
+            .extra { opacity: 1 !important;height: 70px; }
+            .more { opacity: 0 !important; }
         }
     }
-    section.nav-blocks {
-        div.ccm-area-footer div.ccm-area-footer-handle { max-width: 300px;}
-    }
+//    section.nav-blocks {
+//        div.ccm-area-footer div.ccm-area-footer-handle { max-width: 300px;}
+//    }
 }

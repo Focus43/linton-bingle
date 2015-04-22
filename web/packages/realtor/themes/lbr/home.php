@@ -10,8 +10,9 @@
                     <div class="node" style="background-image:url('<?php echo $fileObj->getRelativePath(); ?>');">
                         <div class="inner">
                             <div class="node-content">
-                                <div class="hidden-xs" data-viz-d>
-                                    <?php $index++; $a = new Area("Masthead {$index}"); $a->display($c); ?>
+                                <div>
+                                    <h2><?php $index++; $a = new Area("Masthead Header {$index}"); $a->display($c); ?></h2>
+                                    <?php $a = new Area("Masthead {$index}"); $a->display($c); ?>
                                 </div>
 <!--                                <div class="visible-xs" data-viz-m>-->
 <!--                                    --><?php //$a = new Area("Masthead Mobile {$index}"); $a->display($c); ?>
@@ -36,35 +37,35 @@
         </section>
         <section class="nav-blocks">
             <div class="row">
-                <div class="about col-xs-12 col-sm-4">
-                    <a class="shade">
+                <div class="about col-xs-12 col-sm-4" data-url="/about/about-linton-bingle">
+                    <div class="shade">
                         <h3>ABOUT</h3>
                         <div class="extra">
                             <div><?php $a = new Area("About Short"); $a->display($c); ?></div>
 <!--                            <p>Together, Betsy and Carol are a real estate team unlike any other in the Valley.  Their professional marketing style and customer service to their clients is unrivaled and for those qualities they earned the 2013 Award for Professional Excellence.</p>-->
                         </div>
                         <div class="more">READ MORE</div>
-                    </a>
+                    </div>
                 </div>
-                <div class="resources col-xs-12 col-sm-4">
-                    <a class="shade">
+                <div class="resources col-xs-12 col-sm-4" data-url="/resources">
+                    <div class="shade">
                         <h3>RESOURCES</h3>
                         <div class="extra">
                             <div><?php $a = new Area("Resources Short"); $a->display($c); ?></div>
 <!--                            <p>A trusted team with a wealth of information fo Buyers and Sellers</p>-->
                         </div>
                         <div class="more">LEARN MORE</div>
-                    </a>
+                    </div>
                 </div>
-                <div class="blog col-xs-12 col-sm-4">
-                    <a class="shade">
+                <div class="blog col-xs-12 col-sm-4" data-url="/blog">
+                    <div class="shade">
                         <h3>BLOG / MEDIA</h3>
                         <div class="extra">
-                            <div><?php $a = new Area("Blog Short"); $a->display($c); ?></div>
+                            <?php $a = new Area("Blog Short"); $a->display($c); ?>
 <!--                            <p>Stay up to date with our latest posts,  property brochures and videos.</p>-->
                         </div>
                         <div class="more">READ MORE</div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>

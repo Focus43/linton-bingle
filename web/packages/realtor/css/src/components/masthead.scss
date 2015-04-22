@@ -1,8 +1,13 @@
-.masthead { width: 100%;height: 100%;position: relative;overflow: hidden;
+.masthead { width: 100%;height: 100%;position: relative;overflow: hidden;color: $theme-color-white;
     .node { height: 845px;width: 100%;display: table;visibility: hidden;opacity: 0;position: absolute;top: 0;left: 0;background-size: cover;background-position: 70% 50%;
         &:first-of-type { visibility: visible;opacity: 1; }
-        .inner {width:100%;height:100%;display:table-cell;vertical-align:bottom;text-align:left;padding-bottom:2rem;}
-        .node-content {font-size:1.3rem;display:inline-block;max-width:90%;padding-left:2rem;}
+        .inner {width:100%;height:100%;display:table-cell;vertical-align:middle;text-align:right;padding-bottom:2rem;}
+        .node-content {font-size:1.3rem;display:inline-block;max-width:75%;padding-left:2rem;
+            p { margin: 0 0.4em; }
+            h2 { text-align: rigth;padding: 0 0.4em !important;
+                p { padding: 0 !important;margin: 0 !important; }
+            }
+        }
     }
     // Markers
     .markers { position:absolute;left:0;right:0;bottom:0;width:100%;text-align:center;padding:1rem;font-size:0;line-height:0;
@@ -23,5 +28,15 @@
 
     .edit-arrows {
         display: block;height: 60px;width: 40px;color: #ffffff;
+    }
+
+    @media screen and (max-width:$screen-sm) {
+        .node {
+            .inner { text-align:center; }
+            .node-content { max-width: 95%; }
+        }
+    }
+    @media screen and (max-width:$screen-xs) {
+        .node .node-content > div > p { display: none;margin: 0; }
     }
 }
