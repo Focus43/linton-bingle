@@ -39,7 +39,7 @@
 
         protected $pkgHandle 			= self::PACKAGE_HANDLE;
         protected $appVersionRequired 	= '5.7';
-        protected $pkgVersion 			= '0.26';
+        protected $pkgVersion 			= '0.27';
 
 
         /**
