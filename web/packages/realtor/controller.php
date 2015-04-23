@@ -104,7 +104,7 @@
          * @todo: include package dependency checks
          */
         private function checkDependencies(){
-
+//            require_once(REALTOR_SRC_PATH . "SparkApi/lib/Core.php");
         }
 
 
