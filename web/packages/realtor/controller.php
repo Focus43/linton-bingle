@@ -339,14 +339,6 @@
         private function setupSinglePages() {
             // Property Search Results
             SinglePage::add('/properties/', $this->packageObject());
-//            /** @var $sp \Concrete\Core\Page\Page */
-//            $sp = SinglePage::add('/dashboard/portfolio/item', $this->packageObject());
-//            // since $sp is only returned if it's NEW:
-//            if ($sp) {
-//                $sp->update(array(
-//                    'cName' => 'New Portfolio Item'
-//                ));
-//            }
 
             return $this;
         }
