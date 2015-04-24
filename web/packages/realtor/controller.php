@@ -39,7 +39,7 @@
 
         protected $pkgHandle 			= self::PACKAGE_HANDLE;
         protected $appVersionRequired 	= '5.7';
-        protected $pkgVersion 			= '0.27';
+        protected $pkgVersion 			= '0.34';
 
 
         /**
@@ -339,6 +339,9 @@
         private function setupSinglePages() {
             // Property Search Results
             SinglePage::add('/properties/', $this->packageObject());
+
+            SinglePage::add('/dashboard/theme_settings', $this->packageObject());
+            SinglePage::add('/dashboard/theme_settings/settings', $this->packageObject());
 
             return $this;
         }
