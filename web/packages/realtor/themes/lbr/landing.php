@@ -57,6 +57,9 @@
                     </a>
                 </li>
             {{/pages}}
+            {{^pages}}
+                <div>Sorry, we're still working on this part. Come back soon!</div>
+            {{/pages}}
             </ul>
         </script>
 
