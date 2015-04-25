@@ -21,7 +21,7 @@ $landing-masthead-height: 470px;
             }
         }
     }
-    section.current-level-nav { text-align: center;
+    section.current-level-nav { text-align: center;padding-bottom: 20px;
         ul { list-style: none;padding: 0;margin: 0 auto;display: inline-block;
             li { list-style: none;padding: 0 10px;margin: 0;display: inline-block;float: left;border-right: 1px solid $theme-line-color;
                 &:last-of-type { border-right: 0; }
@@ -29,12 +29,15 @@ $landing-masthead-height: 470px;
                     &:hover, &.nav-selected { color:$theme-color-red;text-decoration: none; }
                 }
             }
+            @media screen and (max-width:$screen-xs) {
+                li { width: 100%;float: left;border-right: 0; }
+            }
         }
     }
     section.subnav { text-align: center;
-        h3 { float: left;padding-left: 30px;text-transform: uppercase;width: 100%;text-align: left; }
-        div.pagination { padding: 10px 0 20px 30px;
-            ul { list-style: none;width: 100%;margin: 0;padding: 0;color: $theme-color-brown;font-family: $theme-font-family-headers;font-size: 0.9em;display: inline-block;max-width: 1000px;
+        h3 { display: inline-block;padding-left: 30px;text-transform: uppercase;width: 100%;max-width: 1000px;text-align: left; }
+        div.pagination { padding: 10px 0 20px 0;
+            ul { list-style: none;width: 100%;margin: 0;padding: 0 0 0 30px;color: $theme-color-brown;font-family: $theme-font-family-headers;font-size: 0.9em;display: inline-block;max-width: 1000px;
                 li { display: inline-block;color: $theme-color-brown;float: left; padding-right: 10px;
                     &:hover, &.active { color: $theme-color-red; }
                     &:first-of-type { color: $theme-color-brown; }

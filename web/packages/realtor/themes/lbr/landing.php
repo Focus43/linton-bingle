@@ -40,10 +40,11 @@
         </section>
         <script id="pagination" type="x-tmpl-mustache">
             <ul>
-                <li>PAGES</li>
+                <li {{^increments}}class="hidden"{{/increments}}>PAGES</li>
             {{#increments}}
                 <li class="pagenum" data-next-page="{{.}}">{{.}}</li>
             {{/increments}}
+            {{^increments}}{{/increments}}
             </ul>
         </script>
         <script id="pageList" type="x-tmpl-mustache">
