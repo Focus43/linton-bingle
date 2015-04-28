@@ -1,4 +1,4 @@
-<?php namespace Concrete\Package\Lineal\Block\Button\Model {
+<?php namespace Concrete\Package\Realtor\Block\Button\Model {
 
     use Page;
 

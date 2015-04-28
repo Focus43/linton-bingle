@@ -1092,7 +1092,8 @@ html.cms-edit-mode div.row > div {
             text-transform: uppercase; }
           .pg-landing #c-level-1 section.hero .masthead .node .inner .node-content a.btn {
             color: #b5121b;
-            background-color: #ffffff; }
+            background-color: #ffffff;
+            margin-top: 15px; }
         @media screen and (max-width: 768px) {
           .pg-landing #c-level-1 section.hero .masthead .node .inner .node-image, .pg-landing #c-level-1 section.hero .masthead .node .inner .node-content {
             width: 100%;

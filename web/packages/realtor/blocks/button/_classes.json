@@ -1,10 +1,5 @@
 [
     {"className":"btn-default", "label":"Color: Default"},
-    {"className":"btn-primary", "label":"Color: Primary"},
-    {"className":"btn-success", "label":"Color: Success"},
-    {"className":"btn-translucent", "label":"Color: Translucent"},
-    {"className":"btn-block", "label":"Block"},
-    {"className":"btn-lg", "label":"Size: Large"},
-    {"className":"btn-sm", "label":"Size: Small"},
-    {"className":"btn-xs", "label":"Size: Extra-Small"}
+    {"className":"btn-transparent", "label":"Color: Transparent"},
+    {"className":"btn-white", "label":"Color: White"}
 ]

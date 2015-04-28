@@ -39,7 +39,7 @@
 
         protected $pkgHandle 			= self::PACKAGE_HANDLE;
         protected $appVersionRequired 	= '5.7';
-        protected $pkgVersion 			= '0.52';
+        protected $pkgVersion 			= '0.59';
 
 
         /**
@@ -112,13 +112,9 @@
          * @return void
          */
         public function upgrade(){
-            echo "upgrade";
             $this->checkDependencies();
-            echo "dep check done";
             parent::upgrade();
-            echo "parent upgrade called";
             $this->installAndUpdate();
-            echo "install and update done";exit;
         }
 
 
@@ -136,7 +132,7 @@
          * Handle all the updating methods.
          * @return void
          */
-        private function installAndUpdate(){
+        private function installAndUpdate() {
             $this->setupAttributeTypeAssociations()
                 ->setupCollectionAttributes()
                 ->setupFileAttributes()
@@ -367,15 +363,12 @@
          * @return Controller
          */
         private function setupBlocks(){
-            echo "set up blocks";
             if(!is_object(BlockType::getByHandle('photo_wall'))) {
                 BlockType::installBlockTypeFromPackage('photo_wall', $this->packageObject());
             }
-            echo "photo wall done";
             if(!is_object(BlockType::getByHandle('button'))) {
                 BlockType::installBlockTypeFromPackage('button', $this->packageObject());
             }
-            echo "button done";exit;
 
 //            if(!is_object(BlockType::getByHandle('statistic'))) {
 //                BlockType::installBlockTypeFromPackage('statistic', $this->packageObject());

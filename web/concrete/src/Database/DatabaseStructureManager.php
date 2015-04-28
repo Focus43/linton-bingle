@@ -104,7 +104,6 @@ class DatabaseStructureManager
             // Generate the proxy classes
             $pf = $this->getEntityManager()->getProxyFactory();
             $pf->generateProxyClasses($metadatas);
-
             return true;
         }
         return false;

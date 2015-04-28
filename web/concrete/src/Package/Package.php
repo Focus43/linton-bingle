@@ -234,12 +234,12 @@ class Package extends Object
     {
         $dbm = $this->getDatabaseStructureManager();
         $this->destroyProxyClasses();
+
         if ($dbm->hasEntities()) {
             $dbm->generateProxyClasses();
             $dbm->dropObsoleteDatabaseTables(camelcase($this->getPackageHandle()));
             $dbm->installDatabase();
         }
-
         if (file_exists($this->getPackagePath() . '/' . FILENAME_PACKAGE_DB)) {
             // Legacy db.xml
             // currently this is just done from xml
@@ -953,7 +953,6 @@ class Package extends Object
     public function upgrade()
     {
         $this->upgradeDatabase();
-
         // now we refresh all blocks
         $items = $this->getPackageItems();
         if (is_array($items['block_types'])) {
