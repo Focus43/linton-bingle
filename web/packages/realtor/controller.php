@@ -39,7 +39,7 @@
 
         protected $pkgHandle 			= self::PACKAGE_HANDLE;
         protected $appVersionRequired 	= '5.7';
-        protected $pkgVersion 			= '0.34';
+        protected $pkgVersion 			= '0.52';
 
 
         /**
@@ -112,9 +112,13 @@
          * @return void
          */
         public function upgrade(){
+            echo "upgrade";
             $this->checkDependencies();
+            echo "dep check done";
             parent::upgrade();
+            echo "parent upgrade called";
             $this->installAndUpdate();
+            echo "install and update done";exit;
         }
 
 
@@ -340,8 +344,8 @@
             // Property Search Results
             SinglePage::add('/properties/', $this->packageObject());
 
-            SinglePage::add('/dashboard/theme_settings', $this->packageObject());
-            SinglePage::add('/dashboard/theme_settings/settings', $this->packageObject());
+//            SinglePage::add('/dashboard/theme_settings', $this->packageObject());
+//            SinglePage::add('/dashboard/theme_settings/settings', $this->packageObject());
 
             return $this;
         }
@@ -363,14 +367,16 @@
          * @return Controller
          */
         private function setupBlocks(){
+            echo "set up blocks";
             if(!is_object(BlockType::getByHandle('photo_wall'))) {
                 BlockType::installBlockTypeFromPackage('photo_wall', $this->packageObject());
             }
+            echo "photo wall done";
+            if(!is_object(BlockType::getByHandle('button'))) {
+                BlockType::installBlockTypeFromPackage('button', $this->packageObject());
+            }
+            echo "button done";exit;
 
-//            if(!is_object(BlockType::getByHandle('quotes'))) {
-//                BlockType::installBlockTypeFromPackage('quotes', $this->packageObject());
-//            }
-//
 //            if(!is_object(BlockType::getByHandle('statistic'))) {
 //                BlockType::installBlockTypeFromPackage('statistic', $this->packageObject());
 //            }

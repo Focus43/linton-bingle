@@ -298,7 +298,7 @@ class DatabaseStructureManager
      * @return int
      */
     public function dropObsoleteDatabaseTables($prefix)
-    {
+    {   echo "dropObsoleteDatabaseTables";
         $em = $this->getEntityManager();
         $conn = $em->getConnection();
         $sm = $conn->getSchemaManager();

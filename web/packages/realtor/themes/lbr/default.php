@@ -1,19 +1,26 @@
 <!DOCTYPE HTML>
 <html lang="<?php echo LANGUAGE; ?>" class="<?php echo $documentClasses; ?>">
 <?php $this->inc('elements/head.php'); ?>
-<body class="pg-landing">
+<body class="pg-default">
 <div id="c-level-1" class="<?php echo $c->getPageWrapperClass(); ?>">
     <main slideable>
         <section class="hero">
             <div class="masthead">
                 <div class="node" >
                     <div class="inner clearfix">
-                        <div class="node-image"><?php $a = new Area("Choose Background Image"); $a->display($c); ?></div>
+                        <div class="node-image" style="background-image: url('<?php echo ($c->getAttribute('page_image')) ? $c->getAttribute('page_image')->getRelativePath() : REALTOR_IMAGE_PATH . 'nav_placeholder.jpg' ?>')">
+<!--                            --><?php //$a = new Area("Choose Background Image"); $a->display($c); ?>
+                        </div>
                         <div class="node-content">
                             <div>
-                                <h3><?php $a = new Area("Header"); $a->display($c); ?></h3>
-                                <!--                                    <div class="hidden-xs">--><?php //$a = new Area("Copy"); $a->display($c); ?><!--</div>-->
-                                <div><?php $a = new Area("Copy"); $a->display($c); ?></div>
+                                <h3>
+                                    <?php echo $c->getCollectionName(); ?>
+<!--                                    --><?php //$a = new Area("Header"); $a->display($c); ?>
+                                </h3>
+                                <div>
+                                    <?php echo $c->getCollectionDescription(); ?>
+<!--                                    --><?php //$a = new Area("Copy"); $a->display($c); ?>
+                                </div>
                                 <?php $a = new Area("Button"); $a->display($c); ?>
                             </div>
                         </div>
@@ -21,7 +28,7 @@
                 </div>
             </div>
         </section>
-        <section class="wide-wrap"><h2><?php echo $c->getCollectionName(); ?></h2></section>
+<!--        <section class="wide-wrap"><h2>--><?php //echo $c->getCollectionName(); ?><!--</h2></section>-->
         <section class="content wide-wrap">
             <?php $a = new Area("Content 1"); $a->display($c); ?>
         </section>

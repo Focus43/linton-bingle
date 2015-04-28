@@ -983,6 +983,67 @@ html.cms-edit-mode div.row > div {
     html.cms-edit-mode div.row > div div.shade .more {
       opacity: 0 !important; }
 
+.pg-default #c-level-1 section.hero {
+  width: 100%;
+  height: 560px;
+  margin-top: 75px; }
+  .pg-default #c-level-1 section.hero .masthead {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; }
+    .pg-default #c-level-1 section.hero .masthead .node {
+      height: 100%;
+      width: 100%;
+      display: table;
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0; }
+      .pg-default #c-level-1 section.hero .masthead .node:first-of-type {
+        visibility: visible;
+        opacity: 1; }
+      .pg-default #c-level-1 section.hero .masthead .node .inner {
+        width: 100%;
+        height: 100%;
+        display: block;
+        text-align: left; }
+        .pg-default #c-level-1 section.hero .masthead .node .inner .node-image {
+          width: 50%;
+          height: 100%;
+          float: left;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: 70% 50%; }
+          .pg-default #c-level-1 section.hero .masthead .node .inner .node-image > div.ccm-custom-style-choosebackgroundimage {
+            background-size: cover;
+            background-position: 70% 50%;
+            height: 100%;
+            width: 100%; }
+        .pg-default #c-level-1 section.hero .masthead .node .inner .node-content {
+          width: 50%;
+          height: 100%;
+          float: right;
+          font-size: 1.3rem;
+          padding-left: 2rem;
+          background-color: #b5121b;
+          color: #ffffff; }
+          .pg-default #c-level-1 section.hero .masthead .node .inner .node-content h3 {
+            margin-top: 130px;
+            text-transform: uppercase; }
+          .pg-default #c-level-1 section.hero .masthead .node .inner .node-content a.btn {
+            color: #b5121b;
+            background-color: #ffffff; }
+        @media screen and (max-width: 768px) {
+          .pg-default #c-level-1 section.hero .masthead .node .inner .node-image, .pg-default #c-level-1 section.hero .masthead .node .inner .node-content {
+            width: 100%;
+            height: 50%;
+            float: left;
+            max-width: 100%; }
+            .pg-default #c-level-1 section.hero .masthead .node .inner .node-image h3, .pg-default #c-level-1 section.hero .masthead .node .inner .node-content h3 {
+              margin-top: 20px; } }
+
 .pg-landing #c-level-1 section.hero {
   width: 100%;
   height: 560px;
