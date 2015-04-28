@@ -17,42 +17,50 @@
                         <tbody>
                         <tr>
                             <td>Facebook</td>
-                            <td><?php echo $formHelper->text('theme_social_link_facebook', $pkgConfig->get('theme_social_link_facebook'), array('class' => 'input-block-level')); ?></td>
+                            <td><?php echo $formHelper->text('social_link_facebook', $pkgConfig->get('theme.social_link_facebook'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         <tr>
                             <td>Twitter</td>
-                            <td><?php echo $formHelper->text('theme_social_link_twitter', $pkgConfig->get('theme_social_link_twitter'), array('class' => 'input-block-level')); ?></td>
+                            <td><?php echo $formHelper->text('social_link_twitter', $pkgConfig->get('theme.social_link_twitter'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         <tr>
                             <td>Youtube</td>
-                            <td><?php echo $formHelper->text('theme_social_link_youtube', $pkgConfig->get('theme_social_link_youtube'), array('class' => 'input-block-level')); ?></td>
+                            <td><?php echo $formHelper->text('social_link_youtube', $pkgConfig->get('theme.social_link_youtube'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         <tr>
                             <td>LinkedIn</td>
-                            <td><?php echo $formHelper->text('theme_social_link_linkedin', $pkgConfig->get('theme_social_link_linkedin'), array('class' => 'input-block-level')); ?></td>
+                            <td><?php echo $formHelper->text('social_link_linkedin', $pkgConfig->get('theme.social_link_linkedin'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         <tr>
                             <td>Pinterest</td>
-                            <td><?php echo $formHelper->text('theme_social_link_pinterest', $pkgConfig->get('theme_social_link_linkedin'), array('class' => 'input-block-level')); ?></td>
+                            <td><?php echo $formHelper->text('social_link_pinterest', $pkgConfig->get('theme.social_link_pinterest'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         <tr>
                             <td>Google+</td>
-                            <td><?php echo $formHelper->text('theme_social_link_googleplus', $pkgConfig->get('theme_social_link_linkedin'), array('class' => 'input-block-level')); ?></td>
+                            <td><?php echo $formHelper->text('social_link_googleplus', $pkgConfig->get('theme.social_link_googleplus'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="span-pane-half">
-                    <h3>Display</h3>
+                    <h3>Contact</h3>
                     <table class="table">
                         <tbody>
                         <tr>
                             <td>Email Address</td>
-                            <td><?php echo $formHelper->text('theme_email_address', $pkgConfig->get('theme_email_address'), array('class' => 'input-block-level')); ?></td>
+                            <td><?php echo $formHelper->text('email_address', $pkgConfig->get('theme.email_address'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         <tr>
-                            <td>Phone Number</td>
-                            <td><?php echo $formHelper->text('theme_phone_number', $pkgConfig->get('theme_phone_number'), array('class' => 'input-block-level')); ?></td>
+                            <td>Phone Number - Cell</td>
+                            <td><?php echo $formHelper->text('phone_number_cell', $pkgConfig->get('theme.phone_number_cell'), array('class' => 'input-block-level')); ?></td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number - Office</td>
+                            <td><?php echo $formHelper->text('phone_number_office', $pkgConfig->get('theme.phone_number_office'), array('class' => 'input-block-level')); ?></td>
+                        </tr>
+                        <tr>
+                            <td>Fax</td>
+                            <td><?php echo $formHelper->text('fax', $pkgConfig->get('theme.fax'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         </tbody>
                     </table>
@@ -61,16 +69,20 @@
 
             <div class="row">
                 <div class="span-pane-half">
-                    <h3>Footer Items</h3>
+                    <h3>Address</h3>
                     <table class="table">
                         <tbody>
                         <tr>
-                            <td>Twitter Feed Handle</td>
-                            <td><?php echo $formHelper->text('theme_twitter_feed_handle', $pkgConfig->get('theme_twitter_feed_handle'), array('class' => 'input-block-level', 'placeholder' => 'Leave off @ symbol')); ?></td>
+                            <td>Address - Physical</td>
+                            <td><?php echo $formHelper->text('address_physical', $pkgConfig->get('theme.address_physical'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         <tr>
-                            <td>Twitter Feed Widget ID</td>
-                            <td><?php echo $formHelper->text('theme_twitter_widget_id', $pkgConfig->get('theme_twitter_widget_id'), array('class' => 'input-block-level')); ?></td>
+                            <td>Address - Mailing</td>
+                            <td><?php echo $formHelper->text('address_po', $pkgConfig->get('theme.address_po'), array('class' => 'input-block-level')); ?></td>
+                        </tr>
+                        <tr>
+                            <td>Address - State, Zip</td>
+                            <td><?php echo $formHelper->text('address_state', $pkgConfig->get('theme.address_state'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         </tbody>
                     </table>

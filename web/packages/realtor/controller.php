@@ -18,6 +18,7 @@
     use Group; /** @see \Concrete\Core\User\Group\Group */
     use GroupSet; /** @see \Concrete\Core\User\Group\GroupSet */
     use SinglePage; /** @see \Concrete\Core\Page\Single */
+    use Config; /** @see \Concrete\Core\Support\Facade\COnfig */
     use Concrete\Core\Page\Type\PublishTarget\Type\Type as PublishTargetType;
 
     class Controller extends Package {
@@ -36,10 +37,11 @@
         const SPARK_API_KEY		= 'tet_2315_key_1';
         const SPARK_API_SECRET	= 'gqG9DqbiWbLBP0xzk9lvG';
 
+        private static $configObj;
 
         protected $pkgHandle 			= self::PACKAGE_HANDLE;
         protected $appVersionRequired 	= '5.7';
-        protected $pkgVersion 			= '0.59';
+        protected $pkgVersion 			= '0.60';
 
 
         /**
@@ -57,6 +59,15 @@
             return t('Realtor Theme');
         }
 
+        /**
+         * Get a Config instance with the package object preset. This takes care of
+         * memoizing the config object so the same Config instance can be used multiple
+         * times throughout the same request.
+         * @return Config
+         */
+        public static function getPackageConfigObj(){
+            return Package::getByHandle(self::PACKAGE_HANDLE)->getConfig();
+        }
 
         /**
          * Run hooks high up in the load chain.
@@ -340,8 +351,8 @@
             // Property Search Results
             SinglePage::add('/properties/', $this->packageObject());
 
-//            SinglePage::add('/dashboard/theme_settings', $this->packageObject());
-//            SinglePage::add('/dashboard/theme_settings/settings', $this->packageObject());
+            SinglePage::add('/dashboard/theme_settings', $this->packageObject());
+            SinglePage::add('/dashboard/theme_settings/settings', $this->packageObject());
 
             return $this;
         }
