@@ -1186,7 +1186,8 @@ html.cms-edit-mode div.row > div {
         padding: 0 30px;
         margin: 0;
         width: 50%;
-        float: left; }
+        display: inline-block;
+        vertical-align: top; }
         .pg-landing #c-level-1 section.subnav div.pagelist ul li a {
           width: 100%;
           display: block;
