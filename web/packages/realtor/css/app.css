@@ -397,13 +397,19 @@ section.footer {
   overflow: hidden;
   text-align: center;
   border-top: 1px solid #e4e3e3; }
-  section.footer ul {
-    margin: 0;
-    padding: 0 0 35px 0; }
-    section.footer ul li a {
-      color: #9b8c86; }
-      section.footer ul li a:hover {
-        color: #910910; }
+  section.footer div.contact {
+    text-align: left;
+    padding-left: 10px; }
+    section.footer div.contact div.address {
+      padding-bottom: 20px;
+      text-align: left; }
+    section.footer div.contact ul {
+      margin: 0;
+      padding: 0 0 35px 0; }
+      section.footer div.contact ul li a {
+        color: #9b8c86; }
+        section.footer div.contact ul li a:hover {
+          color: #910910; }
   section.footer .small-print {
     padding-bottom: 15px; }
   section.footer .row.table {
@@ -420,7 +426,7 @@ section.footer {
   @media screen and (max-width: 768px) {
     section.footer .row.table {
       display: block;
-      padding: 0 5px; }
+      padding: 0 5px 0 0; }
       section.footer .row.table .row.logos {
         padding-top: 5px;
         margin-top: 2px;

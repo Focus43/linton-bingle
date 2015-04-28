@@ -4,17 +4,19 @@
             <div class="col-xs-12 col-sm-3"  style="display: table-cell;vertical-align: bottom;">
                 <div class="contact">
                     <img src="<?php echo REALTOR_IMAGE_PATH; ?>logo_beige.png">
-                    <?php
-                    $a = new GlobalArea('Footer - Address');
-                    $a->display($c);
-                    ?>
+                    <div class="address">
+                        <?php echo $pkgConfig->get('theme.address_physical'); ?><br>
+                        <?php echo $pkgConfig->get('theme.address_po'); ?><br>
+                        <?php echo $pkgConfig->get('theme.address_state'); ?><br>
+                        <?php echo $pkgConfig->get('theme.phone_number_office'); ?>
+                    </div>
                     <ul class="social">
-                        <li><a href=""><span class="icon-facebook"></span></a></li>
-                        <li><a href=""><span class="icon-twitter"></span></a></li>
-                        <li><a href=""><span class="icon-pinterest"></span></a></li>
-                        <li><a href=""><span class="icon-google-plus"></span></a></li>
-                        <li><a href=""><span class="icon-linkedin"></a></li>
-                        <li><a href=""><span class="icon-envelope"></span></a></li>
+                        <?php if ($pkgConfig->get('theme.social_link_facebook')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_facebook'); ?>"><span class="icon-facebook"></span></a></li><?php endif; ?>
+                        <?php if ($pkgConfig->get('theme.social_link_twitter')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_twitter'); ?>"><span class="icon-twitter"></span></a></li><?php endif; ?>
+                        <?php if ($pkgConfig->get('theme.social_link_pinterest')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_pinterest'); ?>"><span class="icon-pinterest"></span></a></li><?php endif; ?>
+                        <?php if ($pkgConfig->get('theme.social_link_googleplus')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_googleplus'); ?>"><span class="icon-google-plus"></span></a></li><?php endif; ?>
+                        <?php if ($pkgConfig->get('theme.social_link_linkedin')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_linkedin'); ?>"><span class="icon-linkedin"></a></li><?php endif; ?>
+                        <?php if ($pkgConfig->get('theme.email_address')): ?><li><a href="mailto:<?php echo $pkgConfig->get('theme.email_address'); ?>"><span class="icon-envelope"></span></a></li><?php endif; ?>
                     </ul>
                 </div>
             </div>

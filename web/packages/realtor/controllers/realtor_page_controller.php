@@ -17,6 +17,7 @@
             }
             $this->set('pagePermissionObject', $this->pagePermissionObject());
             $this->set('isEditMode', $this->getPageObject()->isEditMode());
+            $this->set('pkgConfig', PackageController::getPackageConfigObj());
         }
 
         /**
