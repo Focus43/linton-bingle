@@ -27,9 +27,10 @@
                     <a class="edit-arrows arrows icon-keyboard-arrow-left"></a>
                     <a class="edit-arrows arrows icon-keyboard-arrow-right"></a>
                     <?php } ?>
-                    <div class="markers">
+
+                    <div class="circles">
                         <?php for($i = 0; $i < count($mastheadImages); $i++): ?>
-                            <a class="<?php echo $i === 0 ? 'active' : ''; ?>"><i class="icn-circle"></i></a>
+                            <a class="<?php echo $i === 0 ? 'active' : ''; ?>"></a>
                         <?php endfor; ?>
                     </div>
                 <?php endif; ?>

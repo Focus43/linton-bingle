@@ -361,6 +361,13 @@ var Landing = function () {
 var Masthead = function () {
     var self = this;
     this.startCarousel = function () {
+
+        self.circles = $(".circles a")
+        self.circles.on('click', function() {
+            var index = Array.prototype.slice.call($(".circles a")).indexOf(this);
+            showNode(index);
+        });
+
         self.carousel = $("section.hero div.masthead");
         self.nodes = $("section.hero div.masthead div.node");
         self.indexActive = 0;
@@ -394,7 +401,7 @@ var Masthead = function () {
         TweenLite.to(nextNode, transitionSpeed, {autoAlpha:1});
 
         self.indexActive = indexNext;
-    //        $markers.removeClass('active').eq(indexActive).addClass('active');
+        self.circles.removeClass('active').eq(self.indexActive).addClass('active');
     }
 
     var next = function () {

@@ -662,6 +662,27 @@ section.footer {
     .masthead .node .node-content > div > p {
       display: none;
       margin: 0; } }
+  .masthead .circles {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+    .masthead .circles a {
+      display: inline-block;
+      margin: 0 2px;
+      width: 16px;
+      height: 16px;
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+      border-radius: 8px;
+      border: 3px solid #ffffff;
+      background-color: transparent; }
+      .masthead .circles a:hover, .masthead .circles a.active {
+        color: #ffffff;
+        text-decoration: none;
+        background-color: #ffffff; }
 
 div#c-level-1 section.featured {
   background-color: #e2dddb; }
