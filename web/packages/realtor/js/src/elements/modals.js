@@ -20,7 +20,7 @@ var Modals = function () {
         modalBox.removeClass("hide");
     }
 
-    var initModalTriggers = function () {
+    this.initModalTriggers = function () {
         $('.modalize').on('click', function (event){
             event.preventDefault();
             var _this = $(this);
@@ -94,6 +94,6 @@ var Modals = function () {
     }
 
     this.onloadFunc = function () {
-        initModalTriggers();
+        this.initModalTriggers();
     }
 }

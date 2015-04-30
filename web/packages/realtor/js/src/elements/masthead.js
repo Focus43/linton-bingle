@@ -1,19 +1,19 @@
 var Masthead = function () {
-
-    var startCarousel = function () {
+    var self = this;
+    this.startCarousel = function () {
         self.carousel = $("section.hero div.masthead");
         self.nodes = $("section.hero div.masthead div.node");
         self.indexActive = 0;
 
-        var loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
+        self.loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
 
-        if ( loopTiming == 0 ) return;
+        if ( self.loopTiming == 0 ) return;
 
         (function loop( delay ){
             setTimeout(function(){
                 next();
                 loop(delay);
-            }, (loopTiming));
+            }, (self.loopTiming));
         })( 3000 );
     }
 
@@ -45,7 +45,7 @@ var Masthead = function () {
         showNode((self.indexActive === 0) ? self.nodes.length : self.indexActive - 1);
     }
 
-    var initArrows = function () {
+    this.initArrows = function () {
         $("section.hero div.masthead a.edit-arrows").on('click', function () {
             if ( $(this).hasClass('icon-arrow-left') ) {
                 previous();
@@ -58,8 +58,8 @@ var Masthead = function () {
 
     this.onloadFunc = function () {
         if ( $("section.hero div.masthead") && $("section.hero div.masthead").length > 0 ) {
-            startCarousel();
-            initArrows();
+            this.startCarousel();
+            this.initArrows();
         }
     }
 }

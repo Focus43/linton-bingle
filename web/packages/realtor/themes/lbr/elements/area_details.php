@@ -1,7 +1,7 @@
 <?php //var_dump($mastheadImages);exit; ?>
 <div class="area-details">
     <section class="hero">
-        <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="12"';} ?>>
+        <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="10"';} ?>>
             <?php if(!empty($mastheadImages)): foreach($mastheadImages AS $index => $fileObj): if ( $fileObj && $fileObj->getRelativePath() ): ?>
                 <div class="node" style="background-image:url('<?php echo $fileObj->getRelativePath(); ?>');">
                     <div class="inner">

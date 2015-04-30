@@ -1,11 +1,11 @@
 var Regions = function () {
-
-    var startCarousel = function () {
+    var self = this;
+    this.startCarousel = function () {
         self.carousel = $("section.sub-areas div.masthead");
         self.nodes = $("section.sub-areas div.masthead div.node");
         self.indexActive = 0;
 
-        var loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
+        loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
 
         if ( loopTiming == 0 ) return;
 
@@ -45,7 +45,7 @@ var Regions = function () {
         showNode((self.indexActive === 0) ? self.nodes.length : self.indexActive - 1);
     }
 
-    var initLlinks = function () {
+    this.initLlinks = function () {
         $("section.current-level-nav li").on('click', function () {
             showNode($(this).index())
         });
@@ -54,8 +54,8 @@ var Regions = function () {
 
     this.onloadFunc = function () {
         if ( $("section.sub-areas div.masthead") && $("section.sub-areas div.masthead").length > 0 ) {
-            startCarousel();
-            initLlinks();
+            this.startCarousel();
+            this.initLlinks();
         }
     }
 }

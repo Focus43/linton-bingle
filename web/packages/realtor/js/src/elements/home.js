@@ -1,6 +1,6 @@
 var Home = function () {
 
-    var initBlockLinks = function () {
+    this.initBlockLinks = function () {
 
         $(".nav-blocks div.row > div").on('click', function(){
             console.log("click");
@@ -11,6 +11,6 @@ var Home = function () {
 
 
     this.onloadFunc = function () {
-        initBlockLinks();
+        this.initBlockLinks();
     }
 }

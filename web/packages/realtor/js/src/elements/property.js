@@ -9,7 +9,7 @@ var Property = function () {
         circles;
     self.indexActive = 0;
 
-    var initCarousel = function () {
+    this.initCarousel = function () {
         circles = $(".circles a")
         circles.on('click', function() {
             var index = Array.prototype.slice.call($(".circles a")).indexOf(this);
@@ -59,7 +59,7 @@ var Property = function () {
         showNode((self.indexActive === 0) ? nodeCount : self.indexActive - 1);
     }
 
-    var initToggleGalleryThumbs = function () {
+    this.initToggleGalleryThumbs = function () {
         galleryThumbs = $(".pg-properties section#gallery div.markers.thumbs");
         showHideBtn = $(".pg-properties section#gallery div#showhide")
 
@@ -81,7 +81,7 @@ var Property = function () {
         })
     }
 
-    var initSlideThumbs = function () {
+    this.initSlideThumbs = function () {
         arrowLeft = $(".pg-properties section#gallery a.arrow.left");
         arrowRight = $(".pg-properties section#gallery a.arrow.right");
 
@@ -95,7 +95,7 @@ var Property = function () {
         })
     }
 
-    var initSortingDropdown = function () {
+    this.initSortingDropdown = function () {
 
         var buttons = $("section.pagination div.sorter");
         buttons.on("click", function () {
@@ -119,7 +119,7 @@ var Property = function () {
         })
     }
 
-    var showRelatedProperties = function () {
+    this.showRelatedProperties = function () {
         // /search/related/{city}/{beds}/{baths}/{price}
         var firstTemplate = $('#relatedList').html();
         Mustache.parse(firstTemplate);
@@ -141,19 +141,19 @@ var Property = function () {
 
     this.onloadFunc = function () {
         if ( $(".pg-properties section#gallery div#showhide").length != 0 ) {
-            initToggleGalleryThumbs();
-            initSlideThumbs();
-            initCarousel();
+            this.initToggleGalleryThumbs();
+            this.initSlideThumbs();
+            this.initCarousel();
         }
 
         if ( $("section.pagination div.sortby").length != 0 ) {
-            initSortingDropdown();
+            this.initSortingDropdown();
         }
         if ( $("section.related div#relatedListings") && $("section.related div#relatedListings").length != 0 ) {
-            showRelatedProperties();
+            this.showRelatedProperties();
         }
         if ( $("body.pg-properties section.subnav") && $("body.pg-properties section.subnav").length > 0 ) {
-            initSubPageList();
+            this.initSubPageList();
         }
     }
 

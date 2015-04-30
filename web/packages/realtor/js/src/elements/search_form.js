@@ -37,7 +37,7 @@ var Search = function () {
         }
      }
 
-    var searchOnChange = function () {
+    this.searchOnChange = function () {
         // when a filter gets modified, do ajax search
         $formFilters.on('change' , function () {
             var _data = $('form#propertySearch').serializeArray();
@@ -49,7 +49,7 @@ var Search = function () {
         });
     }
 
-    var autoInit = function () {
-        searchOnChange();
-    }();
+    this.onloadFunc = function () {
+        if ($('form#propertySearch').length > 0) this.searchOnChange();
+    }
 }

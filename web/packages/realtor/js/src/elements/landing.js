@@ -2,7 +2,7 @@ var Landing = function () {
     self = this;
     self._postsPerPage = 8;
 
-    var populateSubPageList = function () {
+    this.populateSubPageList = function () {
         var pageListTempl = $('#pageList').html();
         var paginationTempl = $('#pagination').html();
         Mustache.parse(pageListTempl);
@@ -65,7 +65,7 @@ var Landing = function () {
 
     this.onloadFunc = function () {
         if ( $("body.pg-landing section.subnav") && $("body.pg-landing section.subnav").length > 0 ) {
-            populateSubPageList();
+            this.populateSubPageList();
         }
     }
 }

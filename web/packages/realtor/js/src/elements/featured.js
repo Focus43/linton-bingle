@@ -8,7 +8,7 @@ var Featured = function () {
     self.photoRtActive = {}
     self.internalRotTimeouts = {}
 
-    var populateFeaturedProperties = function () {
+    this.populateFeaturedProperties = function () {
 
         var firstTemplate = $('#featuredInitial').html();
         Mustache.parse(firstTemplate);
@@ -45,7 +45,7 @@ var Featured = function () {
         },'json');
     }
 
-    var initResizeEvent = function () {
+    this.initResizeEvent = function () {
         (function() {
             var throttle = function(type, name, obj) {
                 var obj = obj || window;
@@ -178,8 +178,8 @@ var Featured = function () {
 
     this.onloadFunc = function () {
         if ( $("#featuredCarousel") && $("#featuredCarousel").length > 0 ) {
-            populateFeaturedProperties();
-            initResizeEvent();
+            this.populateFeaturedProperties();
+            this.initResizeEvent();
         }
     }
 

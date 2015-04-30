@@ -1,5 +1,5 @@
 var Header = function () {
-    var initShrink = function () {
+    this.initShrink = function () {
         // shrink header on scroll (only on home page)
         if ( $('body').hasClass('pg-home') ) {
             var _header = $('header')
@@ -17,7 +17,7 @@ var Header = function () {
         }
     }
 
-    var initMobileNav = function () {
+    this.initMobileNav = function () {
 
         var slideable = $("[slideable]")
         var mobileNav = $("div#mobileNav");
@@ -40,7 +40,7 @@ var Header = function () {
         })
     }
 
-    var initSubNavAction = function () {
+    this.initSubNavAction = function () {
         var triggers = $('nav ul.majority > li.has-subs')
         triggers.on('click', function ( e ) {
             e.preventDefault()
@@ -74,9 +74,9 @@ var Header = function () {
     }
 
     this.onloadFunc = function () {
-        initSubNavAction();
-        initMobileNav();
-        initShrink();
+        this.initSubNavAction();
+        this.initMobileNav();
+        this.initShrink();
     }
 
     var autoInit = function () {

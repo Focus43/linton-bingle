@@ -8,7 +8,7 @@ var Featured = function () {
     self.photoRtActive = {}
     self.internalRotTimeouts = {}
 
-    var populateFeaturedProperties = function () {
+    this.populateFeaturedProperties = function () {
 
         var firstTemplate = $('#featuredInitial').html();
         Mustache.parse(firstTemplate);
@@ -45,7 +45,7 @@ var Featured = function () {
         },'json');
     }
 
-    var initResizeEvent = function () {
+    this.initResizeEvent = function () {
         (function() {
             var throttle = function(type, name, obj) {
                 var obj = obj || window;
@@ -178,14 +178,14 @@ var Featured = function () {
 
     this.onloadFunc = function () {
         if ( $("#featuredCarousel") && $("#featuredCarousel").length > 0 ) {
-            populateFeaturedProperties();
-            initResizeEvent();
+            this.populateFeaturedProperties();
+            this.initResizeEvent();
         }
     }
 
 }
 var Header = function () {
-    var initShrink = function () {
+    this.initShrink = function () {
         // shrink header on scroll (only on home page)
         if ( $('body').hasClass('pg-home') ) {
             var _header = $('header')
@@ -203,7 +203,7 @@ var Header = function () {
         }
     }
 
-    var initMobileNav = function () {
+    this.initMobileNav = function () {
 
         var slideable = $("[slideable]")
         var mobileNav = $("div#mobileNav");
@@ -226,7 +226,7 @@ var Header = function () {
         })
     }
 
-    var initSubNavAction = function () {
+    this.initSubNavAction = function () {
         var triggers = $('nav ul.majority > li.has-subs')
         triggers.on('click', function ( e ) {
             e.preventDefault()
@@ -260,9 +260,9 @@ var Header = function () {
     }
 
     this.onloadFunc = function () {
-        initSubNavAction();
-        initMobileNav();
-        initShrink();
+        this.initSubNavAction();
+        this.initMobileNav();
+        this.initShrink();
     }
 
     var autoInit = function () {
@@ -272,7 +272,7 @@ var Header = function () {
 
 var Home = function () {
 
-    var initBlockLinks = function () {
+    this.initBlockLinks = function () {
 
         $(".nav-blocks div.row > div").on('click', function(){
             console.log("click");
@@ -283,7 +283,7 @@ var Home = function () {
 
 
     this.onloadFunc = function () {
-        initBlockLinks();
+        this.initBlockLinks();
     }
 }
 
@@ -291,7 +291,7 @@ var Landing = function () {
     self = this;
     self._postsPerPage = 8;
 
-    var populateSubPageList = function () {
+    this.populateSubPageList = function () {
         var pageListTempl = $('#pageList').html();
         var paginationTempl = $('#pagination').html();
         Mustache.parse(pageListTempl);
@@ -354,26 +354,26 @@ var Landing = function () {
 
     this.onloadFunc = function () {
         if ( $("body.pg-landing section.subnav") && $("body.pg-landing section.subnav").length > 0 ) {
-            populateSubPageList();
+            this.populateSubPageList();
         }
     }
 }
 var Masthead = function () {
-
-    var startCarousel = function () {
+    var self = this;
+    this.startCarousel = function () {
         self.carousel = $("section.hero div.masthead");
         self.nodes = $("section.hero div.masthead div.node");
         self.indexActive = 0;
 
-        var loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
+        self.loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
 
-        if ( loopTiming == 0 ) return;
+        if ( self.loopTiming == 0 ) return;
 
         (function loop( delay ){
             setTimeout(function(){
                 next();
                 loop(delay);
-            }, (loopTiming));
+            }, (self.loopTiming));
         })( 3000 );
     }
 
@@ -405,7 +405,7 @@ var Masthead = function () {
         showNode((self.indexActive === 0) ? self.nodes.length : self.indexActive - 1);
     }
 
-    var initArrows = function () {
+    this.initArrows = function () {
         $("section.hero div.masthead a.edit-arrows").on('click', function () {
             if ( $(this).hasClass('icon-arrow-left') ) {
                 previous();
@@ -418,8 +418,8 @@ var Masthead = function () {
 
     this.onloadFunc = function () {
         if ( $("section.hero div.masthead") && $("section.hero div.masthead").length > 0 ) {
-            startCarousel();
-            initArrows();
+            this.startCarousel();
+            this.initArrows();
         }
     }
 }
@@ -445,7 +445,7 @@ var Modals = function () {
         modalBox.removeClass("hide");
     }
 
-    var initModalTriggers = function () {
+    this.initModalTriggers = function () {
         $('.modalize').on('click', function (event){
             event.preventDefault();
             var _this = $(this);
@@ -519,7 +519,7 @@ var Modals = function () {
     }
 
     this.onloadFunc = function () {
-        initModalTriggers();
+        this.initModalTriggers();
     }
 }
 
@@ -534,7 +534,7 @@ var Property = function () {
         circles;
     self.indexActive = 0;
 
-    var initCarousel = function () {
+    this.initCarousel = function () {
         circles = $(".circles a")
         circles.on('click', function() {
             var index = Array.prototype.slice.call($(".circles a")).indexOf(this);
@@ -584,7 +584,7 @@ var Property = function () {
         showNode((self.indexActive === 0) ? nodeCount : self.indexActive - 1);
     }
 
-    var initToggleGalleryThumbs = function () {
+    this.initToggleGalleryThumbs = function () {
         galleryThumbs = $(".pg-properties section#gallery div.markers.thumbs");
         showHideBtn = $(".pg-properties section#gallery div#showhide")
 
@@ -606,7 +606,7 @@ var Property = function () {
         })
     }
 
-    var initSlideThumbs = function () {
+    this.initSlideThumbs = function () {
         arrowLeft = $(".pg-properties section#gallery a.arrow.left");
         arrowRight = $(".pg-properties section#gallery a.arrow.right");
 
@@ -620,7 +620,7 @@ var Property = function () {
         })
     }
 
-    var initSortingDropdown = function () {
+    this.initSortingDropdown = function () {
 
         var buttons = $("section.pagination div.sorter");
         buttons.on("click", function () {
@@ -644,7 +644,7 @@ var Property = function () {
         })
     }
 
-    var showRelatedProperties = function () {
+    this.showRelatedProperties = function () {
         // /search/related/{city}/{beds}/{baths}/{price}
         var firstTemplate = $('#relatedList').html();
         Mustache.parse(firstTemplate);
@@ -666,19 +666,19 @@ var Property = function () {
 
     this.onloadFunc = function () {
         if ( $(".pg-properties section#gallery div#showhide").length != 0 ) {
-            initToggleGalleryThumbs();
-            initSlideThumbs();
-            initCarousel();
+            this.initToggleGalleryThumbs();
+            this.initSlideThumbs();
+            this.initCarousel();
         }
 
         if ( $("section.pagination div.sortby").length != 0 ) {
-            initSortingDropdown();
+            this.initSortingDropdown();
         }
         if ( $("section.related div#relatedListings") && $("section.related div#relatedListings").length != 0 ) {
-            showRelatedProperties();
+            this.showRelatedProperties();
         }
         if ( $("body.pg-properties section.subnav") && $("body.pg-properties section.subnav").length > 0 ) {
-            initSubPageList();
+            this.initSubPageList();
         }
     }
 
@@ -688,13 +688,13 @@ var Property = function () {
 }
 
 var Regions = function () {
-
-    var startCarousel = function () {
+    var self = this;
+    this.startCarousel = function () {
         self.carousel = $("section.sub-areas div.masthead");
         self.nodes = $("section.sub-areas div.masthead div.node");
         self.indexActive = 0;
 
-        var loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
+        loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
 
         if ( loopTiming == 0 ) return;
 
@@ -734,7 +734,7 @@ var Regions = function () {
         showNode((self.indexActive === 0) ? self.nodes.length : self.indexActive - 1);
     }
 
-    var initLlinks = function () {
+    this.initLlinks = function () {
         $("section.current-level-nav li").on('click', function () {
             showNode($(this).index())
         });
@@ -743,8 +743,8 @@ var Regions = function () {
 
     this.onloadFunc = function () {
         if ( $("section.sub-areas div.masthead") && $("section.sub-areas div.masthead").length > 0 ) {
-            startCarousel();
-            initLlinks();
+            this.startCarousel();
+            this.initLlinks();
         }
     }
 }
@@ -787,7 +787,7 @@ var Search = function () {
         }
      }
 
-    var searchOnChange = function () {
+    this.searchOnChange = function () {
         // when a filter gets modified, do ajax search
         $formFilters.on('change' , function () {
             var _data = $('form#propertySearch').serializeArray();
@@ -799,9 +799,9 @@ var Search = function () {
         });
     }
 
-    var autoInit = function () {
-        searchOnChange();
-    }();
+    this.onloadFunc = function () {
+        if ($('form#propertySearch').length > 0) this.searchOnChange();
+    }
 }
 
 ;(function (ns, undefined) {
