@@ -109,7 +109,7 @@
         <script id="relatedList" type="x-tmpl-mustache">
                 {{#properties}}
                 <div class="property clearfix">
-                    <div class="main-image" style="background-image:url('{{mainImage}}')"></div>
+                    <a href="/properties/id/{{id}}"><div class="main-image" style="background-image:url('{{mainImage}}')"></div></a>
                     <h4>{{name}}</h4>
                     <p class="hidden-sm">{{shortDescription}}</p>
                     <a class="btn btn-white" href="/properties/id/{{id}}">VIEW DETAILS</a>
