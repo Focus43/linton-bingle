@@ -11,6 +11,7 @@ video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;wid
 #c-level-1 { height:100%;
     input, textarea, button, a {&:focus, &:active {outline:0 !important;@include box-shadow(none !important);}}
     a, a:hover, a:active {cursor:pointer;/*text-decoration:none;*/}
+    a:focus { text-decoration: none; }
     h3,h4,h5 {
         &:first-of-type {margin-top:0;}
     }
@@ -63,6 +64,12 @@ video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;wid
         }
         footer [modalize]{display:inline;}
     }
+    .visible-sm { display: none !important; }
+    .hidden-sm { display: block !important; }
+}
+@media screen and (max-width:$screen-sm){
+    .visible-sm { display: block !important; }
+    .hidden-sm { display: none !important; }
 }
 
 // spinning (fonts)

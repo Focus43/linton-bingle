@@ -91,6 +91,17 @@ ul.sidebar { display: none !important; }
                 }
                 &.nav-selected a { color: $theme-color-beige; }
             }
+            li.contact { border-bottom: 0;height: auto;line-height: inherit;
+                img { padding-top: 1rem; }
+                div.address { color: $theme-color-white; }
+                ul.social { display: block;position: relative;padding: 10px 0;float: none;
+                    li { float: left;display: inline-block;width: 30px;text-align: left;border-bottom: 0;padding: 0 45px 0 0 !important;
+                        a { color: $theme-color-white;font-size: 1.5em;
+                            &:hover, &:active { color: $theme-color-beige;text-decoration: none; }
+                        }
+                    }
+                }
+            }
         }
     }
 }

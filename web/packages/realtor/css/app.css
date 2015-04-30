@@ -35,6 +35,8 @@ video.fullscreen {
   #c-level-1 a, #c-level-1 a:hover, #c-level-1 a:active {
     cursor: pointer;
     /*text-decoration:none;*/ }
+  #c-level-1 a:focus {
+    text-decoration: none; }
   #c-level-1 h3:first-of-type, #c-level-1 h4:first-of-type, #c-level-1 h5:first-of-type {
     margin-top: 0; }
   #c-level-1 .tabular {
@@ -151,7 +153,19 @@ video.fullscreen {
   #c-level-1 form .col-sm-6:nth-child(2) {
     padding-left: 7.5px; }
   #c-level-1 footer [modalize] {
-    display: inline; } }
+    display: inline; }
+
+  .visible-sm {
+    display: none !important; }
+
+  .hidden-sm {
+    display: block !important; } }
+@media screen and (max-width: 768px) {
+  .visible-sm {
+    display: block !important; }
+
+  .hidden-sm {
+    display: none !important; } }
 .spinner {
   -webkit-animation: spin 2500ms infinite linear;
   animation: spin 2500ms infinite linear; }
@@ -469,7 +483,33 @@ ul.sidebar {
             color: #e2dddb;
             text-decoration: none; }
         div#mobileNav ul.sidebar li.nav-selected a {
-          color: #e2dddb; } }
+          color: #e2dddb; }
+      div#mobileNav ul.sidebar li.contact {
+        border-bottom: 0;
+        height: auto;
+        line-height: inherit; }
+        div#mobileNav ul.sidebar li.contact img {
+          padding-top: 1rem; }
+        div#mobileNav ul.sidebar li.contact div.address {
+          color: #ffffff; }
+        div#mobileNav ul.sidebar li.contact ul.social {
+          display: block;
+          position: relative;
+          padding: 10px 0;
+          float: none; }
+          div#mobileNav ul.sidebar li.contact ul.social li {
+            float: left;
+            display: inline-block;
+            width: 30px;
+            text-align: left;
+            border-bottom: 0;
+            padding: 0 45px 0 0 !important; }
+            div#mobileNav ul.sidebar li.contact ul.social li a {
+              color: #ffffff;
+              font-size: 1.5em; }
+              div#mobileNav ul.sidebar li.contact ul.social li a:hover, div#mobileNav ul.sidebar li.contact ul.social li a:active {
+                color: #e2dddb;
+                text-decoration: none; } }
 @media screen and (max-width: 480px) {
   body #c-level-1 header {
     padding: 0 5px !important; }

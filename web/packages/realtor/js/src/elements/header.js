@@ -46,7 +46,7 @@ var Header = function () {
             e.preventDefault()
             var t = $(this)
             var idNum = t.attr("data-sub")
-            var subNav = $("li#sub-" + idNum)
+            var subNav = $("ul.majority li#sub-" + idNum)
             var allOpenSubs = $("ul.majority li.sub.open")
             if ( subNav.hasClass("open") ) {
                 TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"})
