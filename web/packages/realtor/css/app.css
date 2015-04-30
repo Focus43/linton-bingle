@@ -1145,7 +1145,8 @@ section.search {
     -moz-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    margin-bottom: -1px; }
+    margin-bottom: -1px;
+    cursor: pointer; }
     .pg-home #c-level-1 main section.nav-blocks div.row > div div.shade {
       display: block;
       width: 100%;
