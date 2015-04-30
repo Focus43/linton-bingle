@@ -125,7 +125,6 @@ foreach ($navItems as $ni) {
         } else {
             $imageSrc = REALTOR_IMAGE_PATH . 'nav_placeholder.jpg';
         }
-//        echo '<img src="' . REALTOR_IMAGE_PATH . 'nav_placeholder.jpg">';
         echo '<div class="pg-icon" style="background-image: url(' . $imageSrc . ')"></div>';
     }
 

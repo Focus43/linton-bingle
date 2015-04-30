@@ -283,6 +283,58 @@
 		{
 			"icon": {
 				"paths": [
+					"M747.52 307.251l-471.040-0.051 235.52 409.6z"
+				],
+				"tags": [
+					"arrow-down",
+					"triangle",
+					"down",
+					"bottom"
+				],
+				"grid": 20,
+				"attrs": []
+			},
+			"attrs": [],
+			"properties": {
+				"id": 202,
+				"order": 13,
+				"prevSize": 20,
+				"code": 58890,
+				"name": "arrow-down"
+			},
+			"setIdx": 9,
+			"setId": 0,
+			"iconIdx": 202
+		},
+		{
+			"icon": {
+				"paths": [
+					"M276.48 716.8h471.040l-235.571-409.6z"
+				],
+				"tags": [
+					"arrow-up",
+					"triangle",
+					"up",
+					"top"
+				],
+				"grid": 20,
+				"attrs": []
+			},
+			"attrs": [],
+			"properties": {
+				"id": 203,
+				"order": 14,
+				"prevSize": 20,
+				"code": 58891,
+				"name": "arrow-up"
+			},
+			"setIdx": 9,
+			"setId": 0,
+			"iconIdx": 203
+		},
+		{
+			"icon": {
+				"paths": [
 					"M768 211.405h-146.227c-17.306 0-36.608 22.733-36.608 53.197v105.574h182.835v150.528h-182.835v452.096h-172.646v-452.045h-156.518v-150.579h156.518v-88.576c0-127.027 88.166-230.4 209.203-230.4h146.278v160.205z"
 				],
 				"tags": [
@@ -337,7 +389,9 @@
 		"fontPref": {
 			"prefix": "icon-",
 			"metadata": {
-				"fontFamily": "icomoon"
+				"fontFamily": "icomoon",
+				"majorVersion": 1,
+				"minorVersion": 0
 			},
 			"showGlyphs": true,
 			"metrics": {

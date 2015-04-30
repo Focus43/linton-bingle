@@ -226,6 +226,13 @@ var Header = function () {
         })
     }
 
+    this.initSubnavIndicators = function () {
+        var triggers = $('nav ul.majority > li.has-subs > a')
+        triggers.each(function ( idx, elem ) {
+            $(elem).append("<i class='icon-arrow-down'></i>")
+        })
+    }
+
     this.initSubNavAction = function () {
         var triggers = $('nav ul.majority > li.has-subs')
         triggers.on('click', function ( e ) {
@@ -261,6 +268,7 @@ var Header = function () {
 
     this.onloadFunc = function () {
         this.initSubNavAction();
+        this.initSubnavIndicators();
         this.initMobileNav();
         this.initShrink();
     }

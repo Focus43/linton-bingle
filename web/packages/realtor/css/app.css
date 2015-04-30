@@ -294,6 +294,8 @@ body #c-level-1 header {
         body #c-level-1 header nav ul li a:hover, body #c-level-1 header nav ul li a:active {
           color: #b5121b !important;
           text-decoration: none; }
+        body #c-level-1 header nav ul li a i.icon-arrow-down {
+          line-height: 0.5; }
         body #c-level-1 header nav ul li.nav-selected a {
           color: #b5121b; }
       body #c-level-1 header nav ul li.sub {
@@ -968,8 +970,8 @@ section.search {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.eot?-zb4hca");
-  src: url("fonts/icomoon.eot?#iefix-zb4hca") format("embedded-opentype"), url("fonts/icomoon.woff?-zb4hca") format("woff"), url("fonts/icomoon.ttf?-zb4hca") format("truetype"), url("fonts/icomoon.svg?-zb4hca#icomoon") format("svg");
+  src: url("fonts/icomoon.eot?-d76wut");
+  src: url("fonts/icomoon.eot?#iefix-d76wut") format("embedded-opentype"), url("fonts/icomoon.woff?-d76wut") format("woff"), url("fonts/icomoon.ttf?-d76wut") format("truetype"), url("fonts/icomoon.svg?-d76wut#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], [class*=" icon-"] {
@@ -1010,6 +1012,12 @@ section.search {
 
 .icon-twitter:before {
   content: "\e601"; }
+
+.icon-arrow-down:before {
+  content: "\e60a"; }
+
+.icon-arrow-up:before {
+  content: "\e60b"; }
 
 .icon-facebook:before {
   content: "\e605"; }

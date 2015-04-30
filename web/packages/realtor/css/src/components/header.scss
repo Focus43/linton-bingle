@@ -8,6 +8,7 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
             li { display: block;float: left;margin:0 17px;list-style: none;font: 1em $theme-font-family-headers;font-weight: 700;text-transform: uppercase;
                 a {
                     &:hover, &:active { color: $theme-color-red !important;text-decoration: none; }
+                    i.icon-arrow-down { line-height: 0.5; }
                 }
                 &.nav-selected {
                     a { color:$theme-color-red; }
