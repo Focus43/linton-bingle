@@ -4,5 +4,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 <meta name="apple-mobile-web-app-capable" content="no" />
+<script>PKG_MODAL_PATH = "<?php echo REALTOR_MODAL_PATH; ?>"</script>
 <?php Loader::element('header_required'); // REQUIRED BY C5 // ?>
 </head>

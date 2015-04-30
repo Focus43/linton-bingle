@@ -53,7 +53,7 @@ img {
   height: auto; }
 
 .img-rounded {
-  border-radius: 6px; }
+  border-radius: 0; }
 
 .img-thumbnail {
   padding: 4px;
@@ -1412,7 +1412,7 @@ address {
   padding: 10px 16px;
   font-size: 23px;
   line-height: 1.33333;
-  border-radius: 6px; }
+  border-radius: 0; }
 
 .btn-sm {
   padding: 5px 10px;
@@ -1668,7 +1668,7 @@ select[multiple].input-sm {
   padding: 10px 16px;
   font-size: 23px;
   line-height: 1.33333;
-  border-radius: 6px; }
+  border-radius: 0; }
 
 select.input-lg {
   height: 53px;
@@ -1683,7 +1683,7 @@ select[multiple].input-lg {
   padding: 10px 16px;
   font-size: 23px;
   line-height: 1.33333;
-  border-radius: 6px; }
+  border-radius: 0; }
 .form-group-lg select.form-control {
   height: 53px;
   line-height: 53px; }

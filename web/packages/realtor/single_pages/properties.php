@@ -39,5 +39,3 @@
             The information on this sheet has been made available by the MLS and may not be the listing of the provider.
         </div>
 
-        <?php $this->inc('elements/footer.php'); ?>
-        <?php $this->inc('elements/header.php'); ?>

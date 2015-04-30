@@ -49,10 +49,26 @@ var Header = function () {
             var subNav = $("li#sub-" + idNum)
             var allOpenSubs = $("ul.majority li.sub.open")
             if ( subNav.hasClass("open") ) {
-                TweenLite.to(subNav, 0.5, {className:"-=open"})
+                TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"})
             } else {
-                TweenLite.to(allOpenSubs, 0.5, {className:"-=open"})
-                TweenLite.to(subNav, 0.5, {className:"+=open"})
+                var ulChildren = subNav.children("ul");
+                var liChildren = subNav.children("ul").children("li");
+                var right = 180 * (liChildren.length/2) * -1
+                ulChildren.css("right", right)
+                TweenLite.to(allOpenSubs, 0.2, {autoAlpha:0, className: "-=open", onComplete: function () {
+                    TweenLite.to(subNav, 0.2, {autoAlpha:1, className: "+=open"})
+                }})
+                // check if subnav in viewport
+                var pos = ulChildren[0].getBoundingClientRect()
+//                if ( ! pos.right <= (window.innerWidth || document.documentElement.clientWidth) ) {
+                if ( pos.right > window.innerWidth ) {
+                    var rightDiff = Math.round(pos.right - (window.innerWidth || document.documentElement.clientWidth)) + 5
+                    TweenLite.to(ulChildren, 0.2, {x: -rightDiff})
+                }
+
+                ulChildren.on('mouseleave', function (){
+                    TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"})
+                });
             }
         })
     }

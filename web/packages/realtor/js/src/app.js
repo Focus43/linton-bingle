@@ -15,6 +15,7 @@
     addModule('Property');
     addModule('Masthead');
     addModule('Landing');
+    addModule('Modals');
 
     ns.init = function () {
         /* global FastClick */

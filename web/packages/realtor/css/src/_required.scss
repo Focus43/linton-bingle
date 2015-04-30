@@ -55,11 +55,18 @@ $font-family-base:              $theme-font-family-copy;
 $font-size-base:                $theme-font-size;
 
 //$border-radius-base:            0;
-//$border-radius-large:           0;
+$border-radius-large:           0;
 //$border-radius-small:           0;
 
 $grid-gutter-width:             60px;
 $container-sm:                  100%;
+
+$modal-content-bg:              $theme-color-white;
+$modal-content-border-color:    rgba(0, 0, 0, 0.5);
+$modal-backdrop-bg:             rgba(0, 0, 0, 0.5);
+$zindex-modal-background:       500000;
+$modal-backdrop-opacity:        0.5;
+$modal-inner-padding:           20px;
 
 // Imports
 @import 'compass';

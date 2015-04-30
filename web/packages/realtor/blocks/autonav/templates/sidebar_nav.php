@@ -142,6 +142,39 @@ foreach ($navItems as $ni) {
     }
 }
 
+    echo '<li class="has-subs" data-sub="contact"><a href="/contact">Contact</a> </li>';
+    echo '<li class="sub" id="sub-contact"><ul>';
+
+    echo '<li><img src="' . REALTOR_IMAGE_PATH . 'logo_white.png"></li>';
+    echo '<li><div class="address">' . $controller->pkgConfig->get('theme.address_physical') .'<br>' . $controller->pkgConfig->get('theme.address_po') . '<br>' . $controller->pkgConfig->get('theme.address_state') . '<br>' . $controller->pkgConfig->get('theme.phone_number_office') . '</div></li>';
+    echo '<li><ul class="social">';
+
+    if ( $controller->pkgConfig->get('theme.social_link_facebook') ) {
+        echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_facebook'). '"><span class="icon-facebook"></span></a></li>';
+    }
+    if ( $controller->pkgConfig->get('theme.social_link_twitter') ) {
+        echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_twitter'). '"><span class="icon-twitter"></span></a></li>';
+    }
+    if ( $controller->pkgConfig->get('theme.social_link_pinterest') ) {
+        echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_pinterest'). '"><span class="icon-pinterest"></span></a></li>';
+    }
+    if ( $controller->pkgConfig->get('theme.social_link_googleplus') ) {
+        echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_googleplus'). '"><span class="icon-google-plus"></span></a></li>';
+    }
+    if ( $controller->pkgConfig->get('theme.social_link_linkedin') ) {
+        echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_linkedin'). '"><span class="icon-linkedin"></span></a></li>';
+    }
+    if ( $controller->pkgConfig->get('theme.email_address') ) {
+        echo '<li><a href="mailto:' . $controller->pkgConfig->get('theme.email_address'). '"><span class="icon-envelope"></span></a></li>';
+    }
+
+    echo '<li><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email"><span class="icon-envelope"></span></a></li>';
+
+//    echo '</ul></li>';
+
+    echo '</ul><li>';
+
+
 echo '</ul>'; //closes the top-level menu
 
 
@@ -156,5 +189,32 @@ foreach ($navItems as $ni) {
         echo '</li>'; //closes a nav item
     }
 }
+
+echo '<li><img src="' . REALTOR_IMAGE_PATH . 'logo_white.png"></li>';
+echo '<li><div class="address">' . $controller->pkgConfig->get('theme.address_physical') .'<br>' . $controller->pkgConfig->get('theme.address_po') . '<br>' . $controller->pkgConfig->get('theme.address_state') . '<br>' . $controller->pkgConfig->get('theme.phone_number_office') . '</div></li>';
+echo '<li><ul class="social">';
+
+if ( $controller->pkgConfig->get('theme.social_link_facebook') ) {
+    echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_facebook'). '"><span class="icon-facebook"></span></a></li>';
+}
+if ( $controller->pkgConfig->get('theme.social_link_twitter') ) {
+    echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_twitter'). '"><span class="icon-twitter"></span></a></li>';
+}
+if ( $controller->pkgConfig->get('theme.social_link_pinterest') ) {
+    echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_pinterest'). '"><span class="icon-pinterest"></span></a></li>';
+}
+if ( $controller->pkgConfig->get('theme.social_link_googleplus') ) {
+    echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_googleplus'). '"><span class="icon-google-plus"></span></a></li>';
+}
+if ( $controller->pkgConfig->get('theme.social_link_linkedin') ) {
+    echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_linkedin'). '"><span class="icon-linkedin"></span></a></li>';
+}
+if ( $controller->pkgConfig->get('theme.email_address') ) {
+    echo '<li><a href="mailto:' . $controller->pkgConfig->get('theme.email_address'). '"><span class="icon-envelope"></span></a></li>';
+}
+
+echo '<li><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email"><span class="icon-envelope"></span></a></li>';
+
+echo '</ul></li>';
 
 echo '</ul></div>'; //closes the top-level menu

@@ -28,8 +28,6 @@
             COLLECTION_ATTR_IMAGE           = 'page_image',
             // User Attributes
             FILE_ATTR_ASSOCIATED_COPY       = 'associated_copy',
-//            FILE_ATTR_SECONDARY_PHOTO       = 'secondary_photo',
-//            FILE_ATTR_INVOLVEMENT_LEVEL     = 'involvement_level',
             // File Set
             FILE_SET_MASTHEAD               = 'Masthead Slider',
             FILE_SET_MASTHEAD_BLOG          = 'Masthead Blog';
@@ -80,10 +78,11 @@
 //            }else{
 //                $sendEmailsTo = 'jhartman86@gmail.com';
 //            }
-//            define('LINTON_EMAIL_ADDRESS', $sendEmailsTo);
+            define('LINTON_EMAIL_ADDRESS', "superrunt@gmail.com");
 
             define('REALTOR_IMAGE_PATH', DIR_REL . '/packages/' . $this->pkgHandle . '/images/');
             define('REALTOR_SRC_PATH', DIR_BASE . '/packages/realtor/src/');
+            define('REALTOR_MODAL_PATH', DIR_BASE . '/packages/realtor/themes/lbr/elements/modals');
 
             Route::register('/search/count',
                 '\Concrete\Package\Realtor\Controller\Tools\Search::resultsCount'
@@ -93,6 +92,12 @@
             );
             Route::register('/landing/list/{id}/{multi}',
                 '\Concrete\Package\Realtor\Controller\Tools\Landing::getPageListForId'
+            );
+            Route::register('/modal/email',
+                '\Concrete\Package\Realtor\Controller\Tools\Modal::email'
+            );
+            Route::register('/process_form',
+                '\Concrete\Package\Realtor\Controller\Tools\Modal::processForm'
             );
         }
 
