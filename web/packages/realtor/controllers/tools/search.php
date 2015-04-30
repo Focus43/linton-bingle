@@ -11,8 +11,8 @@
             $respObj->resultCount = 0;
 
             $search = new SparkSearch( $_REQUEST, true );
-            $searchResults = $search->get();
-            $respObj->resultCount = count($searchResults);
+            $searchResults = $search->getNumberOfResults();
+            $respObj->resultCount = $searchResults;
 
             echo json_encode($respObj);
             exit;

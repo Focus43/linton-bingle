@@ -19,6 +19,7 @@
         public function get() {
             $this->setupFilterQuery();
             $this->setSearchParams( $this->apiSearchParams() );
+            $this->setSearchParams( array('_limit'	=> 5) );
 
             // are the results already cached?
 //            $cached = Cache::get( __CLASS__, $this->getChecksum() );
@@ -44,6 +45,18 @@
             return $sparkProperties;
 
 //            return parent::get();
+        }
+
+        public function getNumberOfResults () {
+            $this->setupFilterQuery();
+            $this->setSearchParams( $this->apiSearchParams() );
+//            $this->setSearchParams( array('_pagination'	=> 'count') );
+            $apiResults = call_user_func_array(array( $this->_connection = SparkConnection::sparkApi(), $this->_apiMethod), array(
+                $this->searchParams()
+            ));
+//            print_r($this->searchParams());
+//            print_r($apiResults);exit;
+            return count($apiResults);
         }
 
         public function getConnection() {
@@ -215,7 +228,7 @@
             if( $this->_params == null ){
                 $defaults = array(
                     '_pagination'	=> 1,
-                    '_limit'		=> 5,
+//                    '_limit'		=> 5,
                     '_page'			=> 1,
                     '_filter'		=> $this->_filterQuery,
                     '_expand'		=> 'Photos'

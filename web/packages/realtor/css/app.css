@@ -28,6 +28,8 @@ video.fullscreen {
 
 #c-level-1 {
   height: 100%; }
+  #c-level-1 iframe {
+    max-width: 100% !important; }
   #c-level-1 input:focus, #c-level-1 input:active, #c-level-1 textarea:focus, #c-level-1 textarea:active, #c-level-1 button:focus, #c-level-1 button:active, #c-level-1 a:focus, #c-level-1 a:active {
     outline: 0 !important;
     -webkit-box-shadow: none !important;
