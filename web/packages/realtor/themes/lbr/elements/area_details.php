@@ -1,0 +1,70 @@
+<?php //var_dump($areaSubs); ?>
+<div class="area-details">
+    <section class="hero">
+        <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="12"';} ?>>
+            <?php if(!empty($mastheadImages)): foreach($mastheadImages AS $index => $fileObj): ?>
+                <div class="node" style="background-image:url('<?php echo $fileObj->getRelativePath(); ?>');">
+                    <div class="inner">
+                        <div class="node-content">
+                            <div>
+                                <h2><?php $index++; $a = new Area("Masthead Header {$index}"); $a->display($c); ?></h2>
+                                <?php $a = new Area("Masthead {$index}"); $a->display($c); ?>
+                            </div>
+                            <!--                                <div class="visible-xs" data-viz-m>-->
+                            <!--                                    --><?php //$a = new Area("Masthead Mobile {$index}"); $a->display($c); ?>
+                            <!--                                </div>-->
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; endif; ?>
+
+            <?php if(count($mastheadImages) > 1): ?>
+                <?php if ( $isEditMode ) { ?>
+                    <a class="edit-arrows arrows icon-keyboard-arrow-left"></a>
+                    <a class="edit-arrows arrows icon-keyboard-arrow-right"></a>
+                <?php } ?>
+                <div class="markers">
+                    <?php for($i = 0; $i < count($mastheadImages); $i++): ?>
+                        <a class="<?php echo $i === 0 ? 'active' : ''; ?>"><i class="icn-circle"></i></a>
+                    <?php endfor; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+
+    <section class="current-level-nav skinny-wrap">
+        <h2>NEIGHBORHOODS IN <?php echo $areaName; ?></h2>
+        <ul>
+        <?php foreach ( $areaSubs as $sub ) : ?>
+            <li><a data-area="<?php echo $sub->getShortName(); ?>"><?php echo $sub->getName(); ?></a></li>
+        <?php endforeach; ?>
+        </ul>
+    </section>
+
+    <section class="sub-areas">
+        <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="12"';} ?>>
+            <?php if(!empty($areaSubs)): foreach($areaSubs AS $index => $sub): ?>
+                <?php $image = File::getByID((int)$sub->getImageID()) ?>
+                <div class="node" data-sub="<?php echo $sub->getShortName(); ?>">
+                    <div class="inner clearfix">
+                        <div class="node-image"style="background-image:url('<?php echo $image->getRelativePath(); ?>');"></div>
+                        <div class="node-content">
+                            <div>
+                                <h3><a href="/properties?<?php echo $sub->getSearchQuery(); ?>"><?php echo $sub->getName(); ?></a></h3>
+                                <p><?php echo $sub->getDescription(); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; endif; ?>
+
+<!--            --><?php //if(count($mastheadImages) > 1): ?>
+<!--                <div class="markers">-->
+<!--                    --><?php //for($i = 0; $i < count($mastheadImages); $i++): ?>
+<!--                        <a class="--><?php //echo $i === 0 ? 'active' : ''; ?><!--"><i class="icn-circle"></i></a>-->
+<!--                    --><?php //endfor; ?>
+<!--                </div>-->
+<!--            --><?php //endif; ?>
+        </div>
+    </section>
+</div>

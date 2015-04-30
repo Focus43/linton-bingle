@@ -26,7 +26,7 @@
 		 * @param string Name
 		 */
 		public function filterByName( $name ){
-            $name = Loader::db()->quote('%'.$name.'%');
+            $name = \Loader::db()->quote('%'.$name.'%');
             $this->filter(false, "region.name LIKE $name");
         }
 
@@ -35,8 +35,8 @@
          * @param string parenRegion
          */
         public function filterByParent( $parentRegion ){
-            $parentRegion = Loader::db()->quote('%'.$parentRegion.'%');
-            $this->filter(false, "region.parentRegion LIKE $parentRegion");
+            $parentRegion = \Loader::db()->quote('%'.$parentRegion.'%');
+            $this->filter(false, "parentRegion LIKE $parentRegion");
         }
 
 		public function sortByName(){

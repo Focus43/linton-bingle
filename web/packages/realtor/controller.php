@@ -103,9 +103,6 @@
             Route::register('/process_form',
                 '\Concrete\Package\Realtor\Controller\Tools\Modal::processForm'
             );
-//            Route::register('/dashboard/realtor/regions/detail/edit/{id}',
-//                'Concrete\Package\Realtor\Controller\SinglePage\Dashboard\Regions\Detail::edit'
-//            );
         }
 
         /**

@@ -3,6 +3,9 @@
     use Concrete\Package\Realtor\Src\PropertySearch\SparkSearch as SparkSearch;
     use Concrete\Package\Realtor\Src\PropertySearch\SparkProperty as SparkProperty;
     use Concrete\Package\Realtor\Controller\RealtorPageController;
+    use Concrete\Package\Realtor\Src\Regions\RegionList as RegionList;
+    use Concrete\Package\Realtor\Src\Regions\Region as Region;
+    use FileSet;
 
 	class Properties extends RealtorPageController {
 
@@ -16,6 +19,15 @@
             $this->_includeThemeAssets = true;
             parent::view();
             $this->set('pageClass', 'pg-properties');
+            // first check if area page
+            if ( $_REQUEST && $_REQUEST["area_page"] ) {
+                $this->set("area", $_REQUEST["area_page"]);
+                $this->set("areaSubs", $this->regionListObj($_REQUEST["area_page"]));
+                $this->set('mastheadImages', FileSet::getByName($_REQUEST["area_page"])->getFiles());
+                $areaName = Region::$parentRegions[$_REQUEST["area_page"]];
+                $this->set("areaName", $areaName);
+
+            }
 			// search
 			$search = new SparkSearch( $_REQUEST, true );
 			$searchResults = $search->get();
@@ -35,14 +47,25 @@
             $this->set('previousUrl', $this->prevPageURL());
             $this->set('nextUrl', $this->nextPageURL());
 		}
-		
-		
+
 		public function id( $id = null ) {
             $this->_includeThemeAssets = true;
             parent::view();
             $this->set('pageClass', 'pg-properties');
 			$this->loadProperty($id );
 		}
+
+        public function regionListObj( $parent ){
+            if( $this->_regionListObj === null ){
+                $this->_regionListObj = new RegionList();
+                $this->_regionListObj->filterByParent( $parent );
+            }
+            return $this->_regionListObj->get();
+        }
+
+//        protected function getMastheadImages () {
+//            return FileSet::getByName(PackageController::FILE_SET_MASTHEAD)->getFiles();
+//        }
 
         /**
          * @return string

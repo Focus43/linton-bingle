@@ -55,9 +55,9 @@
         public function getDescription(){ return $this->description; }
         /** @return string Get parent region */
         public function getParentRegion(){ return $this->parentRegion; }
+        /** @return string Get short name */
+        public function getShortName(){ return str_replace(' ', '_', strtolower($this->name)); }
         
-        
-
 
 		/** @return string Get dog breed handle */
 		public function getParentHandle($formatted = false){

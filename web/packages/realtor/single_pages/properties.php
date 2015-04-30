@@ -2,7 +2,11 @@
             $this->inc('elements/property_details.php');
         } else { ?>
 
-            <?php $this->inc('elements/search_form.php'); ?>
+            <?php if ( $area ) {
+                $this->inc('elements/area_details.php');
+            } else {
+                $this->inc('elements/search_form.php');
+            } ?>
 
             <?php $this->inc('elements/search_pagination.php'); ?>
             <section class="results skinny-wrap">

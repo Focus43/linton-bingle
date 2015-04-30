@@ -152,6 +152,9 @@ var Property = function () {
         if ( $("section.related div#relatedListings") && $("section.related div#relatedListings").length != 0 ) {
             showRelatedProperties();
         }
+        if ( $("body.pg-properties section.subnav") && $("body.pg-properties section.subnav").length > 0 ) {
+            initSubPageList();
+        }
     }
 
     this.autoInit = function () {

@@ -43,10 +43,7 @@
 			if( !empty($_REQUEST['keywords']) ){
 				$listObj->filterByKeywords( $_REQUEST['keywords'] );
 			}
-			
-			if( !empty($_REQUEST['breedHandle']) ){
-				$listObj->filterByBreedHandle( $_REQUEST['breedHandle'] );
-			}
+
 			
 			return $listObj;
 		}

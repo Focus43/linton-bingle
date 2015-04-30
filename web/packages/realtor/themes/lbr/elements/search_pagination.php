@@ -1,5 +1,8 @@
 <section class="pagination">
     <div class="resultsCtrl">
+        <?php if ($areaName) {
+            echo "<h3> PROPERTIES IN " . strtoupper($areaName) . "</h3>";
+        } ?>
         <div class="pager">
             <?php echo "Showing <strong>{$paginationResultFrom} to {$paginationResultTo}</strong> of <strong>{$totalResults}</strong>"; ?>
             <a href="<?php echo $previousUrl; ?>">Previous</a>

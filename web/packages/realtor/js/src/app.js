@@ -17,6 +17,7 @@
     addModule('Landing');
     addModule('Modals');
     addModule('Home');
+    addModule('Regions');
 
     ns.init = function () {
         /* global FastClick */
