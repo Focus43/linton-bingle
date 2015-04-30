@@ -12,7 +12,7 @@
             <section class="results skinny-wrap">
                 <?php foreach ( $searchResults as $idx => $p ) : ?>
                     <div class="listing clearfix">
-                        <div class="photo" style="background-image: url('<?php echo $p->getFirstPhotoURL("640"); ?>')"></div>
+                        <a href="/properties/id/<?php echo $p->getPropertyID(); ?>/"><div class="photo" style="background-image: url('<?php echo $p->getFirstPhotoURL("640"); ?>')"></div></a>
                         <div class="details">
                             <a href="/properties/id/<?php echo $p->getPropertyID(); ?>/"><?php echo $p->getPropertyName(true); ?></a>
                             <div class="numbers clearfix">
