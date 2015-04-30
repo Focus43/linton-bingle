@@ -1794,7 +1794,8 @@ body.pg-properties div#c-level-1 div.featured-round {
   border-radius: 50%;
   color: #ffffff;
   text-align: center;
-  font-family: "Josefin Sans", sans-serif; }
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase; }
 
 @media screen and (max-width: 768px) {
   div.divider-line {

@@ -133,7 +133,7 @@ body.pg-properties div#c-level-1 {
         }
     }
     div.disclaimer { border-top: 1px solid $theme-line-color; }
-    div.featured-round { width:120px; height:120px;position: absolute;left: calc(50% - 60px);padding-top: 35px;background-color: $theme-color-red;border: 2px solid $theme-color-red; border-radius: 50%; color:$theme-color-white;text-align:center;font-family: $theme-font-family-headers; }
+    div.featured-round { width:120px; height:120px;position: absolute;left: calc(50% - 60px);padding-top: 35px;background-color: $theme-color-red;border: 2px solid $theme-color-red; border-radius: 50%; color:$theme-color-white;text-align:center;font-family: $theme-font-family-headers;text-transform: uppercase; }
 }
 
 @media screen and (max-width:$screen-sm) {

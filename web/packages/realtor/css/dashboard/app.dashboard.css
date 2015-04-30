@@ -1,0 +1,28 @@
+table#regionSearchTable thead tr th {padding-left:6px;}
+#regionWrap h3.lead {margin-bottom:0;}
+#regionWrap h4 {margin-bottom:.6em;}
+#regionWrap form {margin-bottom:0;}
+#regionWrap table tr.no-stripe:hover td {background:#fff;}
+#regionSearchTable thead tr th {white-space:nowrap;}
+
+/* PERSONNEL TABLE */
+#regionSearchTable.group-left thead tr th:last-child {width:50%;}
+#regionSearchTable.group-left tbody tr td {padding-left:10px;}
+#regionSearchTable.group-left tbody tr td:first-child {padding-left:6px;}
+#regionSearchTable.group-left tbody tr td.name, 
+#regionSearchTable.group-left tbody tr td.title,
+#regionSearchTable.group-left tbody tr td.provider {white-space:nowrap;}
+#regionSearchTable.group-left tbody tr td a.thumbnail {display:inline-block;}
+#regionSearchTable.group-left tbody tr td a.thumbnail img {width:75px;}
+
+.ccm-ui #regionWrap.addTrxn .container-fluid {padding:0;margin:0;}
+.ccm-ui #regionWrap.addTrxn .controls {*zoom:1;}.ccm-ui #regionWrap .controls:before, .ccm-ui #regionWrap .controls:after{display:table;content:"";line-height:0;}
+.ccm-ui #regionWrap.addTrxn .controls:after{clear:both;}
+.ccm-ui #regionWrap.addTrxn .controls input,
+.ccm-ui #regionWrap.addTrxn .controls select {float:left;margin-bottom:.6em;margin-right:4px;}
+.ccm-ui #regionWrap.addTrxn .controls input:last-child {margin-right:0;}
+.ccm-ui #regionWrap.addTrxn .controls input.span12 {width:100%;}
+/* SPECIFIC CONFIGURATIONS */
+.ccm-ui #regionWrap.addTrxn .controls #state {width:180px;float:left;}
+.ccm-ui #regionWrap.addTrxn .controls #zip {width:80px;}
+.ccm-ui #regionWrap.addTrxn .typeOptions {display:none;}

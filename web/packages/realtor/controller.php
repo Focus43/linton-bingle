@@ -39,7 +39,7 @@
 
         protected $pkgHandle 			= self::PACKAGE_HANDLE;
         protected $appVersionRequired 	= '5.7';
-        protected $pkgVersion 			= '0.60';
+        protected $pkgVersion 			= '0.64';
 
 
         /**
@@ -103,6 +103,9 @@
             Route::register('/process_form',
                 '\Concrete\Package\Realtor\Controller\Tools\Modal::processForm'
             );
+//            Route::register('/dashboard/realtor/regions/detail/edit/{id}',
+//                'Concrete\Package\Realtor\Controller\SinglePage\Dashboard\Regions\Detail::edit'
+//            );
         }
 
         /**
@@ -131,7 +134,7 @@
         /**
          * @return void
          */
-        public function upgrade(){
+        public function upgrade() {
             $this->checkDependencies();
             parent::upgrade();
             $this->installAndUpdate();
@@ -362,6 +365,9 @@
 
             SinglePage::add('/dashboard/theme_settings', $this->packageObject());
             SinglePage::add('/dashboard/theme_settings/settings', $this->packageObject());
+
+            SinglePage::add('/dashboard/regions', $this->packageObject());
+            SinglePage::add('/dashboard/regions/detail', $this->packageObject());
 
             return $this;
         }
