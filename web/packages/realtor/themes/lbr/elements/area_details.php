@@ -39,7 +39,7 @@
     </section>
 
     <section class="sub-areas">
-        <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="12"';} ?>>
+        <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="7"';} ?>>
             <?php if(!empty($areaSubs)): foreach($areaSubs AS $index => $sub): ?>
                 <?php
                 $image = File::getByID((int)$sub->getImageID());
