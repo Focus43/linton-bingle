@@ -156,6 +156,9 @@ body.pg-properties div#c-level-1 {
                             h3 { margin-top: 50px;text-transform: uppercase; }
                             a { color: $theme-color-white;
                                 &:hover { color: $theme-color-white;text-decoration: underline; }
+                                &.btn-white { border: 0;color: $theme-color-red;margin-top: 10px;
+                                    &:hover { color: $theme-color-red;text-decoration:none; }
+                                }
                             }
                         }
                         @media screen and (max-width:$screen-sm) {

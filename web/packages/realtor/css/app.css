@@ -595,8 +595,9 @@ section.footer {
     .masthead .node .node-content {
       font-size: 1.3rem;
       display: inline-block;
-      max-width: 75%;
-      padding-left: 2rem; }
+      max-width: 50%;
+      padding-left: 2rem;
+      font-family: "Josefin Sans", sans-serif; }
       .masthead .node .node-content p {
         margin: 0 0.4em; }
       .masthead .node .node-content h2 {
@@ -1891,6 +1892,13 @@ body.pg-properties div#c-level-1 div.area-details section.sub-areas {
             body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content a:hover {
               color: #ffffff;
               text-decoration: underline; }
+            body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content a.btn-white {
+              border: 0;
+              color: #b5121b;
+              margin-top: 10px; }
+              body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content a.btn-white:hover {
+                color: #b5121b;
+                text-decoration: none; }
         @media screen and (max-width: 768px) {
           body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-image, body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content {
             width: 100%;

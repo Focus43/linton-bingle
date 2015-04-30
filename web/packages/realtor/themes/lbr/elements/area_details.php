@@ -52,6 +52,7 @@
                             <div>
                                 <h3><a href="/properties?<?php echo $sub->getSearchQuery(); ?>"><?php echo $sub->getName(); ?></a></h3>
                                 <p><?php echo $sub->getDescription(); ?></p>
+                                <a class="btn btn-white" href="/properties?<?php echo $sub->getSearchQuery(); ?>">VIEW DETAILS</a>
                             </div>
                         </div>
                     </div>
