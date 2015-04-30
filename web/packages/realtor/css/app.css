@@ -596,7 +596,7 @@ section.footer {
       .masthead .node .node-content p {
         margin: 0 0.4em; }
       .masthead .node .node-content h2 {
-        text-align: right;
+        text-align: right !important;
         padding: 0 0.4em !important; }
         .masthead .node .node-content h2 p {
           padding: 0 !important;
