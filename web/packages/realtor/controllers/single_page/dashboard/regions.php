@@ -1,7 +1,7 @@
 <?php namespace Concrete\Package\Realtor\Controller\SinglePage\Dashboard {
 
-    use Concrete\Package\Realtor\Src\Regions\Region as Region;
-    use Concrete\Package\Realtor\Src\Regions\RegionList as RegionList;
+//    use Concrete\Package\Realtor\Src\Regions\Region as Region;
+    use \Concrete\Package\Realtor\Src\Regions\RegionList as RegionList;
     use \Concrete\Core\Page\Controller\DashboardPageController;
     use Loader;
 
