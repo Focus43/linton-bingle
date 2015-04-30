@@ -41,10 +41,13 @@
     <section class="sub-areas">
         <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="12"';} ?>>
             <?php if(!empty($areaSubs)): foreach($areaSubs AS $index => $sub): ?>
-                <?php $image = File::getByID((int)$sub->getImageID()) ?>
+                <?php
+                $image = File::getByID((int)$sub->getImageID());
+                $imagePath = ( $image && $image->getRelativePath() && $image->getRelativePath() != "" ) ? $image->getRelativePath() : REALTOR_IMAGE_PATH . 'nav_placeholder.jpg';
+                ?>
                 <div class="node" data-sub="<?php echo $sub->getShortName(); ?>">
                     <div class="inner clearfix">
-                        <div class="node-image"style="background-image:url('<?php echo $image->getRelativePath(); ?>');"></div>
+                        <div class="node-image"style="background-image:url('<?php echo $imagePath; ?>');"></div>
                         <div class="node-content">
                             <div>
                                 <h3><a href="/properties?<?php echo $sub->getSearchQuery(); ?>"><?php echo $sub->getName(); ?></a></h3>
