@@ -1729,9 +1729,39 @@ body.pg-properties div#c-level-1 div.property-detail {
       padding-bottom: 20px; }
       body.pg-properties div#c-level-1 div.property-detail section.video div.wrapper iframe {
         max-width: 100% !important; }
+  body.pg-properties div#c-level-1 div.property-detail section.related div#relatedListings {
+    width: 100%; }
+    body.pg-properties div#c-level-1 div.property-detail section.related div#relatedListings div.property {
+      width: 33.33%;
+      float: left;
+      padding-bottom: 20px; }
+      body.pg-properties div#c-level-1 div.property-detail section.related div#relatedListings div.property h4 {
+        text-transform: uppercase;
+        font-size: 20px;
+        padding: 15px 10px 0 10px;
+        color: #9b8c86; }
+      body.pg-properties div#c-level-1 div.property-detail section.related div#relatedListings div.property div.main-image, body.pg-properties div#c-level-1 div.property-detail section.related div#relatedListings div.property p {
+        width: 100%;
+        display: block; }
+      body.pg-properties div#c-level-1 div.property-detail section.related div#relatedListings div.property div.main-image {
+        min-height: 200px;
+        background-size: cover;
+        padding-bottom: 100%; }
+      body.pg-properties div#c-level-1 div.property-detail section.related div#relatedListings div.property p {
+        padding: 0 10px;
+        color: #9b8c86; }
+    @media screen and (max-width: 480px) {
+      body.pg-properties div#c-level-1 div.property-detail section.related div#relatedListings div.property {
+        width: 100%;
+        border: 0;
+        padding-bottom: 10px; } }
+    body.pg-properties div#c-level-1 div.property-detail section.related div#relatedListings div.featured-round {
+      top: -60px; }
   body.pg-properties div#c-level-1 div.property-detail div#gmapCanvas {
     width: 100%;
     height: 500px; }
+  body.pg-properties div#c-level-1 div.property-detail section.googlemap .featured-round {
+    bottom: -60px; }
 body.pg-properties div#c-level-1 div.sortbyList {
   position: absolute;
   right: 20px;
@@ -1751,6 +1781,20 @@ body.pg-properties div#c-level-1 div.sortbyList {
     padding: 0; }
     body.pg-properties div#c-level-1 div.sortbyList ul li {
       margin-bottom: 3px; }
+body.pg-properties div#c-level-1 div.disclaimer {
+  border-top: 1px solid #e4e3e3; }
+body.pg-properties div#c-level-1 div.featured-round {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  left: calc(50% - 60px);
+  padding-top: 35px;
+  background-color: #b5121b;
+  border: 2px solid #b5121b;
+  border-radius: 50%;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif; }
 
 @media screen and (max-width: 768px) {
   div.divider-line {

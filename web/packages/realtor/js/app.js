@@ -20,7 +20,6 @@ var Featured = function () {
                 if ( resp.properties.length > 0 ) {
                     if ( resp.properties.length > 1 ) {
                         // change to random
-                        var firstProp = resp.properties.splice(2, 1)[0];
                         var rendered1 = Mustache.render(firstTemplate, firstProp);
                         $('#featuredCarousel').html(rendered1);
                         $('div.featured-round').css('visibility', 'visible');
@@ -642,6 +641,26 @@ var Property = function () {
         })
     }
 
+    var showRelatedProperties = function () {
+        // /search/related/{city}/{beds}/{baths}/{price}
+        var firstTemplate = $('#relatedList').html();
+        Mustache.parse(firstTemplate);
+//        var _url = '/search/related/' + PROP_CITY + '/' + PROP_BEDS + '/' + PROP_BATHS + '/' + PROP_PRICE
+        var _url = '/search/related/' + PROP_CITY
+        $.post( _url, function(resp) {
+            if( resp.code && resp.code == 1 ) {
+                if ( resp.properties.length >= 3 ) {
+                    var rendered1 = Mustache.render(firstTemplate, resp);
+                    $('#relatedListings').html(rendered1);
+                } else {
+                    $('#relatedListings').html("")
+                }
+            } else {
+                $('#relatedListings').html("")
+            }
+        },'json');
+    }
+
     this.onloadFunc = function () {
         if ( $(".pg-properties section#gallery div#showhide").length != 0 ) {
             initToggleGalleryThumbs();
@@ -651,6 +670,9 @@ var Property = function () {
 
         if ( $("section.pagination div.sortby").length != 0 ) {
             initSortingDropdown();
+        }
+        if ( $("section.related div#relatedListings") && $("section.related div#relatedListings").length != 0 ) {
+            showRelatedProperties();
         }
     }
 
@@ -753,4 +775,10 @@ window.addEventListener("load", function() {
             mod.onloadFunc();
         }
     });
+
+    // HACK
+    if ( $("#gmapCanvas").length > 0 && mapInitialize ) {
+        mapInitialize();
+    }
+
 }, false);

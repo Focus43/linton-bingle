@@ -20,7 +20,6 @@ var Featured = function () {
                 if ( resp.properties.length > 0 ) {
                     if ( resp.properties.length > 1 ) {
                         // change to random
-                        var firstProp = resp.properties.splice(2, 1)[0];
                         var rendered1 = Mustache.render(firstTemplate, firstProp);
                         $('#featuredCarousel').html(rendered1);
                         $('div.featured-round').css('visibility', 'visible');

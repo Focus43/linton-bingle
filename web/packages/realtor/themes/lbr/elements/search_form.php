@@ -45,8 +45,8 @@ $formHelper = Loader::helper('form');
                     </div>
                 </div>
 
-                <p class="big-match"><strong><span class="target-result-count">0</span> properties</strong></p>
-                <p>There are <strong><span class="target-result-count"><?php echo $pagingHelper->resultCount; ?>0</span> properties</strong> matching your search criteria.</p>
+                <p class="big-match"><strong><span class="target-result-count"><?php echo ($totalResults) ? $totalResults : "0";  ?></span> properties</strong></p>
+                <p>There are <strong><span class="target-result-count"><?php echo $pagingHelper->resultCount; ?><?php echo ($totalResults) ? $totalResults : "0";  ?></span> properties</strong> matching your search criteria.</p>
 
                 <div class="buttons">
                     <a class="btn btn-red" onclick="$('form#propertySearch').submit();">View Search Results <i class="icon-chevron-right icon-white"></i></a>

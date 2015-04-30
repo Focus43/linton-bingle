@@ -89,6 +89,12 @@
         /**
          * @return string
          */
+        public function getListPricePlain() {
+            return $this->ListPrice;
+        }
+        /**
+         * @return string
+         */
         public function getBuildingAreaTotal() {
             return number_format( (int) $this->BuildingAreaTotal, 2 );
         }
@@ -113,6 +119,12 @@
          */
         public function getMlsNumber() {
             return $this->ListingId;
+        }
+        /**
+         * @return string
+         */
+        public function getCity() {
+            return $this->City;
         }
         /**
          * @return string

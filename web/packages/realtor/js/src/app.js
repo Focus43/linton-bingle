@@ -36,4 +36,10 @@ window.addEventListener("load", function() {
             mod.onloadFunc();
         }
     });
+
+    // HACK
+    if ( $("#gmapCanvas").length > 0 && mapInitialize ) {
+        mapInitialize();
+    }
+
 }, false);

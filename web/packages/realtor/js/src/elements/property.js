@@ -119,6 +119,26 @@ var Property = function () {
         })
     }
 
+    var showRelatedProperties = function () {
+        // /search/related/{city}/{beds}/{baths}/{price}
+        var firstTemplate = $('#relatedList').html();
+        Mustache.parse(firstTemplate);
+//        var _url = '/search/related/' + PROP_CITY + '/' + PROP_BEDS + '/' + PROP_BATHS + '/' + PROP_PRICE
+        var _url = '/search/related/' + PROP_CITY
+        $.post( _url, function(resp) {
+            if( resp.code && resp.code == 1 ) {
+                if ( resp.properties.length >= 3 ) {
+                    var rendered1 = Mustache.render(firstTemplate, resp);
+                    $('#relatedListings').html(rendered1);
+                } else {
+                    $('#relatedListings').html("")
+                }
+            } else {
+                $('#relatedListings').html("")
+            }
+        },'json');
+    }
+
     this.onloadFunc = function () {
         if ( $(".pg-properties section#gallery div#showhide").length != 0 ) {
             initToggleGalleryThumbs();
@@ -128,6 +148,9 @@ var Property = function () {
 
         if ( $("section.pagination div.sortby").length != 0 ) {
             initSortingDropdown();
+        }
+        if ( $("section.related div#relatedListings") && $("section.related div#relatedListings").length != 0 ) {
+            showRelatedProperties();
         }
     }
 

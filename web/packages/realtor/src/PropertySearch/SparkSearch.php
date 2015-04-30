@@ -50,13 +50,11 @@
         public function getNumberOfResults () {
             $this->setupFilterQuery();
             $this->setSearchParams( $this->apiSearchParams() );
-//            $this->setSearchParams( array('_pagination'	=> 'count') );
+            $this->setSearchParams( array('_pagination'	=> 'count') );
             $apiResults = call_user_func_array(array( $this->_connection = SparkConnection::sparkApi(), $this->_apiMethod), array(
                 $this->searchParams()
             ));
-//            print_r($this->searchParams());
-//            print_r($apiResults);exit;
-            return count($apiResults);
+            return $this->_connection->last_count;
         }
 
         public function getConnection() {

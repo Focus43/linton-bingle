@@ -90,6 +90,10 @@
             Route::register('/search/featured',
                 '\Concrete\Package\Realtor\Controller\Tools\Search::featuredProperties'
             );
+//            Route::register('/search/related/{city}/{beds}/{baths}/{price}',
+            Route::register('/search/related/{city}',
+                '\Concrete\Package\Realtor\Controller\Tools\Search::relatedProperties'
+            );
             Route::register('/landing/list/{id}/{multi}',
                 '\Concrete\Package\Realtor\Controller\Tools\Landing::getPageListForId'
             );

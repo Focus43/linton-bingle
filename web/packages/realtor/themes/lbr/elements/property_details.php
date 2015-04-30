@@ -1,11 +1,12 @@
 <?php $photos = $propertyObj->getPhotos(); ?>
 <?php $videos = $propertyObj->getVideos(); ?>
+<script>
+    PROP_CITY = "<?php echo $propertyObj->getCity() ?>";
+    PROP_BEDS = "<?php echo $propertyObj->getBedsNumber() ?>";
+    PROP_BATHS = "<?php echo $propertyObj->getBathsNumber() ?>";
+    PROP_PRICE = "<?php echo $propertyObj->getListPricePlain() ?>";
+</script>
 <div class="property-detail">
-
-
-<!--        <img src="--><?php //echo $propertyObj->getFirstPhotoURL(1600) ?><!--" />-->
-
-
     <section id="gallery">
         <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="12"';} ?>>
             <?php if(!empty($photos)): foreach($photos AS $index => $p): ?>
@@ -81,7 +82,7 @@
         <div id="gmapCanvas"></div>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_KICvnn4IokmN0oXiiPlvlh9lyS3Vqko"></script>
         <script type="text/javascript">
-            function initialize() {
+            function mapInitialize() {
                 // create property LatLng
                 var propLatLng = new google.maps.LatLng(<?php echo $propertyObj->getLatitude(); ?>,<?php echo $propertyObj->getLongitude(); ?>);
                 var mapOptions = {
@@ -96,8 +97,25 @@
                     title: '<?php echo $propertyObj->getPropertyName(); ?>'
                 });
             }
-            google.maps.event.addDomListener(window, 'load', initialize);
+//            google.maps.event.addDomListener(window, 'load', initialize);
+//            $(window).on('load', initialize)
         </script>
-
+        <div class="featured-round">Related Properties</div>
+    </section>
+    <section class="related">
+        <div id="relatedListings">
+            <div style="text-align: center;padding: 20px;"><span class="icon-spinner spinner"></span></div>
+        </div>
+        <script id="relatedList" type="x-tmpl-mustache">
+                {{#properties}}
+                <div class="property clearfix">
+                    <div class="main-image" style="background-image:url('{{mainImage}}')"></div>
+                    <h4>{{name}}</h4>
+                    <p class="hidden-sm">{{shortDescription}}</p>
+                    <a class="btn btn-white" href="/properties/id/{{id}}">VIEW DETAILS</a>
+                </div>
+                {{/properties}}
+                <div class="featured-round">Related Properties</div>
+            </script>
     </section>
 </div>

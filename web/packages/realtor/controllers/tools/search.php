@@ -62,5 +62,41 @@
             echo json_encode($respObj);
             exit;
         }
+
+        // /search/related/{city}/{beds}/{baths}/{price}
+        public function relatedProperties ( $city = "Jackson", $beds = "3", $baths = "2" ) {
+            $respObj = new \stdClass;
+            $respObj->code = 1;
+            $respObj->properties = array();
+
+//            $search = new SparkSearch( array('city' => $city, 'beds' => $beds, 'baths' => $baths, 'priceMin' => $price - 200000, 'priceMax' => $price + 200000) );
+            $search = new SparkSearch( array('city' => $city) );
+            $search->setApiMethod('getMyListings');
+            $search->setSearchParams(array('_limit' => 3 ));
+            $results = $search->get();
+
+            if ( $results ) {
+                foreach ( $results as $r ) {
+                    $property = new \stdClass;
+                    $property->mainImage = $r->getFirstPhotoURL("800");
+                    $property->name = $r->getPropertyName();
+                    $property->description = $r->getDescription();
+                    $property->id = $r->getPropertyID();
+
+                    // short description
+                    if (strlen($property->description) > 90) {
+                        $property->shortDescription = wordwrap($property->description, 90);
+                        $property->shortDescription = substr($property->shortDescription, 0, strpos($property->shortDescription, "\n")) . "...";
+                    }
+
+                    $respObj->properties[] = $property;
+                }
+            } else {
+                $respObj->code = 0;
+            }
+
+            echo json_encode($respObj);
+            exit;
+        }
     }
 }
