@@ -106,6 +106,9 @@
                                 <a href="/properties/id/{{id}}"><h4>{{name}}</h4></a>
                                 <p>{{shortDescription}}</p>
                             </div>
+                            <div class="link">
+                                <a class="btn btn-red" href="/properties/id/{{id}}">VIEW DETAILS</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -149,6 +152,9 @@
                             <div class="description">
                                 <a href="/properties/id/{{id}}"><h4>{{name}}</h4></a>
                                 <p>{{shortDescription}}</p>
+                            </div>
+                            <div class="link">
+                                <a class="btn btn-red" href="/properties/id/{{id}}">VIEW DETAILS</a>
                             </div>
                         </div>
                     </div>
