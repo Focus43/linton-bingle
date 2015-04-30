@@ -37,7 +37,7 @@
         </section>
         <section class="nav-blocks">
             <div class="row">
-                <div class="about col-xs-12 col-sm-4" data-url="/about/about-linton-bingle">
+                <div class="about col-xs-12 col-sm-4" data-url="/about/about-lintonbingle">
                     <div class="shade">
                         <h3>ABOUT</h3>
                         <div class="extra">
@@ -47,7 +47,7 @@
                         <div class="more">READ MORE</div>
                     </div>
                 </div>
-                <div class="resources col-xs-12 col-sm-4" data-url="/resources">
+                <div class="resources col-xs-12 col-sm-4" data-url="/resources/wyoming-tax-benefits">
                     <div class="shade">
                         <h3>RESOURCES</h3>
                         <div class="extra">
