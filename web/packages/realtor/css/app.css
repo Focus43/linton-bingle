@@ -79,6 +79,8 @@ video.fullscreen {
     #c-level-1 ul.social li {
       display: inline-block;
       margin: 0 5px; }
+      #c-level-1 ul.social li:first-of-type {
+        margin-left: 0px !important; }
       #c-level-1 ul.social li a:hover {
         text-decoration: none; }
   #c-level-1 .wide-wrap {
