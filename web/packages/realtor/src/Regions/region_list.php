@@ -8,10 +8,8 @@
 		
 		const DB_FRIENDLY_DATE = 'Y-m-d H:i:s';
 		
-		
 		protected $autoSortColumns 	= array('createdUTC', 'modifiedUTC', 'name', 'parentRegion'),
 				  $itemsPerPage		= 10;
-
 
 		public function filterByKeywords($keywords) {
             $db = \Loader::db();
