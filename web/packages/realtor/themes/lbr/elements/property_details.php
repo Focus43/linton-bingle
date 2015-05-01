@@ -87,6 +87,7 @@
                 var propLatLng = new google.maps.LatLng(<?php echo $propertyObj->getLatitude(); ?>,<?php echo $propertyObj->getLongitude(); ?>);
                 var mapOptions = {
                     center: propLatLng,
+                    scrollwheel: false,
                     zoom: 12
                 };
                 var map = new google.maps.Map(document.getElementById('gmapCanvas'),
