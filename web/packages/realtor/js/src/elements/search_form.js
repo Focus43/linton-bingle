@@ -37,6 +37,11 @@ var Search = function () {
         }
      }
 
+    this.closeLocationFilter = function () {
+        var filters = $("#locationFilters")
+        TweenLite.to(filters, 0.25, {className:"hidden"})
+    }
+
     this.searchOnChange = function () {
         // when a filter gets modified, do ajax search
         $formFilters.on('change' , function () {
@@ -50,6 +55,13 @@ var Search = function () {
     }
 
     this.onloadFunc = function () {
-        if ($('form#propertySearch').length > 0) this.searchOnChange();
+        if ( $('form#propertySearch').length > 0 ) {
+            this.searchOnChange();
+            $('form#propertySearch').on("click", function ( e ) {
+                if ( $(e.target)[0] != $("button.locations")[0] && $("div#locationFilters").has(e.target).length ===0 ) {
+                    LB.Search.closeLocationFilter();
+                }
+            })
+        }
     }
 }
