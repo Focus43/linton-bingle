@@ -4,7 +4,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Jackson Hole MLS property search: <?= $propertyObj->getPropertyName() ?></title>
-    <link rel="stylesheet" type="text/css" href="/packages/linton/css/print.css"/>
+    <link rel="stylesheet" type="text/css" href="/packages/realtor/css/print.css"/>
 </head>
 <body onload="window.print()">
 <div id="container">

@@ -1,0 +1,94 @@
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+
+h2 {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4 {
+    margin: 0;
+    padding: 0 0 10px;
+}
+
+#container {
+    font-family: helvetica, arial, san-sarif;
+    font-size: 13px;
+    width: 620px;
+    margin: 0 auto;
+}
+
+.clear {
+    width: 100%;
+    height: 0;
+    clear: both;
+    border: 0;
+}
+
+.left {
+    float: left;
+    width: 60%;
+}
+
+.right {
+    float: right;
+    width: 40%;
+}
+
+#top .left img {
+    display: block;
+    margin-top: 15px;
+    border: 1px solid #333;
+}
+
+#agentInfo {
+    background-color: #eee;
+    margin: 5px 0 25px;
+    padding: 10px;
+    line-height: 150%;
+    border: 1px solid #aaa;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#price {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#propertyInfo {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #aaa;
+    line-height: 150%;
+}
+
+#middle {
+    margin-top: 25px;
+}
+
+.photo {
+    width: 198px;
+    height: 132px;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+.photo:nth-child(3n+3) {
+    margin: 0;
+}
