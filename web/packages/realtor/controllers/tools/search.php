@@ -2,6 +2,7 @@
 
     use Controller;
     use Concrete\Package\Realtor\Src\PropertySearch\SparkSearch as SparkSearch;
+    use  Concrete\Package\Realtor\Src\Cache\RedisCache;
 
     class Search extends Controller {
 
@@ -25,10 +26,19 @@
 
             $search = new SparkSearch();
             $search->setApiMethod('getMyListings');
-            $search->setSearchParams(array('_limit' => 25));
-//            $search->setSearchParams(array('_limit' => 3));
-            $results = $search->get();
+            $search->setSearchParams(array('_limit' => 25, '_select' => '', '_expand' => 'Photos', '_pagination'	=> 0));
 
+            // are the results already cached?
+            $cachedHash = RedisCache::cache()->get(__CLASS__ . "featured_properties");
+            if ( $cachedHash ) { $cached = RedisCache::cache()->_unserialize($cachedHash); }
+            if( $cached ){
+                $results = $cached;
+            } else {
+                $results = $search->get()->getResults();
+                // cache it
+                $toCache = RedisCache::cache()->_serialize($results);
+                RedisCache::cache()->set(__CLASS__ . "featured_properties", $toCache, 24*60);
+            }
             if ( $results ) {
                 foreach ( $results as $r ) {
                     $property = new \stdClass;

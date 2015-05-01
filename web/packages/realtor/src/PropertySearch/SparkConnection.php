@@ -1,8 +1,11 @@
 <?php namespace Concrete\Package\Realtor\Src\PropertySearch {
 
     use Concrete\Package\Realtor\Controller AS PackageController;
+    use  Concrete\Package\Realtor\Src\Cache\RedisCache;
+
 
     require_once(REALTOR_SRC_PATH . "SparkApi/lib/Core.php");
+    require_once(REALTOR_SRC_PATH . "SparkApi/lib/MemcacheCache.php");
 
     class SparkConnection {
 
@@ -29,18 +32,21 @@
          * @return array
          */
         public static function getPropertyTypes( $bustCache = false ){
-//            if( !$bustCache ){
-//                $types = Cache::get( __CLASS__, 'property_types' );
-//                if( is_array($types) ){
-//                    return $types;
-//                }
-//            }
+
+            if ( !$bustCache ) {
+                $typesHash = RedisCache::cache()->get(__CLASS__ . 'property_types');
+                if ($typesHash) { $types = RedisCache::cache()->_unserialize($typesHash); }
+                if( is_array($types) ) {
+                    return $types;
+                }
+            }
 
             // cache missed; load from the API
             $types = (array) self::sparkApi()->GetPropertyTypes();
 
             // cache it
-//            Cache::set( __CLASS__, 'property_types', $types, (Config::get('FULL_PAGE_CACHE_LIFETIME_CUSTOM') * 60) );
+            $toCache = RedisCache::cache()->_serialize($types);
+            RedisCache::cache()->set(__CLASS__ . 'property_types', $toCache, 2592000);
 
             return $types;
         }

@@ -1,3 +1,5 @@
+<?php print_r($propertyObj);exit; ?>
+
 <?php $photos = $propertyObj->getPhotos(); ?>
 <?php $videos = $propertyObj->getVideos(); ?>
 <script>

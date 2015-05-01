@@ -33,7 +33,7 @@
 //                }
 
                 // if we get here, call it from the API
-                $request = SparkConnection::sparkApi()->getListing($id, array('_expand' => 'Photos, Videos'));
+                $request = SparkConnection::sparkApi()->getListing($id, array('_expand' => 'Photos, Videos', '_select' => ''));
 
                 // an error occurred; throw exception
                 if( SparkConnection::sparkApi()->GetErrors() ){

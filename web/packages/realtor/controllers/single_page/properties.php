@@ -30,17 +30,18 @@
             }
 			// search
 			$search = new SparkSearch( $_REQUEST, true );
+            $search->setSearchParams( array('_limit'	=> 5) );
 			$searchResults = $search->get();
 			// pass property list results
-			$this->set('searchResults', $searchResults);
+			$this->set('searchResults', $searchResults->getResults());
 			// set up the paging stuff
-            $this->pageSize = $search->getConnection()->page_size;
-            $this->currentPage = $search->getConnection()->current_page;
-            $this->totalPages = $search->getConnection()->total_pages;
-            $this->totalResults = $search->getConnection()->last_count;
+            $this->pageSize = $searchResults->getpageSize();
+            $this->currentPage = $searchResults->getCurrentPage();
+            $this->totalPages = $searchResults->getTotalPages();
+            $this->totalResults = $searchResults->getResultCount();
             // pass the paging stuff
 			$this->set('totalPages', $this->totalPages);
-            $this->set('totalResults', $search->getConnection()->last_count);
+            $this->set('totalResults', $this->totalResults);
             $this->set('currentPage', $this->currentPage);
             $this->set('paginationResultFrom', $this->getResultsFrom());
             $this->set('paginationResultTo', $this->getResultsTo());
@@ -63,9 +64,28 @@
             return $this->_regionListObj->get();
         }
 
-//        protected function getMastheadImages () {
-//            return FileSet::getByName(PackageController::FILE_SET_MASTHEAD)->getFiles();
-//        }
+        public function print_friendly($id = null) {
+            $propertyObj = $this->loadProperty($id);
+            $firstPhotoUrl = $propertyObj->getFirstPhotoURL(640);
+            $this->set('firstPhotoUrl', empty($firstPhotoUrl) ? null : $firstPhotoUrl);
+            $this->set('latitude', $propertyObj->getLatitude());
+            $this->set('longitude', $propertyObj->getLongitude());
+            $area = $propertyObj->getMLSAreaMinor();
+            $this->set('area', 'Other' == $area ? null : $area);
+            $price = (int) $propertyObj->getListPrice();// number_format((int) $sparkProperty->getListPrice(), 2)
+            $this->set('price', $price > 0 ? '$' . number_format($price) : null);
+            $this->set('beds', $propertyObj->getBedsTotal());
+            $this->set('fullBaths', $propertyObj->getBathsFull());
+            $this->set('halfBaths', $propertyObj->getBathsHalf());
+            $squareFeet = (int) $propertyObj->getBuildingAreaTotal();
+            $this->set('squareFeet', $squareFeet > 0 ? number_format($squareFeet) : null);
+            $mls = $propertyObj->getListingId();
+            $this->set('mls', empty($mld) ? null : $mls);
+            $details = $propertyObj->getPublicRemarks();
+            $this->set('details', empty($details) ? null : nl2br($details));
+
+            $this->render('print');
+        }
 
         /**
          * @return string
@@ -162,29 +182,5 @@
             return ( empty($query) ) ? \View::url( 'properties' ) : \View::url( 'properties' ) . '?' . http_build_query( $query );
         }
 
-
-        public function print_friendly($id = null) {
-//            $propertyObj = $this->loadProperty($id);
-//            $firstPhotoUrl = $propertyObj->getFirstPhotoURL(640);
-//            $this->set('firstPhotoUrl', empty($firstPhotoUrl) ? null : $firstPhotoUrl);
-//            $this->set('latitude', $propertyObj->getLatitude());
-//            $this->set('longitude', $propertyObj->getLongitude());
-//            $area = $propertyObj->getMLSAreaMinor();
-//            $this->set('area', 'Other' == $area ? null : $area);
-//            $price = (int) $propertyObj->getListPrice();// number_format((int) $sparkProperty->getListPrice(), 2)
-//            $this->set('price', $price > 0 ? '$' . number_format($price) : null);
-//            $this->set('beds', $propertyObj->getBedsTotal());
-//            $this->set('fullBaths', $propertyObj->getBathsFull());
-//            $this->set('halfBaths', $propertyObj->getBathsHalf());
-//            $squareFeet = (int) $propertyObj->getBuildingAreaTotal();
-//            $this->set('squareFeet', $squareFeet > 0 ? number_format($squareFeet) : null);
-//            $mls = $propertyObj->getListingId();
-//            $this->set('mls', empty($mld) ? null : $mls);
-//            $details = $propertyObj->getPublicRemarks();
-//            $this->set('details', empty($details) ? null : nl2br($details));
-//
-//            $this->render('print');
-        }
-		
 	}
 }
