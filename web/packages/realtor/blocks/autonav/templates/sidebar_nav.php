@@ -123,7 +123,23 @@ foreach ($navItems as $ni) {
         if ( $ni->cObj->getAttribute('page_image') ) {
             $imageSrc = $ni->cObj->getAttribute('page_image')->getRelativePath();
         } else {
-            $imageSrc = REALTOR_IMAGE_PATH . 'nav_placeholder.jpg';
+            switch (true) {
+                case (strpos($ni->url, "area_page=jackson")) :
+                    $imageSrc = REALTOR_IMAGE_PATH . 'nav_jackson.jpg';
+                    break;
+                case (strpos($ni->url, "area_page=teton_valley")) :
+                    $imageSrc = REALTOR_IMAGE_PATH . 'nav_tetonvalley.jpg';
+                    break;
+                case (strpos($ni->url, "area_page=lincoln_county")) :
+                    $imageSrc = REALTOR_IMAGE_PATH . 'nav_lincolncounty.jpg';
+                    break;
+                case (strpos($ni->url, "area_page=other_wyoming")) :
+                    $imageSrc = REALTOR_IMAGE_PATH . 'nav_other.jpg';
+                    break;
+                default:
+                    $imageSrc = REALTOR_IMAGE_PATH . 'nav_placeholder.jpg';
+                    break;
+            }
         }
         echo '<div class="pg-icon" style="background-image: url(' . $imageSrc . ')"></div>';
     }
