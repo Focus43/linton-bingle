@@ -80,26 +80,37 @@
     <?php endif; ?>
     <section class="googlemap">
         <div id="gmapCanvas"></div>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_KICvnn4IokmN0oXiiPlvlh9lyS3Vqko"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA_KICvnn4IokmN0oXiiPlvlh9lyS3Vqko"></script>
         <script type="text/javascript">
-            function mapInitialize() {
-                // create property LatLng
+            function initialize() {
                 var propLatLng = new google.maps.LatLng(<?php echo $propertyObj->getLatitude(); ?>,<?php echo $propertyObj->getLongitude(); ?>);
                 var mapOptions = {
+                    zoom: 12,
                     center: propLatLng,
-                    scrollwheel: false,
-                    zoom: 12
+                    mapTypeControl: true,
+                    mapTypeControlOptions: {
+                        style: google.maps.MapTypeControlStyle.DEFAULT,
+                        mapTypeIds: [
+                            google.maps.MapTypeId.ROADMAP,
+                            google.maps.MapTypeId.TERRAIN
+                        ]
+                    },
+                    zoomControl: true,
+                    zoomControlOptions: {
+                        style: google.maps.ZoomControlStyle.SMALL
+                    },
+                    scrollwheel: false
                 };
-                var map = new google.maps.Map(document.getElementById('gmapCanvas'),
-                    mapOptions);
+                var map = new google.maps.Map(document.getElementById('gmapCanvas'), mapOptions);
                 var marker = new google.maps.Marker({
                     position: propLatLng,
                     map: map,
                     title: '<?php echo $propertyObj->getPropertyName(); ?>'
                 });
             }
-//            google.maps.event.addDomListener(window, 'load', initialize);
-//            $(window).on('load', initialize)
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+
         </script>
         <div class="featured-round">Related Properties</div>
     </section>

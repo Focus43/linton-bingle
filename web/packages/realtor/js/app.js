@@ -859,9 +859,5 @@ window.addEventListener("load", function() {
         }
     });
 
-    // HACK
-    if ( $("#gmapCanvas").length > 0 && mapInitialize ) {
-        mapInitialize();
-    }
 
 }, false);
