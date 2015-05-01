@@ -157,7 +157,7 @@ foreach ($navItems as $ni) {
     }
 }
 
-    echo '<li class="has-subs" data-sub="contact"><a href="/contact">Contact</a> </li>';
+    echo '<li class="has-subs contact" data-sub="contact"><a href="/contact">Contact</a> </li>';
     echo '<li class="sub" id="sub-contact"><ul>';
 
     echo '<li><img src="' . REALTOR_IMAGE_PATH . 'logo_white.png"></li>';

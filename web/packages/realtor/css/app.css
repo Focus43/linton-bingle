@@ -293,6 +293,8 @@ body #c-level-1 header {
         font: 1em "Josefin Sans", sans-serif;
         font-weight: 700;
         text-transform: uppercase; }
+        body #c-level-1 header nav ul li.contact {
+          margin: 0 !important; }
         body #c-level-1 header nav ul li a:hover, body #c-level-1 header nav ul li a:active {
           color: #b5121b !important;
           text-decoration: none; }
@@ -367,6 +369,15 @@ body #c-level-1 header {
                   body #c-level-1 header nav ul li.sub#sub-contact > ul > li ul.social li a:hover, body #c-level-1 header nav ul li.sub#sub-contact > ul > li ul.social li a:active {
                     color: #e2dddb;
                     text-decoration: none; }
+  body #c-level-1 header ul.social {
+    position: absolute;
+    top: 45px;
+    right: 35px; }
+    body #c-level-1 header ul.social li a {
+      color: #ffffff; }
+      body #c-level-1 header ul.social li a:hover, body #c-level-1 header ul.social li a:active {
+        color: #e2dddb;
+        text-decoration: none; }
 
 body #c-level-1 header, body.pg-home #c-level-1 header.shrink {
   height: 75px;

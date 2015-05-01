@@ -6,6 +6,7 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
         .logo { display: block;float: left;background-repeat: none; }
         ul { display: block;float: right;margin: 0;position: relative;min-width:100px;
             li { display: block;float: left;margin:0 17px;list-style: none;font: 1em $theme-font-family-headers;font-weight: 700;text-transform: uppercase;
+                &.contact { margin:0 !important; }
                 a {
                     &:hover, &:active { color: $theme-color-red !important;text-decoration: none; }
                     i.icon-arrow-down { line-height: 0.5; }
@@ -37,6 +38,11 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
                     }
                 }
             }
+        }
+    }
+    ul.social { position: absolute; top: 45px; right: 35px;
+        li a { color: $theme-color-white;
+            &:hover, &:active { color: $theme-color-beige;text-decoration: none; }
         }
     }
 }

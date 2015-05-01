@@ -185,10 +185,13 @@ var Featured = function () {
 
 }
 var Header = function () {
+
     this.initShrink = function () {
         // shrink header on scroll (only on home page)
         if ( $('body').hasClass('pg-home') ) {
             var _header = $('header')
+            var _social = $('header ul.social')
+
             if ( $(window).scrollTop() > 50 ) {
                 _header.addClass("shrink")
             }
@@ -196,8 +199,10 @@ var Header = function () {
             $(window).scroll( function() {
                 if ( $(window).scrollTop() > 50 ) {
                     TweenLite.to(_header, 0.5, {className:"shrink"})
+                    TweenLite.to(_social, 0.5, {autoAlpha:0})
                 } else {
                     TweenLite.to(_header, 0.5, {className:"-=shrink"})
+                    TweenLite.to(_social, 0.5, {autoAlpha:1})
                 }
             })
         }
