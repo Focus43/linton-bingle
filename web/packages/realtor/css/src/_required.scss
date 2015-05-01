@@ -13,7 +13,7 @@ $nav-header-short-height:   75px;
 $nav-header-full-bg-color:  rgba(0, 0, 0, 0.33);
 $nav-header-short-bg-color: #ffffff;
 
-$animate-time:             0.5s;
+$animate-time:             0.8s;
 
 // Palette
 $theme-font-family-headers:   'Josefin Sans', sans-serif;
@@ -79,10 +79,10 @@ $modal-inner-padding:           20px;
 }
 
 @mixin blockTransition {
-    -webkit-transition: all $animate-time ease-in-out;
-    -moz-transition: all $animate-time ease-in-out;
-    -o-transition: all $animate-time ease-in-out;
-    transition: all $animate-time ease-in-out;
+    -webkit-transition: all $animate-time ease-in;
+    -moz-transition: all $animate-time ease-in;
+    -o-transition: all $animate-time ease-in;
+    transition: all $animate-time ease-in;
 }
 
 @mixin bottomBorder { border-bottom: 1px solid $theme-line-color; }

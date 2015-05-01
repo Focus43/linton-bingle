@@ -43,7 +43,6 @@
                         <h3>ABOUT</h3>
                         <div class="extra">
                             <div><?php $a = new Area("About Short"); $a->display($c); ?></div>
-<!--                            <p>Together, Betsy and Carol are a real estate team unlike any other in the Valley.  Their professional marketing style and customer service to their clients is unrivaled and for those qualities they earned the 2013 Award for Professional Excellence.</p>-->
                         </div>
                         <div class="more">READ MORE</div>
                     </div>
@@ -53,7 +52,6 @@
                         <h3>RESOURCES</h3>
                         <div class="extra">
                             <div><?php $a = new Area("Resources Short"); $a->display($c); ?></div>
-<!--                            <p>A trusted team with a wealth of information fo Buyers and Sellers</p>-->
                         </div>
                         <div class="more">LEARN MORE</div>
                     </div>
@@ -63,7 +61,6 @@
                         <h3>BLOG / MEDIA</h3>
                         <div class="extra">
                             <?php $a = new Area("Blog Short"); $a->display($c); ?>
-<!--                            <p>Stay up to date with our latest posts,  property brochures and videos.</p>-->
                         </div>
                         <div class="more">READ MORE</div>
                     </div>
