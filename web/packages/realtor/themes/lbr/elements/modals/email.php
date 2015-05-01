@@ -1,12 +1,21 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied."));
-//	Loader::model('spark/property', 'linton');
-//	$sparkProperty = SparkProperty::getByID( $_REQUEST['entityID'] );
-
+use Concrete\Package\Realtor\Src\PropertySearch\SparkProperty as SparkProperty;
+if ($_REQUEST['entityID']) {
+    $sparkProperty = SparkProperty::getByID( $_REQUEST['entityID'] );
+}
 	$formHelper = Loader::helper('form');
 ?>
 
 <div class="modal-body">
     <div id="content-email" >
+        <?php if ( $_REQUEST['entityID'] ) : ?>
+        <p>
+            MLS #: <strong><?php echo $sparkProperty->getMlsNumber(); ?></strong><br />
+            Property Title: <strong><?php echo $sparkProperty->getPropertyName(); ?></strong><br />
+<!--            City, State: <strong>--><?php //echo $sparkProperty->getCity() . ', ' . $sparkProperty->getStateOrProvince(); ?><!--</strong><br />-->
+            Price: <strong>$<?php echo number_format($sparkProperty->getListPrice(), 2); ?></strong>
+        </p>
+        <?php endif; ?>
         <form id="contact-form" data-method="json" action="/process_form">
             <div class="row padless">
                 <div class="col-xs-12 col-sm-6 col-md-6"><?php echo $formHelper->text('share_sender_name_first', '', array('style'=>'width:95%;','placeholder'=>'FIRST NAME')); ?></div>
@@ -19,6 +28,24 @@
             <div class="row padless">
                 <div class="col-sm-12 col-sm-12 col-md-12"><?php echo $formHelper->textarea('share_message', '', array('rows'=>'4', 'style'=>'width:97%;', 'placeholder'=>'MESSAGE')); ?></div>
             </div>
+
+            <?php if ( $_REQUEST['entityID'] ) : ?>
+            <div class="row padless checkboxes">
+                <label class="checkbox">
+                    <?php echo $formHelper->checkbox('inquiry[]', 'I would like more information about this property'); ?> I would like more information about this property
+                </label><br>
+                <label class="checkbox">
+                    <?php echo $formHelper->checkbox('inquiry[]', 'I  would like more information about similar properties'); ?> I  would like more information about similar properties
+                </label><br>
+                <label class="checkbox">
+                    <?php echo $formHelper->checkbox('inquiry[]', 'I am interested in selling a similar property'); ?> I am interested in selling a similar property
+                </label><br>
+                <label class="checkbox">
+                    <?php echo $formHelper->checkbox('inquiry[]', 'Other'); ?> Other
+                </label>
+            </div>
+            <?php endif; ?>
+
             <div class="row padless">
                 <div class="col-xs-12 col-sm-12 col-md-12 captcha clearfix">
                     <?php
@@ -27,7 +54,6 @@
                     $captcha->showInput(array('placeholder'=>'TYPE LETTERS IN IMAGE'));
                     ?>
                 </div>
-<!--                <div class="col-xs-12 col-sm-6 col-md-6">--><?php //echo $captcha->showInput(); ?><!--</div>-->
             </div>
 
 

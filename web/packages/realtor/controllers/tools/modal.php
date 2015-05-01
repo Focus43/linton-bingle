@@ -4,10 +4,14 @@
     use PageList;
     use Controller;
     use Concrete\Package\Realtor\Controller\Tools\AjaxHandler as AjaxHandler;
+    use Concrete\Package\Realtor\Src\SparkProperty as SparkProperty;
 
     class Modal extends Controller {
 
         public function email(  ) {
+            include REALTOR_MODAL_PATH . "/email.php";
+        }
+        public function inquire(  ) {
             include REALTOR_MODAL_PATH . "/email.php";
         }
 
@@ -19,17 +23,17 @@
             $handler = new AjaxHandler();
 
             switch( true ){
-//                case $_REQUEST['type'] == 'inquire':
-//                    $sparkProperty = SparkProperty::getByID( $_REQUEST['localeID'] );
-//                    // validation
-//                    $handler->addRequired('name', 'Name field is required.');
-//                    $handler->addRequiredEmail('email', 'A valid email address is required.');
-//                    $handler->addRequired('phone', 'Phone field is required.');
-//                    // mail settings
-//                    $handler->addRecipient( LINTON_EMAIL_ADDRESS );
-//                    $handler->addTemplateParameter('sparkProperty', $sparkProperty);
-//                    $handler->setTemplate('inquire', 'linton');
-//                    break;
+                case $_REQUEST['type'] == 'inquire':
+                    $sparkProperty = SparkProperty::getByID( $_REQUEST['localeID'] );
+                    // validation
+                    $handler->addRequired('name', 'Name field is required.');
+                    $handler->addRequiredEmail('email', 'A valid email address is required.');
+                    $handler->addRequired('phone', 'Phone field is required.');
+                    // mail settings
+                    $handler->addRecipient( LINTON_EMAIL_ADDRESS );
+                    $handler->addTemplateParameter('sparkProperty', $sparkProperty);
+                    $handler->setTemplate('inquire', 'linton');
+                    break;
 
 
 //                case $_REQUEST['type'] == 'share':

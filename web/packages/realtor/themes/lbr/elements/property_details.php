@@ -69,7 +69,8 @@
             <p id="property-details"><?php echo $propertyObj->getDescription(); ?></p>
             <div class="action-buttons">
                 <a href="/properties/print_friendly/<?= $propertyObj->getPropertyID() ?>" class="btn btn-red" id="brochure">VIEW BROCHURE</a>
-                <button class="btn btn-red" id="inquire">INQUIRE ABOUT PROPERTY</button>
+                <button class="btn btn-red modalize" id="inquire" data-title="Inquire About Property"data-entity-id="<?php echo $propertyObj->getPropertyID(); ?>" data-load="/inquire">INQUIRE ABOUT PROPERTY</button>
+
                 <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="btn btn-white">BACK TO SEARCH</a>
             </div>
         </div>

@@ -1038,6 +1038,12 @@ section.search {
 .icon-pinterest:before {
   content: "\e602"; }
 
+div.checkboxes {
+  padding: 0 20px; }
+  div.checkboxes label {
+    margin-top: 0;
+    margin-bottom: 0; }
+
 .modal-open {
   overflow: hidden; }
 

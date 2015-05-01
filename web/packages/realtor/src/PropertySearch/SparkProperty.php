@@ -95,6 +95,12 @@
         /**
          * @return string
          */
+        public function getStateOrProvince() {
+            return $this->StateOrProvince;
+        }
+        /**
+         * @return string
+         */
         public function getBuildingAreaTotal() {
             return number_format( (int) $this->BuildingAreaTotal, 2 );
         }

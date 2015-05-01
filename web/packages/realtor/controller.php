@@ -100,6 +100,9 @@
             Route::register('/modal/email',
                 '\Concrete\Package\Realtor\Controller\Tools\Modal::email'
             );
+            Route::register('/modal/inquire',
+                '\Concrete\Package\Realtor\Controller\Tools\Modal::email'
+            );
             Route::register('/process_form',
                 '\Concrete\Package\Realtor\Controller\Tools\Modal::processForm'
             );
