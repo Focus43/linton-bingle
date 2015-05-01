@@ -26,7 +26,7 @@ var Header = function () {
 
         var slideable = $("[slideable]")
         var mobileNav = $("div#mobileNav");
-        mobileNav.height(slideable.height());
+//        mobileNav.height(slideable.height());
         $("body").append(mobileNav);
         var trigger = $("div.trigger a")
         var triggerContainer = $("div.trigger")

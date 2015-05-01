@@ -467,19 +467,19 @@ ul.sidebar {
 
   div#mobileNav {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 100%;
     width: calc(100% - 75px);
-    height: 100%; }
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #b5121b; }
     div#mobileNav.open {
       left: 75px; }
     div#mobileNav ul.sidebar {
       display: block !important;
       width: 100%;
       height: 100%;
-      top: 0;
-      left: 100%;
       background-color: #b5121b;
       list-style: none;
       padding: 0;

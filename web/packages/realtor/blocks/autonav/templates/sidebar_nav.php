@@ -157,8 +157,8 @@ foreach ($navItems as $ni) {
     }
 }
 
-    echo '<li class="has-subs contact" data-sub="contact"><a href="/contact">Contact</a> </li>';
-    echo '<li class="sub" id="sub-contact"><ul>';
+    echo '<li class="has-subs contact" data-sub="contact"><a href="/contact">Contact</a> </li>'; // contact
+    echo '<li class="sub" id="sub-contact"><ul>'; // opens contact sub
 
     echo '<li><img src="' . REALTOR_IMAGE_PATH . 'logo_white.png"></li>';
     echo '<li><div class="address">' . $controller->pkgConfig->get('theme.address_physical') .'<br>' . $controller->pkgConfig->get('theme.address_po') . '<br>' . $controller->pkgConfig->get('theme.address_state') . '<br>' . $controller->pkgConfig->get('theme.phone_number_office') . '</div></li>';
@@ -187,10 +187,14 @@ foreach ($navItems as $ni) {
 
 //    echo '</ul></li>';
 
-    echo '</ul><li>';
+    echo '</ul><li>'; // closes contact sub
 
 
 echo '</ul>'; //closes the top-level menu
+
+
+
+
 
 
 // make the sidebar menu
