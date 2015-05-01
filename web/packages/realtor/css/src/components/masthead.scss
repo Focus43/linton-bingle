@@ -2,7 +2,7 @@
     .node { height: 845px;width: 100%;display: table;visibility: hidden;opacity: 0;position: absolute;top: 0;left: 0;background-size: cover;background-position: 70% 50%;
         &:first-of-type { visibility: visible;opacity: 1; }
         .inner {width:100%;height:100%;display:table-cell;vertical-align:middle;text-align:right;padding-bottom:2rem;}
-        .node-content {font-size:1.3rem;display:inline-block;max-width:50%;padding:0 2rem;font-family: $theme-font-family-headers;
+        .node-content {font-size:1.3rem;display:inline-block;max-width:50%;padding:0 2rem;
             p { margin: 0 0.4em; }
             h2 { text-align: right !important;padding: 0 0.4em !important;
                 p { padding: 0 !important;margin: 0 !important; }

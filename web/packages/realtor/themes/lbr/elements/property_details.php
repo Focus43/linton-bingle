@@ -1,5 +1,3 @@
-<?php print_r($propertyObj);exit; ?>
-
 <?php $photos = $propertyObj->getPhotos(); ?>
 <?php $videos = $propertyObj->getVideos(); ?>
 <script>
@@ -57,7 +55,7 @@
             <div class="list clearfix">
                 <div>
                     <span class="bold">MLS #:</span> <?php echo $propertyObj->getMlsNumber(); ?><br>
-                    <span class="bold">Beds:</span> <?php echo $propertyObj->getBathsNumber(); ?><br>
+                    <span class="bold">Beds:</span> <?php echo $propertyObj->getBedsNumber(); ?><br>
                     <span class="bold">Baths:</span> <?php echo $propertyObj->getBathsFull(); ?>&nbsp;&nbsp;&nbsp;<span class="bold">Half Baths:</span> <?php echo $propertyObj->getBathsHalf(); ?><br>
                     <span class="bold">Property Type:</span> <?php echo $propertyObj->getPropertyType(); ?>
                 </div>
@@ -69,6 +67,11 @@
                 </div>
             </div>
             <p id="property-details"><?php echo $propertyObj->getDescription(); ?></p>
+            <div class="action-buttons">
+                <a href="/properties/print_friendly/<?= $propertyObj->getPropertyID() ?>" class="btn btn-red" id="brochure">VIEW BROCHURE</a>
+                <button class="btn btn-red" id="inquire">INQUIRE ABOUT PROPERTY</button>
+                <a href="<?php echo $_SERVER['HTTP_REFERER']; ?>" class="btn btn-white">BACK TO SEARCH</a>
+            </div>
         </div>
     </section>
     <?php if ( count($videos) > 0 ) : ?>

@@ -609,8 +609,7 @@ section.footer {
       font-size: 1.3rem;
       display: inline-block;
       max-width: 50%;
-      padding: 0 2rem;
-      font-family: "Josefin Sans", sans-serif; }
+      padding: 0 2rem; }
       .masthead .node .node-content p {
         margin: 0 0.4em; }
       .masthead .node .node-content h2 {
@@ -1779,6 +1778,8 @@ body.pg-properties div#c-level-1 div.property-detail {
         font-weight: bold; }
   body.pg-properties div#c-level-1 div.property-detail section.details div.detail-wrapper p {
     padding: 15px 2px 0 2px; }
+  body.pg-properties div#c-level-1 div.property-detail section.details div.detail-wrapper div.action-buttons {
+    padding: 20px 0 30px 0; }
   body.pg-properties div#c-level-1 div.property-detail section.video {
     padding-bottom: 10px; }
     body.pg-properties div#c-level-1 div.property-detail section.video div.wrapper {

@@ -5,6 +5,7 @@
     use Concrete\Package\Realtor\Controller\RealtorPageController;
     use Concrete\Package\Realtor\Src\Regions\RegionList as RegionList;
     use Concrete\Package\Realtor\Src\Regions\Region as Region;
+    use Concrete\Package\Realtor\Controller AS PackageController;
     use FileSet;
 
 	class Properties extends RealtorPageController {
@@ -74,15 +75,17 @@
             $this->set('area', 'Other' == $area ? null : $area);
             $price = (int) $propertyObj->getListPrice();// number_format((int) $sparkProperty->getListPrice(), 2)
             $this->set('price', $price > 0 ? '$' . number_format($price) : null);
-            $this->set('beds', $propertyObj->getBedsTotal());
+            $this->set('beds', $propertyObj->getBedsNumber());
             $this->set('fullBaths', $propertyObj->getBathsFull());
             $this->set('halfBaths', $propertyObj->getBathsHalf());
             $squareFeet = (int) $propertyObj->getBuildingAreaTotal();
             $this->set('squareFeet', $squareFeet > 0 ? number_format($squareFeet) : null);
-            $mls = $propertyObj->getListingId();
+            $mls = $propertyObj->getMlsNumber();
             $this->set('mls', empty($mld) ? null : $mls);
-            $details = $propertyObj->getPublicRemarks();
+            $details = $propertyObj->getDescription();
             $this->set('details', empty($details) ? null : nl2br($details));
+
+            $this->set('pkgConfig', PackageController::getPackageConfigObj());
 
             $this->render('print');
         }
