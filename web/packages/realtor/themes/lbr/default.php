@@ -29,6 +29,7 @@
             </div>
         </section>
 
+        <?php if ( substr_count($_SERVER['REQUEST_URI'], "blog") == 0 ) : ?>
         <section class="current-level-nav skinny-wrap">
             <?php
             $blockTypeNav                                       = BlockType::getByHandle('autonav');
@@ -40,6 +41,7 @@
             $blockTypeNav->render('templates/landing_page_main_nav');
             ?>
         </section>
+        <?php endif; ?>
 
         <section class="content wide-wrap">
             <?php $a = new Area("Content 1"); $a->display($c); ?>
