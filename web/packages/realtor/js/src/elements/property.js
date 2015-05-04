@@ -130,6 +130,7 @@ var Property = function () {
                 if ( resp.properties.length >= 3 ) {
                     var rendered1 = Mustache.render(firstTemplate, resp);
                     $('#relatedListings').html(rendered1);
+                    $('.featured-round').css('display', 'block')
                 } else {
                     $('#relatedListings').html("")
                 }

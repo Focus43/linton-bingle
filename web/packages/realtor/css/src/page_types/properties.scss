@@ -123,11 +123,11 @@ body.pg-properties div#c-level-1 {
                 @media screen and (max-width:$screen-xs) {
                     div.property { width: 100%;border: 0;padding-bottom: 10px;}
                 }
-                div.featured-round { top: -60px; }
+                div.featured-round { top: -60px;display: none; }
             }
         }
         div#gmapCanvas { width:100%;height:500px; }
-        section.googlemap .featured-round { bottom: -60px; }
+        section.googlemap .featured-round { bottom: -60px;display: none; }
     }
     div.area-details {
         section.hero { height: 620px;width: 100%;margin-bottom: -1px; }

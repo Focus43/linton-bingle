@@ -192,6 +192,10 @@ var Header = function () {
             var _header = $('header')
             var _social = $('header ul.social')
 
+            if ( $(window).scrollTop() > 50 ) {
+                _header.addClass("shrink")
+            }
+
             $(window).scroll( function() {
                 if ( $(window).scrollTop() > 50 ) {
                     TweenLite.to(_header, 0.5, {className:"shrink"})
@@ -208,7 +212,6 @@ var Header = function () {
 
         var slideable = $("[slideable]")
         var mobileNav = $("div#mobileNav");
-//        mobileNav.height(slideable.height());
         $("body").append(mobileNav);
         var trigger = $("div.trigger a")
         var triggerContainer = $("div.trigger")
@@ -237,8 +240,10 @@ var Header = function () {
     this.initSubNavAction = function () {
         // make sure width of container ul is correct (cross browser hack)
         $('nav ul.majority > li.sub').each( function ( idx, elm ) {
-            var _kids = $(elm).children('ul').children("li");
-            $(elm).children('ul').css('width', (180 * _kids.length) + 22); // 22 is padding + border
+            if ( $(elm).attr("id") != "sub-contact" )  {
+                var _kids = $(elm).children('ul').children("li");
+                $(elm).children('ul').css('width', (180 * _kids.length) + 22); // 22 is padding + border
+            }
         })
 
         // set up click events
@@ -677,6 +682,7 @@ var Property = function () {
                 if ( resp.properties.length >= 3 ) {
                     var rendered1 = Mustache.render(firstTemplate, resp);
                     $('#relatedListings').html(rendered1);
+                    $('.featured-round').css('display', 'block')
                 } else {
                     $('#relatedListings').html("")
                 }
@@ -770,6 +776,49 @@ var Regions = function () {
         }
     }
 }
+var ResponsiveVideo = function () {
+
+
+    this.initVideoResize = function () {
+        // Find all YouTube videos
+        var $allVideos = $("iframe[src^='//player.vimeo.com'], iframe[src^='//www.youtube.com']"),
+            $fluidEl = $("body");
+
+        // Figure out and save aspect ratio for each video
+        $allVideos.each(function() {
+
+            $(this)
+                .data('aspectRatio', this.height / this.width)
+
+                // and remove the hard coded width/height
+                .removeAttr('height')
+                .removeAttr('width');
+
+        });
+
+        // When the window is resized
+        $(window).resize(function() {
+
+            var newWidth = $fluidEl.width();
+
+            // Resize all videos according to their own aspect ratio
+            $allVideos.each(function() {
+
+                var $el = $(this);
+                $el
+                    .width(newWidth)
+                    .height(newWidth * $el.data('aspectRatio'));
+
+            });
+
+        // Kick off one resize to fix all videos on page load
+        }).resize();
+    }
+
+    this.onloadFunc = function () {
+        this.initVideoResize();
+    }
+}
 var Search = function () {
 
     var self = this,
@@ -858,6 +907,7 @@ var Search = function () {
     addModule('Modals');
     addModule('Home');
     addModule('Regions');
+    addModule('ResponsiveVideo');
 
     ns.init = function () {
         /* global FastClick */

@@ -82,10 +82,10 @@
 //            $search = new SparkSearch( array('city' => $city, 'beds' => $beds, 'baths' => $baths, 'priceMin' => $price - 200000, 'priceMax' => $price + 200000) );
             $search = new SparkSearch( array('city' => $city) );
             $search->setApiMethod('getMyListings');
-            $search->setSearchParams(array('_limit' => 3 ));
-            $results = $search->get();
+            $search->setSearchParams(array('_limit' => 3,'_select' => 'Photos.Uri800, Id, StreetName, StreetSuffix, City, StateOrProvince, ListingId, PublicRemarks' ));
+            $results = $search->get()->getResults();
 
-            if ( $results ) {
+            if ( $results && count($results) >= 3 ) {
                 foreach ( $results as $r ) {
                     $property = new \stdClass;
                     $property->mainImage = $r->getFirstPhotoURL("800");

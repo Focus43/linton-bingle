@@ -6,6 +6,10 @@ var Header = function () {
             var _header = $('header')
             var _social = $('header ul.social')
 
+            if ( $(window).scrollTop() > 50 ) {
+                _header.addClass("shrink")
+            }
+
             $(window).scroll( function() {
                 if ( $(window).scrollTop() > 50 ) {
                     TweenLite.to(_header, 0.5, {className:"shrink"})
@@ -22,7 +26,6 @@ var Header = function () {
 
         var slideable = $("[slideable]")
         var mobileNav = $("div#mobileNav");
-//        mobileNav.height(slideable.height());
         $("body").append(mobileNav);
         var trigger = $("div.trigger a")
         var triggerContainer = $("div.trigger")
@@ -51,8 +54,10 @@ var Header = function () {
     this.initSubNavAction = function () {
         // make sure width of container ul is correct (cross browser hack)
         $('nav ul.majority > li.sub').each( function ( idx, elm ) {
-            var _kids = $(elm).children('ul').children("li");
-            $(elm).children('ul').css('width', (180 * _kids.length) + 22); // 22 is padding + border
+            if ( $(elm).attr("id") != "sub-contact" )  {
+                var _kids = $(elm).children('ul').children("li");
+                $(elm).children('ul').css('width', (180 * _kids.length) + 22); // 22 is padding + border
+            }
         })
 
         // set up click events

@@ -18,6 +18,7 @@
     addModule('Modals');
     addModule('Home');
     addModule('Regions');
+    addModule('ResponsiveVideo');
 
     ns.init = function () {
         /* global FastClick */
