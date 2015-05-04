@@ -339,7 +339,8 @@ var Landing = function () {
                     _data.pages = _pageCollections[currentPage-1];
                 } else {
                     _data.pages = resp.pages;
-                    _data.increments = (resp.pages.length > 0) ? [1] : [];
+//                    _data.increments = (resp.pages.length > 0) ? [1] : [];
+                    _data.increments = null;
                 }
 
                 var pageListRendered = Mustache.render(pageListTempl, _data);
