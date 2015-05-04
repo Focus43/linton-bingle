@@ -74,6 +74,36 @@ video.fullscreen {
     border-top: 1px solid #e4e3e3;
     height: 1px;
     width: 100%; }
+  #c-level-1 section.current-level-nav {
+    text-align: center;
+    padding-bottom: 20px; }
+    #c-level-1 section.current-level-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: inline-block; }
+      #c-level-1 section.current-level-nav ul li {
+        list-style: none;
+        padding: 0 10px;
+        margin: 0;
+        display: inline-block;
+        float: left;
+        border-right: 1px solid #e4e3e3; }
+        #c-level-1 section.current-level-nav ul li:last-of-type {
+          border-right: 0; }
+        #c-level-1 section.current-level-nav ul li a {
+          text-transform: uppercase;
+          color: #9b8c86;
+          font-family: "Josefin Sans", sans-serif;
+          font-size: 0.9em; }
+          #c-level-1 section.current-level-nav ul li a:hover, #c-level-1 section.current-level-nav ul li a.nav-selected {
+            color: #b5121b;
+            text-decoration: none; }
+      @media screen and (max-width: 480px) {
+        #c-level-1 section.current-level-nav ul li {
+          width: 100%;
+          float: left;
+          border-right: 0; } }
   #c-level-1 main {
     width: 100%;
     position: relative;
@@ -1450,36 +1480,6 @@ html.cms-edit-mode div.row > div {
             max-width: 100%; }
             .pg-landing #c-level-1 section.hero .masthead .node .inner .node-image h3, .pg-landing #c-level-1 section.hero .masthead .node .inner .node-content h3 {
               margin-top: 20px; } }
-.pg-landing #c-level-1 section.current-level-nav {
-  text-align: center;
-  padding-bottom: 20px; }
-  .pg-landing #c-level-1 section.current-level-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    display: inline-block; }
-    .pg-landing #c-level-1 section.current-level-nav ul li {
-      list-style: none;
-      padding: 0 10px;
-      margin: 0;
-      display: inline-block;
-      float: left;
-      border-right: 1px solid #e4e3e3; }
-      .pg-landing #c-level-1 section.current-level-nav ul li:last-of-type {
-        border-right: 0; }
-      .pg-landing #c-level-1 section.current-level-nav ul li a {
-        text-transform: uppercase;
-        color: #9b8c86;
-        font-family: "Josefin Sans", sans-serif;
-        font-size: 0.9em; }
-        .pg-landing #c-level-1 section.current-level-nav ul li a:hover, .pg-landing #c-level-1 section.current-level-nav ul li a.nav-selected {
-          color: #b5121b;
-          text-decoration: none; }
-    @media screen and (max-width: 480px) {
-      .pg-landing #c-level-1 section.current-level-nav ul li {
-        width: 100%;
-        float: left;
-        border-right: 0; } }
 .pg-landing #c-level-1 section.subnav {
   text-align: center; }
   .pg-landing #c-level-1 section.subnav h3 {

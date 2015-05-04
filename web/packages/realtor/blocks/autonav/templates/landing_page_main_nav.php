@@ -2,6 +2,10 @@
 
 $navItems = $controller->getNavItems(true);
 
+if ( count($navItems) <= 1 ) {
+    return;
+}
+
 /**
  * The $navItems variable is an array of objects, each representing a nav menu item.
  * It is a "flattened" one-dimensional list of all nav items -- it is not hierarchical.

@@ -28,7 +28,19 @@
                 </div>
             </div>
         </section>
-<!--        <section class="wide-wrap"><h2>--><?php //echo $c->getCollectionName(); ?><!--</h2></section>-->
+
+        <section class="current-level-nav skinny-wrap">
+            <?php
+            $blockTypeNav                                       = BlockType::getByHandle('autonav');
+            $blockTypeNav->controller->orderBy                  = 'display_desc';
+            $blockTypeNav->controller->displayPages             = 'current';
+            $blockTypeNav->controller->displaySubPages          = 'enough';
+            $blockTypeNav->controller->displaySubPageLevels     = 'enough';
+            $blockTypeNav->controller->displaySubPageLevelsNum  = 1;
+            $blockTypeNav->render('templates/landing_page_main_nav');
+            ?>
+        </section>
+
         <section class="content wide-wrap">
             <?php $a = new Area("Content 1"); $a->display($c); ?>
         </section>
