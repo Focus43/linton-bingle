@@ -7,6 +7,9 @@ h1, h2, h3, h4, h5 { font-family: $theme-font-family-headers; }
 
 video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;width:auto;height:auto;z-index:-100;}
 
+// google maps control fix
+#gmapCanvas img { max-width: none; }
+
 // Page wrapper
 #c-level-1 { height:100%;
     iframe { max-width: 100% !important; }

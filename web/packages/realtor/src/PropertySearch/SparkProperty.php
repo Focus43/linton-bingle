@@ -12,10 +12,10 @@
         public function __construct( $properties = array(), $setCache = false ){
             $this->setPropertiesFromArray($properties);
             // cache it
-            if( $setCache === true ) {
-                $toCache = RedisCache::cache()->_serialize($this);
-                RedisCache::cache()->set(__CLASS__ . $this->Id, $toCache, 48*60);
-            }
+//            if( $setCache === true ) {
+//                $toCache = RedisCache::cache()->_serialize($this);
+//                RedisCache::cache()->set(__CLASS__ . $this->Id, $toCache, 48*60);
+//            }
         }
 
         public function setPropertiesFromArray($arr) {
@@ -53,6 +53,8 @@
                 // instantiate self with properties, and set true to force caching
                 $self = new self( $listingData, true );
 
+                $toCache = RedisCache::cache()->_serialize($self);
+                RedisCache::cache()->set(__CLASS__ . $id, $toCache, 48*60);
                 // return it
                 return $self;
 
