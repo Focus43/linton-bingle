@@ -67,10 +67,10 @@ video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;wid
         footer [modalize]{display:inline;}
     }
     .visible-sm { display: none !important; }
-    .hidden-sm { display: block !important; }
+    .hidden-sm { display: block; }
 }
 @media screen and (max-width:$screen-sm){
-    .visible-sm { display: block !important; }
+    .visible-sm { display: block; }
     .hidden-sm { display: none !important; }
 }
 

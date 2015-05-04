@@ -16,13 +16,12 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
                 }
             }
             li.sub { position:relative;padding: 0; margin: 0;font-size: 0.9em;visibility: hidden;opacity: 0;
-                & > ul { display: flex;position: absolute;top: 25px;right: -35px;background-color: $theme-color-red;border: 1px solid $theme-color-darkred;height: 180px;padding: 0 10px !important; }
-                li { width: 180px;float: left;text-align: center;margin: 0 !important;
+                & > ul { display: inline-block;position: absolute;top: 25px;right: -35px;background-color: $theme-color-red;border: 1px solid $theme-color-darkred;height: 180px;padding: 0 10px !important; }
+                li { width: 180px;height: 180px;float: left;text-align: center;margin: 0 !important;
                     a { color: $theme-color-white !important; }
                     a:hover { color: $theme-color-beige !important;text-decoration: none; }
                     div.pg-icon { overflow: hidden;display: block;background-size: cover;background-position: 70% 50%;width: 160px;height: 100px;margin: 20px auto 15px auto; }
                 }
-//                &.open { visibility: visible;opacity: 1; }
                 &#sub-contact {
                     & > ul { width: 250px;display: block;color: $theme-color-white;height: 200px;position: absolute;top: 25px;right: -35px;
                         & > li { width: 100%;float: none;display: block;text-align: left;width: 100%;text-transform: none;
@@ -50,6 +49,7 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
 }
 // short header
 body #c-level-1 header, body.pg-home #c-level-1 header.shrink { height:$nav-header-short-height;background-color: $nav-header-short-bg-color;padding: 0 40px;@include bottomBorder();
+    ul.social { display: none; }
     nav {
         a.logo { background-image: url('#{$image-path}/logo_red.png');background-repeat: no-repeat;width: 232px;height: 43px;margin-top:15px; }
         ul { padding: 30px 0;

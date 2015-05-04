@@ -192,10 +192,6 @@ var Header = function () {
             var _header = $('header')
             var _social = $('header ul.social')
 
-            if ( $(window).scrollTop() > 50 ) {
-                _header.addClass("shrink")
-            }
-
             $(window).scroll( function() {
                 if ( $(window).scrollTop() > 50 ) {
                     TweenLite.to(_header, 0.5, {className:"shrink"})
@@ -239,6 +235,13 @@ var Header = function () {
     }
 
     this.initSubNavAction = function () {
+        // make sure width of container ul is correct (cross browser hack)
+        $('nav ul.majority > li.sub').each( function ( idx, elm ) {
+            var _kids = $(elm).children('ul').children("li");
+            $(elm).children('ul').css('width', (180 * _kids.length) + 22); // 22 is padding + border
+        })
+
+        // set up click events
         var triggers = $('nav ul.majority > li.has-subs')
         triggers.on('click', function ( e ) {
             e.preventDefault()
@@ -258,7 +261,6 @@ var Header = function () {
                 }})
                 // check if subnav in viewport
                 var pos = ulChildren[0].getBoundingClientRect()
-//                if ( ! pos.right <= (window.innerWidth || document.documentElement.clientWidth) ) {
                 if ( pos.right > window.innerWidth ) {
                     var rightDiff = Math.round(pos.right - (window.innerWidth || document.documentElement.clientWidth)) + 5
                     TweenLite.to(ulChildren, 0.2, {x: -rightDiff})
