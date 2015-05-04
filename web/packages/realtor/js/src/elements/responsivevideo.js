@@ -3,7 +3,7 @@ var ResponsiveVideo = function () {
 
     this.initVideoResize = function () {
         // Find all YouTube videos
-        var $allVideos = $("iframe[src^='//player.vimeo.com'], iframe[src^='//www.youtube.com']"),
+        var $allVideos = $("iframe[src^='https://player.vimeo.com'], iframe[src^='http://player.vimeo.com']"),
             $fluidEl = $("body");
 
         // Figure out and save aspect ratio for each video
