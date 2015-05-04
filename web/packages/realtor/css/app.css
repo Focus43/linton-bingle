@@ -80,7 +80,7 @@ video.fullscreen {
       display: inline-block;
       margin: 0 5px; }
       #c-level-1 ul.social li:first-of-type {
-        margin-left: 0px !important; }
+        margin-left: 0px; }
       #c-level-1 ul.social li a:hover {
         text-decoration: none; }
   #c-level-1 .wide-wrap {
@@ -353,31 +353,37 @@ body #c-level-1 header {
             text-transform: none; }
             body #c-level-1 header nav ul li.sub#sub-contact > ul > li img {
               padding-top: 0.8em; }
-            body #c-level-1 header nav ul li.sub#sub-contact > ul > li ul.social {
+            body #c-level-1 header nav ul li.sub#sub-contact > ul > li > ul.social {
               display: block;
               position: relative;
               padding: 10px 0;
               float: none; }
-              body #c-level-1 header nav ul li.sub#sub-contact > ul > li ul.social li {
+              body #c-level-1 header nav ul li.sub#sub-contact > ul > li > ul.social li {
                 float: left;
                 display: inline-block;
                 width: 30px;
                 text-align: left; }
-                body #c-level-1 header nav ul li.sub#sub-contact > ul > li ul.social li a {
+                body #c-level-1 header nav ul li.sub#sub-contact > ul > li > ul.social li a {
                   color: #ffffff;
                   font-size: 1.5em; }
-                  body #c-level-1 header nav ul li.sub#sub-contact > ul > li ul.social li a:hover, body #c-level-1 header nav ul li.sub#sub-contact > ul > li ul.social li a:active {
+                  body #c-level-1 header nav ul li.sub#sub-contact > ul > li > ul.social li a:hover, body #c-level-1 header nav ul li.sub#sub-contact > ul > li > ul.social li a:active {
                     color: #e2dddb;
                     text-decoration: none; }
-  body #c-level-1 header ul.social {
+  body #c-level-1 header > ul.social {
     position: absolute;
     top: 45px;
-    right: 35px; }
-    body #c-level-1 header ul.social li a {
-      color: #ffffff; }
-      body #c-level-1 header ul.social li a:hover, body #c-level-1 header ul.social li a:active {
-        color: #e2dddb;
-        text-decoration: none; }
+    right: 35px;
+    display: inline-block; }
+    body #c-level-1 header > ul.social li {
+      float: left;
+      display: inline-block;
+      width: 30px;
+      text-align: left; }
+      body #c-level-1 header > ul.social li a {
+        color: #ffffff; }
+        body #c-level-1 header > ul.social li a:hover, body #c-level-1 header > ul.social li a:active {
+          color: #e2dddb;
+          text-decoration: none; }
 
 body #c-level-1 header, body.pg-home #c-level-1 header.shrink {
   height: 75px;
@@ -546,6 +552,8 @@ section.footer {
     section.footer div.contact div.address {
       padding-bottom: 20px;
       text-align: left; }
+    section.footer div.contact > ul > li:first-of-type {
+      margin-left: -4px !important; }
     section.footer div.contact ul {
       margin: 0;
       padding: 0 0 35px 0; }

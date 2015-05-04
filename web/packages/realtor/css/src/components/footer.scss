@@ -1,11 +1,12 @@
 section.footer { height: 100%;padding-top: 55px !important;color: $theme-color-brown; overflow: hidden;text-align: center;border-top: 1px solid $theme-line-color;
     div.contact { text-align: left;padding-left: 10px;
         div.address { padding-bottom: 20px;text-align: left; }
+        & > ul > li:first-of-type { margin-left: -4px !important; }
         ul { margin: 0;padding: 0 0 35px 0;
             li a { color: $theme-color-brown;
                 &:hover { color: $theme-color-darkred; }
             }
-        }
+       }
     }
     .small-print { padding-bottom: 15px; }
     .row.table { display: table;height: 100%;

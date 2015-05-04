@@ -32,7 +32,7 @@
         <section class="content wide-wrap">
             <?php $a = new Area("Content 1"); $a->display($c); ?>
         </section>
-        <section class="content wide-wrap">
+        <section class="content wide-wrap" style="padding-bottom: 20px;">
             <?php $a = new Area("Content 2"); $a->display($c); ?>
         </section>
         <?php $this->inc('elements/footer.php'); ?>
