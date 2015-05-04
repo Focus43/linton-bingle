@@ -70,6 +70,10 @@ video.fullscreen {
       margin: 0;
       padding: 2rem 1rem 3rem;
       text-transform: uppercase; }
+  #c-level-1 section.border {
+    border-top: 1px solid #e4e3e3;
+    height: 1px;
+    width: 100%; }
   #c-level-1 main {
     width: 100%;
     position: relative;
@@ -1567,7 +1571,7 @@ html.cms-edit-mode div.row > div {
           width: 100% !important; } }
 
 body.pg-properties div#c-level-1 div.disclaimer {
-  padding: 15px 0; }
+  padding: 15px 0 30px 0; }
 body.pg-properties div#c-level-1 section.search {
   padding-top: 145px !important;
   padding-bottom: 50px !important; }
@@ -1966,8 +1970,6 @@ body.pg-properties div#c-level-1 div.sortbyList {
     padding: 0; }
     body.pg-properties div#c-level-1 div.sortbyList ul li {
       margin-bottom: 3px; }
-body.pg-properties div#c-level-1 div.disclaimer {
-  border-top: 1px solid #e4e3e3; }
 body.pg-properties div#c-level-1 div.featured-round {
   width: 120px;
   height: 120px;

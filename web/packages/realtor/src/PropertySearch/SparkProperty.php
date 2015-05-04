@@ -1,5 +1,7 @@
 <?php namespace Concrete\Package\Realtor\Src\PropertySearch {
 
+    use  Concrete\Package\Realtor\Src\Cache\RedisCache;
+
     class SparkProperty {
 
         /**
@@ -9,10 +11,11 @@
          */
         public function __construct( $properties = array(), $setCache = false ){
             $this->setPropertiesFromArray($properties);
-            // cache it?
-//            if( $setCache === true ){
-//                Cache::set( __CLASS__, $this->Id, $this, (Config::get('FULL_PAGE_CACHE_LIFETIME_CUSTOM') * 60) );
-//            }
+            // cache it
+            if( $setCache === true ) {
+                $toCache = RedisCache::cache()->_serialize($this);
+                RedisCache::cache()->set(__CLASS__ . $this->Id, $toCache, 48*60);
+            }
         }
 
         public function setPropertiesFromArray($arr) {
@@ -27,10 +30,13 @@
         public static function getByID( $id, $bustCache = false ){
             try {
                 // if we can load from the cache, do it
-//                if( !$bustCache ){
-//                    $propertyObj = Cache::get( __CLASS__, $id );
-//                    if( is_object($propertyObj) ){ return $propertyObj; }
-//                }
+                if( !$bustCache ){
+                    $cachedHash = RedisCache::cache()->get(__CLASS__ . $id);
+                    if ( $cachedHash ) {
+                        $cached = RedisCache::cache()->_unserialize($cachedHash);
+                        if( is_object($cached) ){ return $cached; }
+                    }
+                }
 
                 // if we get here, call it from the API
                 $request = SparkConnection::sparkApi()->getListing($id, array('_expand' => 'Photos, Videos', '_select' => ''));

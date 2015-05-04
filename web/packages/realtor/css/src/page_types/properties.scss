@@ -1,5 +1,5 @@
 body.pg-properties div#c-level-1 {
-    div.disclaimer { padding: 15px 0;}
+    div.disclaimer { padding: 15px 0 30px 0;}
     section.search { padding-top: 145px !important;padding-bottom: 50px !important; }
     section.results {
         div.divider-line { width:100%;@include bottomBorder(); }
@@ -177,7 +177,7 @@ body.pg-properties div#c-level-1 {
             li { margin-bottom: 3px; }
         }
     }
-    div.disclaimer { border-top: 1px solid $theme-line-color; }
+
     div.featured-round { width:120px; height:120px;position: absolute;left: calc(50% - 60px);padding-top: 35px;background-color: $theme-color-red;border: 2px solid $theme-color-red; border-radius: 50%; color:$theme-color-white;text-align:center;font-family: $theme-font-family-headers;text-transform: uppercase; }
 }
 

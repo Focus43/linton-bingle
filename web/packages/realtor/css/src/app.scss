@@ -32,6 +32,8 @@ video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;wid
 
     }
 
+    section.border { border-top: 1px solid $theme-line-color;height: 1px;width: 100%; }
+
     main {width:100%;position:relative;overflow-x:hidden;}
 
     ul.social { display: block;

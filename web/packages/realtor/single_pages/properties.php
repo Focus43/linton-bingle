@@ -31,15 +31,15 @@
                     <?php if ( count($searchResults) > $idx + 1 ) : ?><div class="divider-line"></div><?php endif; ?>
                 <?php endforeach; ?>
             </section>
+            <div class="skinny-wrap small-print disclaimer">
+                Information provided through the Teton IDX Program is provided for consumer's personal, non-commercial use and may
+                not be used for any purpose other than to identify prospective properties and individual consumers interested in
+                purchasing. Properties displayed through the Teton IDX Program may be selected by and displayed by an IDX
+                participant, who may not necessarily be the listing agent. Any information contained herein is deemed reliable, but
+                not guaranteed and the Teton MLS is not responsible or liable for the information.<br>
+                The information on this sheet has been made available by the MLS and may not be the listing of the provider.
+            </div>
 
         <?php } ?>
 
-        <div class="skinny-wrap small-print disclaimer">
-            Information provided through the Teton IDX Program is provided for consumer's personal, non-commercial use and may
-            not be used for any purpose other than to identify prospective properties and individual consumers interested in
-            purchasing. Properties displayed through the Teton IDX Program may be selected by and displayed by an IDX
-            participant, who may not necessarily be the listing agent. Any information contained herein is deemed reliable, but
-            not guaranteed and the Teton MLS is not responsible or liable for the information.<br>
-            The information on this sheet has been made available by the MLS and may not be the listing of the provider.
-        </div>
 
