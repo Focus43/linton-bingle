@@ -34,7 +34,9 @@
     @media screen and (max-width:$screen-sm) {
         .node {
             .inner { text-align:center; }
-            .node-content { max-width: 95%; }
+            .node-content { max-width: 95%;
+                h2 { text-align: center !important; }
+            }
         }
     }
     @media screen and (max-width:$screen-xs) {

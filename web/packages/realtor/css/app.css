@@ -726,7 +726,9 @@ section.footer {
     .masthead .node .inner {
       text-align: center; }
     .masthead .node .node-content {
-      max-width: 95%; } }
+      max-width: 95%; }
+      .masthead .node .node-content h2 {
+        text-align: center !important; } }
   @media screen and (max-width: 480px) {
     .masthead .node .node-content > div > p {
       display: none;
@@ -1711,7 +1713,9 @@ body.pg-properties div#c-level-1 section.pagination div.resultsCtrl {
           right: inherit !important;
           position: inherit !important; }
           body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.pager div.sorter > div.arrow, body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.sortby div.sorter > div.arrow {
-            float: right; } }
+            float: right; }
+    body.pg-properties div#c-level-1 section.pagination div.resultsCtrl h3 {
+      padding: 0 10px; } }
 body.pg-properties div#c-level-1 div.property-detail {
   padding-top: 75px; }
   body.pg-properties div#c-level-1 div.property-detail section {
@@ -1960,9 +1964,12 @@ body.pg-properties div#c-level-1 div.area-details section.sub-areas {
                 color: #b5121b;
                 text-decoration: none; }
         @media screen and (max-width: 768px) {
+          body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-image {
+            height: 430px; }
+          body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content {
+            height: calc(100% - 430px); }
           body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-image, body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content {
             width: 100%;
-            height: 50%;
             float: left;
             max-width: 100%; }
             body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-image h3, body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content h3 {
@@ -2002,7 +2009,12 @@ body.pg-properties div#c-level-1 div.featured-round {
 
 @media screen and (max-width: 768px) {
   div.divider-line {
-    border-width: 2px !important; } }
+    border-width: 2px !important; }
+
+  section.sub-areas {
+    height: 1060px !important; }
+    section.sub-areas .masthead .node {
+      height: 100%; } }
 @media screen and (max-width: 480px) {
   section#gallery {
     height: 320px !important; }
