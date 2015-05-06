@@ -36,10 +36,14 @@ var Header = function () {
                 TweenLite.to(navList, 0.5, {className:"-=open"})
                 TweenLite.to(triggerContainer, 0.60, {width: "75px"})
                 TweenLite.to(slideable, 0.5, {className:"-=open"})
+                // make sure content can scroll again
+//                $("#c-level-1").css('overflow-y', "inherit")
             } else {
                 TweenLite.to(navList, 0.5, {className:"+=open"})
                 TweenLite.to(triggerContainer, 0.45, {width: "100%"})
                 TweenLite.to(slideable, 0.5, {className:"+=open"})
+                // make sure only nav can move
+//                $("#c-level-1").css('overflow-y', "hidden")
             }
         })
     }

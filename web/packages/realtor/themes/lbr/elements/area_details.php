@@ -1,4 +1,3 @@
-<?php //var_dump($mastheadImages);exit; ?>
 <div class="area-details">
     <section class="hero">
         <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="10"';} ?>>

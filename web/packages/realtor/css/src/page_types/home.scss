@@ -28,7 +28,7 @@
                 div.resources { background-image: url("#{$image-path}/resources.jpg"); }
                 div.blog { background-image: url("#{$image-path}/blog.jpg"); }
             }
-            @media screen and (min-width:$screen-xs) and (max-width:$screen-sm) {
+            @media screen and (min-width:$screen-xs) and (max-width:767px) {
                 div.row > div { padding: 0 0 50% 0 !important;
                     &.blog { background-image: url("#{$image-path}/blog_rect.jpg") !important; }
                     &.resources { background-image: url("#{$image-path}/resources_rect.jpg")!important; }
