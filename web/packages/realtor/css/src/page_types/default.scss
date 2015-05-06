@@ -20,4 +20,11 @@
             }
         }
     }
+    section.content {
+        div.content-padding { padding: 0 40px; }
+
+        @media screen and (max-width:$screen-sm) {
+            div.content-padding { padding: 0 10px; }
+        }
+    }
 }

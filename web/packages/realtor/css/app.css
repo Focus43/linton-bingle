@@ -79,7 +79,7 @@ video.fullscreen {
     width: 100%; }
   #c-level-1 section.current-level-nav {
     text-align: center;
-    padding-bottom: 20px; }
+    padding: 0 40px 20px 40px; }
     #c-level-1 section.current-level-nav ul {
       list-style: none;
       padding: 0;
@@ -107,6 +107,9 @@ video.fullscreen {
           width: 100%;
           float: left;
           border-right: 0; } }
+  @media screen and (max-width: 768px) {
+    #c-level-1 section.current-level-nav {
+      padding: 0 10px 20px 10px; } }
   #c-level-1 main {
     width: 100%;
     position: relative;
@@ -667,6 +670,8 @@ section.footer {
         .masthead .node .node-content h2 p {
           padding: 0 !important;
           margin: 0 !important; }
+      .masthead .node .node-content a.btn {
+        margin-top: 25px; }
   .masthead .markers {
     position: absolute;
     left: 0;
@@ -1424,6 +1429,11 @@ html.cms-edit-mode div.row > div {
             max-width: 100%; }
             .pg-default #c-level-1 section.hero .masthead .node .inner .node-image h3, .pg-default #c-level-1 section.hero .masthead .node .inner .node-content h3 {
               margin-top: 20px; } }
+.pg-default #c-level-1 section.content div.content-padding {
+  padding: 0 40px; }
+@media screen and (max-width: 768px) {
+  .pg-default #c-level-1 section.content div.content-padding {
+    padding: 0 10px; } }
 
 .pg-landing #c-level-1 section.hero {
   width: 100%;
@@ -1595,7 +1605,7 @@ body.pg-properties div#c-level-1 section.results div.listing {
     float: left;
     width: 50%;
     padding: 0 18px; }
-    body.pg-properties div#c-level-1 section.results div.listing div.details a {
+    body.pg-properties div#c-level-1 section.results div.listing div.details a:not(.btn) {
       display: block;
       padding: 0 2px 15px 2px;
       color: #000;
@@ -1613,6 +1623,9 @@ body.pg-properties div#c-level-1 section.results div.listing {
         padding-right: 30px; }
     body.pg-properties div#c-level-1 section.results div.listing div.details div.description {
       padding: 15px 2px; }
+    body.pg-properties div#c-level-1 section.results div.listing div.details a.btn {
+      display: inline-block;
+      color: #ffffff; }
 body.pg-properties div#c-level-1 section.results p {
   padding-bottom: 25px; }
 @media screen and (max-width: 768px) {

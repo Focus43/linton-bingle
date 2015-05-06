@@ -62,7 +62,7 @@ var Header = function () {
 
         // set up click events
         var triggers = $('nav ul.majority > li.has-subs')
-        triggers.on('click', function ( e ) {
+        triggers.on('mouseenter', function ( e ) {
             e.preventDefault()
             var t = $(this)
             var idNum = t.attr("data-sub")

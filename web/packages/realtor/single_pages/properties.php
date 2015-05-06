@@ -26,6 +26,7 @@
                                 </div>
                             </div>
                             <div class="description"><?php echo Concrete\Core\Utility\Service\Text::shortenTextWord($p->getDescription(), 500); ?></div>
+                            <a class="btn btn-red" href="/properties/id/<?php echo $p->getPropertyID(); ?>">VIEW PROPERTY DETAILS</a>
                         </div>
                     </div>
                     <?php if ( count($searchResults) > $idx + 1 ) : ?><div class="divider-line"></div><?php endif; ?>

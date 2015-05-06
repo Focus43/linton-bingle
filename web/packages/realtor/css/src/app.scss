@@ -37,7 +37,7 @@ video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;wid
 
     section.border { border-top: 1px solid $theme-line-color;height: 1px;width: 100%; }
 
-    section.current-level-nav { text-align: center;padding-bottom: 20px;
+    section.current-level-nav { text-align: center;padding: 0 40px 20px 40px;
         ul { list-style: none;padding: 0;margin: 0 auto;display: inline-block;
             li { list-style: none;padding: 0 10px;margin: 0;display: inline-block;float: left;border-right: 1px solid $theme-line-color;
                 &:last-of-type { border-right: 0; }
@@ -49,6 +49,9 @@ video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;wid
                 li { width: 100%;float: left;border-right: 0; }
             }
         }
+    }
+    @media screen and (max-width:$screen-sm) {
+        section.current-level-nav { padding: 0 10px 20px 10px; }
     }
 
     main {width:100%;position:relative;overflow-x:hidden;}

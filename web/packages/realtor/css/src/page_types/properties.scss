@@ -6,12 +6,13 @@ body.pg-properties div#c-level-1 {
         div.listing { padding: 40px 0;
             div.photo { width: 50%;max-width: 500px;padding-bottom: 37.5%;float: left;background-position: 25% 50%;background-repeat: no-repeat;overflow: hidden; }
             div.details { float: left;width: 50%;padding: 0 18px;
-                a { display: block; padding: 0 2px 15px 2px;color: #000;font-family: $theme-font-family-headers;text-transform: uppercase;@include bottomBorder(); }
+                a:not(.btn) { display: block; padding: 0 2px 15px 2px;color: #000;font-family: $theme-font-family-headers;text-transform: uppercase;@include bottomBorder(); }
                 div.numbers { padding: 15px 2px;@include bottomBorder();
                     & > div { float: left;width: 50%; }
                     div.left { max-width: 250px;padding-right: 30px; }
                 }
                 div.description { padding: 15px 2px; }
+                a.btn { display: inline-block;color:$theme-color-white; }
             }
         }
         p { padding-bottom: 25px; }

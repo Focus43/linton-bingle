@@ -33,7 +33,7 @@
         <section class="current-level-nav skinny-wrap">
             <?php
             $blockTypeNav                                       = BlockType::getByHandle('autonav');
-            $blockTypeNav->controller->orderBy                  = 'display_desc';
+            $blockTypeNav->controller->orderBy                  = 'display_asc';
             $blockTypeNav->controller->displayPages             = 'current';
             $blockTypeNav->controller->displaySubPages          = 'enough';
             $blockTypeNav->controller->displaySubPageLevels     = 'enough';
@@ -44,10 +44,10 @@
         <?php endif; ?>
 
         <section class="content wide-wrap">
-            <?php $a = new Area("Content 1"); $a->display($c); ?>
+            <div class="content-padding"><?php $a = new Area("Content 1"); $a->display($c); ?></div>
         </section>
         <section class="content wide-wrap" style="padding-bottom: 20px;">
-            <?php $a = new Area("Content 2"); $a->display($c); ?>
+            <div class="content-padding"><?php $a = new Area("Content 2"); $a->display($c); ?></div>
         </section>
         <?php $this->inc('elements/footer.php'); ?>
         <?php $this->inc('elements/header.php'); ?>
