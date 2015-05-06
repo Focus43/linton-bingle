@@ -94,6 +94,9 @@ var Header = function () {
                 });
             }
         })
+        triggers.on('click', function ( e ) {
+            e.preventDefault()
+        })
     }
 
     this.onloadFunc = function () {

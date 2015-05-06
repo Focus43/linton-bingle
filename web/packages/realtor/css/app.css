@@ -1332,7 +1332,7 @@ div.checkboxes {
     background-image: url("/packages/realtor/images/resources.jpg"); }
   .pg-home #c-level-1 main section.nav-blocks div.row div.blog {
     background-image: url("/packages/realtor/images/blog.jpg"); }
-@media screen and (min-width: 480px) and (max-width: 768px) {
+@media screen and (min-width: 480px) and (max-width: 767px) {
   .pg-home #c-level-1 main section.nav-blocks div.row > div {
     padding: 0 0 50% 0 !important; }
     .pg-home #c-level-1 main section.nav-blocks div.row > div.blog {
