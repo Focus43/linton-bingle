@@ -583,6 +583,9 @@ ul.sidebar {
     body #c-level-1 header nav a.logo {
       width: 217px !important;
       background-size: contain; } }
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  body.pg-home #c-level-1 header {
+    padding: 0 10px; } }
 section.footer {
   height: 100%;
   padding-top: 55px !important;
