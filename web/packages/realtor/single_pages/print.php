@@ -59,7 +59,7 @@
         </div>
         <div class="right">
             <div id="agentInfo">
-                <h4>Carol Linton & Betsy Bingle</h4>
+                <h4>LintonBingle Associate Brokers</h4>
                 <?php echo $pkgConfig->get('theme.phone_number_office'); ?> (Office)
 <!--                <br>-->
 <!--                --><?php //echo $pkgConfig->get('theme.phone_number_cell'); ?><!-- (Cell)<br>-->
