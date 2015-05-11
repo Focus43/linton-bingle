@@ -206,7 +206,9 @@
             $videos = array();
             if ( count($this->Videos) > 0 ) {
                 foreach ( $this->Videos as $v ) {
-                    array_push($videos, $v["ObjectHtml"]);
+                    if ( !in_array($v["ObjectHtml"], $videos) ) {
+                        array_push($videos, $v["ObjectHtml"]);
+                    }
                 }
             }
             return $videos;

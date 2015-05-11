@@ -86,11 +86,11 @@
                 do {
                     switch ($searchesTried) {
                         case 1:
-                            $results = self::getProperties(null, $type, $price);
+                            $results = self::getProperties(null, $type, $price, $currentId);
                             $searchesTried ++;
                             break;
                         case 2:
-                            $results = self::getProperties(null, $type, null);
+                            $results = self::getProperties(null, $type, null, $currentId);
                             $searchesTried ++;
                             break;
                     }
