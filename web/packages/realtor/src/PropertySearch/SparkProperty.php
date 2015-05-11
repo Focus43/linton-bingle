@@ -181,9 +181,13 @@
         /**
          * @return string
          */
-        public function getPropertyType() {
-            $types = SparkConnection::getPropertyTypes();
-            return $types[ $this->PropertyType ];
+        public function getPropertyType( $forHumans = true ) {
+            if ( $forHumans ) {
+                $types = SparkConnection::getPropertyTypes();
+                return $types[ $this->PropertyType ];
+            } else {
+                return $this->PropertyType;
+            }
         }
 
         public function getMLSAreaMinor() {

@@ -707,11 +707,10 @@ var Property = function () {
     }
 
     this.showRelatedProperties = function () {
-        // /search/related/{city}/{beds}/{baths}/{price}
+        // /search/related/{city}/{type}}/{price}
         var firstTemplate = $('#relatedList').html();
         Mustache.parse(firstTemplate);
-//        var _url = '/search/related/' + PROP_CITY + '/' + PROP_BEDS + '/' + PROP_BATHS + '/' + PROP_PRICE
-        var _url = '/search/related/' + PROP_CITY
+        var _url = '/search/related/' + PROP_CITY + '/' + PROP_TYPE + '/' + PROP_PRICE+ '/' + PROP_ID
         $.post( _url, function(resp) {
             if( resp.code && resp.code == 1 ) {
                 if ( resp.properties.length >= 3 ) {

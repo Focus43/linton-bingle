@@ -11,6 +11,16 @@
             $_params;
 
 
+        public static $priceRanges = array(
+            array('priceMin' => 0,          'priceMax' => 500000),
+            array('priceMin' => 500000,     'priceMax' => 999999),
+            array('priceMin' => 1000000,    'priceMax' => 2999999),
+            array('priceMin' => 3000000,    'priceMax' => 4999999),
+            array('priceMin' => 5000000,    'priceMax' => 7999999),
+            array('priceMin' => 8000000)
+        );
+
+
         public function __construct( array $request = array(), $cacheRequest = false ) {
             $this->_request = $request;
 //            if( $cacheRequest && !empty($this->_request) ){

@@ -2,9 +2,9 @@
 <?php $videos = $propertyObj->getVideos(); ?>
 <script>
     PROP_CITY = "<?php echo $propertyObj->getCity() ?>";
-    PROP_BEDS = "<?php echo $propertyObj->getBedsNumber() ?>";
-    PROP_BATHS = "<?php echo $propertyObj->getBathsNumber() ?>";
+    PROP_TYPE = "<?php echo $propertyObj->getPropertyType(false); ?>";
     PROP_PRICE = "<?php echo $propertyObj->getListPricePlain() ?>";
+    PROP_ID = "<?php echo $propertyObj->getPropertyID() ?>";
 </script>
 <div class="property-detail">
     <section id="gallery">
@@ -91,7 +91,7 @@
             function initialize() {
                 var propLatLng = new google.maps.LatLng(<?php echo $propertyObj->getLatitude(); ?>,<?php echo $propertyObj->getLongitude(); ?>);
                 var mapOptions = {
-                    zoom: 12,
+                    zoom: 13,
                     center: propLatLng,
                     mapTypeControl: true,
                     mapTypeControlOptions: {
