@@ -1001,7 +1001,9 @@ section.search {
       text-align: left; }
       section.search div.property-search .property-types .type {
         float: left;
-        padding-left: 20px; }
+        padding-right: 20px; }
+    section.search div.property-search .pricerange {
+      padding-top: 10px; }
     section.search div.property-search .buttons {
       text-align: left; }
     section.search div.property-search div#locationFilters {
@@ -1045,7 +1047,17 @@ section.search {
       section.search div.property-search .mls {
         width: 100%; }
         section.search div.property-search .mls input {
-          width: calc(100% - 55px); } }
+          width: calc(100% - 55px); }
+      section.search div.property-search .property-types .type:nth-child(even) {
+        float: right;
+        width: calc(100% - 140px); }
+      section.search div.property-search .property-types .type:nth-child(odd) {
+        width: 140px; }
+      section.search div.property-search .property-types .type input {
+        width: 12px;
+        height: 12px; }
+      section.search div.property-search .buttons a.clearfields {
+        margin-top: 10px; } }
 
 @font-face {
   font-family: 'icomoon';

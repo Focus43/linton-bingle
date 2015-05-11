@@ -11,6 +11,13 @@ $formHelper = Loader::helper('form');
             <h3>PROPERTY SEARCH</h3>
             <p>Use the filters below to search through our many listings to find the property that fits you.</p>
             <form id="propertySearch" method="get" action="<?php echo View::url('properties'); ?>" class="clearfix">
+
+                <div class="property-types clearfix">
+                    <?php foreach(SparkConnection::getPropertyTypes() AS $key => $value){ ?>
+                        <div class="type"><?php echo $formHelper->checkbox( "property_type[]", $key, in_array($key, (array)$lastSearch['property_type']) ) . ' ' . $value; ?></div>
+                    <?php } ?>
+                </div>
+
                 <div class="clearfix">
                     <!-- Locations Trigger -->
                     <div class="dropdown">
@@ -33,11 +40,11 @@ $formHelper = Loader::helper('form');
                     </div>
                 </div>
 
-                <div class="property-types clearfix">
-                    <?php foreach(SparkConnection::getPropertyTypes() AS $key => $value){ ?>
-                        <div class="type"><?php echo $formHelper->checkbox( "property_type[]", $key, in_array($key, (array)$lastSearch['property_type']) ) . ' ' . $value; ?></div>
-                    <?php } ?>
-                </div>
+<!--                <div class="property-types clearfix">-->
+<!--                    --><?php //foreach(SparkConnection::getPropertyTypes() AS $key => $value){ ?>
+<!--                        <div class="type">--><?php //echo $formHelper->checkbox( "property_type[]", $key, in_array($key, (array)$lastSearch['property_type']) ) . ' ' . $value; ?><!--</div>-->
+<!--                    --><?php //} ?>
+<!--                </div>-->
 
                 <div class="pricerange clearfix">
                     <div class="dropdown">
@@ -50,7 +57,7 @@ $formHelper = Loader::helper('form');
 
                 <div class="buttons">
                     <a class="btn btn-red" onclick="$('form#propertySearch').submit();">View Search Results <i class="icon-chevron-right icon-white"></i></a>
-                    <a class="btn btn-white" onclick="LB.Search.clearFields(this, true);" data-within="#propertySearch">Clear All</a>
+                    <a class="btn btn-white clearfields" onclick="LB.Search.clearFields(this, true);" data-within="#propertySearch">Clear All</a>
                 </div>
 
                 <div id="locationFilters" class="hidden">
