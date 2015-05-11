@@ -624,9 +624,11 @@ section.footer {
   section.footer img.portrait {
     padding-bottom: 0; }
   @media screen and (max-width: 768px) {
+    section.footer div.contact ul li a {
+      font-size: 30px; }
     section.footer .row.table {
       display: block;
-      padding: 0 5px 0 0; }
+      padding: 0 5px; }
       section.footer .row.table .row.logos {
         padding-top: 5px;
         margin-top: 2px;
@@ -634,6 +636,9 @@ section.footer {
       section.footer .row.table > [class*="col-"] {
         float: left !important;
         text-align: left; } }
+  @media screen and (max-width: 480px) {
+    section.footer div.contact ul li a {
+      font-size: 30px; } }
 
 .masthead {
   width: 100%;
@@ -2035,9 +2040,11 @@ body.pg-properties div#c-level-1 div.featured-round {
 
   section.details div.detail-wrapper {
     padding: 20px 15px 0 15px !important; }
+    section.details div.detail-wrapper div.action-buttons .btn {
+      margin-bottom: 5px; }
 
   section.video {
-    padding-bottom: 0 !important; }
+    padding-bottom: 0px !important; }
     section.video div.detail-wrapper {
       padding: 0 !important; }
       section.video div.detail-wrapper div.wrapper {

@@ -147,6 +147,7 @@
         }
 
         private function jsonifyResults ( $results, &$respObj ) {
+            $results = array_slice($results, 0, 3);
             foreach ( $results as $r ) {
                 $property = new \stdClass;
                 $property->mainImage = $r->getFirstPhotoURL("800");

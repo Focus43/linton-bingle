@@ -200,8 +200,12 @@ body.pg-properties div#c-level-1 {
         div#showhide { display: none; }
         div.markers { display: none; }
     }
-    section.details { div.detail-wrapper { padding: 20px 15px 0 15px !important; } }
-    section.video { padding-bottom: 0 !important;
+    section.details {
+        div.detail-wrapper { padding: 20px 15px 0 15px !important;
+            div.action-buttons .btn { margin-bottom: 5px; }
+        }
+    }
+    section.video { padding-bottom: 0px !important;
         div.detail-wrapper { padding: 0 !important;
             div.wrapper { padding-bottom: 0 !important;background-color: #000; }
         }

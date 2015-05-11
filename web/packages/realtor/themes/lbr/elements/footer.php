@@ -6,7 +6,7 @@
                     <img src="<?php echo REALTOR_IMAGE_PATH; ?>logo_beige.png">
                     <div class="address">
                         <?php echo $pkgConfig->get('theme.address_physical'); ?><br>
-                        <?php echo $pkgConfig->get('theme.address_po'); ?><br>
+<!--                        --><?php //echo $pkgConfig->get('theme.address_po'); ?><!--<br>-->
                         <?php echo $pkgConfig->get('theme.address_state'); ?><br>
                         <?php echo $pkgConfig->get('theme.phone_number_office'); ?>
                     </div>

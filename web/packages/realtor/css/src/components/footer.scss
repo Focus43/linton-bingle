@@ -16,10 +16,14 @@ section.footer { height: 100%;padding-top: 55px !important;color: $theme-color-b
     img.portrait { padding-bottom: 0; }
 
     @media screen and (max-width:$screen-sm) {
-        .row.table { display: block;padding: 0 5px 0 0;
+        div.contact ul li a { font-size: 30px;}
+        .row.table { display: block;padding: 0 5px;
             .row.logos { padding-top: 5px;margin-top: 2px;border-top: 1px solid $theme-line-color; }
             & > [class*="col-"] { float: left !important;text-align: left;
             }
         }
+    }
+    @media screen and (max-width:$screen-xs) {
+        div.contact ul li a { font-size: 30px;}
     }
 }
