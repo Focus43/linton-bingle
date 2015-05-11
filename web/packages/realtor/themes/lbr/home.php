@@ -51,7 +51,7 @@
                     <div class="shade">
                         <h3>RESOURCES</h3>
                         <div class="extra">
-                            <div><?php $a = new Area("Resources Short"); $a->display($c); ?>asfdsafd asdjfa sadfadsf asdfsfda </div>
+                            <div><?php $a = new Area("Resources Short"); $a->display($c); ?></div>
                         </div>
                         <div class="more">LEARN MORE</div>
                     </div>
@@ -61,7 +61,6 @@
                         <h3>BLOG / MEDIA</h3>
                         <div class="extra">
                             <?php $a = new Area("Blog Short"); $a->display($c); ?>
-                            asfdsafd asdjfa sadfadsf asdfsfda
                         </div>
                         <div class="more">READ MORE</div>
                     </div>
