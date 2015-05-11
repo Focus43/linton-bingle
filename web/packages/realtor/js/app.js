@@ -892,14 +892,21 @@ var Search = function () {
 
     this.searchOnChange = function () {
         // when a filter gets modified, do ajax search
-        $formFilters.on('change' , function () {
-            var _data = $('form#propertySearch').serializeArray();
-            $.post( '/search/count', _data, function(resp){
+
+        this.getCount = function (data) {
+            $.post( '/search/count', data, function(resp){
                 if( resp.code == 1 ){
                     $('span.target-result-count').text(resp.resultCount)
                 }
             },'json');
+        }
+
+        $formFilters.on('change' , function () {
+            var _data = $('form#propertySearch').serializeArray();
+            this.getCount(_data)
         });
+
+        this.getCount()
     }
 
     this.onloadFunc = function () {
