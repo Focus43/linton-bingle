@@ -56,33 +56,9 @@ if ($_REQUEST['entityID']) {
                 </div>
             </div>
 
-
-
-
-
-<!--						<tr>-->
-<!--							<td class="v-middle">Share With</td>-->
-<!--							<td colspan="3" class="supertip" title="Recipients" data-content="To share this property with multiple recipients, seperate email addresses with a comma (ex: jon@gmail.com, alex@gmail.com)">-->
-<!--								<div class="control-group">-->
-<!--									<div class="controls">-->
-<!--										--><?php //echo $formHelper->text('share_recipients', '', array('style'=>'width:97%;','placeholder'=>'Email address(es) of people to share with')) ?>
-<!--									</div>-->
-<!--								</div>-->
-<!--							</td>-->
-<!--						</tr>-->
-
-<!--						<tr>-->
-<!--							<td>Copy Me</td>-->
-<!--							<td colspan="3" class="form-inline">-->
-<!--								<label class="checkbox">-->
-<!--									--><?php //echo $formHelper->checkbox('cc_me', 1); ?><!-- Send me a copy of this email-->
-<!--								</label>-->
-<!--							</td>-->
-<!--						</tr>-->
-
             <p style="font-size:11px;">This correspondence is private. Your email will not be viewed or stored by Carol Linton, Jackson Hole Real Estate Associates, or any third parties.</p>
             <input type="hidden" name="type" value="general_contact" />
-<!--					<input type="hidden" name="localeID" value="--><?php //echo $sparkProperty->getPropertyID(); ?><!--" />-->
+            <?php if ( $_REQUEST['entityID'] ) : ?><input type="hidden" name="localeID" value="<?php echo $sparkProperty->getPropertyID(); ?>" /><?php endif; ?>
         </form>
         </div>
 </div>

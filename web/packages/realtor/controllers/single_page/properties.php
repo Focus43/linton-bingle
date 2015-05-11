@@ -73,8 +73,8 @@
             $this->set('longitude', $propertyObj->getLongitude());
             $area = $propertyObj->getMLSAreaMinor();
             $this->set('area', 'Other' == $area ? null : $area);
-            $price = (int) $propertyObj->getListPrice();// number_format((int) $sparkProperty->getListPrice(), 2)
-            $this->set('price', $price > 0 ? '$' . number_format($price) : null);
+            $price = $propertyObj->getListPrice();// number_format((int) $sparkProperty->getListPrice(), 2)
+            $this->set('price', $price > 0 ? '$' . $price : null);
             $this->set('beds', $propertyObj->getBedsNumber());
             $this->set('fullBaths', $propertyObj->getBathsFull());
             $this->set('halfBaths', $propertyObj->getBathsHalf());

@@ -14,15 +14,17 @@
             <?php if(!empty($area)): ?><h2><?= $area ?></h2><?php endif; ?>
             <?php if(!empty($firstPhotoUrl)): ?><img src="<?= $firstPhotoUrl; ?>" width="298" id="mainImage"/><?php endif; ?>
             <?php if(!empty($latitude) && !empty($longitude)): ?>
-                <img src="http://maps.google.com/maps/api/staticmap?sensor=false&size=298x199&markers=color:orange|<?= $latitude . ',' . $longitude ?>&zoom=12&key=AIzaSyB8v02iNSe4NYyS7YQmTMwklN7FZds52Ck" width="298" id="mapImage"/>
+<!--                <img src="http://maps.google.com/maps/api/staticmap?sensor=false&size=298x199&markers=color:orange|--><?//= $latitude . ',' . $longitude ?><!--&zoom=12&key=AIzaSyB8v02iNSe4NYyS7YQmTMwklN7FZds52Ck" width="298" id="mapImage"/>-->
             <?php endif; ?>
         </div>
         <div class="right">
             <div id="agentInfo">
-                <h4>Carol Linton & Betsy Bingle</h4>
-                +1 (307) 732-7518 (Office)<br>
-                +1 (307) 699-1139 (Carol's Cell)<br>
-                +1 (307) 732-8090 (Betsy's Cell)
+                <h4>LintonBingle Associate Brokers</h4>
+                Phone: +1 (307) 732-7518 (Office)<br>
+                Email: lintonbingle@gmail.com
+<!--                <br>-->
+<!--                +1 (307) 699-1139 (Carol's Cell)<br>-->
+<!--                +1 (307) 732-8090 (Betsy's Cell)-->
             </div>
 
             <div id="propertyDetails">
@@ -58,8 +60,9 @@
         <div class="right">
             <div id="agentInfo">
                 <h4>Carol Linton & Betsy Bingle</h4>
-                <?php echo $pkgConfig->get('theme.phone_number_office'); ?> (Office)<br>
-                <?php echo $pkgConfig->get('theme.phone_number_cell'); ?> (Cell)<br>
+                <?php echo $pkgConfig->get('theme.phone_number_office'); ?> (Office)
+<!--                <br>-->
+<!--                --><?php //echo $pkgConfig->get('theme.phone_number_cell'); ?><!-- (Cell)<br>-->
             </div>
         </div>
         <div class="clear"></div>
@@ -71,18 +74,18 @@
 
 <script type="text/javascript">
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-23055981-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function () {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+//    var _gaq = _gaq || [];
+//    _gaq.push(['_setAccount', 'UA-23055981-1']);
+//    _gaq.push(['_trackPageview']);
+//
+//    (function () {
+//        var ga = document.createElement('script');
+//        ga.type = 'text/javascript';
+//        ga.async = true;
+//        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+//        var s = document.getElementsByTagName('script')[0];
+//        s.parentNode.insertBefore(ga, s);
+//    })();
 
 </script>
 </body>
