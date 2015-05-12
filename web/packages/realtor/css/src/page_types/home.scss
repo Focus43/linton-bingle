@@ -17,13 +17,13 @@
                     }
                 }
                 div.about { background-image: url("#{$image-path}/about.jpg");
-                    div.shade { padding: 12%;
-                        .extra { opacity: 1 !important;height: auto !important; }
-                        .more { padding-top: 10px; }
-                    }
-                    @media screen and (min-width:$screen-sm) and (max-width:$screen-md) {
-                        div.shade { padding: 10px !important; }
-                    }
+//                    div.shade { padding: 12%;
+//                        .extra { opacity: 1 !important;height: auto !important; }
+//                        .more { padding-top: 10px; }
+//                    }
+//                    @media screen and (min-width:$screen-sm) and (max-width:$screen-md) {
+//                        div.shade { padding: 10px !important; }
+//                    }
                 }
                 div.resources { background-image: url("#{$image-path}/resources.jpg"); }
                 div.blog { background-image: url("#{$image-path}/blog.jpg"); }

@@ -44,7 +44,7 @@ var Search = function () {
 
     this.searchOnChange = function () {
         // when a filter gets modified, do ajax search
-
+        var _this = this
         this.getCount = function (data) {
             $.post( '/search/count', data, function(resp){
                 if( resp.code == 1 ){
@@ -55,7 +55,7 @@ var Search = function () {
 
         $formFilters.on('change' , function () {
             var _data = $('form#propertySearch').serializeArray();
-            this.getCount(_data)
+            _this.getCount(_data)
         });
 
         this.getCount()
