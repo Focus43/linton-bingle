@@ -97,17 +97,18 @@ ul.sidebar { display: none !important; }
     div#mobileNav { display: block;position: fixed;top: 0;bottom: 0;left: 100%;width: calc(100% - 75px);height: 100%;overflow-y: hidden;background-color: $theme-color-red;
         &.open { left: $nav-header-short-height;}
         ul.sidebar { display: block !important;width: 100%;height: 100%;overflow-y: scroll;background-color: $theme-color-red;list-style: none;padding: 0;border-left: 1px solid $theme-color-darkred;
-            li { width: 100%;border-bottom: 1px solid $theme-color-darkred;margin:0;height: $nav-header-short-height;padding: 0 20px;line-height: 4.8em;
-                a { color: $theme-color-white;text-transform: uppercase;font-family: $theme-font-family-headers;font-weight: bold;
+            li { width: 100%;border-bottom: 1px solid $theme-color-darkred;margin:0;height: $nav-header-short-height;padding: 0 20px 0 45px;line-height: 4.8em;
+                a { color: $theme-color-white;text-transform: uppercase;font-family: $theme-font-family-headers;
                     &:hover { color: $theme-color-beige;text-decoration: none; }
                 }
                 &.nav-selected a { color: $theme-color-beige; }
+                &.has-subs { padding: 0 20px;color: $theme-color-white;text-transform: uppercase;font-family: $theme-font-family-headers;font-weight: 700;font-size: 1.3em;line-height: 4em; }
             }
-            li.contact { border-bottom: 0;height: auto;line-height: inherit;
+            li.contact { border-bottom: 0;height: auto;line-height: inherit;padding: 0 20px;
                 img { padding-top: 1rem; }
                 div.address { color: $theme-color-white; }
                 ul.social { display: block;position: relative;padding: 10px 0;float: none;
-                    li { float: left;display: inline-block;width: 30px;text-align: left;border-bottom: 0;padding: 0 45px 0 0 !important;
+                    li { float: left;display: inline-block;width: 30px;text-align: left;border-bottom: 0;padding: 0 20px 0 0 !important;
                         a { color: $theme-color-white;font-size: 1.5em;
                             &:hover, &:active { color: $theme-color-beige;text-decoration: none; }
                         }

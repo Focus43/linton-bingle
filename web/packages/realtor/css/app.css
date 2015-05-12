@@ -547,22 +547,30 @@ ul.sidebar {
         border-bottom: 1px solid #910910;
         margin: 0;
         height: 75px;
-        padding: 0 20px;
+        padding: 0 20px 0 45px;
         line-height: 4.8em; }
         div#mobileNav ul.sidebar li a {
           color: #ffffff;
           text-transform: uppercase;
-          font-family: "Josefin Sans", sans-serif;
-          font-weight: bold; }
+          font-family: "Josefin Sans", sans-serif; }
           div#mobileNav ul.sidebar li a:hover {
             color: #e2dddb;
             text-decoration: none; }
         div#mobileNav ul.sidebar li.nav-selected a {
           color: #e2dddb; }
+        div#mobileNav ul.sidebar li.has-subs {
+          padding: 0 20px;
+          color: #ffffff;
+          text-transform: uppercase;
+          font-family: "Josefin Sans", sans-serif;
+          font-weight: 700;
+          font-size: 1.3em;
+          line-height: 4em; }
       div#mobileNav ul.sidebar li.contact {
         border-bottom: 0;
         height: auto;
-        line-height: inherit; }
+        line-height: inherit;
+        padding: 0 20px; }
         div#mobileNav ul.sidebar li.contact img {
           padding-top: 1rem; }
         div#mobileNav ul.sidebar li.contact div.address {
@@ -578,7 +586,7 @@ ul.sidebar {
             width: 30px;
             text-align: left;
             border-bottom: 0;
-            padding: 0 45px 0 0 !important; }
+            padding: 0 20px 0 0 !important; }
             div#mobileNav ul.sidebar li.contact ul.social li a {
               color: #ffffff;
               font-size: 1.5em; }
@@ -1545,6 +1553,9 @@ html.cms-edit-mode div.row > div {
             background-color: #ffffff;
             margin-top: 15px; }
         @media screen and (max-width: 768px) {
+          .pg-landing #c-level-1 section.hero .masthead .node .inner .node-content {
+            padding: 0 1em 20px 1em;
+            height: auto; }
           .pg-landing #c-level-1 section.hero .masthead .node .inner .node-image, .pg-landing #c-level-1 section.hero .masthead .node .inner .node-content {
             width: 100%;
             height: 50%;

@@ -206,10 +206,14 @@ foreach ($navItems as $ni) {
         echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
         echo  $ni->name . '</a>';
         echo '</li>'; //closes a nav item
+    } else {
+        echo '<li class="' . $ni->classes . '">'; //opens a nav item
+        echo  $ni->name;
+        echo '</li>'; //closes a nav item
     }
 }
 
-    echo '<li class="contact"><img src="' . REALTOR_IMAGE_PATH . 'logo_white.png"></li>';
+    echo '<li class="contact"><a href="/"><img src="' . REALTOR_IMAGE_PATH . 'logo_white.png"></a></li>';
     echo '<li class="contact"><div class="address">' . $controller->pkgConfig->get('theme.address_physical') .'<br>' . $controller->pkgConfig->get('theme.address_po') . '<br>' . $controller->pkgConfig->get('theme.address_state') . '<br>' . $controller->pkgConfig->get('theme.phone_number_office') . '</div></li>';
     echo '<li class="contact"><ul class="social">';
 
