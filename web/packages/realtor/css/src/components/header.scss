@@ -47,6 +47,8 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
         }
     }
 }
+li.to-form { display: block; }
+li.to-mail { display: none !important; }
 // short header
 body #c-level-1 header, body.pg-home #c-level-1 header.shrink { height:$nav-header-short-height;background-color: $nav-header-short-bg-color;padding: 0 40px;@include bottomBorder();
     ul.social { display: none; }
@@ -109,6 +111,8 @@ ul.sidebar { display: none !important; }
                         a { color: $theme-color-white;font-size: 1.5em;
                             &:hover, &:active { color: $theme-color-beige;text-decoration: none; }
                         }
+                        &.to-form { display: none; }
+                        &.to-mail { display: block !important; }
                     }
                 }
             }

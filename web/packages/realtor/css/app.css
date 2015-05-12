@@ -425,6 +425,12 @@ body #c-level-1 header {
           color: #e2dddb;
           text-decoration: none; }
 
+li.to-form {
+  display: block; }
+
+li.to-mail {
+  display: none !important; }
+
 body #c-level-1 header, body.pg-home #c-level-1 header.shrink {
   height: 75px;
   background-color: #ffffff;
@@ -578,7 +584,11 @@ ul.sidebar {
               font-size: 1.5em; }
               div#mobileNav ul.sidebar li.contact ul.social li a:hover, div#mobileNav ul.sidebar li.contact ul.social li a:active {
                 color: #e2dddb;
-                text-decoration: none; } }
+                text-decoration: none; }
+            div#mobileNav ul.sidebar li.contact ul.social li.to-form {
+              display: none; }
+            div#mobileNav ul.sidebar li.contact ul.social li.to-mail {
+              display: block !important; } }
 @media screen and (max-width: 480px) {
   body #c-level-1 header {
     padding: 0 5px !important; }

@@ -180,10 +180,10 @@ foreach ($navItems as $ni) {
         echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_linkedin'). '"><span class="icon-linkedin"></span></a></li>';
     }
     if ( $controller->pkgConfig->get('theme.email_address') ) {
-        echo '<li class="visible-sm"><a href="mailto:' . $controller->pkgConfig->get('theme.email_address'). '"><span class="icon-envelope"></span></a></li>';
+        echo '<li class="to-mail"><a href="mailto:' . $controller->pkgConfig->get('theme.email_address'). '"><span class="icon-envelope"></span></a></li>';
     }
 
-    echo '<li class="hidden-sm"><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email"><span class="icon-envelope"></span></a></li>';
+    echo '<li class="to-form"><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email"><span class="icon-envelope"></span></a></li>';
 
 //    echo '</ul></li>';
 
@@ -229,10 +229,10 @@ foreach ($navItems as $ni) {
         echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_linkedin'). '"><span class="icon-linkedin"></span></a></li>';
     }
     if ( $controller->pkgConfig->get('theme.email_address') ) {
-        echo '<li class="visible-sm"><a href="mailto:' . $controller->pkgConfig->get('theme.email_address'). '"><span class="icon-envelope"></span></a></li>';
+        echo '<li class="to-mail"><a href="mailto:' . $controller->pkgConfig->get('theme.email_address'). '"><span class="icon-envelope"></span></a></li>';
     }
 
-    echo '<li class="hidden-sm"><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email"><span class="icon-envelope"></span></a></li>';
+    echo '<li class="to-form"><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email"><span class="icon-envelope"></span></a></li>';
 
     echo '</ul></li>';
 
