@@ -1358,15 +1358,12 @@ div.checkboxes {
     .pg-home #c-level-1 main section.nav-blocks div.row > div.resources {
       background-image: url("/packages/realtor/images/resources_rect.jpg") !important; }
     .pg-home #c-level-1 main section.nav-blocks div.row > div div.shade {
-      padding: 20% 20%; }
+      padding: 15% 20%; }
     .pg-home #c-level-1 main section.nav-blocks div.row > div:hover div.shade {
       padding: 10% 20%; } }
 @media screen and (max-width: 480px) {
   .pg-home #c-level-1 main section.nav-blocks div.row > div {
     padding: 0 0 100% 0 !important; } }
-@media screen and (max-width: 350px) {
-  .pg-home #c-level-1 main section.nav-blocks div.row > div div.shade {
-    padding: 6% !important; } }
 @media screen and (min-width: 768px) {
   .pg-home #c-level-1 main section.nav-blocks div.featured-round {
     display: none !important; } }
@@ -1398,7 +1395,9 @@ div.checkboxes {
     border-radius: 50%;
     color: #ffffff;
     text-align: center;
-    font-family: "Josefin Sans", sans-serif; } }
+    font-family: "Josefin Sans", sans-serif; }
+  .pg-home #c-level-1 main section.nav-blocks div.shade {
+    padding: 35% 20%; } }
 .pg-home #c-level-1 main section.search {
   padding-top: 0px !important;
   padding-bottom: 50px; }
