@@ -56,7 +56,7 @@ div#c-level-1 section.featured { background-color: $theme-color-beige;
                 .indicators { background-color: $theme-color-white !important;width: 100%; }
             }
         }
-        div.featured-round { display: none;/* width:105px; height:105px;padding-top: 25px;left: calc(50% - 53px);top: 50%; */ }
+        div.featured-round { top: -60px; }
     }
 
     // weird special cases....

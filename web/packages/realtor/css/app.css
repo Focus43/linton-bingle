@@ -907,8 +907,7 @@ div#c-level-1 section.featured {
         background-color: #ffffff !important;
         width: 100%; }
     div#c-level-1 section.featured div.featured-round {
-      display: none;
-      /* width:105px; height:105px;padding-top: 25px;left: calc(50% - 53px);top: 50%; */ } }
+      top: -60px; } }
   @media screen and (min-width: 768px) and (max-width: 895px) {
     div#c-level-1 section.featured div#featuredCarousel .top .right .description {
       padding: 20px !important; }
@@ -1349,6 +1348,8 @@ div.checkboxes {
     background-image: url("/packages/realtor/images/resources.jpg"); }
   .pg-home #c-level-1 main section.nav-blocks div.row div.blog {
     background-image: url("/packages/realtor/images/blog.jpg"); }
+.pg-home #c-level-1 main section.nav-blocks div.featured-round {
+  display: none; }
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .pg-home #c-level-1 main section.nav-blocks div.row > div {
     padding: 0 0 50% 0 !important; }
@@ -1366,6 +1367,38 @@ div.checkboxes {
 @media screen and (max-width: 350px) {
   .pg-home #c-level-1 main section.nav-blocks div.row > div div.shade {
     padding: 6% !important; } }
+@media screen and (min-width: 768px) {
+  .pg-home #c-level-1 main section.nav-blocks div.featured-round {
+    display: none !important; } }
+@media screen and (max-width: 768px) {
+  .pg-home #c-level-1 main section.nav-blocks div.featured-round {
+    display: block;
+    position: absolute;
+    bottom: -60px;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: calc(50% - 60px);
+    visibility: hidden;
+    padding-top: 35px;
+    background-color: #b5121b;
+    border: 2px solid #b5121b;
+    border-radius: 50%;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: calc(50% - 60px);
+    visibility: visible;
+    padding-top: 35px;
+    background-color: #b5121b;
+    border: 2px solid #b5121b;
+    border-radius: 50%;
+    color: #ffffff;
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif; } }
 .pg-home #c-level-1 main section.search {
   padding-top: 0px !important;
   padding-bottom: 50px; }

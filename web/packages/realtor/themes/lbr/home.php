@@ -66,6 +66,7 @@
                     </div>
                 </div>
             </div>
+            <div class="featured-round" style="display: none;">FEATURED PROPERTY</div>
         </section>
 
         <section class="featured">

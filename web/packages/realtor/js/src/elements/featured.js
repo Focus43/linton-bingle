@@ -37,7 +37,7 @@ var Featured = function () {
                             self.startCarousel();
                         }, 2000);
                     }
-
+                    $("section.nav-blocks div.featured-round").css('display', 'block')
                 } else {
                     $('#featuredCarousel').html("")
                 }
