@@ -6,8 +6,8 @@
                     <div class="inner">
                         <div class="node-content">
                             <div>
-                                <h2><?php $index++; $a = new Area("Masthead Header {$index}"); $a->display($c); ?></h2>
-                                <?php $a = new Area("Masthead {$index}"); $a->display($c); ?>
+                                <h2><?php echo $fileObj->getTitle(); ?></h2>
+                                <?php echo $fileObj->getDescription(); ?>
                             </div>
                         </div>
                     </div>
