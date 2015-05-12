@@ -1479,6 +1479,9 @@ html.cms-edit-mode div.row > div {
             color: #b5121b;
             background-color: #ffffff; }
         @media screen and (max-width: 768px) {
+          .pg-default #c-level-1 section.hero .masthead .node .inner .node-content {
+            padding: 0 1em 20px 1em;
+            height: auto; }
           .pg-default #c-level-1 section.hero .masthead .node .inner .node-image, .pg-default #c-level-1 section.hero .masthead .node .inner .node-content {
             width: 100%;
             height: 50%;
