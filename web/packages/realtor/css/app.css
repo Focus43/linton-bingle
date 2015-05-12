@@ -1687,9 +1687,6 @@ body.pg-properties div#c-level-1 section.pagination div.resultsCtrl {
   padding: 25px 0;
   font-family: "Josefin Sans", sans-serif;
   color: #9b8c86; }
-  body.pg-properties div#c-level-1 section.pagination div.resultsCtrl h3 {
-    color: #030303;
-    font-size: 28px; }
   body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.pager {
     width: 50%;
     float: left;
@@ -1701,6 +1698,8 @@ body.pg-properties div#c-level-1 section.pagination div.resultsCtrl {
     float: right;
     display: block;
     position: relative; }
+    body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.sortby:nth-child(2) {
+      display: none; }
     body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.sortby div.list {
       widt: 130px;
       height: 130px;
@@ -1738,6 +1737,12 @@ body.pg-properties div#c-level-1 section.pagination div.resultsCtrl {
             float: right; }
     body.pg-properties div#c-level-1 section.pagination div.resultsCtrl h3 {
       padding: 0 10px; } }
+body.pg-properties div#c-level-1 h3.areaname {
+  color: #030303;
+  font-size: 28px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 25px; }
 body.pg-properties div#c-level-1 div.property-detail {
   padding-top: 75px; }
   body.pg-properties div#c-level-1 div.property-detail section {

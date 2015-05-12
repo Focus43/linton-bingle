@@ -8,6 +8,9 @@
                 $this->inc('elements/search_form.php');
             } ?>
 
+            <?php if ($areaName) {
+                echo "<h3 class='areaname'> PROPERTIES IN " . strtoupper($areaName) . "</h3>";
+            } ?>
             <?php $this->inc('elements/search_pagination.php'); ?>
             <section class="results skinny-wrap">
                 <?php foreach ( $searchResults as $idx => $p ) : ?>
@@ -32,6 +35,7 @@
                     <?php if ( count($searchResults) > $idx + 1 ) : ?><div class="divider-line"></div><?php endif; ?>
                 <?php endforeach; ?>
             </section>
+            <?php $this->inc('elements/search_pagination.php'); ?>
             <div class="skinny-wrap small-print disclaimer">
                 Information provided through the Teton IDX Program is provided for consumer's personal, non-commercial use and may
                 not be used for any purpose other than to identify prospective properties and individual consumers interested in

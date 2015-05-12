@@ -33,7 +33,7 @@
             ?>
         </section>
         <section class="subnav wide-wrap">
-            <h3><?php echo $c->getCollectionName(); ?></h3>
+<!--            <h3>--><?php //echo $c->getCollectionName(); ?><!--</h3>-->
             <div class="pagination clearfix"></div>
             <div class="pagelist"><span class="icon-spinner spinner"></span></div>
             <div class="pagination clearfix"></div>
