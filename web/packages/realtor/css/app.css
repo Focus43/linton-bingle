@@ -107,7 +107,7 @@ video.fullscreen {
           width: 100%;
           float: left;
           border-right: 0; } }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 769px) {
     #c-level-1 section.current-level-nav {
       padding: 0 10px 20px 10px; } }
   #c-level-1 main {
@@ -191,7 +191,7 @@ video.fullscreen {
     box-shadow: none;
     -webkit-box-shadow: none; }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   #c-level-1 form .col-sm-6:nth-child(1) {
     padding-right: 7.5px; }
   #c-level-1 form .col-sm-6:nth-child(2) {
@@ -204,7 +204,7 @@ video.fullscreen {
 
   .hidden-sm {
     display: block; } }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .visible-sm {
     display: block; }
 
@@ -424,6 +424,9 @@ body #c-level-1 header {
         body #c-level-1 header > ul.social li a:hover, body #c-level-1 header > ul.social li a:active {
           color: #e2dddb;
           text-decoration: none; }
+  @media screen and (max-width: 769px) {
+    body #c-level-1 header > ul.social {
+      display: none !important; } }
 
 li.to-form {
   display: block; }
@@ -473,7 +476,7 @@ div#mobileNav {
 ul.sidebar {
   display: none !important; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   [slideable].open {
     right: calc(100% - 75px); }
 
@@ -587,7 +590,7 @@ ul.sidebar {
           div#mobileNav ul.sidebar li.contact ul.social li {
             float: left;
             display: inline-block;
-            width: 30px;
+            width: 45px;
             text-align: left;
             border-bottom: 0;
             padding: 0 20px 0 0 !important; }
@@ -607,7 +610,7 @@ ul.sidebar {
     body #c-level-1 header nav a.logo {
       width: 217px !important;
       background-size: contain; } }
-@media screen and (min-width: 768px) and (max-width: 992px) {
+@media screen and (min-width: 769px) and (max-width: 992px) {
   body.pg-home #c-level-1 header {
     padding: 0 10px !important; } }
 section.footer {
@@ -650,7 +653,7 @@ section.footer {
       /* flex: 1; */ }
   section.footer img.portrait {
     padding-bottom: 0; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 769px) {
     section.footer div.contact ul li a {
       font-size: 30px; }
     section.footer .row.table {
@@ -759,10 +762,10 @@ section.footer {
     height: 60px;
     width: 40px;
     color: #ffffff; }
-  @media screen and (min-width: 768px) and (max-width: 992px) {
+  @media screen and (min-width: 769px) and (max-width: 992px) {
     .masthead .node .node-content h3 {
       margin-top: 50px !important; } }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 769px) {
     .masthead .node .inner {
       text-align: center; }
     .masthead .node .node-content {
@@ -922,7 +925,7 @@ div#c-level-1 section.featured {
     color: #ffffff;
     text-align: center;
     font-family: "Josefin Sans", sans-serif; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 769px) {
     div#c-level-1 section.featured div#featuredCarousel .top {
       margin-bottom: -1px; }
       div#c-level-1 section.featured div#featuredCarousel .top .right, div#c-level-1 section.featured div#featuredCarousel .top .left {
@@ -938,7 +941,7 @@ div#c-level-1 section.featured {
         width: 100%; }
     div#c-level-1 section.featured div.featured-round {
       top: -60px; } }
-  @media screen and (min-width: 768px) and (max-width: 895px) {
+  @media screen and (min-width: 769px) and (max-width: 895px) {
     div#c-level-1 section.featured div#featuredCarousel .top .right .description {
       padding: 20px !important; }
     div#c-level-1 section.featured div.featured-round {
@@ -1065,7 +1068,7 @@ section.search {
         font-size: 1em;
         float: right;
         margin-left: 5px; }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 769px) {
       section.search div.property-search .dropdown {
         display: block;
         width: 100%; }
@@ -1273,10 +1276,10 @@ div.checkboxes {
   height: 50px;
   overflow: scroll; }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   .modal-body div.captcha > div {
     width: 100% !important; } }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .modal-dialog {
     width: 100%;
     margin: 30px auto; }
@@ -1370,7 +1373,7 @@ div.checkboxes {
     background-image: url("/packages/realtor/images/blog.jpg"); }
 .pg-home #c-level-1 main section.nav-blocks div.featured-round {
   display: none; }
-@media screen and (min-width: 480px) and (max-width: 767px) {
+@media screen and (min-width: 480px) and (max-width: 768px) {
   .pg-home #c-level-1 main section.nav-blocks div.row > div {
     padding: 0 0 50% 0 !important; }
     .pg-home #c-level-1 main section.nav-blocks div.row > div.blog {
@@ -1380,14 +1383,16 @@ div.checkboxes {
     .pg-home #c-level-1 main section.nav-blocks div.row > div div.shade {
       padding: 15% 20%; }
     .pg-home #c-level-1 main section.nav-blocks div.row > div:hover div.shade {
-      padding: 10% 20%; } }
+      padding: 10% 20%; }
+    .pg-home #c-level-1 main section.nav-blocks div.row > div.col-sm-4 {
+      width: 100%; } }
 @media screen and (max-width: 480px) {
   .pg-home #c-level-1 main section.nav-blocks div.row > div {
     padding: 0 0 100% 0 !important; } }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .pg-home #c-level-1 main section.nav-blocks div.featured-round {
     display: none !important; } }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .pg-home #c-level-1 main section.nav-blocks div.featured-round {
     display: block;
     position: absolute;
@@ -1497,7 +1502,7 @@ html.cms-edit-mode div.row > div {
           .pg-default #c-level-1 section.hero .masthead .node .inner .node-content a.btn {
             color: #b5121b;
             background-color: #ffffff; }
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 769px) {
           .pg-default #c-level-1 section.hero .masthead .node .inner .node-content {
             padding: 0 1em 20px 1em;
             height: auto; }
@@ -1510,7 +1515,7 @@ html.cms-edit-mode div.row > div {
               margin-top: 20px; } }
 .pg-default #c-level-1 section.content div.content-padding {
   padding: 0 40px; }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .pg-default #c-level-1 section.content div.content-padding {
     padding: 0 10px; } }
 
@@ -1564,7 +1569,7 @@ html.cms-edit-mode div.row > div {
             color: #b5121b;
             background-color: #ffffff;
             margin-top: 15px; }
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 769px) {
           .pg-landing #c-level-1 section.hero .masthead .node .inner .node-content {
             padding: 0 1em 20px 1em;
             height: auto; }
@@ -1710,7 +1715,7 @@ body.pg-properties div#c-level-1 section.results div.listing {
       color: #ffffff; }
 body.pg-properties div#c-level-1 section.results p {
   padding-bottom: 25px; }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   body.pg-properties div#c-level-1 section.results div.listing {
     text-align: center;
     padding: 15px 0; }
@@ -1778,7 +1783,7 @@ body.pg-properties div#c-level-1 section.pagination div.resultsCtrl {
         position: absolute;
         right: 3px;
         top: 0; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 769px) {
     body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.pager, body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.sortby {
       width: 100%;
       padding: 5px 10px;
@@ -2048,7 +2053,7 @@ body.pg-properties div#c-level-1 div.area-details section.sub-areas {
               body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content a.btn-white:hover {
                 color: #b5121b;
                 text-decoration: none; }
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 769px) {
           body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-image {
             height: 430px; }
           body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content {
@@ -2092,7 +2097,7 @@ body.pg-properties div#c-level-1 div.featured-round {
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase; }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   div.divider-line {
     border-width: 2px !important; }
 

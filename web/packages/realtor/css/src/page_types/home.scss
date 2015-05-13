@@ -30,7 +30,7 @@
             }
             div.featured-round { display: none; }
 
-            @media screen and (min-width:$screen-xs) and (max-width:767px) {
+            @media screen and (min-width:$screen-xs) and (max-width:768px) {
                 div.row > div { padding: 0 0 50% 0 !important;
                     &.blog { background-image: url("#{$image-path}/blog_rect.jpg") !important; }
                     &.resources { background-image: url("#{$image-path}/resources_rect.jpg")!important; }
@@ -38,6 +38,7 @@
                     &:hover {
                         div.shade { padding: 10% 20%; }
                     }
+                    &.col-sm-4 { width: 100%; }
                 }
             }
             @media screen and (max-width:$screen-xs) {

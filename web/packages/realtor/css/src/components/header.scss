@@ -46,9 +46,13 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
             }
         }
     }
+    @media screen and (max-width:$screen-sm) {
+        & > ul.social { display: none !important; }
+    }
 }
 li.to-form { display: block; }
 li.to-mail { display: none !important; }
+
 // short header
 body #c-level-1 header, body.pg-home #c-level-1 header.shrink { height:$nav-header-short-height;background-color: $nav-header-short-bg-color;padding: 0 40px;@include bottomBorder();
     ul.social { display: none; }
@@ -109,7 +113,7 @@ ul.sidebar { display: none !important; }
                 img { padding-top: 1rem; }
                 div.address { color: $theme-color-white; }
                 ul.social { display: block;position: relative;padding: 10px 0;float: none;
-                    li { float: left;display: inline-block;width: 30px;text-align: left;border-bottom: 0;padding: 0 20px 0 0 !important;
+                    li { float: left;display: inline-block;width: 45px;text-align: left;border-bottom: 0;padding: 0 20px 0 0 !important;
                         a { color: $theme-color-white;font-size: 1.5em;
                             &:hover, &:active { color: $theme-color-beige;text-decoration: none; }
                         }
@@ -119,8 +123,6 @@ ul.sidebar { display: none !important; }
                 }
             }
         }
-
-
     }
 }
 

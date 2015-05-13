@@ -73,6 +73,9 @@ $modal-inner-padding:           20px;
 @import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables';
 @import '../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
 
+// override the small size to be one pixel smaller
+$screen-sm:     769px;
+
 // Mixins
 @mixin scrollOverflow {
   overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;
