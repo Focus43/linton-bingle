@@ -8,7 +8,8 @@
                         <?php echo $pkgConfig->get('theme.address_physical'); ?><br>
 <!--                        --><?php //echo $pkgConfig->get('theme.address_po'); ?><!--<br>-->
                         <?php echo $pkgConfig->get('theme.address_state'); ?><br>
-                        <?php echo $pkgConfig->get('theme.phone_number_office'); ?>
+                        <?php echo $pkgConfig->get('theme.phone_number_office'); ?><br><br>
+                        <a class="email" href="mailto:LintonBingle@gmail.com">LintonBingle@gmail.com</a>
                     </div>
                     <ul class="social">
                         <?php if ($pkgConfig->get('theme.social_link_facebook')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_facebook'); ?>"><span class="icon-facebook"></span></a></li><?php endif; ?>

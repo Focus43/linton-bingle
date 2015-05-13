@@ -23,7 +23,7 @@ body #c-level-1 header { position: fixed;top: 0;left: 0;width: 100%;
                     div.pg-icon { overflow: hidden;display: block;background-size: cover;background-position: 70% 50%;width: 160px;height: 100px;margin: 20px auto 15px auto; }
                 }
                 &#sub-contact {
-                    & > ul { width: 250px;display: block;color: $theme-color-white;height: 200px;position: absolute;top: 25px;right: -35px;
+                    & > ul { width: 250px;display: block;color: $theme-color-white;height: 220px;position: absolute;top: 25px;right: -35px;
                         & > li { width: 100%;float: none;display: block;text-align: left;width: 100%;text-transform: none;
                             img { padding-top: 0.8em; }
                             & > ul.social { display: block;position: relative;padding: 10px 0;float: none;
@@ -105,6 +105,7 @@ ul.sidebar { display: none !important; }
                 &.has-subs { padding: 0 20px;color: $theme-color-white;text-transform: uppercase;font-family: $theme-font-family-headers;font-weight: 700;font-size: 1.3em;line-height: 4em; }
             }
             li.contact { border-bottom: 0;height: auto;line-height: inherit;padding: 0 20px;
+                a.email { text-transform: none;padding-top: 10px;font-family: $theme-font-family-copy; }
                 img { padding-top: 1rem; }
                 div.address { color: $theme-color-white; }
                 ul.social { display: block;position: relative;padding: 10px 0;float: none;

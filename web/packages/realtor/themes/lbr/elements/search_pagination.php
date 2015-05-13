@@ -1,4 +1,4 @@
-<section class="pagination">
+<!--<section class="pagination">-->
     <div class="resultsCtrl">
 <!--        --><?php //if ($areaName) {
 //            echo "<h3> PROPERTIES IN " . strtoupper($areaName) . "</h3>";
@@ -28,4 +28,4 @@
             </div>
         </div>
     </div>
-</section>
+<!--</section>-->
