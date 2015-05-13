@@ -35,6 +35,7 @@ module.exports = function( gulp ){
 //                _packagePath('bower_components/knockout/dist/knockout.js'),
                 _packagePath('bower_components/gsap/src/uncompressed/TweenMax.js'),
                 _packagePath('bower_components/zepto/zepto.min.js'),
+                _packagePath('bower_components/zepto/touch.js'),
                 _packagePath('bower_components/mustache.js/mustache.min.js'),
 //                _packagePath('bower_components/gsap/src/uncompressed/plugins/ScrollToPlugin.js'),
 //                _packagePath('bower_components/isotope/dist/isotope.pkgd.js'),
