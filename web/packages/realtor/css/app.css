@@ -613,6 +613,24 @@ ul.sidebar {
 @media screen and (min-width: 769px) and (max-width: 992px) {
   body.pg-home #c-level-1 header {
     padding: 0 10px !important; } }
+@media screen and (min-width: 770px) and (max-width: 1000px) {
+  body.pg-home #c-level-1 header, body #c-level-1 header, body.pg-home #c-level-1 header.shrink {
+    height: 75px;
+    padding: 0 10px; }
+    body.pg-home #c-level-1 header ul.social, body #c-level-1 header ul.social, body.pg-home #c-level-1 header.shrink ul.social {
+      display: none; }
+    body.pg-home #c-level-1 header nav a.logo, body #c-level-1 header nav a.logo, body.pg-home #c-level-1 header.shrink nav a.logo {
+      width: 160px;
+      height: 43px;
+      background-size: contain;
+      margin-top: 15px; }
+    body.pg-home #c-level-1 header nav ul.majority, body #c-level-1 header nav ul.majority, body.pg-home #c-level-1 header.shrink nav ul.majority {
+      padding: 30px 0; }
+      body.pg-home #c-level-1 header nav ul.majority li.has-subs, body #c-level-1 header nav ul.majority li.has-subs, body.pg-home #c-level-1 header.shrink nav ul.majority li.has-subs {
+        margin: 0 10px; }
+
+  body #c-level-1 header nav a.logo, body.pg-home #c-level-1 header.shrink nav a.logo {
+    margin-top: 23px; } }
 section.footer {
   height: 100%;
   padding-top: 55px !important;

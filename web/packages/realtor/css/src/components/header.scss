@@ -136,4 +136,18 @@ ul.sidebar { display: none !important; }
     body.pg-home #c-level-1 {
         header { padding: 0 10px !important; }
     }
+}// special case between desktop and tablet
+@media screen and (min-width:770px) and (max-width: 1000px) {
+    body.pg-home #c-level-1 header, body #c-level-1 header, body.pg-home #c-level-1 header.shrink  { height: 75px;padding: 0 10px;
+        ul.social { display: none; }
+        nav {
+            a.logo { width: 160px;height: 43px;background-size: contain;margin-top: 15px; }
+            ul.majority { padding: 30px 0;
+                li.has-subs { margin: 0 10px; }
+            }
+        }
+    }
+    body #c-level-1 header, body.pg-home #c-level-1 header.shrink {
+        nav a.logo { margin-top: 23px; }
+    }
 }
