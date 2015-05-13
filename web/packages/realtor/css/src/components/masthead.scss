@@ -31,6 +31,10 @@
         display: block;height: 60px;width: 40px;color: #ffffff;
     }
 
+    @media screen and (min-width:$screen-sm) and (max-width:$screen-md) {
+        .node .node-content h3 { margin-top: 50px !important; }
+    }
+
     @media screen and (max-width:$screen-sm) {
         .node {
             .inner { text-align:center; }

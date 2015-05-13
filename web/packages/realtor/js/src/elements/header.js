@@ -1,5 +1,5 @@
 var Header = function () {
-
+    var self = this
     this.initShrink = function () {
         // shrink header on scroll (only on home page)
         if ( $('body').hasClass('pg-home') ) {
@@ -64,14 +64,16 @@ var Header = function () {
             }
         })
 
-        // set up click events
-        var triggers = $('nav ul.majority > li.has-subs')
+        // set up click/hover events
+        var triggers    = $('nav ul.majority > li.has-subs')
+        var subs        = $('nav ul.majority > li.sub')
         triggers.on('mouseenter', function ( e ) {
             e.preventDefault()
             var t = $(this)
             var idNum = t.attr("data-sub")
             var subNav = $("ul.majority li#sub-" + idNum)
             var allOpenSubs = $("ul.majority li.sub.open")
+
             if ( subNav.hasClass("open") ) {
                 TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"})
             } else {
@@ -82,18 +84,26 @@ var Header = function () {
                 TweenLite.to(allOpenSubs, 0.2, {autoAlpha:0, className: "-=open", onComplete: function () {
                     TweenLite.to(subNav, 0.2, {autoAlpha:1, className: "+=open"})
                 }})
-                // check if subnav in viewport
+
+                // check if subnav in viewport, move if not
                 var pos = ulChildren[0].getBoundingClientRect()
                 if ( pos.right > window.innerWidth ) {
                     var rightDiff = Math.round(pos.right - (window.innerWidth || document.documentElement.clientWidth)) + 5
                     TweenLite.to(ulChildren, 0.2, {x: -rightDiff})
                 }
 
-                ulChildren.on('mouseleave', function (){
+                ulChildren.on('mouseleave', function () {
                     TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"})
+                });
+                ulChildren.on('mouseenter', function () {
+                    if ( self.navTimer ) clearTimeout(self.navTimer)
                 });
             }
         })
+        triggers.on('mouseleave', function () {
+            self.navTimer = setTimeout(function () { TweenLite.to(subs, 0.2, {autoAlpha:0, className: "-=open"}) }, 500)
+        })
+
         triggers.on('click', function ( e ) {
             e.preventDefault()
         })

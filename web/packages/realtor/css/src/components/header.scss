@@ -130,8 +130,8 @@ ul.sidebar { display: none !important; }
     }
 }
 
-@media screen and (min-width:$screen-sm) and (max-width: 1000px) {
+@media screen and (min-width:$screen-sm) and (max-width: $screen-md) {
     body.pg-home #c-level-1 {
-        header { padding: 0 10px; }
+        header { padding: 0 10px !important; }
     }
 }

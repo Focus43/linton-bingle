@@ -607,9 +607,9 @@ ul.sidebar {
     body #c-level-1 header nav a.logo {
       width: 217px !important;
       background-size: contain; } }
-@media screen and (min-width: 768px) and (max-width: 1000px) {
+@media screen and (min-width: 768px) and (max-width: 992px) {
   body.pg-home #c-level-1 header {
-    padding: 0 10px; } }
+    padding: 0 10px !important; } }
 section.footer {
   height: 100%;
   padding-top: 55px !important;
@@ -759,6 +759,9 @@ section.footer {
     height: 60px;
     width: 40px;
     color: #ffffff; }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .masthead .node .node-content h3 {
+      margin-top: 50px !important; } }
   @media screen and (max-width: 768px) {
     .masthead .node .inner {
       text-align: center; }
