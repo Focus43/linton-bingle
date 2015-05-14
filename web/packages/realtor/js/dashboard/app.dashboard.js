@@ -10,16 +10,20 @@
             
             
             // tooltips and popover bindings
-            $document.tooltip({
-                animation: false,
-                selector: '.helpTooltip',
-                trigger: 'hover'
-            }).popover({
-                animation: false,
-                selector: '.helpTip',
-                placement: 'bottom'
+//            $document.tooltip({
+//                animation: false,
+//                selector: '.helpTooltip',
+//                trigger: 'hover'
+//            }).popover({
+//                animation: false,
+//                selector: '.helpTip',
+//                placement: 'bottom'
+//            });
+
+            // send request on change
+            $('#regionWrap').on('change', '#numResults', function() {
+                window.location = "?numResults=" + $(this).val()
             });
-            
             
             // check all checkboxes
             $document.on('click', '#checkAllBoxes', function(){
@@ -30,7 +34,7 @@
             
             
             // if any box is checked, enable the actions dropdown
-            $('#srk9Wrap').on('change', '#regionSearchTable tbody :checkbox', function(){
+            $('#regionWrap').on('change', '#regionSearchTable tbody :checkbox', function(){
                 if( $(':checkbox', '#regionSearchTable > tbody').filter(':checked').length ){
                     $('#actionMenu').prop('disabled', false);
                     return;
@@ -39,29 +43,21 @@
             });
             
             
-            $('#srk9Wrap').on('change', '#actionMenu', function(){
-                var $this   = $(this),
-                    tools   = $('#srk9ToolsDir').attr('value'),
-                    $checkd = $('tbody', '#regionSearchTable').find(':checkbox').filter(':checked'),
-                    data    = $checkd.serializeArray();
-                
-                switch( $this.val() ){
-                    case 'delete':
-                        if( confirm('Delete these records? This cannot be undone!') ){
-                            var deleteURL = tools + $('#actionMenu').attr('data-action-delete');
-                            $.post( deleteURL, data, function(resp){
-                                if( resp.code == 1 ){
-                                    $checkd.parents('tr').fadeOut(150);
-                                }else{
-                                    alert('An error occurred. Try again later.');
-                                }
-                            }, 'json');
+            $('#regionWrap').on('click', 'button.delete', function() {
+                var regionElm = $(this).parents("tr")
+                var id = $(this).attr('data-id')
+                if( confirm('Delete this region? This cannot be undone!') ){
+                    var deleteURL = "/regions/delete/" + id;
+                    $.post( deleteURL, function(resp){
+                        console.log(resp);
+                        if( resp.code == 1 ){
+                            regionElm.fadeOut(150);
+                        }else{
+                            alert('An error occurred. Try again later.');
                         }
-                        break;
+                    }, 'json');
                 }
-                
-                // reset the menu
-                $this.val('');
+
             });
             
         }

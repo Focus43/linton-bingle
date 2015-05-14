@@ -1,30 +1,30 @@
 <?php $columns = Concrete\Package\Realtor\Src\Regions\RegionColumnSet::getCurrent();
 	$imageHelper = Loader::helper('image');
 ?>
+<style>
+    #regionSearchTable.group-left tbody tr td, #regionSearchTable.group-left th {
+        padding-left: 15px !important;padding-bottom: 5px;padding-right: 15px;padding-top: 5px;
+    }
+    thead { border-bottom: 1px solid #ccc; }
+    .ccm-pane-options-permanent-search .search { width: 590px;float: left;padding-bottom: 25px; }
+    .ccm-pane-options-permanent-search .search div { width: 50%;float: left;padding-right: 50px; }
+    .ccm-pane-options-permanent-search .search div #keywords { width: 170px;float: left;padding-right: 5px; }
+    .ccm-pane-options-permanent-search .search div button { float: right; }
+    select#actionMenu { margin: 20px 0; }
+</style>
 
 <div id="ccm-<?php echo $searchInstance; ?>-search-results">
 	<div class="ccm-pane-body">
-		<div class="clearfix">
-			<div class="pull-left">
-				<select id="actionMenu" class="span3" disabled="disabled" data-action-delete="<?php echo 'dashboard/dogs/delete'; ?>">
-					<option value="">** With Selected</option>
-					<option value="delete">Delete Dog</option>
-				</select>
-			</div>
-		</div>
 		
 		<table id="regionSearchTable" border="0" cellspacing="0" cellpadding="0" class="group-left ccm-results-list">
 			<thead>
 				<tr>
 					<th><input id="checkAllBoxes" type="checkbox" /></th>
-					<th>Profile Photo</th>
+					<th>Region Image</th>
 					<?php foreach($columns->getColumns() as $col) { ?>
-		                <?php if ($col->isColumnSortable()) { ?>
-		                	<th class="<?php echo $listObject->getSearchResultsClass($col->getColumnKey())?>"><a href="<?php echo $listObject->getSortByURL($col->getColumnKey(), $col->getColumnDefaultSortDirection(), (SRK_TOOLS_URL . 'dashboard/dogs/search_results'), array())?>"><?php echo $col->getColumnName()?></a></th>
-		                <?php } else { ?>
-		                	<th><?php echo $col->getColumnName() ?></th>
-		                <?php } ?>
+		                <th><?php echo $col->getColumnName() ?></th>
 	                <?php } ?>
+                    <th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,6 +41,7 @@
 						<?php foreach($columns->getColumns() AS $colObj){ ?>
 							<td class="<?php echo strtolower($colObj->getColumnName()); ?>"><?php echo $colObj->getColumnValue($region); ?></td>
 						<?php } ?>
+                        <td><button class="btn btn-danger delete" data-id="<?php echo $region->getID(); ?>">Delete</button></td>
 					</tr>
 				<?php endforeach; ?>
 			</tbody>
@@ -51,7 +52,7 @@
 	</div>
 	
 	<!-- paging stuff -->
-	<div class="ccm-pane-footer">
-		<?php $listObject->displayPagingV2((SRK_TOOLS_URL . 'dashboard/personnel/search_results'), array()) ?>
-	</div>
+<!--	<div class="ccm-pane-footer">-->
+<!--		--><?php //$listObject->displayPagingV2((SRK_TOOLS_URL . 'dashboard/personnel/search_results'), array()) ?>
+<!--	</div>-->
 </div>

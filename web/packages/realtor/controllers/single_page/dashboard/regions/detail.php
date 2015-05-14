@@ -35,6 +35,13 @@
 			$personnelObj->save();
 			$this->redirect('/dashboard/regions');
 		}
+
+        public function delete( $id = null ) {
+            $personnelObj = Region::getByID($id);
+            $personnelObj->setPropertiesFromArray($_POST);
+            $personnelObj->delete();
+            $this->redirect('/dashboard/regions');
+        }
 	
 	}
 }

@@ -18,7 +18,7 @@
 			$searchInstance = 'region' . time();
 			$this->addHeaderItem(Loader::helper('html')->css('dashboard/app.dashboard.css', 'realtor'));
 //			$this->addHeaderItem( '<meta id="srk9ToolsDir" value="'.SRK9_TOOLS_URL.'" />' );
-			$this->addFooterItem('<script type="text/javascript">$(function() { ccm_setupAdvancedSearch(\''.$searchInstance.'\'); });</script>');
+//			$this->addFooterItem('<script type="text/javascript">$(function() { ccm_setupAdvancedSearch(\''.$searchInstance.'\'); });</script>');
 			$this->addFooterItem(Loader::helper('html')->javascript('dashboard/app.dashboard.js', 'realtor'));
 			$this->set('listObject', $this->regionListObj());
 			$this->set('listResults', $this->regionListObj()->getPage());

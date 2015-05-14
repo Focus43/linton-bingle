@@ -105,6 +105,9 @@
             Route::register('/process_form',
                 '\Concrete\Package\Realtor\Controller\Tools\Modal::processForm'
             );
+            Route::register('/regions/delete/{id}',
+                '\Concrete\Package\Realtor\Controller\Tools\Regions::delete'
+            );
         }
 
         /**
