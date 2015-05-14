@@ -1569,7 +1569,7 @@ html.cms-edit-mode div.row > div {
           float: left; }
           .pg-landing #c-level-1 section.hero .masthead .node .inner .node-image > div.ccm-custom-style-choosebackgroundimage {
             background-size: cover;
-            background-position: 70% 50%;
+            background-position: 50% 50%;
             height: 100%;
             width: 100%; }
         .pg-landing #c-level-1 section.hero .masthead .node .inner .node-content {
@@ -2022,6 +2022,7 @@ body.pg-properties div#c-level-1 div.area-details section.sub-areas {
     overflow: hidden; }
     body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node {
       width: 100%;
+      height: 100%;
       display: table;
       visibility: hidden;
       opacity: 0;
@@ -2042,7 +2043,7 @@ body.pg-properties div#c-level-1 div.area-details section.sub-areas {
           float: left;
           background-size: cover;
           background-repeat: no-repeat;
-          background-position: 70% 50%; }
+          background-position: 50% 50%; }
           body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-image > div.ccm-custom-style-choosebackgroundimage {
             background-size: cover;
             background-position: 70% 50%;

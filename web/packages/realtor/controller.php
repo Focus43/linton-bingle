@@ -73,12 +73,7 @@
          */
         public function on_start(){
 
-//            if( C5_APPLICATION_ENVIRONMENT == 'production' ){
-//                $sendEmailsTo = 'CarolLinton@jhrea.com';
-//            }else{
-//                $sendEmailsTo = 'jhartman86@gmail.com';
-//            }
-            define('LINTON_EMAIL_ADDRESS', "superrunt@gmail.com");
+            define('LINTON_EMAIL_ADDRESS', "lintonbingle@jhrea.com");
 
             define('REALTOR_IMAGE_PATH', DIR_REL . '/packages/' . $this->pkgHandle . '/images/');
             define('REALTOR_SRC_PATH', DIR_BASE . '/packages/realtor/src/');
