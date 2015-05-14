@@ -49,7 +49,6 @@
                 if( confirm('Delete this region? This cannot be undone!') ){
                     var deleteURL = "/regions/delete/" + id;
                     $.post( deleteURL, function(resp){
-                        console.log(resp);
                         if( resp.code == 1 ){
                             regionElm.fadeOut(150);
                         }else{
