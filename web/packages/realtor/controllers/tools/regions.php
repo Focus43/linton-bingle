@@ -1,7 +1,7 @@
 <?php namespace Concrete\Package\Realtor\Controller\Tools {
 
     use Controller;
-    use Region;
+    use Concrete\Package\Realtor\Src\Regions\Region;
 
     class Regions extends Controller {
 
