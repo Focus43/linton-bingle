@@ -1527,7 +1527,7 @@ html.cms-edit-mode div.row > div {
         @media screen and (max-width: 769px) {
           .pg-default #c-level-1 section.hero .masthead .node .inner .node-content {
             padding: 0 1em 20px 1em;
-            height: auto; }
+            height: auto !important; }
           .pg-default #c-level-1 section.hero .masthead .node .inner .node-image, .pg-default #c-level-1 section.hero .masthead .node .inner .node-content {
             width: 100%;
             height: 50%;
@@ -1594,7 +1594,7 @@ html.cms-edit-mode div.row > div {
         @media screen and (max-width: 769px) {
           .pg-landing #c-level-1 section.hero .masthead .node .inner .node-content {
             padding: 0 1em 20px 1em;
-            height: auto; }
+            height: auto !important; }
           .pg-landing #c-level-1 section.hero .masthead .node .inner .node-image, .pg-landing #c-level-1 section.hero .masthead .node .inner .node-content {
             width: 100%;
             height: 50%;
@@ -1690,7 +1690,8 @@ html.cms-edit-mode div.row > div {
             font-size: 0.9em; }
       @media screen and (max-width: 480px) {
         .pg-landing #c-level-1 section.subnav div.pagelist ul li {
-          width: 100% !important; } }
+          width: 100% !important;
+          padding-top: 20px; } }
 
 body.pg-properties div#c-level-1 div.disclaimer {
   padding: 15px 0 30px 0; }

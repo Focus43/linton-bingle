@@ -13,7 +13,7 @@ $landing-masthead-height: 470px;
                         a.btn { color: $theme-color-red;background-color: $theme-color-white;margin-top: 15px; }
                     }
                     @media screen and (max-width:$screen-sm) {
-                        .node-content { padding: 0 1em 20px 1em;height: auto; }
+                        .node-content { padding: 0 1em 20px 1em;height: auto !important; }
                         .node-image, .node-content { width: 100%;height: 50%;float: left;max-width: 100%;
                             h3 { margin-top: 20px; }
                         }
@@ -46,7 +46,7 @@ $landing-masthead-height: 470px;
                     }
                 }
                 @media screen and (max-width:$screen-xs) {
-                    li { width: 100% !important; }
+                    li { width: 100% !important;padding-top: 20px; }
                 }
             }
         }

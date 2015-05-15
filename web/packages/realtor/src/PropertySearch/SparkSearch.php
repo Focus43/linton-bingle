@@ -252,7 +252,7 @@
                 );
                 $this->_params = empty($this->_customSearchParams) ? $defaults : array_merge($defaults, $this->_customSearchParams);
             }
-            
+
             return $this->_params;
         }
 
