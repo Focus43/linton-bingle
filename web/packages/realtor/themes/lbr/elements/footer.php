@@ -31,7 +31,8 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12 small-print">
-                        <?php $a = new GlobalArea("Not JHREA"); $a->display($c); ?>
+<!--                        --><?php //$a = new GlobalArea("Not JHREA"); $a->display($c); ?>
+                        This Web site is not the official Web site of Jackson Hole Real Estate Associates. Jackson Hole Real Estate Associates does not make any representation or warranty regarding any information, including without limitation it's accuracy or completeness, contained on this Web site.
                     </div>
                 </div>
                 <div class="row">

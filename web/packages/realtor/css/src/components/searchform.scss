@@ -48,6 +48,7 @@ section.search { text-align: center;background-color: $theme-color-beige;color: 
                 &:nth-child(even) { float: right;width: calc(100% - 140px); }
                 &:nth-child(odd) { width: 140px; }
                 input { width: 12px; height: 12px; }
+                input[type=checkbox] { margin: 0 3px 5px 0;vertical-align: -5px;padding: 12px !important;}
             }
             .buttons a.clearfields { margin-top: 10px; }
         }
