@@ -1,9 +1,25 @@
 <?php
 
 use Concrete\Package\Realtor\Src\PropertySearch\SparkConnection as SparkConnection;
+use Concrete\Package\Realtor\Src\PropertySearch\SparkSearch as SparkSearch;
 
 $formHelper = Loader::helper('form');
-//$lastSearch = LintonPropertySearch::getLastSearchRequest();
+
+function stringify ( $values ) {
+    $str = "";
+    foreach ( $values as $idx => $v ) {
+        if ( $idx == 'priceMax' ) {
+            $str .= " - ";
+        }
+        $str .= '$' . number_format($v);
+        if ( count($values) <= 1 ) {
+            $str .= " + ";
+        }
+    }
+    return $str;
+}
+$pricesArr = array_merge(array(''=>'PRICE RANGE'), array_map('stringify', SparkSearch::$priceRanges));
+
 ?>
 <section class="search">
     <div class="skinny-wrap">
@@ -40,15 +56,9 @@ $formHelper = Loader::helper('form');
                     </div>
                 </div>
 
-<!--                <div class="property-types clearfix">-->
-<!--                    --><?php //foreach(SparkConnection::getPropertyTypes() AS $key => $value){ ?>
-<!--                        <div class="type">--><?php //echo $formHelper->checkbox( "property_type[]", $key, in_array($key, (array)$lastSearch['property_type']) ) . ' ' . $value; ?><!--</div>-->
-<!--                    --><?php //} ?>
-<!--                </div>-->
-
                 <div class="pricerange clearfix">
                     <div class="dropdown">
-                        <?php echo $formHelper->select('pricerange', array(''=>'PRICE RANGE') + array_combine(range(1,10), range(1,10)), $lastSearch['pricerange'], array('class'=>'pricerange')); ?>
+                        <?php echo $formHelper->select('pricerange', $pricesArr, $lastSearch['pricerange'], array('class'=>'pricerange')); ?>
                     </div>
                 </div>
 

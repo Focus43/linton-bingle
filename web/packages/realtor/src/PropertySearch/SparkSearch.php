@@ -102,6 +102,15 @@
          * @return void
          */
         protected function setupFilterQuery() {
+            // price range
+            if ( isset($this->_request['pricerange']) ) {
+                $expression = self::expression('ListPrice', 'Ge', number_format(self::$priceRanges[$this->_request['pricerange']]['priceMin'], 2, '.', '') );
+                $this->applyFilter( $expression );
+                if ( isset(self::$priceRanges[$this->_request['pricerange']]['priceMax']) ) {
+                    $expression = self::expression('ListPrice', 'Le', number_format(self::$priceRanges[$this->_request['pricerange']]['priceMax'], 2, '.', '') );
+                    $this->applyFilter( $expression );
+                }
+            }
             // min price
             if( isset($this->_request['priceMin']) && $this->_request['priceMin'] > SparkConnection::getMinPrice() ){
                 $expression = self::expression('ListPrice', 'Ge', number_format($this->_request['priceMin'], 2, '.', '') );
@@ -243,7 +252,7 @@
                 );
                 $this->_params = empty($this->_customSearchParams) ? $defaults : array_merge($defaults, $this->_customSearchParams);
             }
-
+            
             return $this->_params;
         }
 
