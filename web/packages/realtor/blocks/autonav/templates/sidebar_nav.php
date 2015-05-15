@@ -133,7 +133,7 @@ foreach ($navItems as $ni) {
                 case (strpos($ni->url, "area_page=lincoln_county")) :
                     $imageSrc = REALTOR_IMAGE_PATH . 'nav_lincolncounty.jpg';
                     break;
-                case (strpos($ni->url, "area_page=other_wyoming")) :
+                case (strpos($ni->url, "area_page=other")) :
                     $imageSrc = REALTOR_IMAGE_PATH . 'nav_other.jpg';
                     break;
                 default:
