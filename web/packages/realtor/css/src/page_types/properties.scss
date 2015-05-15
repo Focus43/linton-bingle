@@ -167,7 +167,7 @@ body.pg-properties div#c-level-1 {
                         }
                         @media screen and (max-width:$screen-sm) {
                             .node-image { height: 430px; }
-                            .node-content { height: calc(100% - 430px); }
+                            .node-content { height: calc(100% - 430px);padding: 0 1em;line-height: 1.2em; }
                             .node-image, .node-content { width: 100%;float: left;max-width: 100%;
                                 h3 { margin-top: 20px; }
                             }

@@ -5,6 +5,7 @@
 //        } ?>
         <div class="pager">
             <?php echo "Showing <strong>{$paginationResultFrom} to {$paginationResultTo}</strong> of <strong>{$totalResults}</strong>"; ?>
+            <br class="visible-xs">
             <a href="<?php echo $previousUrl; ?>">Previous</a>
             <a href="<?php echo $nextUrl; ?>">Next</a>
         </div>
