@@ -32,6 +32,7 @@
                     // mail settings
 //                    $handler->addRecipient( LINTON_EMAIL_ADDRESS );
                     $handler->addRecipient( "superrunt@gmail.com" );
+                    $handler->setSender( "lintonbingle@gmail.com" );
                     $handler->addTemplateParameter('sparkProperty', $sparkProperty);
                     $handler->setTemplate('inquire', 'linton');
                     break;
@@ -53,6 +54,7 @@
                     // mail settings
 //                    $handler->addRecipient( LINTON_EMAIL_ADDRESS );
                     $handler->addRecipient( "superrunt@gmail.com" );
+                    $handler->setSender( "lintonbingle@gmail.com" );
                     $handler->setTemplate('contact', 'realtor');
                     break;
             }
