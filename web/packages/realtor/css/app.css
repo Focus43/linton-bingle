@@ -1176,6 +1176,13 @@ div.checkboxes {
     margin-top: 0;
     margin-bottom: 0; }
 
+div#modalBox #spinner {
+  text-align: center;
+  width: 100%; }
+  div#modalBox #spinner .spinner {
+    font-size: 40px;
+    padding: 40px; }
+
 .modal-open {
   overflow: hidden; }
 

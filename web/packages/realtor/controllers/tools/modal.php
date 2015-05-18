@@ -36,34 +36,6 @@
                     break;
 
 
-//                case $_REQUEST['type'] == 'share':
-//                    $sparkProperty = SparkProperty::getByID( $_REQUEST['localeID'] );
-//                    // validation
-//                    $handler->addRequired('share_sender_name', 'Your name is required.');
-//                    $handler->addRequiredEmail('share_sender_email', 'Your email address must be valid.');
-//                    $handler->addRequired('share_message', 'You must include at least a brief message.');
-//                    $handler->addRequired('share_recipients', 'You must specify the email address(es) of recipients.');
-//                    // validate all the recipients in the share_with field
-//                    $recipients = explode(',', $_REQUEST['share_recipients']);
-//                    foreach($recipients AS $email){
-//                        $email = trim($email);
-//                        if( !$handler->isValidEmail($email) ){
-//                            $handler->invalidate( 'share_recipients', 'The "share with" field contains invalid email addresses.' );
-//                            break;
-//                        }else{
-//                            // email *is* valid, so add a recipient
-//                            $handler->addRecipient($email);
-//                        }
-//                    }
-//                    // mail settings (recipients are set above)
-//                    $handler->setSender( $_REQUEST['share_sender_email'], $_REQUEST['share_sender_name'] );
-//                    $handler->addTemplateParameter('sparkProperty', $sparkProperty);
-//                    $handler->setTemplate('share', 'linton');
-//                    if( (bool)$_REQUEST['cc_me'] ){
-//                        $handler->addRecipient( $_REQUEST['share_sender_email'] );
-//                    }
-//                    break;
-
 
                 case $_REQUEST['type'] == 'general_contact':
                     // validation

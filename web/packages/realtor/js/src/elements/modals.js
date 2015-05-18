@@ -5,8 +5,8 @@ var Modals = function () {
         $('#modalBox').remove();
 
         // add modalbox to the DOM
-        $('body').append('<div id="modalBox" class="modal hide fade"><div class="modal-content"><div class="modal-header clearfix"><a class="close" data-dismiss="modal">×</a><h3 class="title-target"></h3></div><div class="loadTarget"></div></div></div>');
-
+        $('body').append('<div id="modalBox" class="modal hide fade"><div class="modal-content"><div class="modal-header clearfix"><a class="close" data-dismiss="modal">×</a><h3 class="title-target"></h3></div><div id="spinner"><span class="icon-spinner spinner"></span></div><div class="loadTarget"></div></div></div>');
+        $('div#spinner').css('display', 'inline-block');
         // select the modalBox element
         var modalBox = $('#modalBox');
 
@@ -14,6 +14,7 @@ var Modals = function () {
         $('h3.title-target',modalBox).empty().text( opts.title );
         $('div.loadTarget', modalBox).empty().load( "/modal" + opts.url, opts.data, function(data, status, xhr){
             if ( status === 'success' ) {
+                $('div#spinner').css('display', 'none');
                 self.initFormAjaxing();
             }
         });

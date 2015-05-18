@@ -248,7 +248,7 @@
                     '_pagination'	=> 1,
                     '_page'			=> 1,
                     '_filter'		=> $this->_filterQuery,
-                    '_select'       => 'Photos.Uri640, Id, ListPrice, StreetNumber, StreetName, StreetSuffix, City, StateOrProvince, ListingId, BedsTotal, BathsFull, BathsHalf, PublicRemarks'
+                    '_select'       => 'Photos.Uri640, Id, ListPrice, StreetNumber, StreetName, StreetSuffix, City, StateOrProvince, ListingId, BedsTotal, BathsFull, BathsHalf, PublicRemarks, PropertyType'
                 );
                 $this->_params = empty($this->_customSearchParams) ? $defaults : array_merge($defaults, $this->_customSearchParams);
             }

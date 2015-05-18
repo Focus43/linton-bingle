@@ -1,6 +1,9 @@
 div.checkboxes { padding: 0 20px;
     label { margin-top: 0;margin-bottom: 0; }
 }
+div#modalBox #spinner { text-align: center;width: 100%;
+    .spinner { font-size: 40px; padding: 40px; }
+}
 
 //
 // Modals

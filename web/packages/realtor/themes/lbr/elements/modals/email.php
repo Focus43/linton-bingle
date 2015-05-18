@@ -13,7 +13,7 @@ if ($_REQUEST['entityID']) {
             MLS #: <strong><?php echo $sparkProperty->getMlsNumber(); ?></strong><br />
             Property Title: <strong><?php echo $sparkProperty->getPropertyName(); ?></strong><br />
 <!--            City, State: <strong>--><?php //echo $sparkProperty->getCity() . ', ' . $sparkProperty->getStateOrProvince(); ?><!--</strong><br />-->
-            Price: <strong>$<?php echo number_format($sparkProperty->getListPrice(), 2); ?></strong>
+            Price: <strong>$<?php echo $sparkProperty->getListPrice(); ?></strong>
         </p>
         <?php endif; ?>
         <form id="contact-form" data-method="json" action="/process_form">
