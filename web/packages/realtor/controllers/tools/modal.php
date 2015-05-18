@@ -30,7 +30,8 @@
                     $handler->addRequiredEmail('email', 'A valid email address is required.');
                     $handler->addRequired('phone', 'Phone field is required.');
                     // mail settings
-                    $handler->addRecipient( LINTON_EMAIL_ADDRESS );
+//                    $handler->addRecipient( LINTON_EMAIL_ADDRESS );
+                    $handler->addRecipient( "superrunt@gmail.com" );
                     $handler->addTemplateParameter('sparkProperty', $sparkProperty);
                     $handler->setTemplate('inquire', 'linton');
                     break;
@@ -50,7 +51,8 @@
                         $handler->addRequired('zip', 'A zip is required to receive brochure.');
                     }
                     // mail settings
-                    $handler->addRecipient( LINTON_EMAIL_ADDRESS );
+//                    $handler->addRecipient( LINTON_EMAIL_ADDRESS );
+                    $handler->addRecipient( "superrunt@gmail.com" );
                     $handler->setTemplate('contact', 'realtor');
                     break;
             }
