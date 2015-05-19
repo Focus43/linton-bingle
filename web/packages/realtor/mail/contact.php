@@ -2,7 +2,15 @@
 
 $brochure = isset($brochure) ? $brochure : 'No';
 
-$subject = t('Contact form submission from CarolLinton.com');
+$inquiryNature = isset($inquiry) ? join(', and ', (array)$inquiry) : "";
+
+if ( isset($propertyName) && isset($MLSNumber) ) {
+    $propertyStr = '<p class="p">You have received a property inquiry from lintonbingle.com regarding <strong>' . $propertyName .'</strong> (MLS ID: ' . $MLSNumber . ')</p>';
+} else {
+    $propertyStr = "";
+}
+
+$subject = t('Contact form submission from LintonBingle.com');
 $template = <<< heredoc
 <html>
 	<head>
@@ -23,18 +31,18 @@ $template = <<< heredoc
 				<tr>
 					<td valign="top">
 						<center>
-							<h1 class="h1">CarolLinton.com Contact Form Submission</h1>
+							<h1 class="h1">Website Contact Form Submission</h1>
 							<table cellpadding="0" cellspacing="0" width="600" style="background-color:#fff;border:1px solid #ccc;">
 								<tr>
 									<td valign="top">
 										<table border="0" cellpadding="10" cellspacing="0" width="600">
 											<tr>
 												<td>
-													<p class="p">Name: {$name} (<a href="mailto:{$email}">{$email}</a> / {$phone})</p>
-													<p class="p">{$address1} {$address2} {$city}, {$state} {$zip}</p>
-													<p class="p">Send free brochure? {$brochure}</p>
-													<p class="p">Message from {$name}:</p>
-													<blockquote class="blockquote">{$message}</blockquote>
+													<p class="p">Name: {$share_sender_name_first} {$share_sender_name_last} (<a href="mailto:{$share_sender_email}">{$share_sender_email}</a> / {$share_sender_phone})</p>
+                                                    {$propertyStr}
+													<p class="p">Message:</p>
+													<blockquote class="blockquote">{$share_message}</blockquote>
+													<p class="p">{$inquiryNature}</p>
 												</td>
 											</tr>
 										</table>

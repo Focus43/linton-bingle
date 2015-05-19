@@ -32,12 +32,15 @@ $template = <<< heredoc
 										<table border="0" cellpadding="10" cellspacing="0" width="600">
 											<tr>
 												<td>
-													<p class="p">You have received a property inquiry from carollinton.com regarding <strong>{$sparkProperty->getPropertyName()}</strong> (MLS ID: {$sparkProperty->getListingId()})</p>
-													<p class="p">From: {$name} (<a href="mailto:{$email}">${email}</a> / {$phone})</p>
-													<p class="p">Preferred contact method: {$contactMethod}</p>
-													<p class="p">Nature of inquiry: {$inquiryNature}</p>
+													<p class="p">You have received a property inquiry from lintonbingle.com regarding <strong>{$sparkProperty->getPropertyName()}</strong> (MLS ID: {$sparkProperty->getListingId()})</p>
+													<p class="p">From: {$share_sender_name_first} {$share_sender_name_last} (<a href="mailto:{$share_sender_email}">{$share_sender_email}</a> / {$share_sender_phone})</p>
+
+
 													<p class="p">Message</p>
-													<blockquote class="blockquote">{$message}</blockquote>
+													<blockquote class="blockquote">
+													    {$share_message}<br><br>
+													    {$inquiryNature}
+													</blockquote>
 												</td>
 											</tr>
 										</table>
