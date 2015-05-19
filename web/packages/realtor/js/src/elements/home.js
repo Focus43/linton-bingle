@@ -1,9 +1,9 @@
 var Home = function () {
 
     this.initBlockLinks = function () {
-        var self = this;
-        self.transitionSpeed = 0.8
-        self.timeLines = [];
+        var _self = this;
+        _self.transitionSpeed = 0.8
+        _self.timeLines = [];
 
         $(".nav-blocks div.row > div").on('click', function(){
             window.location.href = $(this).attr('data-url');
@@ -11,19 +11,19 @@ var Home = function () {
 
 //        $(".nav-blocks div.row > div").on('mouseenter', function(){
 //
-//            if ( !self.timeLines[_idx] )  {
+//            if ( !_self.timeLines[_idx] )  {
 //                var _shade = $(this).children("div.shade");
 //                var _extra = _shade.children("div.extra")
 //                var _more = _shade.children("div.more")
 //                var _idx = $(this).index()
 //
-//                self.timeLines[_idx] = new TimelineLite()
-//                self.timeLines[_idx].insert(TweenLite.to(_shade, self.transitionSpeed, {css: {'background-color': 'rgba(18,10,7,0.70)', 'padding': '25% 20%'}}), 0)
-//                self.timeLines[_idx].insert(TweenLite.to(_extra, self.transitionSpeed, {autoAlpha:1, height: 70}), -self.transitionSpeed)
-//                self.timeLines[_idx].insert(TweenLite.to(_more, self.transitionSpeed, {autoAlpha:0}), -2*self.transitionSpeed)
+//                _self.timeLines[_idx] = new TimelineLite()
+//                _self.timeLines[_idx].insert(TweenLite.to(_shade, _self.transitionSpeed, {css: {'background-color': 'rgba(18,10,7,0.70)', 'padding': '25% 20%'}}), 0)
+//                _self.timeLines[_idx].insert(TweenLite.to(_extra, _self.transitionSpeed, {autoAlpha:1, height: 70}), -_self.transitionSpeed)
+//                _self.timeLines[_idx].insert(TweenLite.to(_more, _self.transitionSpeed, {autoAlpha:0}), -2*_self.transitionSpeed)
 //            }
 //
-//            self.timeLines[_idx].play()
+//            _self.timeLines[_idx].play()
 //
 //        })
 //
@@ -31,7 +31,7 @@ var Home = function () {
 //
 //            var _idx = $(this).index()
 //
-//            self.timeLines[_idx].reverse()
+//            _self.timeLines[_idx].reverse()
 //        })
 
     }

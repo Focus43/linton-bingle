@@ -1,35 +1,35 @@
 var Masthead = function () {
-    var self = this;
+    var _self = this;
     this.startCarousel = function () {
 
-        self.circles = $(".circles a")
-        self.circles.on('click', function() {
+        _self.circles = $(".circles a")
+        _self.circles.on('click', function() {
             var index = Array.prototype.slice.call($(".circles a")).indexOf(this);
             showNode(index);
         });
 
-        self.carousel = $("section.hero div.masthead");
-        self.nodes = $("section.hero div.masthead div.node");
-        self.indexActive = 0;
+        _self.carousel = $("section.hero div.masthead");
+        _self.nodes = $("section.hero div.masthead div.node");
+        _self.indexActive = 0;
 
-        self.loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
+        _self.loopTiming = _self.carousel.attr('data-loop-timing') * 1000 || 0;
 
-        if ( self.loopTiming == 0 ) return;
+        if ( _self.loopTiming == 0 ) return;
 
         (function loop( delay ){
             setTimeout(function(){
                 next();
                 loop(delay);
-            }, (self.loopTiming));
+            }, (_self.loopTiming));
         })( 3000 );
     }
 
     var showNode = function ( index ) {
 
         var indexNext       = index,
-            currentNode     = self.nodes[self.indexActive],
+            currentNode     = _self.nodes[_self.indexActive],
             currentNodeKids = $(".top", currentNode).children(),
-            nextNode        = self.nodes[indexNext],
+            nextNode        = _self.nodes[indexNext],
             nextNodeKids    = $(".top", nextNode).children()
         transitionSpeed  = 2;
 
@@ -40,16 +40,16 @@ var Masthead = function () {
         TweenMax.staggerFromTo(nextNodeKids, transitionSpeed, {x:-200,autoAlpha:0}, {x:0,autoAlpha:1}, (transitionSpeed/nextNodeKids.length));
         TweenLite.to(nextNode, transitionSpeed, {autoAlpha:1});
 
-        self.indexActive = indexNext;
-        self.circles.removeClass('active').eq(self.indexActive).addClass('active');
+        _self.indexActive = indexNext;
+        _self.circles.removeClass('active').eq(_self.indexActive).addClass('active');
     }
 
     var next = function () {
-        showNode((self.indexActive === self.nodes.length-1) ? 0 : self.indexActive + 1);
+        showNode((_self.indexActive === _self.nodes.length-1) ? 0 : _self.indexActive + 1);
     }
 
     var previous = function () {
-        showNode((self.indexActive === 0) ? self.nodes.length : self.indexActive - 1);
+        showNode((_self.indexActive === 0) ? _self.nodes.length : _self.indexActive - 1);
     }
 
     this.initArrows = function () {

@@ -96,7 +96,7 @@ var Featured = function () {
         self.nodes = $("#featuredCarousel .property");
         self.indexActive = 0;
 
-        var loopTiming = 12000;
+        var loopTiming = 6000;
 
         (function loop( delay ){
             setTimeout(function(){
@@ -185,7 +185,7 @@ var Featured = function () {
 
 }
 var Header = function () {
-    var self = this
+    var _self = this
     this.initShrink = function () {
         // shrink header on scroll (only on home page)
         if ( $('body').hasClass('pg-home') ) {
@@ -282,12 +282,12 @@ var Header = function () {
                     TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"})
                 });
                 ulChildren.on('mouseenter', function () {
-                    if ( self.navTimer ) clearTimeout(self.navTimer)
+                    if ( _self.navTimer ) clearTimeout(_self.navTimer)
                 });
             }
         })
         triggers.on('mouseleave', function () {
-            self.navTimer = setTimeout(function () { TweenLite.to(subs, 0.2, {autoAlpha:0, className: "-=open"}) }, 500)
+            _self.navTimer = setTimeout(function () { TweenLite.to(subs, 0.2, {autoAlpha:0, className: "-=open"}) }, 500)
         })
 
         triggers.on('click', function ( e ) {
@@ -310,9 +310,9 @@ var Header = function () {
 var Home = function () {
 
     this.initBlockLinks = function () {
-        var self = this;
-        self.transitionSpeed = 0.8
-        self.timeLines = [];
+        var _self = this;
+        _self.transitionSpeed = 0.8
+        _self.timeLines = [];
 
         $(".nav-blocks div.row > div").on('click', function(){
             window.location.href = $(this).attr('data-url');
@@ -320,19 +320,19 @@ var Home = function () {
 
 //        $(".nav-blocks div.row > div").on('mouseenter', function(){
 //
-//            if ( !self.timeLines[_idx] )  {
+//            if ( !_self.timeLines[_idx] )  {
 //                var _shade = $(this).children("div.shade");
 //                var _extra = _shade.children("div.extra")
 //                var _more = _shade.children("div.more")
 //                var _idx = $(this).index()
 //
-//                self.timeLines[_idx] = new TimelineLite()
-//                self.timeLines[_idx].insert(TweenLite.to(_shade, self.transitionSpeed, {css: {'background-color': 'rgba(18,10,7,0.70)', 'padding': '25% 20%'}}), 0)
-//                self.timeLines[_idx].insert(TweenLite.to(_extra, self.transitionSpeed, {autoAlpha:1, height: 70}), -self.transitionSpeed)
-//                self.timeLines[_idx].insert(TweenLite.to(_more, self.transitionSpeed, {autoAlpha:0}), -2*self.transitionSpeed)
+//                _self.timeLines[_idx] = new TimelineLite()
+//                _self.timeLines[_idx].insert(TweenLite.to(_shade, _self.transitionSpeed, {css: {'background-color': 'rgba(18,10,7,0.70)', 'padding': '25% 20%'}}), 0)
+//                _self.timeLines[_idx].insert(TweenLite.to(_extra, _self.transitionSpeed, {autoAlpha:1, height: 70}), -_self.transitionSpeed)
+//                _self.timeLines[_idx].insert(TweenLite.to(_more, _self.transitionSpeed, {autoAlpha:0}), -2*_self.transitionSpeed)
 //            }
 //
-//            self.timeLines[_idx].play()
+//            _self.timeLines[_idx].play()
 //
 //        })
 //
@@ -340,7 +340,7 @@ var Home = function () {
 //
 //            var _idx = $(this).index()
 //
-//            self.timeLines[_idx].reverse()
+//            _self.timeLines[_idx].reverse()
 //        })
 
     }
@@ -352,8 +352,8 @@ var Home = function () {
 }
 
 var Landing = function () {
-    self = this;
-    self._postsPerPage = 8;
+    _self = this;
+    _self._postsPerPage = 8;
 
     this.populateSubPageList = function () {
         var pageListTempl = $('#pageList').html();
@@ -369,14 +369,14 @@ var Landing = function () {
 
                 var _data = {};
                 // TODO: refactor to reuse this
-                if ( resp.pages.length > self._postsPerPage ) {
+                if ( resp.pages.length > _self._postsPerPage ) {
                     var _pageCollections = [],
                         _increments = [],
                         _pageLink = 1,
                         currentPage = 1;
 
                     while( resp.pages.length ) {
-                        _pageCollections.push(resp.pages.splice(0,self._postsPerPage));
+                        _pageCollections.push(resp.pages.splice(0,_self._postsPerPage));
                         _increments.push(_pageLink++);
                     }
                     _data.increments = _increments;
@@ -424,37 +424,37 @@ var Landing = function () {
     }
 }
 var Masthead = function () {
-    var self = this;
+    var _self = this;
     this.startCarousel = function () {
 
-        self.circles = $(".circles a")
-        self.circles.on('click', function() {
+        _self.circles = $(".circles a")
+        _self.circles.on('click', function() {
             var index = Array.prototype.slice.call($(".circles a")).indexOf(this);
             showNode(index);
         });
 
-        self.carousel = $("section.hero div.masthead");
-        self.nodes = $("section.hero div.masthead div.node");
-        self.indexActive = 0;
+        _self.carousel = $("section.hero div.masthead");
+        _self.nodes = $("section.hero div.masthead div.node");
+        _self.indexActive = 0;
 
-        self.loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
+        _self.loopTiming = _self.carousel.attr('data-loop-timing') * 1000 || 0;
 
-        if ( self.loopTiming == 0 ) return;
+        if ( _self.loopTiming == 0 ) return;
 
         (function loop( delay ){
             setTimeout(function(){
                 next();
                 loop(delay);
-            }, (self.loopTiming));
+            }, (_self.loopTiming));
         })( 3000 );
     }
 
     var showNode = function ( index ) {
 
         var indexNext       = index,
-            currentNode     = self.nodes[self.indexActive],
+            currentNode     = _self.nodes[_self.indexActive],
             currentNodeKids = $(".top", currentNode).children(),
-            nextNode        = self.nodes[indexNext],
+            nextNode        = _self.nodes[indexNext],
             nextNodeKids    = $(".top", nextNode).children()
         transitionSpeed  = 2;
 
@@ -465,16 +465,16 @@ var Masthead = function () {
         TweenMax.staggerFromTo(nextNodeKids, transitionSpeed, {x:-200,autoAlpha:0}, {x:0,autoAlpha:1}, (transitionSpeed/nextNodeKids.length));
         TweenLite.to(nextNode, transitionSpeed, {autoAlpha:1});
 
-        self.indexActive = indexNext;
-        self.circles.removeClass('active').eq(self.indexActive).addClass('active');
+        _self.indexActive = indexNext;
+        _self.circles.removeClass('active').eq(_self.indexActive).addClass('active');
     }
 
     var next = function () {
-        showNode((self.indexActive === self.nodes.length-1) ? 0 : self.indexActive + 1);
+        showNode((_self.indexActive === _self.nodes.length-1) ? 0 : _self.indexActive + 1);
     }
 
     var previous = function () {
-        showNode((self.indexActive === 0) ? self.nodes.length : self.indexActive - 1);
+        showNode((_self.indexActive === 0) ? _self.nodes.length : _self.indexActive - 1);
     }
 
     this.initArrows = function () {
@@ -496,7 +496,7 @@ var Masthead = function () {
     }
 }
 var Modals = function () {
-    var self = this;
+    var _self = this;
     this.openModal = function( opts ){
         // remove any existing ones
         $('#modalBox').remove();
@@ -512,7 +512,7 @@ var Modals = function () {
         $('div.loadTarget', modalBox).empty().load( "/modal" + opts.url, opts.data, function(data, status, xhr){
             if ( status === 'success' ) {
                 $('div#spinner').css('display', 'none');
-                self.initFormAjaxing();
+                _self.initFormAjaxing();
             }
         });
         modalBox.removeClass("hide");
@@ -522,7 +522,7 @@ var Modals = function () {
         $('.modalize').on('click', function (event){
             event.preventDefault();
             var _this = $(this);
-            self.openModal({
+            _self.openModal({
                 width: _this.attr('data-width'),
                 title: _this.attr('data-title'),
                 url: _this.attr('data-load'),
@@ -598,14 +598,14 @@ var Modals = function () {
 
 var Property = function () {
 
-    var self = this,
+    var _self = this,
         galleryThumbs,
         showHideBtn,
         arrowLeft,
         arrowRight,
         thumbs,
         circles;
-    self.indexActive = 0;
+    _self.indexActive = 0;
 
     this.initCarousel = function () {
         circles = $(".circles a")
@@ -619,8 +619,8 @@ var Property = function () {
             showNode(index);
         });
 
-        self.indexActive = 0;
-        self.nodes = $("#gallery .masthead .node");
+        _self.indexActive = 0;
+        _self.nodes = $("#gallery .masthead .node");
 
         var loopTiming = 5000;
 
@@ -635,8 +635,8 @@ var Property = function () {
     var showNode = function ( index ) {
 
         var indexNext       = index,
-            currentNode     = self.nodes[self.indexActive],
-            nextNode        = self.nodes[indexNext],
+            currentNode     = _self.nodes[_self.indexActive],
+            nextNode        = _self.nodes[indexNext],
             transitionSpeed  = 2;
 
         // Current
@@ -644,17 +644,17 @@ var Property = function () {
         // Next
         TweenLite.to(nextNode, transitionSpeed, {autoAlpha:1});
 
-        self.indexActive = indexNext;
-        circles.removeClass('active').eq(self.indexActive).addClass('active');
-        thumbs.removeClass('active').eq(self.indexActive).addClass('active');
+        _self.indexActive = indexNext;
+        circles.removeClass('active').eq(_self.indexActive).addClass('active');
+        thumbs.removeClass('active').eq(_self.indexActive).addClass('active');
     }
 
     var next = function () {
-        showNode((self.indexActive === self.nodes.length-1) ? 0 : self.indexActive + 1);
+        showNode((_self.indexActive === _self.nodes.length-1) ? 0 : _self.indexActive + 1);
     }
 
     var previous = function () {
-        showNode((self.indexActive === 0) ? nodeCount : self.indexActive - 1);
+        showNode((_self.indexActive === 0) ? nodeCount : _self.indexActive - 1);
     }
 
     this.initToggleGalleryThumbs = function () {
@@ -761,29 +761,29 @@ var Property = function () {
 }
 
 var Regions = function () {
-    var self = this;
+    var _self = this;
     this.startCarousel = function () {
-        self.carousel = $("section.sub-areas div.masthead");
-        self.nodes = $("section.sub-areas div.masthead div.node");
-        self.indexActive = 0;
+        _self.carousel = $("section.sub-areas div.masthead");
+        _self.nodes = $("section.sub-areas div.masthead div.node");
+        _self.indexActive = 0;
 
-        self.loopTiming = self.carousel.attr('data-loop-timing') * 1000 || 0;
+        _self.loopTiming = _self.carousel.attr('data-loop-timing') * 1000 || 0;
 
-        if ( self.loopTiming == 0 ) return;
+        if ( _self.loopTiming == 0 ) return;
 
         (function loop( delay ){
-            self.rotationTimeOut = setTimeout(function(){
+            _self.rotationTimeOut = setTimeout(function(){
                 next();
                 loop(delay);
-            }, (self.loopTiming));
+            }, (_self.loopTiming));
         })( 3000 );
     }
 
     var showNode = function ( index ) {
 
         var indexNext       = index,
-            currentNode     = self.nodes[self.indexActive],
-            nextNode        = self.nodes[indexNext],
+            currentNode     = _self.nodes[_self.indexActive],
+            nextNode        = _self.nodes[indexNext],
             transitionSpeed  = 1;
 
         var xTransform = $(currentNode).width()
@@ -793,23 +793,23 @@ var Regions = function () {
         // Next
         TweenLite.fromTo( nextNode, transitionSpeed, {x:xTransform, autoAlpha:1}, {x:0, autoAlpha:1} )
 
-        self.indexActive = indexNext;
+        _self.indexActive = indexNext;
 
         //        $markers.removeClass('active').eq(indexActive).addClass('active');
     }
 
     var next = function () {
-        showNode((self.indexActive === self.nodes.length-1) ? 0 : self.indexActive + 1);
+        showNode((_self.indexActive === _self.nodes.length-1) ? 0 : _self.indexActive + 1);
     }
 
     var previous = function () {
-        showNode((self.indexActive === 0) ? self.nodes.length : self.indexActive - 1);
+        showNode((_self.indexActive === 0) ? _self.nodes.length : _self.indexActive - 1);
     }
 
     this.initLlinks = function () {
         $("section.current-level-nav li").on('click', function () {
             showNode($(this).index())
-            clearTimeout(self.rotationTimeOut);
+            clearTimeout(_self.rotationTimeOut);
         });
 
     }
@@ -859,7 +859,7 @@ var ResponsiveVideo = function () {
 }
 var Search = function () {
 
-    var self = this,
+    var _self = this,
         $document = $(document),
         $sortBy = $('.sortBy'),
         $formFilters = $('form#propertySearch input, form#propertySearch select'),

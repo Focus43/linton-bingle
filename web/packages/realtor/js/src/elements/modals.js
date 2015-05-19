@@ -1,5 +1,5 @@
 var Modals = function () {
-    var self = this;
+    var _self = this;
     this.openModal = function( opts ){
         // remove any existing ones
         $('#modalBox').remove();
@@ -15,7 +15,7 @@ var Modals = function () {
         $('div.loadTarget', modalBox).empty().load( "/modal" + opts.url, opts.data, function(data, status, xhr){
             if ( status === 'success' ) {
                 $('div#spinner').css('display', 'none');
-                self.initFormAjaxing();
+                _self.initFormAjaxing();
             }
         });
         modalBox.removeClass("hide");
@@ -25,7 +25,7 @@ var Modals = function () {
         $('.modalize').on('click', function (event){
             event.preventDefault();
             var _this = $(this);
-            self.openModal({
+            _self.openModal({
                 width: _this.attr('data-width'),
                 title: _this.attr('data-title'),
                 url: _this.attr('data-load'),

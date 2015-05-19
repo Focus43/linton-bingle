@@ -96,7 +96,7 @@ var Featured = function () {
         self.nodes = $("#featuredCarousel .property");
         self.indexActive = 0;
 
-        var loopTiming = 12000;
+        var loopTiming = 6000;
 
         (function loop( delay ){
             setTimeout(function(){

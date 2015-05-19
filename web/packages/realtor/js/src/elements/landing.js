@@ -1,6 +1,6 @@
 var Landing = function () {
-    self = this;
-    self._postsPerPage = 8;
+    _self = this;
+    _self._postsPerPage = 8;
 
     this.populateSubPageList = function () {
         var pageListTempl = $('#pageList').html();
@@ -16,14 +16,14 @@ var Landing = function () {
 
                 var _data = {};
                 // TODO: refactor to reuse this
-                if ( resp.pages.length > self._postsPerPage ) {
+                if ( resp.pages.length > _self._postsPerPage ) {
                     var _pageCollections = [],
                         _increments = [],
                         _pageLink = 1,
                         currentPage = 1;
 
                     while( resp.pages.length ) {
-                        _pageCollections.push(resp.pages.splice(0,self._postsPerPage));
+                        _pageCollections.push(resp.pages.splice(0,_self._postsPerPage));
                         _increments.push(_pageLink++);
                     }
                     _data.increments = _increments;

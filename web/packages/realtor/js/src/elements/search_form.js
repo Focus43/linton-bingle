@@ -1,6 +1,6 @@
 var Search = function () {
 
-    var self = this,
+    var _self = this,
         $document = $(document),
         $sortBy = $('.sortBy'),
         $formFilters = $('form#propertySearch input, form#propertySearch select'),

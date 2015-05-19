@@ -1,13 +1,13 @@
 var Property = function () {
 
-    var self = this,
+    var _self = this,
         galleryThumbs,
         showHideBtn,
         arrowLeft,
         arrowRight,
         thumbs,
         circles;
-    self.indexActive = 0;
+    _self.indexActive = 0;
 
     this.initCarousel = function () {
         circles = $(".circles a")
@@ -21,8 +21,8 @@ var Property = function () {
             showNode(index);
         });
 
-        self.indexActive = 0;
-        self.nodes = $("#gallery .masthead .node");
+        _self.indexActive = 0;
+        _self.nodes = $("#gallery .masthead .node");
 
         var loopTiming = 5000;
 
@@ -37,8 +37,8 @@ var Property = function () {
     var showNode = function ( index ) {
 
         var indexNext       = index,
-            currentNode     = self.nodes[self.indexActive],
-            nextNode        = self.nodes[indexNext],
+            currentNode     = _self.nodes[_self.indexActive],
+            nextNode        = _self.nodes[indexNext],
             transitionSpeed  = 2;
 
         // Current
@@ -46,17 +46,17 @@ var Property = function () {
         // Next
         TweenLite.to(nextNode, transitionSpeed, {autoAlpha:1});
 
-        self.indexActive = indexNext;
-        circles.removeClass('active').eq(self.indexActive).addClass('active');
-        thumbs.removeClass('active').eq(self.indexActive).addClass('active');
+        _self.indexActive = indexNext;
+        circles.removeClass('active').eq(_self.indexActive).addClass('active');
+        thumbs.removeClass('active').eq(_self.indexActive).addClass('active');
     }
 
     var next = function () {
-        showNode((self.indexActive === self.nodes.length-1) ? 0 : self.indexActive + 1);
+        showNode((_self.indexActive === _self.nodes.length-1) ? 0 : _self.indexActive + 1);
     }
 
     var previous = function () {
-        showNode((self.indexActive === 0) ? nodeCount : self.indexActive - 1);
+        showNode((_self.indexActive === 0) ? nodeCount : _self.indexActive - 1);
     }
 
     this.initToggleGalleryThumbs = function () {

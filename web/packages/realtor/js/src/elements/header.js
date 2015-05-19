@@ -1,5 +1,5 @@
 var Header = function () {
-    var self = this
+    var _self = this
     this.initShrink = function () {
         // shrink header on scroll (only on home page)
         if ( $('body').hasClass('pg-home') ) {
@@ -96,12 +96,12 @@ var Header = function () {
                     TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"})
                 });
                 ulChildren.on('mouseenter', function () {
-                    if ( self.navTimer ) clearTimeout(self.navTimer)
+                    if ( _self.navTimer ) clearTimeout(_self.navTimer)
                 });
             }
         })
         triggers.on('mouseleave', function () {
-            self.navTimer = setTimeout(function () { TweenLite.to(subs, 0.2, {autoAlpha:0, className: "-=open"}) }, 500)
+            _self.navTimer = setTimeout(function () { TweenLite.to(subs, 0.2, {autoAlpha:0, className: "-=open"}) }, 500)
         })
 
         triggers.on('click', function ( e ) {
