@@ -56,8 +56,8 @@
                         $handler->addTemplateParameter('MLSNumber', $sparkProperty->getMlsNumber());
                     }
                     // mail settings
-//                    $handler->addRecipient( LINTON_EMAIL_ADDRESS );
-                    $handler->addRecipient( "superrunt@gmail.com" );
+                    $handler->addRecipient( LINTON_EMAIL_ADDRESS );
+//                    $handler->addRecipient( "superrunt@gmail.com" );
                     $handler->setSender( "lintonbingle@gmail.com" );
                     $handler->setTemplate('contact', 'realtor');
 //                    print_r($handler);exit;
