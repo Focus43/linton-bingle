@@ -60,7 +60,7 @@
                     $handler->addRecipient( "superrunt@gmail.com" );
                     $handler->setSender( "lintonbingle@gmail.com" );
                     $handler->setTemplate('contact', 'realtor');
-                    print_r($handler);exit;
+//                    print_r($handler);exit;
 //                    break;
 //            }
 
