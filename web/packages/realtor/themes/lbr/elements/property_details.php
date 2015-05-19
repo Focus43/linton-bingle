@@ -8,7 +8,7 @@
 </script>
 <div class="property-detail">
     <section id="gallery">
-        <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="12"';} ?>>
+        <div class="masthead" data-transition-speed="0.5"<?php if(!$isEditMode && (count($mastheadImages) > 1)){echo ' data-loop-timing="6"';} ?>>
             <?php if(!empty($photos)): foreach($photos AS $index => $p): ?>
                 <div class="node" style="background-image:url('<?php echo $p['Uri1600'] ?>');">
                     <div class="inner">
