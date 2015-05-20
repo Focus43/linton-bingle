@@ -65,6 +65,7 @@
             $apiResults = call_user_func_array(array( $this->_connection = SparkConnection::sparkApi(), $this->_apiMethod), array(
                 $this->searchParams()
             ));
+
             return $this->_connection->last_count;
         }
 

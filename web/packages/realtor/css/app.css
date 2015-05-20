@@ -1007,7 +1007,8 @@ section.search {
       -webkit-appearance: none; }
     section.search div.property-search input[type=checkbox] {
       height: inherit;
-      margin: 0 3px 0 0; }
+      margin: 0 3px 0 0;
+      padding: 12px; }
     section.search div.property-search p {
       text-align: left;
       padding: 0; }
@@ -1113,18 +1114,8 @@ section.search {
       section.search div.property-search .buttons a.clearfields {
         margin-top: 10px; } }
     @media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
-      section.search div.property-search .property-types .type:nth-child(even) {
-        float: right;
-        width: calc(100% - 140px); }
-      section.search div.property-search .property-types .type:nth-child(odd) {
-        width: 140px; }
-      section.search div.property-search .property-types .type input {
-        width: 12px;
-        height: 12px; }
       section.search div.property-search .property-types .type input[type=checkbox] {
-        margin: 0 3px 5px 0;
-        vertical-align: -5px;
-        padding: 12px !important; } }
+        vertical-align: -5px; } }
 
 @font-face {
   font-family: 'icomoon';

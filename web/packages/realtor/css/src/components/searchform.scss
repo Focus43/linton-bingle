@@ -7,7 +7,7 @@ section.search { text-align: center;background-color: $theme-color-beige;color: 
         }
         input, select, button.locations { width: inherit;height: 50px;padding: 12px 70px 6px 20px;font-family: $theme-font-family-headers;font-size: 1.1em;text-transform: uppercase; }
         select { -webkit-appearance: none; }
-        input[type=checkbox] { height: inherit;margin: 0 3px 0 0; }
+        input[type=checkbox] { height: inherit;margin: 0 3px 0 0;padding: 12px; }
         p { text-align: left;padding: 0;
             .target-result-count { color: $theme-color-red; }
             &.big-match { font-size: 2em;color: $theme-color-red;
@@ -55,10 +55,7 @@ section.search { text-align: center;background-color: $theme-color-beige;color: 
 
         @media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation:landscape) {
             .property-types .type {
-                &:nth-child(even) { float: right;width: calc(100% - 140px); }
-                &:nth-child(odd) { width: 140px; }
-                input { width: 12px; height: 12px; }
-                input[type=checkbox] { margin: 0 3px 5px 0;vertical-align: -5px;padding: 12px !important;}
+                input[type=checkbox] { vertical-align: -5px;}
             }
         }
     }
