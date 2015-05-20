@@ -11,12 +11,12 @@
                         h3 { margin-top: 130px;text-transform: uppercase; }
                         a.btn { color: $theme-color-red;background-color: $theme-color-white; }
                     }
-                    @media screen and (max-width:$screen-sm) {
-                        .node-content { padding: 0 1em 20px 1em;height: auto !important; }
-                        .node-image, .node-content { width: 100%;height: 50%;float: left;max-width: 100%;
-                            h3 { margin-top: 20px; }
-                        }
-                    }
+//                    @media screen and (max-width:$screen-sm) {
+//                        .node-content { padding: 0 1em 20px 1em;height: auto !important; }
+//                        .node-image, .node-content { width: 100%;height: 50%;float: left;max-width: 100%;
+//                            h3 { margin-top: 20px; }
+//                        }
+//                    }
                 }
             }
         }

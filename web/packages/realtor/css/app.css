@@ -1535,17 +1535,6 @@ html.cms-edit-mode div.row > div {
           .pg-default #c-level-1 section.hero .masthead .node .inner .node-content a.btn {
             color: #b5121b;
             background-color: #ffffff; }
-        @media screen and (max-width: 769px) {
-          .pg-default #c-level-1 section.hero .masthead .node .inner .node-content {
-            padding: 0 1em 20px 1em;
-            height: auto !important; }
-          .pg-default #c-level-1 section.hero .masthead .node .inner .node-image, .pg-default #c-level-1 section.hero .masthead .node .inner .node-content {
-            width: 100%;
-            height: 50%;
-            float: left;
-            max-width: 100%; }
-            .pg-default #c-level-1 section.hero .masthead .node .inner .node-image h3, .pg-default #c-level-1 section.hero .masthead .node .inner .node-content h3 {
-              margin-top: 20px; } }
 @media screen and (max-width: 769px) {
   .pg-default #c-level-1 section.hero {
     height: 630px !important; }
@@ -1656,6 +1645,9 @@ html.cms-edit-mode div.row > div {
             display: inline-block; }
           .pg-landing #c-level-1 section.hero .masthead .node .node-content h3 {
             margin-top: 10px !important; } }
+@media screen and (max-width: 769px) and (orientation: landscape) {
+  .pg-landing #c-level-1 section.hero .masthead .node .node-content h3 {
+    margin-top: 20px !important; } }
 .pg-landing #c-level-1 section.subnav {
   text-align: center; }
   .pg-landing #c-level-1 section.subnav h3 {
