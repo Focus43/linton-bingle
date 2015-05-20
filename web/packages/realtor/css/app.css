@@ -1566,7 +1566,7 @@ html.cms-edit-mode div.row > div {
         .pg-default #c-level-1 section.hero .masthead .node .node-content p {
           display: inline-block; }
         .pg-default #c-level-1 section.hero .masthead .node .node-content h3 {
-          margin-top: 20px; } }
+          margin-top: 10px !important; } }
 .pg-default #c-level-1 section.content div.content-padding {
   padding: 0 40px; }
 @media screen and (max-width: 769px) {
@@ -1643,7 +1643,7 @@ html.cms-edit-mode div.row > div {
         .pg-landing #c-level-1 section.hero .masthead .node .node-content p {
           display: inline-block; }
         .pg-landing #c-level-1 section.hero .masthead .node .node-content h3 {
-          margin-top: 20px; } }
+          margin-top: 10px !important; } }
 .pg-landing #c-level-1 section.subnav {
   text-align: center; }
   .pg-landing #c-level-1 section.subnav h3 {
