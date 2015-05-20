@@ -1546,6 +1546,27 @@ html.cms-edit-mode div.row > div {
             max-width: 100%; }
             .pg-default #c-level-1 section.hero .masthead .node .inner .node-image h3, .pg-default #c-level-1 section.hero .masthead .node .inner .node-content h3 {
               margin-top: 20px; } }
+@media screen and (max-width: 769px) {
+  .pg-default #c-level-1 section.hero {
+    height: 630px !important; }
+    .pg-default #c-level-1 section.hero .masthead .node {
+      height: 100%; }
+      .pg-default #c-level-1 section.hero .masthead .node .node-image, .pg-default #c-level-1 section.hero .masthead .node .node-content {
+        width: 100% !important;
+        float: left;
+        max-width: 100%; }
+      .pg-default #c-level-1 section.hero .masthead .node .node-image {
+        height: 40% !important; }
+      .pg-default #c-level-1 section.hero .masthead .node .node-content {
+        height: 60% !important;
+        padding: 0 1em;
+        line-height: 1.2em;
+        padding: 0 1em 20px 1em;
+        height: auto; }
+        .pg-default #c-level-1 section.hero .masthead .node .node-content p {
+          display: inline-block; }
+        .pg-default #c-level-1 section.hero .masthead .node .node-content h3 {
+          margin-top: 20px; } }
 .pg-default #c-level-1 section.content div.content-padding {
   padding: 0 40px; }
 @media screen and (max-width: 769px) {
