@@ -39,8 +39,8 @@
             <div class="pagination clearfix"></div>
         </section>
         <script id="pagination" type="x-tmpl-mustache">
-            <ul>
-                <li {{^increments}}class="hidden"{{/increments}}>PAGES</li>
+            <ul {{^increments}}class="hidden"{{/increments}}>
+                <li>PAGES</li>
             {{#increments}}
                 <li class="pagenum" data-next-page="{{.}}">{{.}}</li>
             {{/increments}}
