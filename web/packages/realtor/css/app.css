@@ -1040,7 +1040,8 @@ section.search {
       background-position: calc(100% - 4px) 0;
       background-repeat: no-repeat;
       color: #ffffff;
-      margin-right: 15px; }
+      margin-right: 15px;
+      -moz-appearance: none; }
     section.search div.property-search .dropdown button {
       margin-right: 15px; }
     section.search div.property-search .property-types {
@@ -1507,7 +1508,6 @@ html.cms-edit-mode div.row > div {
       .pg-default #c-level-1 section.hero .masthead .node .inner {
         width: 100%;
         height: 100%;
-        display: block;
         text-align: left; }
         .pg-default #c-level-1 section.hero .masthead .node .inner .node-image {
           width: 50%;
@@ -1592,7 +1592,6 @@ html.cms-edit-mode div.row > div {
       .pg-landing #c-level-1 section.hero .masthead .node .inner {
         width: 100%;
         height: 100%;
-        display: block;
         text-align: left; }
         .pg-landing #c-level-1 section.hero .masthead .node .inner .node-image {
           width: 50%;
