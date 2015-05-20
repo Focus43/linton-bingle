@@ -1,6 +1,7 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+
   ################ FORCE HTTPS EXAMPLES (PAGODABOX SPECIFIC) ################
   #-- redirect anything domains containing "something" to a specific page --#
   #RewriteCond %{HTTP_HOST} ^((.*)something(.*))$ [NC]
@@ -24,9 +25,9 @@
   ###########################################################################
 
   # Redirect all domains to lintonbingle.com (unless 192... (a local IP), or localhost...)
-#  RewriteCond %{HTTP_HOST} !=lintonbingle.com
-#  RewriteCond %{HTTP_HOST} !^((lintonbingle\.com)|(.*)gopagoda(.*)|(192\.(.*))|localhost(.*)|(.*)pagekite(.*))$ [NC]
-#  RewriteRule ^ http://lintonbingle.com%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} !=lintonbingle.com
+  RewriteCond %{HTTP_HOST} !^((lintonbingle\.com)|(.*)gopagoda(.*)|(192\.(.*))|localhost(.*))$ [NC]
+  RewriteRule ^ http://lintonbingle.com%{REQUEST_URI} [L,R=301]
 
   RewriteBase /
   RewriteCond %{REQUEST_URI} !^/favicon.ico$
