@@ -23,12 +23,15 @@
     }
     @media screen and (max-width:$screen-sm) {
         section.hero { height: 630px !important;
-            .masthead .node { height: 100%;
-                .node-image, .node-content { width: 100% !important;float: left;max-width: 100%; }
-                .node-image { height: 40% !important; }
-                .node-content { height: 60% !important;padding: 0 1em;line-height: 1.2em;padding: 0 1em 20px 1em;height: auto;
-                    p { display: inline-block; }
-                    h3 { margin-top: 10px !important; }
+            .masthead { height: calc(100% + 50px);
+                .node { height: 100%;
+                    .node-image, .node-content { width: 100% !important;float: left;max-width: 100%; }
+                    .node-image { height: 40% !important; }
+                    .node-content { display: table;height: 60% !important;padding: 0 1em;line-height: 1.2em;padding: 0 1em 20px 1em;height: auto;
+                        & > div { display: table-cell;vertical-align: middle; }
+                        p { display: inline-block; }
+                        h3 { margin-top: 10px !important; }
+                    }
                 }
             }
         }
