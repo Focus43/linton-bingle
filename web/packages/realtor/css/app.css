@@ -1613,6 +1613,17 @@ html.cms-edit-mode div.row > div {
             max-width: 100%; }
             .pg-landing #c-level-1 section.hero .masthead .node .inner .node-image h3, .pg-landing #c-level-1 section.hero .masthead .node .inner .node-content h3 {
               margin-top: 20px; } }
+@media screen and (max-width: 769px) {
+  .pg-landing #c-level-1 section.hero {
+    height: 1060px !important; }
+    .pg-landing #c-level-1 section.hero .masthead .node {
+      height: 100%; }
+      .pg-landing #c-level-1 section.hero .masthead .node .node-content {
+        height: calc(100% - 560px);
+        padding: 0 1em;
+        line-height: 1.2em; }
+        .pg-landing #c-level-1 section.hero .masthead .node .node-content p {
+          display: inline-block; } }
 .pg-landing #c-level-1 section.subnav {
   text-align: center; }
   .pg-landing #c-level-1 section.subnav h3 {
@@ -2095,6 +2106,8 @@ body.pg-properties div#c-level-1 div.area-details section.sub-areas {
             height: calc(100% - 430px);
             padding: 0 1em;
             line-height: 1.2em; }
+            body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content p {
+              display: inline-block; }
           body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-image, body.pg-properties div#c-level-1 div.area-details section.sub-areas .masthead .node .inner .node-content {
             width: 100%;
             float: left;
