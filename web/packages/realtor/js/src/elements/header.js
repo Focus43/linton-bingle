@@ -46,6 +46,22 @@ var Header = function () {
 //                $("#c-level-1").css('overflow-y', "hidden")
             }
         })
+
+        var mainNavTriggers = $("div#mobileNav ul.sidebar li.has-subs");
+        mainNavTriggers.on('click', function () {
+            var _subNav = $(this).next("ul.sub")
+            var _subs = _subNav.children("li")
+
+            if ( _subNav.hasClass("open")) {
+                $(this).addClass("show-plus")
+                _subNav.removeClass("open")
+                TweenLite.to(_subNav, 0.5, {height: 0})
+            } else {
+                $(this).removeClass("show-plus")
+                _subNav.addClass("open")
+                TweenLite.to(_subNav, 0.5, {height: _subs.length*75})
+            }
+        })
     }
 
     this.initSubnavIndicators = function () {

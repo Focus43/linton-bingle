@@ -556,6 +556,34 @@ ul.sidebar {
           font-weight: 700;
           font-size: 1.3em;
           line-height: 4em; }
+          div#mobileNav ul.sidebar li.has-subs div.plus {
+            display: none;
+            height: 75px;
+            width: 0; }
+          div#mobileNav ul.sidebar li.has-subs div.minus {
+            display: block;
+            height: 75px;
+            width: 30px;
+            text-align: center;
+            float: right;
+            margin-right: 50px; }
+          div#mobileNav ul.sidebar li.has-subs.show-plus div.plus {
+            display: block;
+            height: 75px;
+            width: 30px;
+            text-align: center;
+            float: right;
+            margin-right: 50px; }
+          div#mobileNav ul.sidebar li.has-subs.show-plus div.minus {
+            display: none;
+            height: 75px;
+            width: 0; }
+      div#mobileNav ul.sidebar > ul.sub {
+        background-color: #b5121b;
+        height: 0;
+        overflow: hidden;
+        list-style: none;
+        padding: 0; }
       div#mobileNav ul.sidebar li.contact {
         border-bottom: 0;
         height: auto;

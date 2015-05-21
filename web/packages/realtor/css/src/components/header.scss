@@ -106,8 +106,16 @@ ul.sidebar { display: none !important; }
                     &:hover { color: $theme-color-beige;text-decoration: none; }
                 }
                 &.nav-selected a { color: $theme-color-beige; }
-                &.has-subs { padding: 0 20px;color: $theme-color-white;text-transform: uppercase;font-family: $theme-font-family-headers;font-weight: 700;font-size: 1.3em;line-height: 4em; }
+                &.has-subs { padding: 0 20px;color: $theme-color-white;text-transform: uppercase;font-family: $theme-font-family-headers;font-weight: 700;font-size: 1.3em;line-height: 4em;
+//                    div.plus { display: none;height: 75px;width: 0; }
+//                    div.minus { display: block;height: 75px;width: 30px;text-align: center;float: right;margin-right: 50px; }
+//                    &.show-plus {
+//                        div.plus { display: block;height: 75px;width: 30px;text-align: center;float: right;margin-right: 50px; }
+//                        div.minus { display: none;height: 75px;width: 0; }
+//                    }
+                }
             }
+            & > ul.sub { background-color: $theme-color-red;height: 0;overflow: hidden;list-style: none;padding: 0; }
             li.contact { border-bottom: 0;height: auto;line-height: inherit;padding: 0 20px;
                 a.email { text-transform: none;padding-top: 10px;font-family: $theme-font-family-copy; }
                 img { padding-top: 1rem; }
