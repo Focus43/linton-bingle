@@ -94,34 +94,14 @@ video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;wid
 @media screen and (max-width:$screen-sm){
     .visible-sm { display: block; }
     .hidden-sm { display: none !important; }
-}
 
-// spinning (fonts)
-.spinner {
-    -webkit-animation: spin 2500ms infinite linear;
-    animation: spin 2500ms infinite linear;
-}
-@-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
+    ul.social {
+        li {
+            &.to-form { display: none !important; }
+            &.to-mail { display: inline-block !important; }
+        }
     }
 }
-@keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
-    }
-}
-
 
 /**
 * When In Edit Mode

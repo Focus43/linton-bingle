@@ -71,7 +71,7 @@
 
         <section class="featured">
             <div id="featuredCarousel">
-                <div style="text-align: center;padding: 20px;"><span class="icon-spinner spinner"></span></div>
+                <div style="text-align: center;padding: 20px;"><span class="icon-spinner spinner spinner--steps"></span></div>
             </div>
 
             <script id="featuredInitial" type="x-tmpl-mustache">
@@ -174,5 +174,6 @@
 </div>
 
 <?php Loader::element('footer_required'); // REQUIRED BY C5 // ?>
+<?php $this->inc('elements/googleanalytics.php'); ?>
 </body>
 </html>

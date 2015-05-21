@@ -14,5 +14,6 @@
     </div>
 
 <?php Loader::element('footer_required'); // REQUIRED BY C5 // ?>
+    <?php $this->inc('elements/googleanalytics.php'); ?>
 </body>
 </html>

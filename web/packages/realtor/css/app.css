@@ -209,25 +209,12 @@ video.fullscreen {
     display: block; }
 
   .hidden-sm {
-    display: none !important; } }
-.spinner {
-  -webkit-animation: spin 2500ms infinite linear;
-  animation: spin 2500ms infinite linear; }
+    display: none !important; }
 
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg); } }
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg); } }
+  ul.social li.to-form {
+    display: none !important; }
+  ul.social li.to-mail {
+    display: inline-block !important; } }
 /**
 * When In Edit Mode
 */
@@ -1175,6 +1162,29 @@ section.search {
 .icon-pinterest:before {
   content: "\e602"; }
 
+@keyframes anim-rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+@-webkit-keyframes anim-rotate {
+  0% {
+    -webkit-transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+.spinner {
+  display: inline-block;
+  font-size: 4em;
+  height: 1em;
+  line-height: 1;
+  margin: .5em;
+  animation: anim-rotate 2s infinite linear;
+  color: #9b8c86; }
+
+.spinner--steps {
+  -webkit-animation: anim-rotate 1s infinite steps(8);
+  animation: anim-rotate 1s infinite steps(8); }
+
 div.checkboxes {
   padding: 0 20px; }
   div.checkboxes label {
@@ -1186,7 +1196,7 @@ div#modalBox #spinner {
   width: 100%; }
   div#modalBox #spinner .spinner {
     font-size: 40px;
-    padding: 40px; }
+    margin: 40px; }
 
 .modal-open {
   overflow: hidden; }

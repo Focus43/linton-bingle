@@ -15,7 +15,7 @@
             ?>
         </div>
     </nav>
-    <ul class="social hidden-xs">
+    <ul class="social free-standing hidden-xs">
         <?php if ($pkgConfig->get('theme.social_link_facebook')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_facebook'); ?>"><span class="icon-facebook"></span></a></li><?php endif; ?>
         <?php if ($pkgConfig->get('theme.social_link_twitter')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_twitter'); ?>"><span class="icon-twitter"></span></a></li><?php endif; ?>
         <?php if ($pkgConfig->get('theme.social_link_pinterest')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_pinterest'); ?>"><span class="icon-pinterest"></span></a></li><?php endif; ?>

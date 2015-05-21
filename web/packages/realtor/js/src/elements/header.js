@@ -4,7 +4,7 @@ var Header = function () {
         // shrink header on scroll (only on home page)
         if ( $('body').hasClass('pg-home') ) {
             var _header = $('header')
-            var _social = $('header ul.social')
+            var _social = $('header ul.social.free-standing')
 
             if ( $(window).scrollTop() > 50 ) {
                 _header.addClass("shrink")

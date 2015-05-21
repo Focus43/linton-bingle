@@ -35,7 +35,7 @@
         <section class="subnav wide-wrap">
 <!--            <h3>--><?php //echo $c->getCollectionName(); ?><!--</h3>-->
             <div class="pagination clearfix"></div>
-            <div class="pagelist"><span class="icon-spinner spinner"></span></div>
+            <div class="pagelist"><span class="icon-spinner spinner spinner--steps"></span></div>
             <div class="pagination clearfix"></div>
         </section>
         <script id="pagination" type="x-tmpl-mustache">
@@ -71,5 +71,6 @@
 </div>
 
 <?php Loader::element('footer_required'); // REQUIRED BY C5 // ?>
+<?php $this->inc('elements/googleanalytics.php'); ?>
 </body>
 </html>

@@ -122,7 +122,7 @@
     </section>
     <section class="related">
         <div id="relatedListings">
-            <div style="text-align: center;padding: 20px;"><span class="icon-spinner spinner"></span></div>
+            <div style="text-align: center;padding: 20px;"><span class="icon-spinner spinner spinner--steps"></span></div>
         </div>
         <script id="relatedList" type="x-tmpl-mustache">
                 {{#properties}}
