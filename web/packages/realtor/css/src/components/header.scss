@@ -115,7 +115,9 @@ ul.sidebar { display: none !important; }
 //                    }
                 }
             }
-            & > ul.sub { background-color: $theme-color-red;height: 0;overflow: hidden;list-style: none;padding: 0; }
+            & > ul.sub { background-color: $theme-color-red;height: 0;overflow: hidden;list-style: none;padding: 0;
+                li { white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: $theme-color-white; }
+            }
             li.contact { border-bottom: 0;height: auto;line-height: inherit;padding: 0 20px;
                 a.email { text-transform: none;padding-top: 10px;font-family: $theme-font-family-copy; }
                 img { padding-top: 1rem; }
