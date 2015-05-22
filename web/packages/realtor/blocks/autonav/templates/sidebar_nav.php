@@ -189,8 +189,6 @@ foreach ($navItems as $ni) {
 //    echo '</ul></li>';
 
     echo '</ul><li>'; // closes contact sub
-
-
 echo '</ul>'; //closes the top-level menu
 
 
@@ -204,24 +202,35 @@ echo '<div id="mobileNav"><ul class="sidebar">'; //opens the top-level menu
 $passedFirst = false;
 foreach ($navItems as $ni) {
     if ( !$ni->hasSubmenu ) {
+        if ( $ni->level == 1 ) {
+            $ni->classes .= " top-level";
+            // this is a little dicey, but I know it works with our current IA
+            echo "</ul>"; // close previous
+//            if ( $passedFirst ) {
+//                echo "</ul>"; // close previous
+//            } else {
+//                $passedFirst = true;
+//            }
+        }
         echo '<li class="' . $ni->classes . '">'; //opens a nav item
         echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
         echo  $ni->name . '</a>';
         echo '</li>'; //closes a nav item
+
     } else {
         if ( $passedFirst ) {
             echo "</ul>"; // close previous
         } else {
             $passedFirst = true;
         }
-        echo '<li class="' . $ni->classes . ' show-plus">'; //opens a nav item
+        echo '<li class="' . $ni->classes . ' show-plus"><div class="plus">+</div><div class="minus">-</div>'; //opens a nav item
         echo  $ni->name;
-        echo '<!-- <div class="plus">+</div><div class="minus">-</div>--></li>'; //closes a nav item
+        echo '</li>'; //closes a nav item
         echo '<ul class="sub">'; //opens a dropdown sub-menu
     }
 }
 
-    echo '</ul><li class="contact"><a href="/"><img src="' . REALTOR_IMAGE_PATH . 'logo_white.png"></a></li>';
+    echo '<li class="contact"><a href="/"><img src="' . REALTOR_IMAGE_PATH . 'logo_white.png"></a></li>';
     echo '<li class="contact"><div class="address">' . $controller->pkgConfig->get('theme.address_physical') .'<br>' . $controller->pkgConfig->get('theme.address_state') . '<br>' . $controller->pkgConfig->get('theme.phone_number_office') . '</div></li>';
     echo '<li class="contact"><br><a class="email" href="mailto:LintonBingle@gmail.com">LintonBingle@gmail.com</a></li>';
     echo '<li class="contact"><ul class="social">';

@@ -548,7 +548,9 @@ ul.sidebar {
             text-decoration: none; }
         div#mobileNav ul.sidebar li.nav-selected a {
           color: #e2dddb; }
-        div#mobileNav ul.sidebar li.has-subs {
+        div#mobileNav ul.sidebar li.top-level {
+          padding-left: 24px; }
+        div#mobileNav ul.sidebar li.has-subs, div#mobileNav ul.sidebar li.top-level {
           padding: 0 20px;
           color: #ffffff;
           text-transform: uppercase;
@@ -556,6 +558,30 @@ ul.sidebar {
           font-weight: 700;
           font-size: 1.3em;
           line-height: 4em; }
+          div#mobileNav ul.sidebar li.has-subs div.plus, div#mobileNav ul.sidebar li.top-level div.plus {
+            display: none;
+            width: 0;
+            line-height: 79px;
+            text-align: center;
+            float: left;
+            height: 75px; }
+          div#mobileNav ul.sidebar li.has-subs div.minus, div#mobileNav ul.sidebar li.top-level div.minus {
+            display: block;
+            width: 20px;
+            text-align: center;
+            float: left;
+            line-height: 79px;
+            height: 75px; }
+          div#mobileNav ul.sidebar li.has-subs.show-plus div.plus, div#mobileNav ul.sidebar li.top-level.show-plus div.plus {
+            display: block;
+            width: 20px; }
+          div#mobileNav ul.sidebar li.has-subs.show-plus div.minus, div#mobileNav ul.sidebar li.top-level.show-plus div.minus {
+            display: none;
+            width: 0; } }
+        @media screen and (max-width: 769px) and (max-width: 330px) {
+          div#mobileNav ul.sidebar li.has-subs div.plus, div#mobileNav ul.sidebar li.has-subs div.minus, div#mobileNav ul.sidebar li.has-subs.show-plus div, div#mobileNav ul.sidebar li.top-level div.plus, div#mobileNav ul.sidebar li.top-level div.minus, div#mobileNav ul.sidebar li.top-level.show-plus div {
+            display: none !important; } }
+@media screen and (max-width: 769px) {
       div#mobileNav ul.sidebar > ul.sub {
         background-color: #b5121b;
         height: 0;
