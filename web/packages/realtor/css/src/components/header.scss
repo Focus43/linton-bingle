@@ -120,14 +120,14 @@ ul.sidebar { display: none !important; }
                 }
             }
             & > ul.sub { background-color: $theme-color-red;height: 0;overflow: hidden;list-style: none;padding: 0;
-                li { white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: $theme-color-white; }
+                li a { display: table-cell;vertical-align: middle;height: 75px;width: 100%;line-height: 1.2em; }
             }
             li.contact { border-bottom: 0;height: auto;line-height: inherit;padding: 0 20px;
                 a.email { text-transform: none;padding-top: 10px;font-family: $theme-font-family-copy; }
                 img { padding-top: 1rem; }
                 div.address { color: $theme-color-white; }
                 ul.social { display: block;position: relative;padding: 10px 0;float: none;
-                    li { float: left;display: inline-block;width: 45px;text-align: left;border-bottom: 0;padding: 0 20px 0 0 !important;
+                    li { float: left;display: inline-block;width: 34px;text-align: left;border-bottom: 0;padding: 0 !important;
                         a { color: $theme-color-white;font-size: 1.5em;
                             &:hover, &:active { color: $theme-color-beige;text-decoration: none; }
                         }

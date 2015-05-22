@@ -588,11 +588,12 @@ ul.sidebar {
         overflow: hidden;
         list-style: none;
         padding: 0; }
-        div#mobileNav ul.sidebar > ul.sub li {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          color: #ffffff; }
+        div#mobileNav ul.sidebar > ul.sub li a {
+          display: table-cell;
+          vertical-align: middle;
+          height: 75px;
+          width: 100%;
+          line-height: 1.2em; }
       div#mobileNav ul.sidebar li.contact {
         border-bottom: 0;
         height: auto;
@@ -614,10 +615,10 @@ ul.sidebar {
           div#mobileNav ul.sidebar li.contact ul.social li {
             float: left;
             display: inline-block;
-            width: 45px;
+            width: 34px;
             text-align: left;
             border-bottom: 0;
-            padding: 0 20px 0 0 !important; }
+            padding: 0 !important; }
             div#mobileNav ul.sidebar li.contact ul.social li a {
               color: #ffffff;
               font-size: 1.5em; }
