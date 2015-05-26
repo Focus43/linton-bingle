@@ -713,8 +713,10 @@ var Property = function () {
 
         var buttons = $("section.pagination div.sorter");
         buttons.on("click", function () {
-            var list = $("div.sortbyList")
+            var parent = $(this).parents("div.sortby")
+            var list = parent.find("div.sortbyList")
             var verticalPos = { }
+            var horizPos = ( parent.css("width") == '100%') ? { 'right': 0 } : { 'left': '12px' }
 
             if ( $(this)[0] == buttons[0] ) {
                 $("section.results").append(list)
@@ -725,9 +727,9 @@ var Property = function () {
             }
 
             if ( list.css('visibility') == 'visible' ) {
-                list.css({ 'visibility': 'hidden' })
+                list.css({ 'visibility': 'hidden'})
             } else {
-                list.css({ 'visibility': 'visible', 'right': 0 })
+                list.css($.extend({ 'visibility': 'visible' }, horizPos))
                 list.css(verticalPos)
             }
         })

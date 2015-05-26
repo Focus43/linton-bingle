@@ -588,16 +588,12 @@ ul.sidebar {
         overflow: hidden;
         list-style: none;
         padding: 0; }
-        div#mobileNav ul.sidebar > ul.sub li {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          color: #ffffff; }
-          div#mobileNav ul.sidebar > ul.sub li a {
-            /* display: table-cell;vertical-align: middle; */
-            height: 75px;
-            width: 100%;
-            line-height: 1.2em; }
+        div#mobileNav ul.sidebar > ul.sub li a {
+          display: table-cell;
+          vertical-align: middle;
+          height: 75px;
+          width: 100%;
+          line-height: 1.2em; }
       div#mobileNav ul.sidebar li.contact {
         border-bottom: 0;
         height: auto;
@@ -1911,8 +1907,10 @@ body.pg-properties div#c-level-1 section.pagination div.resultsCtrl {
       width: 100%;
       padding: 5px 10px;
       float: left; }
+      body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.pager a:first-of-type, body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.sortby a:first-of-type {
+        padding-left: 0 !important; }
       body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.pager div.sorter, body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.sortby div.sorter {
-        width: 100px; }
+        width: 110px; }
         body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.pager div.sorter > div, body.pg-properties div#c-level-1 section.pagination div.resultsCtrl div.sortby div.sorter > div {
           float: left;
           right: inherit !important;

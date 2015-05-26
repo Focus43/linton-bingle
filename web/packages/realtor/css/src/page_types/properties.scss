@@ -53,7 +53,8 @@ body.pg-properties div#c-level-1 {
             }
             @media screen and (max-width:$screen-sm) {
                 div.pager, div.sortby { width: 100%; padding: 5px 10px;float: left;
-                    div.sorter { width: 100px;
+                    a:first-of-type { padding-left: 0 !important; }
+                    div.sorter { width: 110px;
                         & > div { float: left;right: inherit !important;position: inherit !important;
                             &.arrow { float: right; }
                         }
