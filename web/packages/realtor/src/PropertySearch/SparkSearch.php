@@ -4,7 +4,7 @@
 
     class SparkSearch {
 
-        protected $_filterQuery     = "MlsStatus Eq 'A' And StateOrProvince Eq 'WY'",
+        protected $_filterQuery     = "MlsStatus Eq 'A'", // "MlsStatus Eq 'A' And StateOrProvince Eq 'WY'"
             $_apiMethod			    = 'getListings',
             $_customSearchParams 	= array(),
             $_connection,
@@ -168,6 +168,18 @@
                 $expression = self::expression('ListingId', 'Eq', $this->_request['mls_id']);
                 $this->applyFilter($expression);
             }
+
+            // add state here. if no state in query => use WY
+
+            // state
+            if( !empty($this->_request['state']) ){
+                $expression = self::expression('StateOrProvince', 'Eq', $this->_request['state']);
+                $this->applyFilter($expression);
+            } else {
+                $expression = self::expression('StateOrProvince', 'Eq', "WY");
+                $this->applyFilter($expression);
+            }
+
         }
 
         /**

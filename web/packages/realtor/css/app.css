@@ -588,12 +588,16 @@ ul.sidebar {
         overflow: hidden;
         list-style: none;
         padding: 0; }
-        div#mobileNav ul.sidebar > ul.sub li a {
-          display: table-cell;
-          vertical-align: middle;
-          height: 75px;
-          width: 100%;
-          line-height: 1.2em; }
+        div#mobileNav ul.sidebar > ul.sub li {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: #ffffff; }
+          div#mobileNav ul.sidebar > ul.sub li a {
+            /* display: table-cell;vertical-align: middle; */
+            height: 75px;
+            width: 100%;
+            line-height: 1.2em; }
       div#mobileNav ul.sidebar li.contact {
         border-bottom: 0;
         height: auto;

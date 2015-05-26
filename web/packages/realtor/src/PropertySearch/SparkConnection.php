@@ -17,7 +17,7 @@
         public static function sparkApi() {
             if( self::$_sparkAPI === null ){
                 self::$_sparkAPI = new \SparkAPI_APIAuth( PackageController::SPARK_API_KEY, PackageController::SPARK_API_SECRET );
-                self::$_sparkAPI->SetDeveloperMode( true );
+                self::$_sparkAPI->SetDeveloperMode( false );
     //            self::$_sparkAPI->SetDeveloperMode( (C5_APPLICATION_ENVIRONMENT == 'production' ? false : true) );
                 self::$_sparkAPI->SetApplicationName('lintonbingle.com');
                 $auth = self::$_sparkAPI->Authenticate();
