@@ -6,7 +6,7 @@
 
     class Search extends Controller {
 
-        public function resultsCount () {
+        public function resultsCount ( ) {
             $respObj = new \stdClass;
             $respObj->code = 1;
             $respObj->resultCount = 0;

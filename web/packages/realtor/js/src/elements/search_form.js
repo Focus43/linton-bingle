@@ -48,17 +48,18 @@ var Search = function () {
         this.getCount = function (data) {
             $.post( '/search/count', data, function(resp){
                 if( resp.code == 1 ){
+                    console.log("get count = " + resp.resultCount);
                     $('span.target-result-count').text(resp.resultCount)
                 }
             },'json');
         }
 
-        $formFilters.on('change' , function () {
+        $formFilters.on('change' , function () { console.log("change");
             var _data = $('form#propertySearch').serializeArray();
             _this.getCount(_data)
         });
 
-        this.getCount()
+        this.getCount($('form#propertySearch').serializeArray())
     }
 
     this.onloadFunc = function () {

@@ -175,10 +175,11 @@
             if( !empty($this->_request['state']) ){
                 $expression = self::expression('StateOrProvince', 'Eq', $this->_request['state']);
                 $this->applyFilter($expression);
-            } else {
-                $expression = self::expression('StateOrProvince', 'Eq', "WY");
-                $this->applyFilter($expression);
             }
+//            else {
+//                $expression = self::expression('StateOrProvince', 'Eq', "WY");
+//                $this->applyFilter($expression);
+//            }
 
         }
 
