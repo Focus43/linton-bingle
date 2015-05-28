@@ -48,7 +48,6 @@ var Search = function () {
         this.getCount = function (data) {
             $.post( '/search/count', data, function(resp){
                 if( resp.code == 1 ){
-                    console.log("get count = " + resp.resultCount);
                     $('span.target-result-count').text(resp.resultCount)
                 }
             },'json');
