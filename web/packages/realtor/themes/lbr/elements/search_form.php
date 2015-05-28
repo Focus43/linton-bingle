@@ -18,7 +18,7 @@ function stringify ( $values ) {
     }
     return $str;
 }
-$pricesArr = array_merge(array(''=>'PRICE RANGE'), array_map('stringify', SparkSearch::$priceRanges));
+$pricesArr = array_merge(array('0'=>'PRICE RANGE'), array_map('stringify', SparkSearch::$priceRanges));
 
 ?>
 <section class="search">
@@ -58,7 +58,7 @@ $pricesArr = array_merge(array(''=>'PRICE RANGE'), array_map('stringify', SparkS
 
                 <div class="pricerange clearfix">
                     <div class="dropdown">
-                        <?php echo $formHelper->select('pricerange', $pricesArr, $lastSearch['pricerange'], array('class'=>'pricerange')); ?>
+                        <?php echo $formHelper->select('pricerange', $pricesArr, $lastSearch['pricerange'], array('class'=>'pricerange', 'placeholder'=>'price range')); ?>
                     </div>
                 </div>
 

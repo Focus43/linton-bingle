@@ -105,10 +105,10 @@
         protected function setupFilterQuery() {
             // price range
             if ( isset($this->_request['pricerange']) ) {
-                $expression = self::expression('ListPrice', 'Ge', number_format(self::$priceRanges[$this->_request['pricerange']]['priceMin'], 2, '.', '') );
+                $expression = self::expression('ListPrice', 'Ge', number_format(self::$priceRanges[$this->_request['pricerange'] - 1]['priceMin'], 2, '.', '') );
                 $this->applyFilter( $expression );
                 if ( isset(self::$priceRanges[$this->_request['pricerange']]['priceMax']) ) {
-                    $expression = self::expression('ListPrice', 'Le', number_format(self::$priceRanges[$this->_request['pricerange']]['priceMax'], 2, '.', '') );
+                    $expression = self::expression('ListPrice', 'Le', number_format(self::$priceRanges[$this->_request['pricerange'] - 1]['priceMax'], 2, '.', '') );
                     $this->applyFilter( $expression );
                 }
             }
