@@ -925,17 +925,15 @@ var Search = function () {
         this.getCount = function (data) {
             $.post( '/search/count', data, function(resp){
                 if( resp.code == 1 ){
-                    console.log("get count = " + resp.resultCount);
                     $('span.target-result-count').text(resp.resultCount)
                 }
             },'json');
         }
 
-        $formFilters.on('change' , function () { console.log("change");
+        $formFilters.on('change' , function () {
             var _data = $('form#propertySearch').serializeArray();
             _this.getCount(_data)
         });
-
         this.getCount($('form#propertySearch').serializeArray())
     }
 

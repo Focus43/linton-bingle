@@ -53,11 +53,10 @@ var Search = function () {
             },'json');
         }
 
-        $formFilters.on('change' , function () { console.log("change");
+        $formFilters.on('change' , function () {
             var _data = $('form#propertySearch').serializeArray();
             _this.getCount(_data)
         });
-
         this.getCount($('form#propertySearch').serializeArray())
     }
 

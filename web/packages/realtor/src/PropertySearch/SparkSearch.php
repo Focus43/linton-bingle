@@ -104,7 +104,7 @@
          */
         protected function setupFilterQuery() {
             // price range
-            if ( isset($this->_request['pricerange']) ) {
+            if ( isset($this->_request['pricerange']) && $this->_request['pricerange'] != 0 ) {
                 $expression = self::expression('ListPrice', 'Ge', number_format(self::$priceRanges[$this->_request['pricerange'] - 1]['priceMin'], 2, '.', '') );
                 $this->applyFilter( $expression );
                 if ( isset(self::$priceRanges[$this->_request['pricerange']]['priceMax']) ) {
@@ -266,7 +266,6 @@
                 );
                 $this->_params = empty($this->_customSearchParams) ? $defaults : array_merge($defaults, $this->_customSearchParams);
             }
-
             return $this->_params;
         }
 
