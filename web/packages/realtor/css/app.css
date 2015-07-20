@@ -743,13 +743,13 @@ section.footer {
     .masthead .node .node-content {
       font-size: 1.3rem;
       display: inline-block;
-      max-width: 60%;
+      max-width: 50%;
       padding: 0 2rem; }
       .masthead .node .node-content p {
-        margin: 0 0.8em; }
+        margin: 0 0.4em; }
       .masthead .node .node-content h2 {
         text-align: right !important;
-        padding: 0 0.4em 0 0 !important; }
+        padding: 0 0.4em !important; }
         .masthead .node .node-content h2 p {
           padding: 0 !important;
           margin: 0 !important; }
@@ -1377,6 +1377,13 @@ div#modalBox #spinner {
   height: 845px;
   width: 100%;
   margin-bottom: -1px; }
+  .pg-home #c-level-1 main section.hero .node-content {
+    max-width: 60%; }
+    .pg-home #c-level-1 main section.hero .node-content p {
+      margin: 0 0.8em; }
+    .pg-home #c-level-1 main section.hero .node-content h2 {
+      padding: 0 0.3em 0 0 !important;
+      font-size: 60px; }
 .pg-home #c-level-1 main section.nav-blocks div.row {
   margin-left: 0px;
   margin-right: 0px; }
