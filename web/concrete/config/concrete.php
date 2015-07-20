@@ -51,7 +51,7 @@ return array(
          *
          * @var bool
          */
-        'display_errors' => true,
+        'display_errors' => false,
 
         /**
          * Site debug level
@@ -166,7 +166,7 @@ return array(
 
         /**
          * Use Doctrine development mode
-         * 
+         *
          * @var bool
          */
         'doctrine_dev_mode'        => false,
