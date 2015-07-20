@@ -743,13 +743,13 @@ section.footer {
     .masthead .node .node-content {
       font-size: 1.3rem;
       display: inline-block;
-      max-width: 50%;
+      max-width: 60%;
       padding: 0 2rem; }
       .masthead .node .node-content p {
-        margin: 0 0.4em; }
+        margin: 0 0.8em; }
       .masthead .node .node-content h2 {
         text-align: right !important;
-        padding: 0 0.4em !important; }
+        padding: 0 0.4em 0 0 !important; }
         .masthead .node .node-content h2 p {
           padding: 0 !important;
           margin: 0 !important; }
