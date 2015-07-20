@@ -271,14 +271,13 @@ var Header = function () {
         var subs        = $('nav ul.majority > li.sub')
         triggers.on('mouseenter tap', function ( e ) {
             e.preventDefault()
+            if ( _self.navTimer ) clearTimeout(_self.navTimer)
             var t = $(this)
             var idNum = t.attr("data-sub")
             var subNav = $("ul.majority li#sub-" + idNum)
             var allOpenSubs = $("ul.majority li.sub.open")
 
-            if ( subNav.hasClass("open") ) {
-                TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"})
-            } else {
+            if ( !subNav.hasClass("open") ) {
                 var ulChildren = subNav.children("ul");
                 var liChildren = subNav.children("ul").children("li");
                 var right = 180 * (liChildren.length/2) * -1
@@ -295,14 +294,22 @@ var Header = function () {
                 }
 
                 ulChildren.on('mouseleave', function () {
-                    TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"})
+                    if ( _self.navTimer ) clearTimeout(_self.navTimer)
+                    _self.navTimer = setTimeout(function () {TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"}) }, 500)
                 });
                 ulChildren.on('mouseenter', function () {
                     if ( _self.navTimer ) clearTimeout(_self.navTimer)
                 });
+                if ( e.type === "tap" ) {
+                    t.removeClass("noHover")
+                }
+            } else if ( e.type === "tap" && subNav.hasClass("open") ) {
+                t.addClass("noHover")
+                TweenLite.to(subNav, 0.2, {autoAlpha:0, className: "-=open"})
             }
         })
         triggers.on('mouseleave', function () {
+            if ( _self.navTimer ) clearTimeout(_self.navTimer)
             _self.navTimer = setTimeout(function () { TweenLite.to(subs, 0.2, {autoAlpha:0, className: "-=open"}) }, 500)
         })
 
