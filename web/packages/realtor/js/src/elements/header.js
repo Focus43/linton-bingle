@@ -104,7 +104,8 @@ var Header = function () {
                 var pos = ulChildren[0].getBoundingClientRect()
                 if ( pos.right > window.innerWidth ) {
                     var rightDiff = Math.round(pos.right - (window.innerWidth || document.documentElement.clientWidth)) + 5
-                    TweenLite.to(ulChildren, 0.2, {x: -rightDiff})
+                    var timer = (e.type === "tap") ? 0 : 0.1
+                    TweenLite.to(ulChildren, timer, {x: -rightDiff})
                 }
 
                 ulChildren.on('mouseleave', function () {

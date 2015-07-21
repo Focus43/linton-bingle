@@ -6,7 +6,7 @@ div#c-level-1 section.featured { background-color: $theme-color-beige;
         .property { visibility: hidden;opacity: 0;
             &.first { display: block;width: 100%;visibility: visible;opacity: 1; }
             &:not(.first) { position: absolute;top: 0;left: 0; }
-            .top { width: 100%;height: calc(100%-50px);background-color: $theme-color-white;
+            .top { width: 100%;height: calc(100%-50px); background-color: $theme-color-white;
                 .left { width: 50%;height: 100%;float: left;background-color: $theme-color-beige;
                     div#carouselLeft { height: 100%;
                         div.main-image { height: 0;padding-bottom: 100%;width: 100%;background-size: cover;background-position: 50% 50%; }
