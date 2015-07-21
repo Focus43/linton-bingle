@@ -2,7 +2,7 @@ module.exports = function( gulp ){
 
     // Get the name of the parent directory so we can use it to "namespace" tasks
     var directoryName = require('path').basename(__dirname);
-    
+
     /**
      * Return full path on the file system.
      * @param _path
@@ -37,7 +37,7 @@ module.exports = function( gulp ){
                 _packagePath('bower_components/zepto/zepto.min.js'),
                 _packagePath('bower_components/zepto/touch.js'),
                 _packagePath('bower_components/mustache.js/mustache.min.js'),
-//                _packagePath('bower_components/gsap/src/uncompressed/plugins/ScrollToPlugin.js'),
+               _packagePath('bower_components/gsap/src/uncompressed/plugins/ScrollToPlugin.js'),
 //                _packagePath('bower_components/isotope/dist/isotope.pkgd.js'),
 //                _packagePath('bower_components/moment/min/moment.min.js'),
                 _packagePath('js/3rd_party/*.js')

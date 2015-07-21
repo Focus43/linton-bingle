@@ -340,37 +340,26 @@ var Home = function () {
         $(".nav-blocks div.row > div").on('click', function(){
             window.location.href = $(this).attr('data-url');
         })
-
-//        $(".nav-blocks div.row > div").on('mouseenter', function(){
-//
-//            if ( !_self.timeLines[_idx] )  {
-//                var _shade = $(this).children("div.shade");
-//                var _extra = _shade.children("div.extra")
-//                var _more = _shade.children("div.more")
-//                var _idx = $(this).index()
-//
-//                _self.timeLines[_idx] = new TimelineLite()
-//                _self.timeLines[_idx].insert(TweenLite.to(_shade, _self.transitionSpeed, {css: {'background-color': 'rgba(18,10,7,0.70)', 'padding': '25% 20%'}}), 0)
-//                _self.timeLines[_idx].insert(TweenLite.to(_extra, _self.transitionSpeed, {autoAlpha:1, height: 70}), -_self.transitionSpeed)
-//                _self.timeLines[_idx].insert(TweenLite.to(_more, _self.transitionSpeed, {autoAlpha:0}), -2*_self.transitionSpeed)
-//            }
-//
-//            _self.timeLines[_idx].play()
-//
-//        })
-//
-//        $(".nav-blocks div.row > div").on('mouseleave', function(){
-//
-//            var _idx = $(this).index()
-//
-//            _self.timeLines[_idx].reverse()
-//        })
-
     }
 
+    this.initLayoutAndLookdown = function () {
+        // move arrow to bottom of view port, and set image height to same height
+        var _vpheight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
+            _top = _vpheight - 100;
+
+        $("div.look-down").css('top', _top + "px")
+        $("section.hero").css('height', _vpheight + "px")
+        $("section.hero .masthead .node").css('height', _vpheight + "px")
+
+        $("div.look-down").on('click', function() {
+            var  _scrollTo = $("section.featured").position().top
+            TweenLite.to(window, 1, {scrollTo:{y:_scrollTo, x:0}, ease:Power2.easeOut});
+        })
+    }
 
     this.onloadFunc = function () {
-        this.initBlockLinks();
+        this.initBlockLinks()
+        this.initLayoutAndLookdown()
     }
 }
 

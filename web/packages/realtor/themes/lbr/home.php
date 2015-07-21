@@ -21,8 +21,8 @@
                         </div>
                     </div>
                 <?php endforeach; endif; ?>
-
-                <?php if(count($mastheadImages) > 1): ?>
+                <div class="look-down"><i class="icon-expand-more"></i></div>
+                <!-- <?php if(count($mastheadImages) > 1): ?>
                     <?php if ( $isEditMode ) { ?>
                     <a class="edit-arrows arrows icon-keyboard-arrow-left"></a>
                     <a class="edit-arrows arrows icon-keyboard-arrow-right"></a>
@@ -33,7 +33,7 @@
                             <a class="<?php echo $i === 0 ? 'active' : ''; ?>"></a>
                         <?php endfor; ?>
                     </div>
-                <?php endif; ?>
+                <?php endif; ?> -->
             </div>
         </section>
         <section class="nav-blocks">

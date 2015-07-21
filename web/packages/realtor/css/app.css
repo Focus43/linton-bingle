@@ -289,6 +289,57 @@ html.cms-edit-mode #c-level-1 section {
   background-color: #f2dede;
   border-color: #ebccd1; }
 
+@-webkit-keyframes movearrows {
+  0% {
+    -webkit-transform: translate(0%, 0%);
+    opacity: 1;
+    color: #fff; }
+  92% {
+    -webkit-transform: translate(0%, 0%);
+    opacity: 1;
+    color: #fff; }
+  96% {
+    -webkit-transform: translate(0%, 10%);
+    opacity: .8;
+    color: #9b8c86; }
+  100% {
+    -webkit-transform: translate(0%, 0%);
+    opacity: 1;
+    color: #fff; } }
+@-moz-keyframes movearrows {
+  0% {
+    -moz-transform: translate(0%, 0%);
+    opacity: 1;
+    color: #fff; }
+  92% {
+    -moz-transform: translate(0%, 0%);
+    opacity: 1;
+    color: #fff; }
+  96% {
+    -moz-transform: translate(0%, 10%);
+    opacity: .8;
+    color: #9b8c86; }
+  100% {
+    -moz-transform: translate(0%, 0%);
+    opacity: 1;
+    color: #fff; } }
+@-o-keyframes movearrows {
+  0% {
+    -o-transform: translate(0%, 0%);
+    opacity: 1;
+    color: #fff; }
+  92% {
+    -o-transform: translate(0%, 0%);
+    opacity: 1;
+    color: #fff; }
+  96% {
+    -o-transform: translate(0%, 10%);
+    opacity: .8;
+    color: #9b8c86; }
+  100% {
+    -o-transform: translate(0%, 0%);
+    opacity: 1;
+    color: #fff; } }
 body #c-level-1 header {
   position: fixed;
   top: 0;
@@ -1386,6 +1437,16 @@ div#modalBox #spinner {
     .pg-home #c-level-1 main section.hero .node-content h2 {
       padding: 0 0.3em 0 0 !important;
       font-size: 60px; }
+  .pg-home #c-level-1 main section.hero .look-down {
+    height: 100px;
+    width: 100%;
+    position: absolute;
+    top: calc(100% - 100px);
+    text-align: center;
+    font-size: 100px;
+    -webkit-animation: movearrows 5s linear infinite;
+    -moz-animation: movearrows 5s linear infinite;
+    -o-animation: movearrows 5s linear infinite; }
 .pg-home #c-level-1 main section.nav-blocks div.row {
   margin-left: 0px;
   margin-right: 0px; }

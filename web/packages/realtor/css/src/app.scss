@@ -190,6 +190,72 @@ html.cms-edit-mode {
     border-color: #ebccd1;
 }
 
+// ANIMATIONS
+@-webkit-keyframes movearrows{
+    0% {
+        -webkit-transform:translate(0%,0%);
+        opacity:1;color:#fff
+    }
+    92% {
+        -webkit-transform:translate(0%,0%);
+        opacity:1;color:#fff
+    }
+    96% {
+        -webkit-transform:translate(0%,10%);
+        opacity:.8;
+        color:$theme-color-brown
+    }
+    100% {
+        -webkit-transform:translate(0%,0%);
+        opacity:1;
+        color:#fff
+    }
+}
+@-moz-keyframes movearrows {
+    0% {
+        -moz-transform:translate(0%,0%);
+        opacity:1;
+        color:#fff
+    }
+    92% {
+        -moz-transform:translate(0%,0%);
+        opacity:1;
+        color:#fff
+    }
+    96% {
+        -moz-transform:translate(0%,10%);
+        opacity:.8;
+        color:$theme-color-brown
+    }
+    100% {
+        -moz-transform:translate(0%,0%);
+        opacity:1;
+        color:#fff
+    }
+}
+@-o-keyframes movearrows {
+    0% {
+        -o-transform:translate(0%,0%);
+        opacity:1;
+        color:#fff
+    }
+    92% {
+        -o-transform:translate(0%,0%);
+        opacity:1;
+        color:#fff
+    }
+    96% {
+        -o-transform:translate(0%,10%);
+        opacity:.8;
+        color:$theme-color-brown
+    }
+    100% {
+        -o-transform:translate(0%,0%);
+        opacity:1;
+        color:#fff
+    }
+}
+
 @import 'components/header';
 @import 'components/footer';
 @import 'components/masthead';
