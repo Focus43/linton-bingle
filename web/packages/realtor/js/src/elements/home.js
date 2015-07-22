@@ -11,13 +11,14 @@ var Home = function () {
     }
 
     this.initLayoutAndLookdown = function () {
+        if ( $("body.pg-home").length === 0 ) return
         // move arrow to bottom of view port, and set image height to same height
         var _vpheight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
             _top = _vpheight - 100;
 
         $("div.look-down").css('top', _top + "px")
-        $("section.hero").css('height', _vpheight + "px")
-        $("section.hero .masthead .node").css('height', _vpheight + "px")
+        $("body.pg-home section.hero").css('height', _vpheight + "px")
+        $("body.pg-home section.hero .masthead .node").css('height', _vpheight + "px")
 
         $("div.look-down").on('click', function() {
             var  _scrollTo = $("section.featured").position().top
