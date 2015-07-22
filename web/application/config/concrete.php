@@ -37,7 +37,8 @@ return array(
         'seen_introduction' => true
     ),
     'debug' => array(
-        'detail' => 'debug'
+        'detail' => 'debug',
+        'display_errors' => false
     ),
     'cache' => array(
         'pages' => true,

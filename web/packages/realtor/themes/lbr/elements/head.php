@@ -6,4 +6,9 @@
 <meta name="apple-mobile-web-app-capable" content="no" />
 <script>PKG_MODAL_PATH = "<?php echo REALTOR_MODAL_PATH; ?>"</script>
 <?php Loader::element('header_required'); // REQUIRED BY C5 // ?>
+<?php
+    if( ! $this->controller instanceof \Concrete\Package\Realtor\Controller\RealtorPageController ){
+        \Concrete\Package\Realtor\Controller\RealtorPageController::attachThemeAssets($this->controller);
+    }
+?>
 </head>

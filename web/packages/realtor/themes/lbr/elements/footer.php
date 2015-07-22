@@ -1,3 +1,6 @@
+<?php
+    // $pkgConfig = \Concrete\Package\Realtor\Controller::getPackageConfigObj();
+?>
 <section class="footer">
     <div class="wide-wrap">
         <div class="row table">

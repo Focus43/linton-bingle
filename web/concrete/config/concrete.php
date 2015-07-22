@@ -51,7 +51,7 @@ return array(
          *
          * @var bool
          */
-        'display_errors' => false,
+        'display_errors' => true,
 
         /**
          * Site debug level

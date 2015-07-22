@@ -38,12 +38,13 @@
          * @return void
          */
         public function attachThemeAssets( PageController $pageController ){
+            $htmlHelper = \Core::make('helper/html');
             // CSS
-            $pageController->addHeaderItem( $this->getHelper('helper/html')->css('core.css', PackageController::PACKAGE_HANDLE) );
-            $pageController->addHeaderItem( $this->getHelper('helper/html')->css('app.css', PackageController::PACKAGE_HANDLE) );
+            $pageController->addHeaderItem( $htmlHelper->css('core.css', PackageController::PACKAGE_HANDLE) );
+            $pageController->addHeaderItem( $htmlHelper->css('app.css', PackageController::PACKAGE_HANDLE) );
             // JS
-            $pageController->addFooterItem( $this->getHelper('helper/html')->javascript('core.js', PackageController::PACKAGE_HANDLE) );
-            $pageController->addFooterItem( $this->getHelper('helper/html')->javascript('app.js', PackageController::PACKAGE_HANDLE) );
+            $pageController->addFooterItem( $htmlHelper->javascript('core.js', PackageController::PACKAGE_HANDLE) );
+            $pageController->addFooterItem( $htmlHelper->javascript('app.js', PackageController::PACKAGE_HANDLE) );
         }
 
         /**
