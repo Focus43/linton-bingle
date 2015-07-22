@@ -22,18 +22,12 @@
                     </div>
                 <?php endforeach; endif; ?>
                 <div class="look-down"><i class="icon-expand-more"></i></div>
-                <!-- <?php if(count($mastheadImages) > 1): ?>
+                <?php if(count($mastheadImages) > 1): ?>
                     <?php if ( $isEditMode ) { ?>
                     <a class="edit-arrows arrows icon-keyboard-arrow-left"></a>
                     <a class="edit-arrows arrows icon-keyboard-arrow-right"></a>
                     <?php } ?>
-
-                    <div class="circles">
-                        <?php for($i = 0; $i < count($mastheadImages); $i++): ?>
-                            <a class="<?php echo $i === 0 ? 'active' : ''; ?>"></a>
-                        <?php endfor; ?>
-                    </div>
-                <?php endif; ?> -->
+                <?php endif; ?>
             </div>
         </section>
         <section class="nav-blocks">
