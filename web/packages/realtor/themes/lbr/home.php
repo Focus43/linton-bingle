@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 <?php endforeach; endif; ?>
-                <div class="look-down"><i class="icon-expand-more"></i></div>
+                <?php if ( !$isEditMode ) { ?> <div class="look-down"><i class="icon-expand-more"></i></div> <?php } ?>
                 <?php if(count($mastheadImages) > 1): ?>
                     <?php if ( $isEditMode ) { ?>
                     <a class="edit-arrows arrows icon-keyboard-arrow-left"></a>
