@@ -11,8 +11,8 @@
         \Concrete\Package\Realtor\Controller\RealtorPageController::attachThemeAssets($this->controller);
     }
 ?>
-    <link rel="shortcut icon" href="/files/4714/5029/2458/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="/files/4714/5029/2458/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/application/files/4714/5029/2458/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="/application/files/4714/5029/2458/favicon.ico" type="image/x-icon" />
     
     <?php $this->inc('elements/facebookpixelcode.php'); ?>
 </head>
