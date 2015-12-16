@@ -11,4 +11,5 @@
         \Concrete\Package\Realtor\Controller\RealtorPageController::attachThemeAssets($this->controller);
     }
 ?>
+    <?php $this->inc('elements/facebookpixelcode.php'); ?>
 </head>
