@@ -33,4 +33,13 @@
         </index>
     </table>
 
+    <table name="SparkPropertyCache">
+        <field name="cacheKey" type="C" size="255">
+            <NOTNULL />
+            <key />
+        </field>
+        <field name="cacheValue" type="X2" />
+        <field name="expUTC" type="C" size="255" />
+    </table>
+
 </schema>
