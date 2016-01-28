@@ -38,22 +38,23 @@ return array(
     ),
     'debug' => array(
         'detail' => 'debug',
-        'display_errors' => false
-    ),
-    'cache' => array(
-        'pages' => true,
-        'levels' => array(
-            'expensive' => array(
-                'drivers' => array(
-                    $ephemeralStashCacheDriver,
-                    (defined('EPHEMERAL_ONLY_DURING_INSTALL') ? $ephemeralStashCacheDriver : $redisStashCacheDriver)
-                )
-            ),
-            'object' => array(
-                'drivers' => array(
-                    $ephemeralStashCacheDriver
-                )
-            )
-        )
+        'display_errors' => true
     )
+    // ,
+    // 'cache' => array(
+    //     'pages' => true,
+    //     'levels' => array(
+    //         'expensive' => array(
+    //             'drivers' => array(
+    //                 $ephemeralStashCacheDriver,
+    //                 (defined('EPHEMERAL_ONLY_DURING_INSTALL') ? $ephemeralStashCacheDriver : $redisStashCacheDriver)
+    //             )
+    //         ),
+    //         'object' => array(
+    //             'drivers' => array(
+    //                 $ephemeralStashCacheDriver
+    //             )
+    //         )
+    //     )
+    // )
 );
