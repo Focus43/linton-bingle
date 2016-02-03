@@ -2,7 +2,7 @@
 
 /**
  * -----------------------------------------------------------------------------
- * Generated 2016-02-01T21:11:08+00:00
+ * Generated 2016-02-03T21:21:23+00:00
  *
  * @item      misc.do_page_reindex_check
  * @group     concrete
@@ -23,6 +23,6 @@ return array(
         'compress_preprocessor_output' => false
     ),
     'misc' => array(
-        'do_page_reindex_check' => true
+        'do_page_reindex_check' => false
     )
 );

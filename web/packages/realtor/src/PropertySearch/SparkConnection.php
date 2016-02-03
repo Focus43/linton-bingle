@@ -46,7 +46,7 @@
 
             // cache it
             $toCache = RedisCache::cache()->_serialize($types);
-            RedisCache::cache()->set(__CLASS__ . 'property_types', $toCache, 2592000);
+            RedisCache::cache()->set(__CLASS__ . 'property_types', $toCache, 24*60*60*30);
 
             return $types;
         }

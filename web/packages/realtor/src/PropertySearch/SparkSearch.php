@@ -51,7 +51,7 @@
 
                 // cache it
                 $toCache = RedisCache::cache()->_serialize($searchResult);
-                RedisCache::cache()->set(__CLASS__ . $this->getChecksum(), $toCache, 24*60);
+                RedisCache::cache()->set(__CLASS__ . $this->getChecksum(), $toCache, 24*60*60);
             }
 
             return $searchResult;
