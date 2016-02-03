@@ -39,6 +39,20 @@ VM_SETTINGS = {
        owner: 'vagrant',
        group: 'www-data',
        mount_options: ['dmode=775,fmode=664']
+    },
+    {
+       host_relative_path: '../web',
+       vm_absolute_path: '/home/vagrant/app/web',
+       owner: 'vagrant',
+       group: 'www-data',
+       mount_options: ['dmode=775,fmode=664']
+    },
+    {
+       host_relative_path: '../web/application/config',
+       vm_absolute_path: '/home/vagrant/app/web/application/config',
+       owner: 'vagrant',
+       group: 'www-data',
+       mount_options: ['dmode=775,fmode=664']
     }
   ]
 }

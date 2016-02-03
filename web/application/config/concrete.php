@@ -38,7 +38,7 @@ return array(
     ),
     'debug' => array(
         'detail' => 'debug',
-        'display_errors' => false
+        'display_errors' => true
     )
     // ,
     // 'cache' => array(

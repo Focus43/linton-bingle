@@ -48,7 +48,7 @@
                         <img src="<?php echo REALTOR_IMAGE_PATH; ?>luxury_logo.png">
                     </div>
                     <div class="col-xs-12 col-sm-8 pull-left small-print">
-                        © 2015 Carol Linton Real Estate. All Rights Reserved. Legal/Privacy
+                        &copy;<?php echo date('Y');?> LintonBingle Associate Brokers. All Rights Reserved. <a href="<?php echo BASE_URL . '/legal-privacy'?>">Legal/Privacy</a>
                     </div>
                 </div>
             </div>

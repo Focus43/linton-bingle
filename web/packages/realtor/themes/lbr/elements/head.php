@@ -5,7 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 <meta name="apple-mobile-web-app-capable" content="no" />
 <script>PKG_MODAL_PATH = "<?php echo REALTOR_MODAL_PATH; ?>"</script>
-<?php Loader::element('header_required'); // REQUIRED BY C5 // ?>
+<?php 
+// check to see if we are on a property details page 
+// if so, bring in property-specific details
+if ( $propertyObj ){
+  $propertyPageTitle = $propertyObj->getPropertyName() . ' | LintonBingle Associate Brokers';
+  $propertyPageDesc = $propertyObj->getDescription(); 
+}
+if(isset($propertyPageTitle)){
+  Loader::element('header_required', 
+    array(
+      'pageTitle' => $propertyPageTitle, 
+      'pageDescription' => $propertyPageDesc
+    )
+  );
+} else {
+  Loader::element('header_required');
+}
+?>
+
 <?php
     if( ! $this->controller instanceof \Concrete\Package\Realtor\Controller\RealtorPageController ){
         \Concrete\Package\Realtor\Controller\RealtorPageController::attachThemeAssets($this->controller);

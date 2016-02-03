@@ -6,7 +6,7 @@
                     <div class="inner">
                         <div class="node-content">
                             <div>
-                                <h2><?php echo $fileObj->getTitle(); ?></h2>
+                                <h1><?php echo $fileObj->getTitle(); ?></h1>
                                 <?php echo $fileObj->getDescription(); ?>
                             </div>
                         </div>

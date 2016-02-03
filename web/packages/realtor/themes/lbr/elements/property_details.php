@@ -51,7 +51,7 @@
 
     <section class="details">
         <div class="detail-wrapper">
-            <h3><?php echo $propertyObj->getPropertyName(); ?></h3>
+            <h1><?php echo $propertyObj->getPropertyName(); ?></h1>
             <div class="list clearfix">
                 <div>
                     <span class="bold">MLS #:</span> <?php echo $propertyObj->getMlsNumber(); ?><br>

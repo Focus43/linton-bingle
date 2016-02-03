@@ -1,22 +1,18 @@
 .pg-default #c-level-1 {
-    section.hero { width: 100%;height: 560px;margin-top: $nav-header-short-height;
+    section.hero { width: 100%;height: 550px;margin-top: $nav-header-short-height;
         .masthead { width: 100%;height: 100%;position: relative;overflow: hidden;
             .node { height: 100%;width: 100%;display: table;visibility: hidden;opacity: 0;position: absolute;top: 0;left: 0;
                 &:first-of-type { visibility: visible;opacity: 1; }
                 .inner { width:100%;height:100%;text-align:left;
-                    .node-image { width: 50%;height: 100%;float: left;background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;
+                    .node-image { width: 50%;height: inherit;overflow:hidden;float: left;background-size: cover;position:relative;background-repeat: no-repeat;background-position: 50% 50%;margin:0 auto;
+
+                        img{position: absolute;z-index:-1;object-fit:cover;height:106%;width:100%;display: block;}
                         & > div.ccm-custom-style-choosebackgroundimage { background-size: cover;background-position: 70% 50%;height: 100%;width: 100%; }
                     }
                     .node-content {width: 50%;height: 100%;float: right;font-size:1.3rem;padding-left:2rem;background-color: $theme-color-red;color: $theme-color-white;
-                        h3 { margin-top: 130px;text-transform: uppercase; }
+                        h1 { margin-top: 130px;text-transform: uppercase;text-align: left; }
                         a.btn { color: $theme-color-red;background-color: $theme-color-white; }
                     }
-//                    @media screen and (max-width:$screen-sm) {
-//                        .node-content { padding: 0 1em 20px 1em;height: auto !important; }
-//                        .node-image, .node-content { width: 100%;height: 50%;float: left;max-width: 100%;
-//                            h3 { margin-top: 20px; }
-//                        }
-//                    }
                 }
             }
         }
@@ -30,7 +26,7 @@
                     .node-content { display: table;height: 60% !important;padding: 0 1em;line-height: 1.2em;padding: 0 1em 20px 1em;height: auto;
                         & > div { display: table-cell;vertical-align: middle; }
                         p { display: inline-block; }
-                        h3 { margin-top: 10px !important; }
+                        h1 { margin-top: 10px !important;}
                     }
                 }
             }

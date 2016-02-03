@@ -4,7 +4,11 @@ body.pg-properties div#c-level-1 {
     section.results {
         div.divider-line { width:100%;@include bottomBorder(); }
         div.listing { padding: 40px 0;
-            div.photo { width: 50%;max-width: 500px;padding-bottom: 37.5%;float: left;background-position: 25% 50%;background-repeat: no-repeat;overflow: hidden; }
+            div.photo { width: 50%;max-width: 500px;max-height: 370px;float: left; overflow: hidden;
+            img{
+                max-width: 125%;
+            }
+            }
             div.details { float: left;width: 50%;padding: 0 18px;
                 a:not(.btn) { display: block; padding: 0 2px 15px 2px;color: #000;font-family: $theme-font-family-headers;text-transform: uppercase;@include bottomBorder(); }
                 div.numbers { padding: 15px 2px;@include bottomBorder();
@@ -69,6 +73,7 @@ body.pg-properties div#c-level-1 {
     div.property-detail { padding-top: 75px;
         section { text-align: center;
             div.detail-wrapper { max-width: 880px;margin: 0 auto;text-align: left;padding: 70px 15px 0 15px; }
+            h1{font-size: 2rem;}
         }
         section#gallery { width: 100%;height: 650px;
             .masthead { height: 620px;
@@ -136,7 +141,7 @@ body.pg-properties div#c-level-1 {
     div.area-details {
         section.hero { height: 620px;width: 100%;margin-bottom: -1px; }
         section.current-level-nav { text-align: center;padding: 20px 0;
-            h2 { text-align: left;padding-bottom: 0;margin-bottom: 0; }
+            h2 { padding-bottom: 0;margin-bottom: 0; }
             ul { list-style: none;padding: 0;margin: 0 auto;display: inline-block;
                 li { list-style: none;padding: 0 10px;margin: 0;display: inline-block;float: left;border-right: 1px solid $theme-line-color;
                     &:last-of-type { border-right: 0; }
@@ -157,7 +162,7 @@ body.pg-properties div#c-level-1 {
                         .node-image { width: 50%;height: 100%;float: left;background-size: cover;background-repeat: no-repeat;background-position: 50% 50%;
                             & > div.ccm-custom-style-choosebackgroundimage { background-size: cover;background-position: 70% 50%;height: 100%;width: 100%; }
                         }
-                        .node-content {width: 50%;height: 100%;float: right;font-size:1.3rem;padding-left:2rem;background-color: $theme-color-red;color: $theme-color-white;
+                        .node-content {float: right;width: 50%;height: 100%;font-size:1.3rem;padding-left:2rem;background-color: $theme-color-red;color: $theme-color-white;
                             h3 { margin-top: 50px;text-transform: uppercase; }
                             a { color: $theme-color-white;
                                 &:hover { color: $theme-color-white;text-decoration: underline; }

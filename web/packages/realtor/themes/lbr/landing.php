@@ -11,7 +11,7 @@
                             <div class="node-image"><?php $a = new Area("Choose Background Image"); $a->display($c); ?></div>
                             <div class="node-content">
                                 <div>
-                                    <h3><?php $a = new Area("Header"); $a->display($c); ?></h3>
+                                    <h1><?php $a = new Area("Header"); $a->display($c); ?></h1>
 <!--                                    <div class="hidden-xs">--><?php //$a = new Area("Copy"); $a->display($c); ?><!--</div>-->
                                     <div><?php $a = new Area("Copy"); $a->display($c); ?></div>
                                     <?php $a = new Area("Button"); $a->display($c); ?>

@@ -117,7 +117,11 @@ foreach ($navItems as $ni) {
         $topLevelCnt += 1;
     }
     echo '<li class="' . $ni->classes . '" data-sub="' . $topLevelCnt . '" >'; //opens a nav item
-    echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
+    if($ni->classes == 'has-subs'){
+        echo '<a class="' . $ni->classes . '">';
+    } else {
+        echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '">';
+    }
 
     if ( $ni->level == 2 ) {
         if ( $ni->cObj->getAttribute('page_image') ) {
@@ -157,38 +161,8 @@ foreach ($navItems as $ni) {
     }
 }
 
-    echo '<li class="has-subs contact" data-sub="contact"><a href="/contact">Contact</a> </li>'; // contact
-    echo '<li class="sub" id="sub-contact"><ul>'; // opens contact sub
-
-    echo '<li><img src="' . REALTOR_IMAGE_PATH . 'logo_white.png"></li>';
-    echo '<li><div class="address">' . $controller->pkgConfig->get('theme.address_physical') .'<br>' . $controller->pkgConfig->get('theme.address_state') . '<br>' . $controller->pkgConfig->get('theme.phone_number_office') . '</div></li>';
-    echo '<li class="contact"><br><a class="email" href="mailto:LintonBingle@gmail.com">LintonBingle@gmail.com</a></li>';
-    echo '<li><ul class="social">';
-
-    if ( $controller->pkgConfig->get('theme.social_link_facebook') ) {
-        echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_facebook'). '"><span class="icon-facebook"></span></a></li>';
-    }
-    if ( $controller->pkgConfig->get('theme.social_link_twitter') ) {
-        echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_twitter'). '"><span class="icon-twitter"></span></a></li>';
-    }
-    if ( $controller->pkgConfig->get('theme.social_link_pinterest') ) {
-        echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_pinterest'). '"><span class="icon-pinterest"></span></a></li>';
-    }
-    if ( $controller->pkgConfig->get('theme.social_link_googleplus') ) {
-        echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_googleplus'). '"><span class="icon-google-plus"></span></a></li>';
-    }
-    if ( $controller->pkgConfig->get('theme.social_link_linkedin') ) {
-        echo '<li><a href="' . $controller->pkgConfig->get('theme.social_link_linkedin'). '"><span class="icon-linkedin"></span></a></li>';
-    }
-    if ( $controller->pkgConfig->get('theme.email_address') ) {
-        echo '<li class="to-mail"><a href="mailto:' . $controller->pkgConfig->get('theme.email_address'). '"><span class="icon-envelope"></span></a></li>';
-    }
-
-    echo '<li class="to-form"><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email"><span class="icon-envelope"></span></a></li>';
-
-//    echo '</ul></li>';
-
-    echo '</ul><li>'; // closes contact sub
+    echo '<li class="top-level"><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email">Contact</a></li>';
+    
 echo '</ul>'; //closes the top-level menu
 
 
@@ -230,6 +204,6 @@ foreach ($navItems as $ni) {
     }
 }
 
-    echo '<li class="contact to-form"><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email">Contact</a></li>';
+    echo '<li class="top-level"><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email">Contact</a></li>';
 
 echo '</ul></div>'; //closes the top-level menu

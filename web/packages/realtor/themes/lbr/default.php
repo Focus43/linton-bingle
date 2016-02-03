@@ -8,15 +8,20 @@
             <div class="masthead">
                 <div class="node" >
                     <div class="inner clearfix">
-                        <div class="node-image" style="background-image: url('<?php echo ($c->getAttribute('page_image')) ? $c->getAttribute('page_image')->getRelativePath() : REALTOR_IMAGE_PATH . 'nav_placeholder.jpg' ?>')">
-<!--                            --><?php //$a = new Area("Choose Background Image"); $a->display($c); ?>
+                        <div class="node-image">
+                        <?php 
+                            $img = ($c->getAttribute('page_image')) ? $c->getAttribute('page_image') : REALTOR_IMAGE_PATH . 'nav_placeholder.jpg';
+                            $img_src = $img->getRelativePath();
+                            $img_title = ($img->getTitle() ? $img->getTitle() : $c->getCollectionName())
+                        ?>
+                            <img alt="<?php echo $img_title; ?>" src="<?php echo $img_src; ?>" />
                         </div>
                         <div class="node-content">
                             <div>
-                                <h3>
+                                <h1>
                                     <?php echo $c->getCollectionName(); ?>
 <!--                                    --><?php //$a = new Area("Header"); $a->display($c); ?>
-                                </h3>
+                                </h1>
                                 <div>
                                     <?php echo $c->getCollectionDescription(); ?>
 <!--                                    --><?php //$a = new Area("Copy"); $a->display($c); ?>

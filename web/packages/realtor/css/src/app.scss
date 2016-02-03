@@ -4,7 +4,7 @@
 html, body {height:100%;font-size:100%;}
 img {@include img-responsive(inline-block);padding-bottom:1rem;}
 h1, h2, h3, h4, h5 { font-family: $theme-font-family-headers; }
-
+h1{font-size: 2.4rem;}
 video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;width:auto;height:auto;z-index:-100;}
 
 // google maps control fix
@@ -31,13 +31,16 @@ video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;wid
     section { padding: 0;overflow: hidden;position: relative;
         &:first-of-type { padding: 0;height: 100%;width: 100%;position:relative; }
         &:last-of-type { padding-top:0; }
-        h2 { text-align:center;margin:0;padding:2rem 1rem 3rem;text-transform:uppercase; }
+        h1 { text-align:center;margin:0;padding:2rem 1rem 3rem;text-transform:uppercase; }
+        h2{text-align: left;padding:2rem 1rem 3rem 0;text-transform:uppercase;}
+        h1.homepageTitle {text-align: right;font-size: 4rem;margin-top: 100px;}
 
     }
 
     section.border { border-top: 1px solid $theme-line-color;height: 1px;width: 100%; }
 
     section.current-level-nav { text-align: center;padding: 0 40px 20px 40px;
+        h2{text-align: center;}
         ul { list-style: none;padding: 0;margin: 0 auto;display: inline-block;
             li { list-style: none;padding: 0 10px;margin: 0;display: inline-block;float: left;border-right: 1px solid $theme-line-color;
                 &:last-of-type { border-right: 0; }
@@ -56,7 +59,8 @@ video.fullscreen {position:fixed;top:0;left:0;min-width:100%;min-height:100%;wid
 
     main {width:100%;position:relative;overflow-x:hidden;}
 
-    ul.social { display: block;
+    ul.social { 
+        display: block;
         li { display: inline-block;margin: 0 5px;
             &:first-of-type { margin-left: 0px; }
             a:hover { text-decoration: none; }

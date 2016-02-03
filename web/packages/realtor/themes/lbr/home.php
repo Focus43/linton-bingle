@@ -9,9 +9,9 @@
                 <?php if(!empty($mastheadImages)): foreach($mastheadImages AS $index => $fileObj): ?>
                     <div class="node" style="background-image:url('<?php echo $fileObj->getRelativePath(); ?>');">
                         <div class="inner">
-                            <div class="node-content">
+                            <div class="node-content home-node">
                                 <div>
-                                    <h2><?php $index++; $a = new Area("Masthead Header {$index}"); $a->display($c); ?></h2>
+                                    <h1 class="homepageTitle"><?php $index++; $a = new Area("Masthead Header {$index}"); $a->display($c); ?></h1>
                                     <?php $a = new Area("Masthead {$index}"); $a->display($c); ?>
                                 </div>
 <!--                                <div class="visible-xs" data-viz-m>-->
