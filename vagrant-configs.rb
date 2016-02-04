@@ -33,13 +33,7 @@ VM_SETTINGS = {
     # writable. Notice, the vm absolute path /home/vagrant/app/,
     # which is where the machine will mount your app automatically.
     # -----------------------------------------------------------
-    {
-       host_relative_path: '../web/application/files',
-       vm_absolute_path: '/home/vagrant/app/web/application/files',
-       owner: 'vagrant',
-       group: 'www-data',
-       mount_options: ['dmode=775,fmode=664']
-    },
+
     {
        host_relative_path: '../web',
        vm_absolute_path: '/home/vagrant/app/web',
