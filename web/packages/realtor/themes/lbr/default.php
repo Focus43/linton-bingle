@@ -10,9 +10,9 @@
                     <div class="inner clearfix">
                         <div class="node-image">
                         <?php 
-                            $img = ($c->getAttribute('page_image')) ? $c->getAttribute('page_image') : REALTOR_IMAGE_PATH . 'nav_placeholder.jpg';
-                            $img_src = $img->getRelativePath();
-                            $img_title = ($img->getTitle() ? $img->getTitle() : $c->getCollectionName())
+                            $img = ($c->getAttribute('page_image')) ? $c->getAttribute('page_image') : 'nav_placeholder.jpg';
+                            $img_src = !is_string($img) ? $img->getRelativePath() : REALTOR_IMAGE_PATH . $img;
+                            $img_title = (!is_string($img) ? $img->getTitle() : $c->getCollectionName())
                         ?>
                             <img alt="<?php echo $img_title; ?>" src="<?php echo $img_src; ?>" />
                         </div>

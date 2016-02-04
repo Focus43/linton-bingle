@@ -9,7 +9,7 @@
                 <?php if(!empty($mastheadImages)): foreach($mastheadImages AS $index => $fileObj): ?>
                     <div class="node" style="background-image:url('<?php echo $fileObj->getRelativePath(); ?>');">
                         <div class="inner">
-                            <div class="node-content home-node">
+                            <div class="node-content">
                                 <div>
                                     <h1 class="homepageTitle"><?php $index++; $a = new Area("Masthead Header {$index}"); $a->display($c); ?></h1>
                                     <?php $a = new Area("Masthead {$index}"); $a->display($c); ?>
