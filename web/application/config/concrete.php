@@ -1,21 +1,21 @@
 <?php
 
-$ephemeralStashCacheDriver = array(
-    'class' => '\Stash\Driver\Ephemeral',
-    'options' => array()
-);
+// $ephemeralStashCacheDriver = array(
+//     'class' => '\Stash\Driver\Ephemeral',
+//     'options' => array()
+// );
 
-$redisStashCacheDriver = array(
-    'class' => '\Stash\Driver\Redis',
-    'options' => array(
-        'servers' => array(
-            array(
-                'server' => $_SERVER['CACHE1_HOST'],
-                'port'   => $_SERVER['CACHE1_PORT']
-            )
-        )
-    )
-);
+// $redisStashCacheDriver = array(
+//     'class' => '\Stash\Driver\Redis',
+//     'options' => array(
+//         'servers' => array(
+//             array(
+//                 'server' => $_SERVER['CACHE1_HOST'],
+//                 'port'   => $_SERVER['CACHE1_PORT']
+//             )
+//         )
+//     )
+// );
 
 return array(
     'seo' => array(
