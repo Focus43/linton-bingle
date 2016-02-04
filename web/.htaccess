@@ -26,7 +26,7 @@
 
   # Redirect all domains to lintonbingle.com (unless 192... (a local IP), or localhost...)
   RewriteCond %{HTTP_HOST} !=lintonbingle.com
-  RewriteCond %{HTTP_HOST} !^((lintonbingle\.com)|(.*)gopagoda(.*)|(192\.(.*))|localhost(.*))$ [NC]
+  RewriteCond %{HTTP_HOST} !^((lintonbingle\.com)|(.*)gopagoda(.*)|(.*)focusfortythree(.*)|(192\.(.*))|localhost(.*))$ [NC]
   RewriteRule ^ http://lintonbingle.com%{REQUEST_URI} [L,R=301]
 
   RewriteBase /
