@@ -35,10 +35,6 @@ return array(
     ),
     'misc'  => array(
         'seen_introduction' => true
-    ),
-    'debug' => array(
-        'detail' => 'debug',
-        'display_errors' => true
     )
     // ,
     // 'cache' => array(
