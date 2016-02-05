@@ -118,7 +118,7 @@
     - role: "{{ custom_role_path }}/php"
       php_install_xdebug: false
       php_install_phpunit: false
-      php_install_composer: true
+      php_install_composer: false
       php_install_redis_ext: false
       php_sessions_use_redis: false
       when: install_php == true
