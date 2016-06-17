@@ -28,6 +28,10 @@
                             <td><?php echo $formHelper->text('social_link_youtube', $pkgConfig->get('theme.social_link_youtube'), array('class' => 'input-block-level')); ?></td>
                         </tr>
                         <tr>
+                            <td>Instagram</td>
+                            <td><?php echo $formHelper->text('social_link_instagram', $pkgConfig->get('theme.social_link_instagram'), array('class' => 'input-block-level')); ?></td>
+                        </tr>
+                        <tr>
                             <td>LinkedIn</td>
                             <td><?php echo $formHelper->text('social_link_linkedin', $pkgConfig->get('theme.social_link_linkedin'), array('class' => 'input-block-level')); ?></td>
                         </tr>

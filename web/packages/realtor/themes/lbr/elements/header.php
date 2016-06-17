@@ -21,6 +21,8 @@
         <?php if ($pkgConfig->get('theme.social_link_pinterest')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_pinterest'); ?>"><span class="icon-pinterest"></span></a></li><?php endif; ?>
         <?php if ($pkgConfig->get('theme.social_link_googleplus')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_googleplus'); ?>"><span class="icon-google-plus"></span></a></li><?php endif; ?>
         <?php if ($pkgConfig->get('theme.social_link_linkedin')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_linkedin'); ?>"><span class="icon-linkedin"></a></li><?php endif; ?>
+        <?php if ($pkgConfig->get('theme.social_link_youtube')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_youtube'); ?>"><span class="icon-youtube"></a></li><?php endif; ?>
+        <?php if ($pkgConfig->get('theme.social_link_instagram')): ?><li><a href="<?php echo $pkgConfig->get('theme.social_link_instagram'); ?>"><span class="icon-instagram"></a></li><?php endif; ?>
         <?php if ($pkgConfig->get('theme.email_address')): ?>
             <li class="to-mail"><a href="mailto:<?php echo $pkgConfig->get('theme.email_address'); ?>"><span class="icon-envelope"></span></a></li>
             <li class="to-form"><a href="#" class="modalize" data-width="600" data-title="Email Us" data-load="/email"><span class="icon-envelope"></span></a></li>
